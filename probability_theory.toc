@@ -1,0 +1,42 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Предварительные сведения}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Обозначения}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Предварительные сведения из действительного анализа}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Предварительные сведения из анализа Фурье}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Предварительные сведения из линейной алгебры}{4}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Билинейные и квадратичные формы}{4}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Полуторалинейные функции}{5}{subsubsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.5}Теория категорий и взгляд на измеримые пространства с её точки зрения}{6}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Вероятностное пространство, случайные события}{6}{section.2}%
+\contentsline {section}{\numberline {3}Условные вероятности, формула Байеса, формула полной вероятности}{9}{section.3}%
+\contentsline {section}{\numberline {4}Случайные величины, их распределения, функции распределения и плотности}{9}{section.4}%
+\contentsline {section}{\numberline {5}Классические примеры распределений}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Распределение константы}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Распределение Бернулли}{9}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Дискретное равномерное распределение}{9}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Биномиальное распределение}{9}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Распределение Пуассона}{9}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Геометрическое распределение}{9}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Гипергеометрическое распределение}{9}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Отрицательное биномиальное распределение}{9}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Равномерное распределение}{10}{subsection.5.9}%
+\contentsline {subsection}{\numberline {5.10}Экспоненциальное (показательное) распределение}{10}{subsection.5.10}%
+\contentsline {subsection}{\numberline {5.11}Нормальное распределение (распределение Гаусса)}{10}{subsection.5.11}%
+\contentsline {subsection}{\numberline {5.12}Распределение Коши}{10}{subsection.5.12}%
+\contentsline {section}{\numberline {6}Численные характеристики случайных величин}{10}{section.6}%
+\contentsline {section}{\numberline {7}Сходимости случайных величин}{10}{section.7}%
+\contentsline {section}{\numberline {8}Производящие функции}{10}{section.8}%
+\contentsline {section}{\numberline {9}Характеристические функции}{10}{section.9}%
+\contentsline {section}{\numberline {10}Предельные теоремы}{10}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Неравенства}{10}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Закон больших чисел}{10}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Теорема Муавра-Лапласа}{11}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Закон нуля или единицы}{11}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Закон повторного логарифма}{11}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}Закон арксинуса}{11}{subsection.10.6}%
+\contentsline {subsection}{\numberline {10.7}Правило трёх сигм}{11}{subsection.10.7}%
+\contentsline {subsection}{\numberline {10.8}Центральная предельная теорема}{11}{subsection.10.8}%
+\contentsline {section}{\numberline {11}Совместные распределения случайных величин}{11}{section.11}%
+\contentsline {section}{\numberline {12}Свёртки случайных величин}{11}{section.12}%
+\contentsline {section}{\numberline {13}Указатель терминов}{11}{section.13}%
+\contentsline {section}{\numberline {14}Указатель теорем}{12}{section.14}%

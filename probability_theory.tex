@@ -1,0 +1,639 @@
+ \documentclass[12pt]{article}
+%\documentclass[12pt]{amsart}
+
+\pagestyle{plain}
+\usepackage[margin=3cm]{geometry} 
+
+\usepackage{amsmath,amssymb,amsfonts,enumerate,latexsym, amsthm,textcomp,wasysym,longtable}
+
+% \usepackage{indentfirst}
+\usepackage[matrix, arrow, curve]{xy} % Для коммутативных диаграмм
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{verbatim}
+\makeatletter
+\def\@settitle{\begin{center}%
+		\baselineskip14\p@\relax
+		\bfseries
+		\large \@title
+	\end{center}%
+}
+\makeatother
+
+\usepackage{cancel}
+\usepackage{graphicx}
+% \graphicspath{{pictures/}}
+% \DeclareGraphicsExtensions{.pdf,.png,.jpg}
+%\usepackage{russian}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % commands for making comments
+\usepackage[dvipsnames]{xcolor}
+\newcommand{\YP}[1]{\footnote{\textcolor{red}{YP: #1}}}
+\newcommand{\yp}[1]{\leavevmode{\color{red}{#1}}}
+% {\textcolor{orange}{#1}} 
+\usepackage[normalem]{ulem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{hyperref}
+\usepackage{tikz-cd} % Ещё для коммутативных диаграмм
+
+
+% \textheight=270mm
+% \textwidth=190mm
+% \voffset=-40mm
+% \hoffset=-35mm
+% \pagestyle{empty}
+% 
+% \\SLoppy
+
+
+
+\emergencystretch=5pt
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{proposition}{Предложение}
+\newtheorem*{definition}{Определение}
+\newtheorem{lemma}[theorem]{Лемма}
+\newtheorem{corollary}[theorem]{Следствие}
+
+
+\numberwithin{theorem}{section}
+\numberwithin{proposition}{section}
+
+\theoremstyle{definition}
+
+\newenvironment{example}{\indent \textbf{Пример.}}{\indent}
+
+\newtheorem*{remark*}{Замечание}
+
+\newcommand{\Alt}{\mathfrak{A}}
+\newcommand{\Sym}{\mathfrak{S}}
+\newcommand{\Q}{\mathrm{Q}}
+\newcommand{\D}{\mathrm{D}}
+\newcommand{\Dic}{\mathrm{Dic}}
+\newcommand{\rC}{\mathrm{C}}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\rO}{\mathrm{O}}
+\newcommand{\I}{\mathrm{I}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\KK}{\mathbb{K}}
+\newcommand{\LL}{\mathbb{L}}
+
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calP}{\mathcal{P}}
+
+\newcommand{\Gal}{\operatorname{Gal}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Tor}{\operatorname{T}}
+\newcommand{\AGL}{\operatorname{AGL}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\Qrn}{\operatorname{Q}_8}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\PSU}{\operatorname{PSU}}
+\newcommand{\SU}{\operatorname{SU}}
+\newcommand{\SO}{\operatorname{SO}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\projective}{\mathbb{P}}
+\newcommand{\affine}{{\mathbb{A}}}
+\newcommand{\characteristic}{\operatorname{char}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\rd}{\operatorname{rd}}
+\newcommand{\ed}{\operatorname{ed}}
+\newcommand{\id}{\operatorname{id}}
+
+\newcommand{\ab}[1]{#1^{\mathrm{ab}}}
+
+\newcommand{\prob}{\operatorname{P}}
+\newcommand{\defin}[2]{\hypertarget{#2}{{\color{red} #1}}}
+\newcommand{\events}{\mathfrak{F}}
+\newcommand{\expect}{\operatorname{E}}
+\newcommand{\disp}{\operatorname{D}}
+\newcommand{\cov}{\operatorname{Cov}}
+
+% Цвета
+\definecolor{linkcolor}{HTML}{0000FF} % цвет ссылок
+\definecolor{urlcolor}{HTML}{0000FF} % цвет гиперссылок
+\definecolor{citecolor}{HTML}{0000FF} % цвет ссылки на статью
+\hypersetup{pdfstartview=FitH, linkcolor=linkcolor, urlcolor=urlcolor, citecolor=citecolor, colorlinks=true}
+
+% Пробелы, отступы и выделения
+\definecolor{todocolor}{HTML}{FF4500} % цвет todo
+\newcommand{\TODO}[1]{\textcolor{todocolor}{НУЖНО: #1}}
+\renewcommand\labelenumi{\rm (\arabic{enumi})}
+\renewcommand\theenumi{\rm (\arabic{enumi})}
+% Определение множества
+\newcommand{\definineset}[2]{\left\{
+	\left.
+	#1
+	\right\vert
+	#2
+	\right\}}
+
+% Кусочное определение функции
+\newcommand{\defininefuntwo}[4]{
+	\begin{cases}
+		#1, & #2; \\
+		#3, & #4.
+	\end{cases}
+}
+
+\newcommand{\spmatrix}[4]{
+	\left( \begin{smallmatrix}
+		#1 & #2 \\
+		#3 & #4
+	\end{smallmatrix} \right)
+}
+
+
+
+
+\title{Теория вероятностей}
+\author{(Ещё не)алгебраист}
+
+
+\begin{document}
+	\maketitle
+	
+	\section*{Предисловие}
+	
+	Эти записки созданы с целью аккуратно формализовать и заполнить пробелы в лекциях Елены Борисовны Яровой.
+	В разделе \ref{preparing} будут содержаться основные принятые в курсе обозначения, 
+	а также сведения и определения из разных разделов математики, которыми автор будет пользоваться.
+	Поскольку автор считает полезным взгляд на всякий раздел математики с точки зрения теории категорий и её приложений, 
+	этот язык также будет упоминаться (тем не менее, не замещая собой прочие подходы).
+	
+	\tableofcontents
+	
+	
+	\section{Предварительные сведения} \label{preparing}
+	
+	\subsection{Обозначения}
+	
+	%В работе приняты следующие обозначения:
+	
+	\begin{itemize}
+		\item $ \Omega $ --- пространство элементарных исходов;
+		\item $ \omega $ --- элементарный исход;
+		\item $ \events $ --- $ \sigma $-алгебра событий;
+		\item $ \prob $ --- вероятностная мера;
+		\item $ \xi, \eta, \zeta $ --- случайные величины;
+		\item $ \expect \xi $ --- математическое ожидание случайной величины $ \xi $;
+		\item $ \disp \xi $ --- дисперсия случайной величины $ \xi $;
+		\item $ \cov(\xi, \eta) $ --- ковариация случайных величин $ \xi $ и $ \eta $;
+		\item $ \rho(\xi, \eta) $ --- корреляция случайных величин $ \xi $ и $ \eta $;
+	\end{itemize}
+	
+	\subsection{Предварительные сведения из действительного анализа}
+	
+	Пусть $ \Omega $ --- некоторое множество.
+	Система множеств (следует понимать как синоним термина <<семейство множеств>>) 
+	$ R \subset 2^{\Omega} $ называется \defin{$ \sigma $-алгеброй с единицей $ \Omega $}{sigma-algebra}, если выполнены следующие аксиомы.
+	\begin{enumerate}
+		\item $ \Omega \in R $;
+		\item $ \forall \ A, B \in R: A \cup B, A \cap B \in R $;
+		\item $ \forall \ A \in R: \ \Omega \setminus A := \overline{A} \in R $;
+		\item $ \forall \ \{A_k\}_{k \in R} \subset R: \ \bigcup\limits_{k \in \mathbb{N}} A_k \in R $.
+	\end{enumerate}
+	 
+	Мы опускаем многие классические определения, 
+	которые не будут возникать непосредственно при доказательствах (например, если выполнены только первые три свойства, то $ R $ называется алгеброй).
+	Далее, если не оговорено иное, все алгебры являются $ \sigma $-алгебрами с единицей $ \Omega $
+	и будут называться <<$ \sigma $-алгебрами>>.
+	
+	Будем называть функцию $ \mu \colon R \to \RR \sqcup \{+\infty\} $ \defin{мерой}{measure} на $ \sigma $-алгебре $ R $, 
+	если выполнена аксиома
+	$ \forall A, B \in R, A \cap B = \varnothing \ \mu(A \sqcup B) = \mu(S) + \mu(B) $.
+	Если дополнительно для любой последовательности попарно непересекающихся подмножеств $ \{A_k\}_{k \in \mathbb{N}} $
+	имеет место равенство $ \mu\left(\bigsqcup\limits_{k \in \mathbb{N}}\right) = \sum\limits_{k \in \mathbb{N}} \mu(A_k) $,
+	то мера называется \defin{$ \sigma $-аддитивной}{sigma-measure}.
+	
+	\subsection{Предварительные сведения из анализа Фурье}
+	
+	\subsection{Предварительные сведения из линейной алгебры}
+	
+	\subsubsection{Билинейные и квадратичные формы}
+	
+	Пусть $ \Bbbk $ --- некоторое поле (в нашем случае будут рассматриваться только поля вещественных чисел $ \RR $) и $ V $ --- векторное пространство над $ \Bbbk $.
+	
+	Отображение $ B \colon V \times V \to \Bbbk $ называется \defin{билинейной функцией}{bilinear}, если выполнены следующие аксиомы
+	\begin{enumerate}
+		\item $ \forall v,u,w \in V \ B(u + v, w) = B(u, w) + B(v, w) $;
+		\item $ \forall v,u \in V, \lambda \in \Bbbk \ B(\lambda u, v) = \lambda B(u, v) $;
+		\item $ \forall v,u,w \in V \ B(u, v + w) = B(u, w) + B(u, v) $;
+		\item $ \forall v,u \in V, \lambda \in \Bbbk \ B(u, \lambda v) = \lambda B(u, v) $.
+	\end{enumerate}
+	
+	Билинейная функция называется \defin{симметрической}{symmetric}, если дополнительно для любых $ u, v \in V $ выполнено $ B(u, v) = B(v, u) $.
+	
+	\begin{example}
+		Пусть $ V = \Bbbk $ и $ B(a, b) = a \cdot b $, где $ \cdot $ --- умножение в поле $ \Bbbk $.
+		Тогда $ B $ --- симметрическая билинейная функция.
+	\end{example}
+	
+	\begin{example}
+		Пусть в векторном пространстве $ V $
+		фиксирован базис $ e_1, \ldots, e_n $. Тогда если $ B(x, y) = \sum\limits_{i = 1}^{n} x_iy_i $, где $ x = \sum\limits_{i = 1}^{n} x_ie_i $ и $ y = \sum\limits_{i = 1}^{n} y_ie_i $, то $ B $ --- также билинейная симметрическая форма.
+	\end{example}
+	
+	\defin{Квадратичной формой}{quadratic} называется отображение $ Q \colon V \to \Bbbk $ такое, что для некоторой билинейной формы и любой вектора $ v \in V $ имеет место равенство $ Q(v) = B(v, v) $.
+	Если $ B $ --- билинейная функция, то квадратичная форма $ Q $, заданная формулой $ Q(v) = B(v, v) $
+	называется квадратичной формой соответствующей билинейной функции $ B $.
+	Пусть $ \Bbbk = \RR $, $ Q $ --- квадратичная форма 
+	и для любого ненулевого вектора $ v \in V $ выполнено неравенство $ Q(v) > 0 $.
+	Тогда форма $ Q $ называется положительно определённой. 
+	Если для любого $ v \in V $ выполнено неравенство $ Q(v) \geqslant 0 $,
+	то форма $ Q $ называется неотрицательно определённой.
+
+	Симметрическую билинейную форму с положительно определённой соответствующей квадратичной формой называют 
+	\defin{скалярным произведением}{inner-product}. Вместо $ B(u,v) $ часто пишут $ (u, v) $ или $ \left<u, v\right> $.
+	
+	Примеры. Квадратичные формы, соответствующие билинейным функциям из примеров выше являются положительно определёнными.
+	
+	\begin{theorem}[Коши, Буняковский, Шварц]
+		Пусть $ V $ --- векторное пространство над полем $ \RR $ и $ B $ --- скалярное произведение на $ V $.
+		Тогда дл любых двух векторов $ u, v \in V $ выполнено равенство
+		$$ B(u, v)^2 \leqslant B(u,u)B(v,v), $$
+		причём равенство достигается тогда и только тогда, когда $ u $ и $ v $ коллинеарны.
+	\end{theorem}
+	
+	\begin{proof}
+		Рассмотрим вектор $ u + tv $, где $ t \in \RR $ и значение квадратичной формы на нём.
+		По билинейности, симметричности и положительной определённости имеем 
+		$$ B(u + tv, u + tv) = B(u, u) + tB(u, v) + tB(v, u) + t^2B(v,v) = B(u,u) + 2tB(u,v) + t^2B(v,v) \geqslant 0, $$
+		причём последнее равенство достигается тогда и только тогда, когда $ u + tv = 0 $.
+		
+		Многочлен второй степени принимает только неотрицательные (положительные) значения тогда и только тогда, когда его дискриминант меньше или равен 0 (меньше 0).
+		Итого $$ D = 4B(u,v)^2 - 4B(u,u)B(v,v) \leqslant 0  \Leftrightarrow B(u,v)^2 \leqslant B(u,u)B(v,v) $$
+		и $ D = 0 \Leftrightarrow B(u,v)^2 = B(u,u)B(v,v) $. Последнее равносильно тому, что многочлен имеет корень $ t $
+		и $ u + tv = 0 $, то есть $ u $ и $ v $ пропорциональны.
+	\end{proof}
+	
+	Заметьте, что доказательство этого неравенства в случае поля комплексных чисел требует добавления дополнительной <<поправки>> $ \lambda $.
+	
+	\subsubsection{Полуторалинейные функции}
+	
+	В этом подразделе будем рассматривать только векторные пространства над полем комплексных чисел.
+	
+	Отображение $ S \colon V \times V \to \Bbbk $ называется \defin{полуторалинейной функцией (по второму аргументу)}{sesquilinear}, если выполнены следующие аксиомы
+	\begin{enumerate}
+		\item $ \forall v,u,w \in V \ S(u + v, w) = S(u, w) + S(v, w) $;
+		\item $ \forall v,u \in V, \lambda \in \Bbbk \ S(\lambda u, v) = \lambda S(u, v) $;
+		\item $ \forall v,u,w \in V \ S(u, v + w) = S(u, w) + S(u, v) $;
+		\item $ \forall v,u \in V, \lambda \in \Bbbk \ S(u, \lambda v) = \overline{\lambda} S(u, v) $,
+		где надчёркивание означает комплексное сопряжение.
+	\end{enumerate}
+	
+	Полуторалинейная функция называется \defin{эрмитовой}{hermitian}, если для любых векторов $ u $ и $ v $ дополнительно выполнено равенство
+	$ S(u, v) = \overline{S(v, u)} $.
+	
+	Эрмитова функция называется \defin{скалярным произведением}{C-inner-product}, если для любого ненулевого вектора $ v $
+	выполнено неравенство $ S(v, v) > 0 $.
+	
+	
+	\begin{theorem}[Коши, Буняковский, Шварц]
+		Пусть $ V $ --- векторное пространство над полем $ \CC $ и $ S $ --- скалярное произведение на $ V $.
+		Тогда для любых двух векторов $ u, v \in V $ выполнено равенство
+		$$ S(u, v)\overline{S(u,v)} \leqslant S(u,u)S(v,v), $$
+		причём равенство достигается тогда и только тогда, когда $ u $ и $ v $ коллинеарны.
+	\end{theorem}
+	
+	\begin{proof}
+		Если $ S(u, v) = 0 $, то неравенство выполнено. При таком условии $ u $ и $ v $ пропорциональны тогда и только тогда,
+		когда один из этих векторов равен 0. Последнее в свою очередь равносильно тому, что правая часть неравенства обращается в нуль. Далее будем считать, что $ S(u,v) \neq 0 $.
+		
+		Рассмотрим вектор $ u + t\lambda v $, где $ t \in \RR $ и $ \lambda = S(u,v) $.
+		Поскольку $ S $ --- скалярное произведение и из условий наложенных на $ 
+		\lambda $, то 
+		$$ S(u + t\lambda v, u + t\lambda v) 
+		= S(u, u) + t\overline{\lambda}S(u, v) + t\lambda S(v, u) + t^2\lambda\overline{\lambda}S(v,v) = $$ 
+		$$ = S(u,u) + 2tS(u,v)S(v,u) + t^2S(u,v)S(v,u)S(v,v) \leqslant 0 $$
+		причём последнее равенство достигается тогда и только тогда, когда $ u + t\lambda v = 0 $.
+		
+		Многочлен второй степени принимает только неотрицательные (положительные) значения тогда и только тогда, когда его дискриминант меньше или равен 0 (меньше 0).
+		Итого $$ D = 4S(u,v)^2S(v,u)^2 - 4S(u,u)S(v,v)S(u,v)S(v,u) \leqslant 0  \Leftrightarrow S(u,v)S(v,u) \leqslant S(u,u)S(v,v) $$
+		и $ D = 0 \Leftrightarrow S(u,v)^2 = S(u,u)S(v,v) $. Последнее равносильно тому, что многочлен имеет корень $ t $
+		и $ u + tS(u, v)v = 0 $, то есть $ u $ и $ v $ пропорциональны.
+	\end{proof}
+	
+	\subsection{Теория категорий и взгляд на измеримые пространства с её точки зрения}
+	
+	\section{Вероятностное пространство, случайные события}
+	
+	Пусть $ \Omega $ --- некоторое множество, $ \mathfrak{F} $ --- $ \sigma $-алгебра с единицей $ \Omega $
+	и $ \prob $ --- $ \sigma $-аддитивная мера на $ \mathfrak{F} $, удовлетворяющая свойству $ \prob(\Omega) = 1 $. 
+	Тогда тройка $ (\Omega, \mathfrak{F}, \prob) $ называется \defin{вероятностным пространством}{prob-space}.
+	Множество $ \Omega $ называется \defin{пространством элементарных событий (исходов)}{space},
+	элементы $ \sigma $-алгебры $ \mathfrak{F} $ называются \defin{событиями}{event}.
+	
+	Вероятностное пространство называется \defin{дискретным}{discr}, если множество $ \Omega $ не более, чем счётно.
+	
+	Для кратности, если множество $ \{\omega\} $ является событием, вместо $ \prob({\omega}) $ будем писать $ \prob(\omega) $.
+	
+	Примеры. Пусть $ \Omega = \{1,2,3,4,5,6\} $ --- числа, возникающие при броске игральной кости.
+	Будем считать, что все элементарные исходы равновероятны, 
+	то есть $ \prob(1) = \prob(2) = \prob(3) = \prob(4) = \prob(5) = \prob(6) = \tfrac{1}{6} $.
+	Тогда вероятность события $ A = \{2,4,6\} $ --- <<>выпало чётное число> равна $ \prob(A) = \prob(2) + \prob(4) + \prob(6) = \tfrac{1}{6} + \tfrac{1}{6} + \tfrac{1}{6} = \tfrac{1}{2} $.
+	
+	Рассмотренный пример мотивирует нас ввести параллельные определения для дискретного пространства.
+	\defin{Дискретным вероятностным пространством}{discr-2} мы будем называть  пару $ (\Omega, \prob) $, 
+	где $ \Omega = \{\omega_k\}_{k \in \mathbb{N}} $ --- не более чем счётное множество (также называемое \defin{пространством элементарных исходов}{space-discr}),
+	а $ \prob \colon \Omega \to \RR $ --- неотрицательная функция, удовлетворяющая свойству
+	$ \sum\limits_{k \in \mathbb{N}} \prob(\omega_k) = 1 $.	Говорят, что в этом случае на $ \Omega $ \defin{заданы вероятности элементарных событий}{prob-defined} и что функция $ \prob $ 
+	\defin{задаёт на $ \Omega $ распределение вероятностей}{disrtib-discr}.
+	\defin{Событиями}{event-discr} называются подмножества $ \Omega $. \defin{Вероятностью события}{prob-discr} $ A \subset \Omega $ называется величина
+	$$ \prob(A) = \sum\limits_{\omega \in A} P(\omega), $$
+	которую мы также будем обозначать буквой $ \prob $. Последнее данное определение корректно, поскольку ряд в правой части сходится абсолютно.
+	
+	\begin{proposition}
+		Пусть $ (\Omega, \prob) $ --- дискретное вероятностное пространство в смысле \hyperlink{discr-2}{последнего определения}.
+		Пусть $ \prob \colon 2^{\Omega} \to \mathbb{R} $ --- функция, сопоставляющая событию его вероятность.
+		Тогда тройка $ (\Omega, 2^{\Omega}, \prob) $ является вероятностным пространством в смысле \hyperlink{prob-space}{исходного определения}.
+	\end{proposition}
+	
+	\begin{proof}
+		
+		Множество $ 2^{\Omega} $ является $ \sigma $-алгеброй, поэтому достаточно проверить, что функция $ \prob $
+		удовлетворяет аксиомам вероятностной меры.
+		
+		Из определения $ \prob $ имеем
+		$$ \prob(\Omega) = \sum\limits_{i = 1}^{+\infty} \prob(\omega_i) = 1. $$
+		Пусть $ A, B \subset \Omega $ и $ A \cap B = \varnothing $.
+		Положим $ A = \{\omega_{i}\}_{i \in I_A} $, $ B = \{\omega_{i}\}_{i \in I_B} $ и 
+		$ A \sqcup B = \{\omega_i\}_{i \in I_{A \sqcup B}} $. 
+		Поскольку $ A $ и $ B $ не пересекаются, то $ I_A \sqcup I_B =  I_{A \sqcup B} $.
+		Тогда, так как ряды в формуле ниже сходятся абсолютно, имеем
+		$$ \prob(A \sqcup B) = \sum\limits_{i \in I_{A \sqcup B}} \omega_i = 
+		\sum\limits_{i \in I_A} \omega_{i} + \sum\limits_{i \in I_B} \omega_{i}
+		= \prob(A) + \prob(B). $$
+		
+		Пусть теперь $ \{A_k\}_{k \in \mathbb{N}} $ --- счётное семейство непересекающихся подмножеств множества $ \Omega $.
+		Положим $ A_k = \{\omega_{i}\}_{i \in I_k} $, $ A = \bigsqcup\limits_{k \in I} A_k $.
+		Снова, поскольку $ A_k $ попарно не пересекаются, то $ I = \bigsqcup\limits_{k \in \mathbb{N}} I_k $.
+		Поскольку все ряды ниже сходятся абсолютно, то выполнены равенства
+		$$ \prob(A) = \sum\limits_{i \in I} \prob(\omega_i) 
+		= \sum\limits_{k \in \mathbb{N}} \sum\limits_{i \in I_k} \prob(\omega_i) 
+		= \sum\limits_{k \in \mathbb{N}} \prob(A_k). $$
+	\end{proof}
+	
+	Пусть $ A, B \in \events $ --- события. Введём основные операции над событиями 
+	и приведём их классические наименования и обозначения в теории вероятностей. 
+	
+	Событие $ \Omega \setminus A $ называется
+	\defin{дополнением к событию $ A $}{event-compl}
+	и обозначается $ \overline{A} $ (<<событие $ A $ не произошло>>).
+	
+	Событие $ A \cup B $ называется
+	\defin{суммой событий $ A $ и $ B $}{event-sum}
+	и обозначается $ A + B $  (<<произошло событие $ A $ или $ B $>>). 
+	В курсе лекций это обозначение использовалось для случаев, когда $ A \cap B = \varnothing $.
+	
+	Событие $ A \cap B $ называется 
+	\defin{произведением событий $ A $ и $ B $}{event-product} 
+	и обозначается $ AB $ (<<произошло и событие $ A $ и событие $ B $>>).
+	
+	События $ \Omega $ и $ \varnothing $ называются \defin{достоверным}{} и \defin{невозможным}{}, соответственно.
+	
+	Если $ AB = \varnothing $, то события $ A $ и $ B $ называются \defin{несовместными}{}.
+	(<<события $ A $ и $ B $ не происходят одновременно>>).
+	
+	\begin{proposition}
+		Пусть $ A, B, A_k \in \events $ --- события.
+		Тогда имеет место следующее:
+		\begin{enumerate}
+			\item $ \prob(\overline{A}) = 1 - \prob(A); $
+			\item если $ A \subset B $, то $ \prob(A) \leqslant \prob(B); $
+			\item $ \prob(A \cup B) = \prob(A) + \prob(B) - \prob(AB); $
+			\item $ \prob(\bigcup\limits_{k = 1}^{n} A_k) = \sum\limits_{k = 1}^{n} 
+			(-1)^{k - 1}\sum\limits_{i_1 < i_2 < \ldots < i_k} \prob(A_{i_1} \ldots A_{i_k}); $
+		\end{enumerate}
+	\end{proposition}
+	
+	\begin{proof}
+		Первое равенство следует из цепочки 
+		$$ 1 = \prob(\Omega) = \prob(A \sqcup \overline{A}) = \prob(A) + \prob(\overline{A}). $$
+		
+		Второе равенство --- из цепочки 
+		$$ \prob(B) = \prob(A \cup (B \setminus A)) = \prob(A) + \prob(B \setminus A) \geqslant \prob(A). $$
+		
+		Третье равенство --- из цепочки
+		$$ \prob(A \cup B) = \prob((A \setminus B) \sqcup (A \cap B) \sqcup (B \setminus A)) = $$ 
+		$$ = \prob(A \setminus B) + \prob(A \cap B) + \prob(B \setminus A) + \prob(A \cap B) - \prob(A \cap B) = $$
+		$$ = \prob((A \setminus B) \sqcup (A \cap B)) + \prob((B \setminus A) \sqcup (A \cap B)) - \prob(A \cap B) = $$
+		$$ = \prob(A) + \prob(B) - \prob (A \cap B). $$
+		
+		Докажем четвёртое равенство по индукции.
+		
+		База $ n = 2 $ была доказана в пункте 3.
+		
+		Докажем шаг.
+		Положим $ B = \bigcup\limits_{k = 1}^{n - 1} A_k $.
+		По базе индукции $$ \prob(B \cup A_{n}) = \prob(B) + \prob(A_n) - \prob(B A_n). $$
+		Далее, положим $ B_k = A_kA_n $. Тогда $ BA_n = \bigcup\limits_{k = 1}^{n - 1} B_k $.
+		По индукционному предположению вероятность $ \prob(B \cup A_n) $ равна
+		$$ \sum\limits_{k = 1}^{n - 1} 
+		(-1)^{k - 1}\sum\limits_{i_1 < i_2 < \ldots < i_k} \prob(A_{i_1} \ldots A_{i_k})
+		+ \prob(A_n)
+		- \left(\sum\limits_{k = 1}^{n - 1} 
+		(-1)^{k - 1}\sum\limits_{i_1 < i_2 < \ldots < i_k} \prob(A_{i_1} \ldots A_{i_k} A_{n})\right) = $$
+		$$ = \sum\limits_{k = 1}^{n} 
+		(-1)^{k - 1}\sum\limits_{i_1 < i_2 < \ldots < i_k} \prob(A_{i_1} \ldots A_{i_k}). $$
+	\end{proof}
+	
+	\section{Условные вероятности, формула Байеса, формула полной вероятности}
+	
+	
+
+	\section{Случайные величины, их распределения, функции распределения и плотности}
+	
+	\TODO{вписать все определения}
+	
+	\TODO{ввести функцию распределения}
+	
+	\TODO{определить распределение как прямой образ вероятностной меры}
+	
+	\TODO{доказать, что прямой образ вероятностной меры и мера Лебега-Стилтьеса, порождённая функцией распределения совпадают}
+	
+	\TODO{ввести понятие абсолютно непрерывной случайной величины и её плотности}
+	
+	\section{Классические примеры распределений} 
+	
+	\TODO{вписать описания для всех классических распределений}
+	
+	Дискретные распределения.
+	
+	\subsection{Распределение константы}
+	
+	\subsection{Распределение Бернулли}
+	
+	\subsection{Дискретное равномерное распределение}
+	
+	\subsection{Биномиальное распределение}
+	
+	\subsection{Распределение Пуассона}
+	
+	\subsection{Геометрическое распределение}
+	
+	\subsection{Гипергеометрическое распределение}
+	
+	\subsection{Отрицательное биномиальное распределение}
+	
+	Абсолютно непрерывные случайные величины
+	
+	\subsection{Равномерное распределение}
+	
+	\subsection{Экспоненциальное (показательное) распределение}
+	
+	\subsection{Нормальное распределение (распределение Гаусса)}
+	
+	\subsection{Распределение Коши}
+	
+	\section{Численные характеристики случайных величин}
+	
+	\TODO{записать определения и свойства, описать ковариацию как скалярное произведение}
+	
+	\TODO{доказать формулы для вычисленя матожидания через интегралы Лебега, Лебега-Стилтьеса и интеграл Римана для абсолютно непрерывной случайно величины}
+	
+	
+	
+	\section{Сходимости случайных величин}
+	
+	\TODO{записать определения всех сходимостей и вывод одних сходимостей из других}
+	
+	\section{Производящие функции}
+	
+	\TODO{записать определение}
+	
+	\section{Характеристические функции}
+	
+	\begin{theorem}[Бохнер, Хинчин]
+		
+	\end{theorem}
+	
+	\section{Предельные теоремы}
+	
+	\TODO{дописать ниже доказательства теорем}
+	
+	\subsection{Неравенства}
+	
+	\subsection{Закон больших чисел}
+	
+	\begin{theorem}[Закон больших чисел в форме Бернулли]
+		
+	\end{theorem}
+	
+	\begin{theorem}[Закон больших чисел в форме Чебышёва]
+		
+	\end{theorem}
+	
+	\begin{theorem}[Усиленный закон больших чисел]
+		
+	\end{theorem}
+	
+	\begin{theorem}[Закон больших чисел в форме Хинчина]
+		content
+	\end{theorem}
+	
+	\subsection{Теорема Муавра-Лапласа}
+	
+	\begin{theorem}[Теорема Пуассона]
+		
+	\end{theorem}
+	
+	\begin{theorem}[Формула Стирлинга]
+		
+	\end{theorem}
+	
+	\begin{theorem}[Муавр, Лапласа]
+		
+	\end{theorem}
+	
+	\subsection{Закон нуля или единицы}
+	
+	\begin{lemma}[Борель, Кантелли]
+		
+	\end{lemma}
+	
+	\begin{lemma}[Борель, Кантелли]
+		
+	\end{lemma}
+	
+	\begin{theorem}[Закон нуля или единицы Колмогорова]
+		
+	\end{theorem}
+	
+	\subsection{Закон повторного логарифма}
+	
+	\begin{theorem}[Закон повторного логарифма]
+		
+	\end{theorem}
+	
+	\subsection{Закон арксинуса}
+	
+	\begin{theorem}[Закон арксинуса]
+		
+	\end{theorem}
+	
+	\subsection{Правило трёх сигм}
+	
+	\begin{theorem}[Правило трёх сигм]
+		
+	\end{theorem}
+	
+	\subsection{Центральная предельная теорема}
+	
+	\begin{theorem}[Центральная предельная теорема]
+		
+	\end{theorem}
+	
+	\begin{theorem}[Оценка Берри-Эссена]
+		
+	\end{theorem}
+	
+	\section{Совместные распределения случайных величин}
+	
+	d
+	
+	\section{Свёртки случайных величин}
+	
+	d
+	
+	\section{Указатель терминов}
+	
+	d
+	
+	\section{Указатель теорем}
+	
+	d
+	
+	\begin{thebibliography}{2}
+		\bibitem{Buhler} J. Buhler, Z. Reichstein {\it On the Essential Dimension of a Finite Group}, Comp. Math. 106, 1997, 159–179.
+		
+		\bibitem{essdim1} Huah Chu, Shou-Jen Hu, Ming-chang Kang, Jiping Zhang, {\it \href{https://arxiv.org/abs/math/0611917v1}{ Groups with essential dimension one}}, 2006, 26 p.
+		
+		\bibitem{Dolgachev} I. V. Dolgachev {\it \href{https://dept.math.lsa.umich.edu/~idolga/McKaybook.pdf}{McKay correspondence. Winter 2006/07} }, 2009, 161 p.
+		
+		\bibitem{Duncan} A. Duncan {\it Finite groups of essential dimension 2}, Comment. Math. Helv. 88, no. 3, 2013, 555–585.
+		
+		\bibitem{Reichstein} D. Kaur, Z. Reichstein 
+		{\it \href{https://arxiv.org/pdf/2407.21449}{Essential Dimension of Small Finite Groups}}, 2024.
+		
+		\bibitem{Merkurjev} N. A. Karpenko, A. S. Merkurjev {\it Essential dimension of finite p-groups}, Invent. Math. 172, 
+		no. 3, 2008, 491–508.
+		
+		\bibitem{Serre} Ж.-П. Серр {\it Линейные представления конечных групп}, Мир, 1970, 133 с.
+		
+		\bibitem{Suzuki} M. Suzuki {\it Group Theory I}, Springer, 1981, 446 p.
+	\end{thebibliography}
+	
+	
+\end{document}
+
