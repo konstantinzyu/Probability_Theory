@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.29)  8 JUN 2025 20:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.29)  9 JUN 2025 15:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1156,23 +1156,37 @@ Package hyperref Info: Link coloring ON on input line 163.
 
 [1
 
-{/home/konstantin/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map}])
+{/home/konstantin/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map}]
+
+[2])
 \tf@toc=\write6
 \openout6 = `probability_theory.toc'.
 
-
-
-[2]
 LaTeX Font Info:    Trying to load font information for U+euf on input line 186
 .
  (/home/konstantin/.miktex/texmfs/install/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 197.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sigma' on input line 197.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 197.
+
+
+
 [3]
 
 [4]
-Overfull \hbox (28.88065pt too wide) detected at line 271
+
+[5]
+Overfull \hbox (28.88065pt too wide) detected at line 307
 \OML/cmm/m/it/12 B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u \OT1/cmr/m/n/12 + \OML/cm
 m/m/it/12 tv; u \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 tv\OT1/cmr/m/n/12 ) = \OML/c
 mm/m/it/12 B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u; u\OT1/cmr/m/n/12 ) + \OML/cmm/
@@ -1187,8 +1201,8 @@ t[]B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v; v\OT1/cmr/m/n/12 ) \U/msa/m/n/12 > \OT
 
 
 
-[5]
-Overfull \hbox (20.69383pt too wide) detected at line 322
+[6]
+Overfull \hbox (20.69383pt too wide) detected at line 358
 \OML/cmm/m/it/12 D \OT1/cmr/m/n/12 = 4\OML/cmm/m/it/12 S\OT1/cmr/m/n/12 (\OML/c
 mm/m/it/12 u; v\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 S\OT1/cmr/m/n/12 (\OML/cmm/m
 /it/12 v; u\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 4\OML/cmm/m
@@ -1204,21 +1218,59 @@ m/n/12 ) \U/msa/m/n/12 6 \OML/cmm/m/it/12 S\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u;
  []
 
 
-
-[6]
-
-Package hyperref Warning: Ignoring empty anchor on input line 403.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 367.
 
 
-Package hyperref Warning: Ignoring empty anchor on input line 403.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sigma' on input line 367.
 
 
-Package hyperref Warning: Ignoring empty anchor on input line 405.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 367.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 369.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sigma' on input line 369.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 369.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 371.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sigma' on input line 371.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 371.
 
 
 
 [7]
-Overfull \hbox (9.00807pt too wide) detected at line 446
+
+[8]
+
+Package hyperref Warning: Ignoring empty anchor on input line 452.
+
+
+Package hyperref Warning: Ignoring empty anchor on input line 452.
+
+
+Package hyperref Warning: Ignoring empty anchor on input line 454.
+
+
+
+[9]
+Overfull \hbox (9.00807pt too wide) detected at line 501
 []\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1)[] [] [](\OML/cmm/m/it
 /12 A[] [] A[]\OT1/cmr/m/n/12 ) + [](\OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 ) \OMS
 /cmsy/m/n/12 ^^@ [] \OT1/cmr/m/n/12 =
@@ -1226,56 +1278,83 @@ Overfull \hbox (9.00807pt too wide) detected at line 446
 
 
 
-[8]
-
-[9]
-
 [10]
+Overfull \hbox (8.6785pt too wide) detected at line 550
+[][] [] \OT1/cmr/m/n/12 = [] [] [] = [] [] [] = [] [] = [] [][] (\OML/cmm/m/it/
+12 B[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 :
+ []
+
+
 
 [11]
+Overfull \hbox (17.29565pt too wide) detected at line 604
+[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A[]B\OT1/cmr/m/n/12 ) = [](\OML/cmm/m/it/12
+ A[] \OMS/cmsy/m/n/12 j \OML/cmm/m/it/12 B\OT1/cmr/m/n/12 ) [](\OML/cmm/m/it/12
+ B\OT1/cmr/m/n/12 ) = [](\OML/cmm/m/it/12 A[] \OMS/cmsy/m/n/12 j \OML/cmm/m/it/
+12 A[]A[] [] A[]\OT1/cmr/m/n/12 ) [](\OML/cmm/m/it/12 A[] \OMS/cmsy/m/n/12 j \O
+ML/cmm/m/it/12 A[] [] A[]\OT1/cmr/m/n/12 ) [] [](\OML/cmm/m/it/12 A[] \OMS/cmsy
+/m/n/12 j \OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 ) [](\OML/cmm/m/it/12 A[]\OT1/cmr
+/m/n/12 )\OML/cmm/m/it/12 :
+ []
 
-[12] (probability_theory.aux)
+
+
+[12]
+
+[13]
+
+[14]
+
+[15]
+
+[16]
+
+[17]
+
+[18] (probability_theory.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
  ***********
 Package rerunfilecheck Info: File `probability_theory.out' has not changed.
-(rerunfilecheck)             Checksum: DCE8C8141BC38E31B2B5199DDB6537CF;12375.
+(rerunfilecheck)             Checksum: F96E9C88629F97186F635FECDC885B77;15823.
  ) 
 Here is how much of TeX's memory you used:
- 26601 strings out of 473566
- 479538 string characters out of 5718235
- 905045 words of memory out of 5000000
- 49198 multiletter control sequences out of 15000+600000
- 575730 words of font info for 94 fonts, out of 8000000 for 9000
+ 26674 strings out of 473566
+ 480603 string characters out of 5718235
+ 909323 words of memory out of 5000000
+ 49229 multiletter control sequences out of 15000+600000
+ 577336 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,6n,101p,1411b,643s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/konstantin/.miktex/texmfs/data/fonts/pk/ljfour/lh/lh-t2a/dpi600/lati1
-200.pk> </home/konstantin/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi60
-0/tcrm1200.pk> </home/konstantin/.miktex/texmfs/data/fonts/pk/ljfour/lh/lh-t2a/
-dpi600/labx1440.pk> </home/konstantin/.miktex/texmfs/data/fonts/pk/ljfour/lh/lh
--t2a/dpi600/labx1200.pk> </home/konstantin/.miktex/texmfs/data/fonts/pk/ljfour/
-lh/lh-t2a/dpi600/larm1200.pk> </home/konstantin/.miktex/texmfs/data/fonts/pk/lj
-four/lh/lh-t2a/dpi600/labx1728.pk> </home/konstantin/.miktex/texmfs/data/fonts/
-pk/ljfour/lh/lh-t2a/dpi600/larm1440.pk> </home/konstantin/.miktex/texmfs/data/f
-onts/pk/ljfour/lh/lh-t2a/dpi600/larm2074.pk></home/konstantin/.miktex/texmfs/in
-stall/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/konstantin/.miktex/texmf
-s/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></home/konstantin/.miktex/t
-exmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></home/konstantin/.mikte
-x/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/konstantin/.mi
-ktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/konstantin/
-.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/konstanti
-n/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/konstan
-tin/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/kon
-stantin/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb></home/
-konstantin/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></ho
-me/konstantin/.miktex/texmfs/install/fonts/type1/public/amsfonts/euler/eufm10.p
-fb></home/konstantin/.miktex/texmfs/install/fonts/type1/public/amsfonts/symbols
-/msam10.pfb></home/konstantin/.miktex/texmfs/install/fonts/type1/public/amsfont
-s/symbols/msbm10.pfb>
-Output written on probability_theory.pdf (12 pages, 341569 bytes).
+ 98i,6n,101p,1411b,679s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/konstantin/.miktex/texmfs/data/fonts/pk/ljfour/lh/lh-t2a/dpi600/larm0
+800.pk> </home/konstantin/.miktex/texmfs/data/fonts/pk/ljfour/lh/lh-t2a/dpi600/
+lati1200.pk> </home/konstantin/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/
+dpi600/tcrm1200.pk> </home/konstantin/.miktex/texmfs/data/fonts/pk/ljfour/lh/lh
+-t2a/dpi600/labx1440.pk> </home/konstantin/.miktex/texmfs/data/fonts/pk/ljfour/
+lh/lh-t2a/dpi600/labx1200.pk> </home/konstantin/.miktex/texmfs/data/fonts/pk/lj
+four/lh/lh-t2a/dpi600/larm1200.pk> </home/konstantin/.miktex/texmfs/data/fonts/
+pk/ljfour/lh/lh-t2a/dpi600/labx1728.pk> </home/konstantin/.miktex/texmfs/data/f
+onts/pk/ljfour/lh/lh-t2a/dpi600/larm1440.pk> </home/konstantin/.miktex/texmfs/d
+ata/fonts/pk/ljfour/lh/lh-t2a/dpi600/larm2074.pk></home/konstantin/.miktex/texm
+fs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/konstantin/.miktex/
+texmfs/install/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></home/konstantin/
+.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12.pfb></home/konstan
+tin/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi6.pfb></home/kons
+tantin/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/k
+onstantin/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></hom
+e/konstantin/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></h
+ome/konstantin/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+/home/konstantin/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb></home/konstantin/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy
+6.pfb></home/konstantin/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/c
+msy8.pfb></home/konstantin/.miktex/texmfs/install/fonts/type1/public/amsfonts/e
+uler/eufm10.pfb></home/konstantin/.miktex/texmfs/install/fonts/type1/public/ams
+fonts/symbols/msam10.pfb></home/konstantin/.miktex/texmfs/install/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb>
+Output written on probability_theory.pdf (18 pages, 386253 bytes).
 PDF statistics:
- 848 PDF objects out of 1000 (max. 8388607)
- 124 named destinations out of 1000 (max. 500000)
- 341 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 976 PDF objects out of 1000 (max. 8388607)
+ 164 named destinations out of 1000 (max. 500000)
+ 445 words of extra memory for PDF output out of 10000 (max. 10000000)
 

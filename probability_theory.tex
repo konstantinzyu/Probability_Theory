@@ -131,7 +131,7 @@
 \renewcommand\labelenumi{\rm (\arabic{enumi})}
 \renewcommand\theenumi{\rm (\arabic{enumi})}
 % Определение множества
-\newcommand{\definineset}[2]{\left\{
+\newcommand{\defineset}[2]{\left\{
 	\left.
 	#1
 	\right\vert
@@ -139,7 +139,7 @@
 	\right\}}
 
 % Кусочное определение функции
-\newcommand{\defininefuntwo}[4]{
+\newcommand{\definefuntwo}[4]{
 	\begin{cases}
 		#1, & #2; \\
 		#3, & #4.
@@ -154,7 +154,7 @@
 }
 
 
-
+\setcounter{section}{-1}
 
 \title{Теория вероятностей}
 \author{(Ещё не)алгебраист}
@@ -194,9 +194,11 @@
 	
 	\subsection{Предварительные сведения из действительного анализа}
 	
+	\subsubsection{($ \sigma $-)Алгебры и меры}
+	
 	Пусть $ \Omega $ --- некоторое множество.
 	Система множеств (следует понимать как синоним термина <<семейство множеств>>) 
-	$ R \subset 2^{\Omega} $ называется \defin{$ \sigma $-алгеброй с единицей $ \Omega $}{sigma-algebra}, если выполнены следующие аксиомы.
+	$ R \subset 2^{\Omega} $ называется \defin{алгеброй с единицей $ \Omega $}{algebra}, если выполнены первые три из следующих аксиом и \defin{$ \sigma $-алгеброй с единицей $ \Omega $}{sigma-algebra}, если выполнены все четыре аксиомы.
 	\begin{enumerate}
 		\item $ \Omega \in R $;
 		\item $ \forall \ A, B \in R: A \cup B, A \cap B \in R $;
@@ -204,23 +206,57 @@
 		\item $ \forall \ \{A_k\}_{k \in R} \subset R: \ \bigcup\limits_{k \in \mathbb{N}} A_k \in R $.
 	\end{enumerate}
 	 
-	Мы опускаем многие классические определения, 
-	которые не будут возникать непосредственно при доказательствах (например, если выполнены только первые три свойства, то $ R $ называется алгеброй).
-	Далее, если не оговорено иное, все алгебры являются $ \sigma $-алгебрами с единицей $ \Omega $
-	и будут называться <<$ \sigma $-алгебрами>>.
+	Далее, если не оговорено иное, все алгебры являются ($ \sigma $-)алгебрами с единицей $ \Omega $
+	и будут называться <<($ \sigma $-)алгебрами>>.
 	
-	Будем называть функцию $ \mu \colon R \to \RR \sqcup \{+\infty\} $ \defin{мерой}{measure} на $ \sigma $-алгебре $ R $, 
-	если выполнена аксиома
-	$ \forall A, B \in R, A \cap B = \varnothing \ \mu(A \sqcup B) = \mu(S) + \mu(B) $.
-	Если дополнительно для любой последовательности попарно непересекающихся подмножеств $ \{A_k\}_{k \in \mathbb{N}} $
-	имеет место равенство $ \mu\left(\bigsqcup\limits_{k \in \mathbb{N}}\right) = \sum\limits_{k \in \mathbb{N}} \mu(A_k) $,
-	то мера называется \defin{$ \sigma $-аддитивной}{sigma-measure}.
+	Будем называть функцию $ \mu \colon R \to \RR $ \defin{(конечной) мерой}{measure} на ($ \sigma $-)алгебре $ R $, 
+	если $ \nu $ удовлетворяет аксиоме аддитивности
+	$$ \forall A, B \in R, A \cap B = \varnothing \ \mu(A \sqcup B) = \mu(S) + \mu(B). $$
+	Если дополнительно для любой последовательности попарно непересекающихся подмножеств $ \{A_k\}_{k \in \mathbb{N}} $,
+	объединение которых есть элемент $ R $ (отметим, что это автоматически выполнено для $ \sigma $-алгебры)
+	имеет место равенство 
+	$$ \mu\left(\bigsqcup\limits_{k = 1}^{\infty} A_k \right) = \sum\limits_{k = 1}^{\infty} \mu(A_k), $$
+	то мера $ \mu $ называется \defin{$ \sigma $-аддитивной}{sigma-measure} (аксиома $ \sigma $-аддитивности).
+	Можно показать, что из этой аксиомы следует, что $ \mu(\varnothing) = 0 $ и поэтому из неё следует аксиома аддитивности.
+	
+	\begin{lemma} \label{algebra restriction}
+		Пусть $ \events $ --- ($ \sigma $-)алгебра и $ A \in \events $.
+		Тогда множество $$ \events \cap A := \defineset{B \cap A}{B \in \events} $$ является ($ \sigma $-)алгеброй
+		с единицей $ A $.
+	\end{lemma}
+	
+	\begin{proof}
+		По построению $ \Omega \cap A = A $ содержится в $ \events \cap A $.
+		
+		Пусть теперь $ C_1 = B_1 \cap A, C_2 = B_2 \cap A \in \events \cap A $ --- два множества.
+		Тогда $ C_1 \cap C_2 = (B_1 \cap B_2)  \cap A \in \events \cap A $, так как $ B_1 \cap B_2 \in \events $.
+		Далее, $ C_1 \cup C_2 = (B_1 \cup B_2) \cap A \in \events \cap A $, так как $ B_1 \cup B_2 \in \events $.
+		Окончательно, $ A \setminus C_1 = (A \setminus B_1) = (\Omega \setminus B_1) \cap A \in \events \cap A $,
+		поскольку $ \Omega \setminus B_1 \in \events $.
+		
+		Предположим, что $ \events $ являлось $ \sigma $-алгеброй. Пусть $ \{C_k\} $ --- счётное семейство 
+		элементов $ \events \cap A $ и $ C_k = B_k \cap A $.
+		Тогда
+		$$ \bigcup\limits_{i = 1}^{\infty} C_k = \bigcup\limits_{i = 1}^{\infty} (B_k \cap A) 
+		= \left(\bigcup\limits_{i = 1}^{\infty} B_k \right) \cap A \in \events \cap A, $$
+		принадлежность справедлива в силу того, что $ \bigcup\limits_{i = 1}^{\infty} B_k \in \events $.
+	\end{proof}
+	
+	\subsubsection{Лебеговское продолжение меры}
+	
+	\subsubsection{Мера Лебега-Стилтьеса}
+	
+	\subsubsection{Измеримое отображение}
+	
+	\subsubsection{Интеграл Лебега}
+	
+	\subsubsection{Прямой образ меры (pushforward measure)}
 	
 	\subsection{Предварительные сведения из анализа Фурье}
 	
 	\subsection{Предварительные сведения из линейной алгебры}
 	
-	\subsubsection{Билинейные и квадратичные формы}
+	\subsubsection{Билинейные функции и квадратичные формы}
 	
 	Пусть $ \Bbbk $ --- некоторое поле (в нашем случае будут рассматриваться только поля вещественных чисел $ \RR $) и $ V $ --- векторное пространство над $ \Bbbk $.
 	
@@ -258,7 +294,7 @@
 	
 	Примеры. Квадратичные формы, соответствующие билинейным функциям из примеров выше являются положительно определёнными.
 	
-	\begin{theorem}[Коши, Буняковский, Шварц]
+	\begin{theorem}[Коши, Буняковский, Шварц] \label{Cauchy-real}
 		Пусть $ V $ --- векторное пространство над полем $ \RR $ и $ B $ --- скалярное произведение на $ V $.
 		Тогда дл любых двух векторов $ u, v \in V $ выполнено равенство
 		$$ B(u, v)^2 \leqslant B(u,u)B(v,v), $$
@@ -299,7 +335,7 @@
 	выполнено неравенство $ S(v, v) > 0 $.
 	
 	
-	\begin{theorem}[Коши, Буняковский, Шварц]
+	\begin{theorem}[Коши, Буняковский, Шварц] \label{Cauchy-complex}
 		Пусть $ V $ --- векторное пространство над полем $ \CC $ и $ S $ --- скалярное произведение на $ V $.
 		Тогда для любых двух векторов $ u, v \in V $ выполнено равенство
 		$$ S(u, v)\overline{S(u,v)} \leqslant S(u,u)S(v,v), $$
@@ -320,11 +356,19 @@
 		
 		Многочлен второй степени принимает только неотрицательные (положительные) значения тогда и только тогда, когда его дискриминант меньше или равен 0 (меньше 0).
 		Итого $$ D = 4S(u,v)^2S(v,u)^2 - 4S(u,u)S(v,v)S(u,v)S(v,u) \leqslant 0  \Leftrightarrow S(u,v)S(v,u) \leqslant S(u,u)S(v,v) $$
-		и $ D = 0 \Leftrightarrow S(u,v)^2 = S(u,u)S(v,v) $. Последнее равносильно тому, что многочлен имеет корень $ t $
-		и $ u + tS(u, v)v = 0 $, то есть $ u $ и $ v $ пропорциональны.
+		и $ D = 0 \Leftrightarrow S(u,v)^2 = S(u,u)S(v,v) $. Последнее равносильно тому, что многочлен имеет корень $ t_0 $
+		и $ u + t_0S(u, v)v = 0 $, то есть $ u $ и $ v $ пропорциональны.
 	\end{proof}
 	
 	\subsection{Теория категорий и взгляд на измеримые пространства с её точки зрения}
+	
+	\subsubsection{Категория измеримых пространств}
+	
+	\subsubsection{Прямой образ $ \sigma $-алгебры}
+	
+	\subsubsection{Обратный образ $ \sigma $-алгебры}
+	
+	\subsubsection{Функтор борелевской $ \sigma $-алгебры}
 	
 	\section{Вероятностное пространство, случайные события}
 	
@@ -341,19 +385,24 @@
 	Примеры. Пусть $ \Omega = \{1,2,3,4,5,6\} $ --- числа, возникающие при броске игральной кости.
 	Будем считать, что все элементарные исходы равновероятны, 
 	то есть $ \prob(1) = \prob(2) = \prob(3) = \prob(4) = \prob(5) = \prob(6) = \tfrac{1}{6} $.
-	Тогда вероятность события $ A = \{2,4,6\} $ --- <<>выпало чётное число> равна $ \prob(A) = \prob(2) + \prob(4) + \prob(6) = \tfrac{1}{6} + \tfrac{1}{6} + \tfrac{1}{6} = \tfrac{1}{2} $.
+	Тогда вероятность события $ A = \{2,4,6\} $ --- <<>выпало чётное число> 
+	равна $ \prob(A) = \prob(2) + \prob(4) + \prob(6) = \tfrac{1}{6} + \tfrac{1}{6} + \tfrac{1}{6} = \tfrac{1}{2} $.
 	
 	Рассмотренный пример мотивирует нас ввести параллельные определения для дискретного пространства.
 	\defin{Дискретным вероятностным пространством}{discr-2} мы будем называть  пару $ (\Omega, \prob) $, 
-	где $ \Omega = \{\omega_k\}_{k \in \mathbb{N}} $ --- не более чем счётное множество (также называемое \defin{пространством элементарных исходов}{space-discr}),
+	где $ \Omega = \{\omega_k\}_{k \in \mathbb{N}} $ --- не более чем счётное множество 
+	(также называемое \defin{пространством элементарных исходов}{space-discr}),
 	а $ \prob \colon \Omega \to \RR $ --- неотрицательная функция, удовлетворяющая свойству
-	$ \sum\limits_{k \in \mathbb{N}} \prob(\omega_k) = 1 $.	Говорят, что в этом случае на $ \Omega $ \defin{заданы вероятности элементарных событий}{prob-defined} и что функция $ \prob $ 
+	$ \sum\limits_{k \in \mathbb{N}} \prob(\omega_k) = 1 $.	
+	Говорят, что в этом случае на $ \Omega $ \defin{заданы вероятности элементарных событий}{prob-defined} и что функция $ \prob $ 
 	\defin{задаёт на $ \Omega $ распределение вероятностей}{disrtib-discr}.
-	\defin{Событиями}{event-discr} называются подмножества $ \Omega $. \defin{Вероятностью события}{prob-discr} $ A \subset \Omega $ называется величина
+	\defin{Событиями}{event-discr} называются подмножества $ \Omega $. 
+	\defin{Вероятностью события}{prob-discr} $ A \subset \Omega $ называется величина
 	$$ \prob(A) = \sum\limits_{\omega \in A} P(\omega), $$
-	которую мы также будем обозначать буквой $ \prob $. Последнее данное определение корректно, поскольку ряд в правой части сходится абсолютно.
+	которую мы также будем обозначать буквой $ \prob $. 
+	Последнее данное определение корректно, поскольку ряд в правой части сходится абсолютно.
 	
-	\begin{proposition}
+	\begin{proposition} \label{}
 		Пусть $ (\Omega, \prob) $ --- дискретное вероятностное пространство в смысле \hyperlink{discr-2}{последнего определения}.
 		Пусть $ \prob \colon 2^{\Omega} \to \mathbb{R} $ --- функция, сопоставляющая событию его вероятность.
 		Тогда тройка $ (\Omega, 2^{\Omega}, \prob) $ является вероятностным пространством в смысле \hyperlink{prob-space}{исходного определения}.
@@ -405,32 +454,38 @@
 	Если $ AB = \varnothing $, то события $ A $ и $ B $ называются \defin{несовместными}{}.
 	(<<события $ A $ и $ B $ не происходят одновременно>>).
 	
-	\begin{proposition}
+	\begin{proposition}[Начальные свойства вероятностной меры]
 		Пусть $ A, B, A_k \in \events $ --- события.
 		Тогда имеет место следующее:
 		\begin{enumerate}
-			\item $ \prob(\overline{A}) = 1 - \prob(A); $
-			\item если $ A \subset B $, то $ \prob(A) \leqslant \prob(B); $
-			\item $ \prob(A \cup B) = \prob(A) + \prob(B) - \prob(AB); $
+			\item $ \prob(\overline{A}) = 1 - \prob(A); $ \label{prob-prop1}
+			\item если $ A \subset B $, то $ \prob(B \setminus A) = \prob(B) - \prob(A); $ \label{prob-prop2}
+			\item если $ A \subset B $, то $ \prob(A) \leqslant \prob(B); $ \label{prob-prop2.5}
+			\item $ \prob(A \cup B) = \prob(A) + \prob(B) - \prob(AB); $ \label{prob-prop3}
+			\item $ \prob(A \cup B) \leqslant \prob(A) + \prob(B) $; \label{prob-prop4}
 			\item $ \prob(\bigcup\limits_{k = 1}^{n} A_k) = \sum\limits_{k = 1}^{n} 
-			(-1)^{k - 1}\sum\limits_{i_1 < i_2 < \ldots < i_k} \prob(A_{i_1} \ldots A_{i_k}); $
+			(-1)^{k - 1}\sum\limits_{i_1 < i_2 < \ldots < i_k} \prob(A_{i_1} \ldots A_{i_k}); $ \label{prob-prop5}
+			\item $ \prob\left(\bigcup\limits_{k = 1}^{+\infty} A_k \right) \leqslant \sum\limits_{k = 1}^{+\infty} \prob(A_k) $ 
+			(это свойство называется \defin{субаддитивностью}{subadditivity}). \label{prob-prop6}
 		\end{enumerate}
 	\end{proposition}
 	
 	\begin{proof}
-		Первое равенство следует из цепочки 
+		Равенство \ref{prob-prop1} следует из цепочки 
 		$$ 1 = \prob(\Omega) = \prob(A \sqcup \overline{A}) = \prob(A) + \prob(\overline{A}). $$
 		
-		Второе равенство --- из цепочки 
-		$$ \prob(B) = \prob(A \cup (B \setminus A)) = \prob(A) + \prob(B \setminus A) \geqslant \prob(A). $$
+		Равенство \ref{prob-prop2} --- из цепочки 
+		$$ \prob(B) = \prob(A \cup (B \setminus A)) = \prob(A) + \prob(B \setminus A). $$
+		Неравенство \ref{prob-prop2.5} следует из этого равенства и неотрицательности вероятности.
 		
-		Третье равенство --- из цепочки
+		Равенство \ref{prob-prop3} --- из цепочки
 		$$ \prob(A \cup B) = \prob((A \setminus B) \sqcup (A \cap B) \sqcup (B \setminus A)) = $$ 
 		$$ = \prob(A \setminus B) + \prob(A \cap B) + \prob(B \setminus A) + \prob(A \cap B) - \prob(A \cap B) = $$
 		$$ = \prob((A \setminus B) \sqcup (A \cap B)) + \prob((B \setminus A) \sqcup (A \cap B)) - \prob(A \cap B) = $$
 		$$ = \prob(A) + \prob(B) - \prob (A \cap B). $$
+		Неравенство \ref{prob-prop4} немедленно следует из равенства \ref{prob-prop3}.
 		
-		Докажем четвёртое равенство по индукции.
+		Докажем \ref{prob-prop5} по индукции.
 		
 		База $ n = 2 $ была доказана в пункте 3.
 		
@@ -446,11 +501,222 @@
 		(-1)^{k - 1}\sum\limits_{i_1 < i_2 < \ldots < i_k} \prob(A_{i_1} \ldots A_{i_k} A_{n})\right) = $$
 		$$ = \sum\limits_{k = 1}^{n} 
 		(-1)^{k - 1}\sum\limits_{i_1 < i_2 < \ldots < i_k} \prob(A_{i_1} \ldots A_{i_k}). $$
+		
+		Докажем неравенство $ \ref{prob-prop6} $.
+		Положим $ B_k = A_k \setminus \bigcup\limits_{i = 1}^{k - 1} A_i $.
+		Тогда $ \bigcup\limits_{k = 1}^{+\infty} B_k = \bigcup\limits_{k = 1}^{+\infty} A_k $,
+		причём  $ B_k $ попарно не пересекаются и $ \prob(B_k) \leqslant \prob(A_k) $ по $ \ref{prob-prop2} $.
+		Тогда по $ \sigma $-аддитивности имеем 
+		$$ \bigcup\limits_{k = 1}^{+\infty} A_k = \bigcup\limits_{k = 1}^{+\infty} B_k 
+		= \sum\limits_{k = 1}^{+\infty} \prob(B_k) \leqslant \sum\limits_{k = 1}^{+\infty} \prob(A_k). $$
 	\end{proof}
 	
-	\section{Условные вероятности, формула Байеса, формула полной вероятности}
+	\section{Условные вероятности, формула Байеса, независимость событий}
 	
+	\subsection{Условная вероятность}
 	
+	В задачах бывает полезно рассмотреть вероятность того, что произойдёт некоторое событие $ B $ при условии, 
+	что произойдёт событие $ A $. Пусть $ \prob(A) > 0 $. Тогда вероятность $ \prob(B \mid A) = \tfrac{\prob(AB)}{\prob(A)} $
+	называется \defin{условной вероятностью события $ B $ при условии того, 
+	что событие $ A $ произойдёт с вероятностью $ \prob(A) > 0 $}{conditional}.
+	Вероятность $ \prob(B) $ также иногда называется \defin{априорной вероятностью события $ B $}{apriori}.
+		
+	\begin{proposition}
+		Пусть $ (\Omega, \events, \prob) $ --- вероятностное пространство.
+		Пусть $ {A \in \events} $ --- событие, удовлетворяющее условию $ \prob(A) > 0 $.
+		Тогда тройка $$ (\Omega, \events, \left.\prob\right|_{A}), $$
+		где $ \left.\prob\right|_{A}(B) := \prob(B \mid A) = \tfrac{\prob(AB)}{\prob(A)} $,
+		является вероятностным пространством.
+	\end{proposition}
+	
+	\begin{proof}
+		Достаточно проверить аксиомы вероятностной меры 
+		(аксиомы $ \sigma $-аддитивной меры и равенство $ \left.\prob\right|_{A}(\Omega) = 1 $).
+		
+		Так как обе величины $ \prob(AB) $ и $ \prob(A) $ неотрицательны (а последняя и вовсе положительна),
+		то $ \prob(B \mid A) \leqslant 0 $.
+		
+		Справедливость упомянутого равенства выводится из определения условной вероятности: 
+		$$ \left.\prob\right|_{A}(\Omega) = \tfrac{\prob(A\Omega)}{\prob(A)} = \tfrac{\prob(A)}{\prob(A)} = 1. $$
+		
+		Пусть $ \{B_k\}_{k \in \mathbb{N}} $ --- 
+		счётная последовательность попарно не пересекающихся элементов алгебры $ \events $. 
+		Тогда элементы последовательности $ \{B_k \cap A\}_{k \in \mathbb{N}} $ также попарно не пересекаются.
+		Тогда
+		$$ \left.\prob\right|_{A}\left(\bigsqcup\limits_{k = 1}^{+\infty} B_k \right)
+		= \tfrac{1}{\prob(A)}\prob\left(A \cap \bigsqcup\limits_{k = 1}^{+\infty} B_k \right)
+		= \tfrac{1}{\prob(A)}\prob\left(\bigsqcup\limits_{k = 1}^{+\infty} AB_k \right)
+		= \sum\limits_{k = 1}^{+\infty} \tfrac{\prob(AB_k)}{\prob(A)} 
+		= \sum\limits_{k = 1}^{+\infty} \left.\prob\right|_{A}(B_k). $$
+	\end{proof}
+	
+	\begin{corollary}
+		Пусть $ A \in \events $ --- событие, вероятность которого больше $ 0 $, $ B_1, B_2 \in \events $.
+		Тогда справедливы следующие свойства
+		\begin{enumerate}
+			\item если $ B_1 \supset A $, то $ \prob(B_1 \mid A) = 1; $
+			\item $ \prob(B_1 \cup B_2 \mid A) = \prob(B_1 \mid A) + \prob(B_2 \mid A) - \prob(B_1B_2 \mid A); $
+			\item если $ B_1 $ и $ B_2 $ несовместны, то $ \prob(B_1 + B_2 \mid A) = \prob(B_1 \mid A) + \prob(B_2 \mid A). $
+		\end{enumerate}
+	\end{corollary}
+	
+	\subsection{Формула полной вероятности и формула Байеса}
+	
+	Теперь мы покажем, как связаны условные вероятности с вероятностями произведений событий, 
+	как можно вычислять вероятность события, зная его условные вероятности для несовместных событий (формула полной вероятности)
+	и как можно вычислить условную вероятность <<с переставленными причиной и следствием>> (формула Байеса).
+	
+	\begin{lemma} \label{cond prob}
+		Пусть $ A, B \in \events $ --- события и $ \prob(A), \prob(B) > 0 $.
+		Тогда имеют место равенства
+		$$ \prob(AB) = \prob(A \mid B)\prob(B) = \prob(B \mid A)\prob(A), $$
+		$$ \prob(A \mid B) = \tfrac{\prob(B \mid A)\prob(A)}{\prob(B)}. $$
+	\end{lemma}
+	
+	\begin{proof}
+		Первое равенство немедленно следует из определения условной вероятности, второе -- немедленно из первого
+		и предположения, что $ \prob(B) > 0 $.
+	\end{proof}
+	
+	Второе равенство, доказанное в лемме иногда (особенно в школьных программах), называют формулой Байеса.
+	Ниже, пользуясь этим простым свойством, мы докажем более общую формулу и в дальнейшем будем называть формулой Байеса её.
+	
+	\begin{theorem}[Формула произведения вероятностей] \label{multiplication law}
+		Пусть $ A_1, \ldots, A_n \in \events $ --- события.
+		Если вероятности событий $ A_2A_3\ldots A_n, \ldots, A_{n - 1}A_n, A_n $ не равны нулю, то имеет место формула
+		$$ \prob(A_1A_2\ldots A_n) = \prob(A_1 \mid A_2 \ldots A_n)\prob(A_2 \mid A_3 \ldots A_n) 
+		\ldots \prob(A_{n - 1}\mid A_n)\prob(A_n). $$
+		Если вероятности событий $ A_1A_2\ldots A_n, A_1A_2\ldots A_{n - 1}, \ldots, A_1 $ не равны нулю, то имеет место формула
+		$$ \prob(A_1A_2\ldots A_n) = \prob(A_n \mid A_1\ldots A_{n-1})\prob(A_{n - 1} \mid A_1 \ldots A_{n - 2}) 
+		\ldots \prob(A_{2}\mid A_1)\prob(A_1). $$
+	\end{theorem}
+	
+	\begin{proof}
+		Докажем первое утверждение индукцией по $ n $, второе получается из первого перестановкой индексов в обратном порядке.
+		
+		База: $ n = 2 $ есть определение условной вероятности.
+		
+		Докажем шаг индукции. Пусть для $ n - 1 $ утверждение выполнено.
+		Положим $ B = A_2A_3\ldots A_n $.
+		Тогда по базе индукции (здесь мы пользуемся тем, что $ \prob(B) > 0 $) 
+		и затем по индукционному предположению (а здесь всеми остальными условиями) имеем
+		$$ \prob(A_1B) = \prob(A_1 \mid B)\prob (B) = \prob(A_1 \mid A_2A_3 \ldots A_n)\prob(A_2 \mid A_3 \ldots A_n)
+		\ldots \prob(A_{n - 1}\mid A_n)\prob(A_n). $$
+	\end{proof}
+	
+	Набор событий $ A_1, \ldots, A_n \in \events $ называется \defin{разбиением пространства $ \Omega $}{exclusive-exhaustive}
+	(или просто <<разбиение $ \Omega $>>),
+	если $ \prob(A_i) > 0 $ для каждого $ i $, $ A_i $ попарно несовместны ($ A_iA_j = \varnothing $ при $ i \neq j $)
+	и $ {A_1 + A_2 + \ldots + A_n = \Omega} $.
+	
+	\begin{theorem}[Формула полной вероятности] \label{law of total probability}
+		Пусть $ A_1, \ldots, A_n \in \events $ --- разбиение $ \Omega $. 
+		Тогда для всякого события $ B $ имеет место равенство формула полной вероятности
+		$$ \prob(B) = \sum\limits_{i = k}^{n} \prob(B \mid A_k)\prob(A_k). $$
+	\end{theorem}
+	
+	\begin{proof}
+		Так как события $ A_k $ попарно несовместны, то события $ A_kB $ также попарно несовместны.
+		Имеем цепочку равенств
+		$$ \prob(B) = \prob(B\Omega) = \prob(B(A_1 + \ldots + A_n))
+		= \prob(BA_1 + \ldots + BA_n) \overset{\text{несовместность}}{=} $$ 
+	    $$ \overset{\text{несовместность}}{=} \sum\limits_{k = 1}^{n} \prob(BA_k)
+		= \sum\limits_{k = 1}^{n} \prob(B\mid A_k)\prob(A_k). $$
+	\end{proof}
+	
+	Формула полной вероятности остаётся справедливой, если отказаться от требования $ A_1 + A_2 + \ldots + A_n = \Omega $
+	и заменить его на условие $ B \subset A_1 + \ldots + A_n $ (сохраняя требования попарной несовместности событий $ A_i $ 
+	и $ \prob(A_i) > 0 $).
+	
+	\begin{theorem}[Формула Байеса] \label{Bayes}
+		Пусть события $ A_1, \ldots, A_n \in \events $ образуют разбиение $ \Omega $,
+		пусть $ B \in \events $ --- ещё одно событие и $ \prob(B) > 0 $.
+		Тогда справедлива формула Байеса
+		$$ \prob(A_i \mid B) = \tfrac{\prob(B \mid A_i)\prob(A_i)}{\sum\limits_{k = 1}^{n} \prob(B \mid A_k)\prob(A_k)}. $$
+	\end{theorem}
+	
+	\begin{proof}
+		По лемме \ref{cond prob} (<<простейшая формула Байеса>>) имеем равенство
+		$$ \prob(A_i \mid B) = \tfrac{\prob(B \mid A_i)\prob(B)}{\prob(B)}. $$
+		По формуле полной вероятности имеем
+		$$ \prob(B) = \sum\limits_{i = k}^{n} \prob(B \mid A_k)\prob(A_k), $$
+		откуда следует искомая формула.
+	\end{proof}
+	
+	\subsection{Независимость событий}
+	
+	Интуиция говорит нам, что события $ A $ и $ B $ <<независимы>>, когда от того с какой вероятностью произойдёт событие $ A $
+	не зависит вероятность того, что произойдёт событие $ B $ и наоборот.
+	Математически это выражается формулами $ \prob(B \mid A) = \prob(B) $ и $ \prob(A \mid B) = \prob(A) $.
+	Чтобы не ограничиваться случаями, когда вероятности событий больше 0, мы определим независимость
+	следствием формул выше. События $ A $ и $ B $ называются \defin{независимыми}{independent}, если справедливо равенство
+	$ \prob(AB) = \prob(A)\prob(B) $.
+	
+	\begin{proposition}[Свойства независимости] \label{indep-prop}
+		Имеют место следующие утверждения:
+		\begin{enumerate}
+			\item если $ \prob(B) > 0 $, 
+			то независимость $ A $ и $ B $ равносильна равенству $ \prob(A \mid B) = \prob(A) $; \label{indep-prop-1}
+			\item если $ A $ и $ B $ независимы, то $ \overline{A} $ и $ B $ независимы; \label{indep-prop-2}
+			\item если события $ B_1 $ и $ B_2 $ несовместны, $ A $ и $ B_1 $ независимы, а также $ A $ и $ B_2 $ независимы, 
+			то $ A $ и $ B_1 + B_2 $ независимы. \label{indep-prop-3}
+		\end{enumerate}
+	\end{proposition}
+	
+	\begin{proof}
+		Проверим $ \ref{indep-prop-1} $.
+		Если $ \prob(B) > 0 $, то по независимости имеем 
+		$$ \prob(A \mid B) = \tfrac{\prob(AB)}{\prob(B)} = \tfrac{\prob(A)\prob(B)}{\prob(B)} = \prob(A). $$
+		Обратно, если $ \prob(A \mid B) = \prob(A) $, то $ \tfrac{\prob(AB)}{\prob(B)} = \prob(A) $, откуда
+		$ \prob(AB) = \prob(A)\prob(B) $.
+		
+		Для доказательства $ \ref{indep-prop-2} $ выпишем цепочку равенств
+		$$ \prob(\overline{A}B) = \prob((\Omega \setminus A)B) = \prob(B \setminus AB) 
+		= \prob(B) - \prob(AB) \overset{\text{независимость}}{=} $$ 
+		$$ \overset{\text{независимость}}{=} \prob(B) - \prob(A)\prob(B) = \prob(B)(1 - \prob(A)) = \prob(B)\prob(\overline{A}). $$
+		
+		Наконец, для доказательства $ \ref{indep-prop-3} $ заметим, что события $ B_1A $ и $ B_2A $ несовместны.
+		Тогда
+		$$ \prob((B_1 + B_2)A) = \prob(B_1A + B_2A) = \prob(B_1A) + \prob(B_2A) 
+		= \prob(B_1)\prob(A) + \prob(B_2)\prob(A)= $$ 
+		$$ = (\prob(B_1) + \prob(B_2))\prob(A) = \prob(B_1 + B_2)\prob(A). $$
+	\end{proof}
+
+	Теперь определим независимость для набора событий.
+	Пусть $ B_1, \ldots, B_n \in \events $ --- события.
+	Будем говорить, что они \defin{попарно независимы}{pairwise-independent}, если для всяких двух индексов $ i \neq j $ выполнено равенство
+	$ \prob(B_iB_j) = \prob(B_i)\prob(B_j) $ (то есть $ B_i $ и $ B_j $ независимы). 
+	Будем называть эти события \defin{независимыми}{global-independent}, если для всякого набора индексов
+	$ i_1 < \ldots < i_k $ (здесь $ 2 \leqslant k \leqslant n $) имеет место равенство
+	$$ \prob\left(\bigcap\limits_{s = 1}^{k} B_{i_s}\right) = \prod_{s = 1}^{k} \prob(B_{i_s}). $$
+	
+	\begin{proposition}
+		Если события $ B_1, \ldots, B_n $ независимы, то они попарно независимы.
+	\end{proposition}
+	
+	\begin{example}
+		Вообще говоря из попарной независимости не следует независимость, что демонстрируется следующим примером.
+		Рассмотрим тетраэдр, три грани которого покрашены в красный, зелёный и синий цвета, соответственно,
+		а последняя разбита на три треугольника, покрашенных в те же цвета. 
+		Пусть вероятности выпадения граней равны $ \tfrac{1}{4} $. покажем, что события <<выпала грань с цветом $ A $>>,
+		где $ A $ --- цвет попарно независимы, но не являются таковыми в совокупности. 
+		Формально ситуация выглядит следующим образом $ \Omega = \{\omega_{R}, \omega_{G}, \omega_{B}, \omega_{RGB}\} $
+		--- элементарное событие --- выпала грань с данной раскраской.
+		По условию $ \prob(\omega_{R}) = \prob(\omega_{G}) = \prob(\omega_{B}) = \prob(\omega_{RGB}) = \tfrac{1}{4} $.
+		Обозначим через $ R = \{\omega_R, \omega_{RGB}\} $  $ (G = \{\omega_G, \omega_{RGB}\}, B = \{\omega_B, \omega_{RGB}\}) $
+		события <<выпала грань с красным (зелёным, синим) цветом>>, соответственно.
+		Тогда $ \prob(R) = \prob(G) = \prob(B) = \tfrac{1}{2} $,
+		$ \prob(RG) = \prob(GB) = \prob(BR) = \tfrac{1}{4} = \prob(R)\prob(G) = \prob(G)\prob(B) = \prob(B)\prob(R) $,
+		но $ \prob(RGB) = \prob(\omega_{RGB}) = \tfrac{1}{4} \neq \prob(R)\prob(G)\prob(B) = \tfrac{1}{8} $.
+	\end{example}
+
+	\begin{example}
+		Пользуясь примером выше, можно показать, что условие несовместности в пункте $ \ref{indep-prop-3} $ 
+		предложения \ref{indep-prop} нельзя опустить.
+		Положим $ A = R $ и $ B_1 = G $ и $ B_2 = B $. Тогда $ \prob((B_1 \cup B_2)A) = \prob(\omega_{RGB}) = \tfrac{1}{4} $,
+		но $ \prob(A) = \tfrac{1}{2} $, $ \prob(B_1 + B_2) = \tfrac{3}{4} $ и $ \tfrac{1}{2} \cdot \tfrac{3}{4} \neq \tfrac{1}{4} $.
+		Таким образом, события $ B_1 + B_2 $ и $ A $ не являются независимыми.
+	\end{example}
 
 	\section{Случайные величины, их распределения, функции распределения и плотности}
 	
@@ -615,23 +881,13 @@
 	d
 	
 	\begin{thebibliography}{2}
-		\bibitem{Buhler} J. Buhler, Z. Reichstein {\it On the Essential Dimension of a Finite Group}, Comp. Math. 106, 1997, 159–179.
 		
-		\bibitem{essdim1} Huah Chu, Shou-Jen Hu, Ming-chang Kang, Jiping Zhang, {\it \href{https://arxiv.org/abs/math/0611917v1}{ Groups with essential dimension one}}, 2006, 26 p.
+		\bibitem{KolmogorovFomin} Колмогоров А.Н., Фомин С.В. {\it Элементы теории функций и функционального анализа}, Физматлит, 2004, 572с.
 		
-		\bibitem{Dolgachev} I. V. Dolgachev {\it \href{https://dept.math.lsa.umich.edu/~idolga/McKaybook.pdf}{McKay correspondence. Winter 2006/07} }, 2009, 161 p.
-		
-		\bibitem{Duncan} A. Duncan {\it Finite groups of essential dimension 2}, Comment. Math. Helv. 88, no. 3, 2013, 555–585.
-		
-		\bibitem{Reichstein} D. Kaur, Z. Reichstein 
-		{\it \href{https://arxiv.org/pdf/2407.21449}{Essential Dimension of Small Finite Groups}}, 2024.
-		
-		\bibitem{Merkurjev} N. A. Karpenko, A. S. Merkurjev {\it Essential dimension of finite p-groups}, Invent. Math. 172, 
-		no. 3, 2008, 491–508.
-		
-		\bibitem{Serre} Ж.-П. Серр {\it Линейные представления конечных групп}, Мир, 1970, 133 с.
-		
-		\bibitem{Suzuki} M. Suzuki {\it Group Theory I}, Springer, 1981, 446 p.
+		\bibitem{DiyachenoUliyanov} Дьяченко~М.~И., Ульянов~П.~Л. {\it Мера и интеграл}, Факториал, 1998, 160с.
+	
+		\bibitem{Borovkov} Боровков А. А. {\it Теория вероятностей}, Физматлит, 1986, 432с.
+	
 	\end{thebibliography}
 	
 	
