@@ -197,6 +197,15 @@
 	\subsubsection{($ \sigma $-)Алгебры и меры}
 	
 	Пусть $ \Omega $ --- некоторое множество.
+	
+	Система множеств $ S $ называется полуцольком, если выполнены следующие аксиомы
+	\begin{enumerate}
+		\item $ \varnothing \in S $;
+		\item $ A, B \in S: A \cap B \in S $;
+		\item $ A, B \in S, A \subset B \ \exists n \in \mathbb{N} \exists C_1, \ldots, C_n \in S: 
+		A = B \sqcup \bigsqcup\limits_{k = 1}^{n} C_k  $
+	\end{enumerate}
+	
 	Система множеств (следует понимать как синоним термина <<семейство множеств>>) 
 	$ R \subset 2^{\Omega} $ называется \defin{алгеброй с единицей $ \Omega $}{algebra}, если выполнены первые три из следующих аксиом и \defin{$ \sigma $-алгеброй с единицей $ \Omega $}{sigma-algebra}, если выполнены все четыре аксиомы.
 	\begin{enumerate}
@@ -716,6 +725,74 @@
 		Положим $ A = R $ и $ B_1 = G $ и $ B_2 = B $. Тогда $ \prob((B_1 \cup B_2)A) = \prob(\omega_{RGB}) = \tfrac{1}{4} $,
 		но $ \prob(A) = \tfrac{1}{2} $, $ \prob(B_1 + B_2) = \tfrac{3}{4} $ и $ \tfrac{1}{2} \cdot \tfrac{3}{4} \neq \tfrac{1}{4} $.
 		Таким образом, события $ B_1 + B_2 $ и $ A $ не являются независимыми.
+	\end{example}
+	
+	\begin{example}
+		Покажем, что из условия независимости нельзя удалить ни одно из равенств.
+		Более того, мы докажем, что для всякого натурального $ n $ 
+		и семейства наборов индексов $ S_{J} = \{(i_{1,j}, \ldots, i_{k_j,j})\}_{j \in J} $
+		можно построить пример вероятностного пространства $ (\Omega, \events, \prob) $ 
+		и событий $ A_1, \ldots, A_n \in \events $ 
+		для которых множество наборов, на которых выполнены равенства
+		$$ \prob\left(\bigcap\limits_{s = 1}^{k} B_{i_s}\right) = \prod_{s = 1}^{k} \prob(B_{i_s}) $$
+		в точности совпадает с $ J $.
+		
+		Построим пример для дискретного вероятностного пространства.
+		Положим $ \Omega = \defineset{(\varepsilon_1, \ldots, \varepsilon_n)}{\varepsilon_i \in \{0, 1\}} $
+		--- множество всех кортежей из нулей и единиц длины $ n $,
+		$ \prob((\varepsilon_1, \ldots, \varepsilon_n)) = p_{(\varepsilon_1, \ldots, \varepsilon_n)} $
+		--- будущее распределение вероятностей.
+		Также положим 
+		$ A_k = \defineset{(\varepsilon_1, \ldots, \varepsilon_n)}{\varepsilon_i \in \{0, 1\}, \varepsilon_k = 1} $.
+		Рассмотрим отображение 
+		$ \varphi \colon \mathbb{R}^{2^n} \to \mathbb{R}^{2^n} $,
+		заданное в некоторых фиксированных базисах этих пространств по правилу 
+		$$ \varphi\colon 
+		\left( \begin{matrix}
+			\ldots \\
+			p_{(\varepsilon_1, \ldots, \varepsilon_n)} \\
+			\ldots
+		\end{matrix} \right)
+		\mapsto 
+		\left( \begin{matrix}
+			\ldots \\
+			\prob(A_{i_1}\ldots A_{i_k}) \\
+			\ldots
+		\end{matrix} \right), $$
+		где для $ k = 0 $ предполагается, что в матрице стоит $ \prob(\Omega) $.
+		Поскольку $ \prob(A_{i_1}\ldots A_{i_k}) = 
+		\prob(\defineset{(\varepsilon_1, \ldots, \varepsilon_n)}{\varepsilon_i \in \{0, 1\}, 
+			\varepsilon_{i_s} = 1, 1 \leqslant s \leqslant k})
+		= \sum\limits_{\varepsilon_{i_s} = 1, 1 \leqslant s \leqslant k} p_{(\varepsilon_1, \ldots, \varepsilon_n)} $,
+		то $ \varphi $ --- линейное отображение.
+		Можно показать, что $ \varphi $ сюръективно (проверьте с помощью элементарных преобразований, 
+		что его матрица имеет ранг $ 2^n $) и, следовательно, биективно.
+		Таким образом, достаточно подобрать значения вероятностей все возможных произведений $ A_i $ так, чтобы
+		вероятности $ p_{(\varepsilon_1, \ldots, \varepsilon_n)} $ были неотрицательны, в сумме давали 1 ($ \prob(\Omega) = 1 $)
+		и при этом выполнялись в точности все желаемые равенства на вероятности произведений событий $ A_i $.
+		Положим $ \prob(A_i) = \tfrac{1}{2^{2n}} $, $ \prob(\Omega) = 1 $.
+		Если $ (i_1, \ldots, i_k) \in S_{J} $, то положим $ \prob(A_{i_1}\ldots A_{i_k}) = \tfrac{1}{2^{2kn}} $.
+		Иначе положим $ \prob(A_{i_1}\ldots A_{i_k}) = \tfrac{1}{2^{2kn + 1}} $.
+		Проверим, что имеют место неравенство
+		$ \tfrac{1}{2^{2kn + 2}} \leqslant p_{(\varepsilon_1, \ldots, \varepsilon_n)} \leqslant \tfrac{1}{2^{2kn}} $,
+		для кортежей с $ k > 0 $ числом единиц.
+		Для кортежа $ (1, \ldots, 1) $ неравенство выполнено по построению.
+		Докажем неравенства для оставшихся кортежей с данным условием индукцией по числу нулей в кортеже.
+		Пусть в текущем кортеже $ (\varepsilon_1, \ldots, \varepsilon_n) $ присутствует $ n - k \geqslant 1 $ нулей.
+		Прибавим к $ p_{(\varepsilon_1, \ldots, \varepsilon_n)} $ все остальные значения вероятностей элементарных исходов
+		--- кортежей, в которых некоторые нули из данного кортежа заменены на единицы.
+		Тогда $ p_{(\varepsilon_1, \ldots, \varepsilon_n)} \leqslant \tfrac{1}{2^{2kn}} $,
+		так как по предположению индукции все остальные слагаемые положительны, а сумма не превосходит $ \tfrac{1}{2^{2kn}} $.
+		С другой стороны, 
+		$ p_{(\varepsilon_1, \ldots, \varepsilon_n)} \geqslant \tfrac{1}{2^{2kn + 1}} - \tfrac{2^k - 1}{2^{2(k + 1)n}}
+		= \tfrac{1}{2^{2kn + 1}} - \tfrac{1}{2^{2kn + 2 + (2n - k - 2)}} $.
+		Так как $ n - k - 1 \leqslant 0 $ и $ n - 1 \leqslant 0 $, 
+		то последнее слагаемое по модулю не превосходит $ \tfrac{1}{2^{2kn + 2}} $.
+		Тогда $ p_{(\varepsilon_1, \ldots, \varepsilon_n)} $ не меньше $ \tfrac{1}{2kn + 2} $.
+		Остаётся убедиться в том, что $ p_{(0, \ldots, 0)} 
+		= 1 - \sum\limits_{(\varepsilon_1, \ldots, \varepsilon_n) \neq (0, \ldots, 0)} p_{(\varepsilon_1, \ldots, \varepsilon_n)}
+		\geqslant 1 - \tfrac{2^n - 1}{2^{2n}} > 0 $.
+		
 	\end{example}
 
 	\section{Случайные величины, их распределения, функции распределения и плотности}
