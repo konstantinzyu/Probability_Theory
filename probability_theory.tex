@@ -119,6 +119,10 @@
 \newcommand{\disp}{\operatorname{D}}
 \newcommand{\cov}{\operatorname{Cov}}
 
+\newcommand{\Bor}{\operatorname{Bor}}
+\newcommand{\Top}{\mathfrak{Top}}
+\newcommand{\Meas}{\mathfrak{Meas}}
+
 % Цвета
 \definecolor{linkcolor}{HTML}{0000FF} % цвет ссылок
 \definecolor{urlcolor}{HTML}{0000FF} % цвет гиперссылок
@@ -194,64 +198,245 @@
 	
 	\subsection{Предварительные сведения из действительного анализа}
 	
-	\subsubsection{($ \sigma $-)Алгебры и меры}
+	\subsubsection{Системы множеств и структуры на них}
 	
-	Пусть $ \Omega $ --- некоторое множество.
-	
-	Система множеств $ S $ называется полуцольком, если выполнены следующие аксиомы
+	Система множеств (следует понимать как синоним термина <<семейство множеств>>) $ S $ 
+	называется \defin{полуцольком}{semiring}, если она удовлетворяет следующим аксиомам:
 	\begin{enumerate}
 		\item $ \varnothing \in S $;
-		\item $ A, B \in S: A \cap B \in S $;
-		\item $ A, B \in S, A \subset B \ \exists n \in \mathbb{N} \exists C_1, \ldots, C_n \in S: 
-		A = B \sqcup \bigsqcup\limits_{k = 1}^{n} C_k  $
+		\item $ \forall A, B \in S: A \cap B \in S $;
+		\item $ \forall A, B \in S, A \subset B \ \exists n \in \mathbb{N} \ \exists C_1, \ldots, C_n \in S: 
+		A = B \sqcup \bigsqcup\limits_{k = 1}^{n} C_k  $.
 	\end{enumerate}
 	
-	Система множеств (следует понимать как синоним термина <<семейство множеств>>) 
-	$ R \subset 2^{\Omega} $ называется \defin{алгеброй с единицей $ \Omega $}{algebra}, если выполнены первые три из следующих аксиом и \defin{$ \sigma $-алгеброй с единицей $ \Omega $}{sigma-algebra}, если выполнены все четыре аксиомы.
+	Множество $ \Omega \in U $ называется \defin{единицей системы множеств $ U $}{unit},
+	если всякий элемент $ A \in U $ является подмножеством $ \Omega $.
+	
+	Система множеств $ R $ называется \defin{кольцом}{ring}, если она удовлетворяет следующим аксиомам:
 	\begin{enumerate}
-		\item $ \Omega \in R $;
-		\item $ \forall \ A, B \in R: A \cup B, A \cap B \in R $;
-		\item $ \forall \ A \in R: \ \Omega \setminus A := \overline{A} \in R $;
-		\item $ \forall \ \{A_k\}_{k \in R} \subset R: \ \bigcup\limits_{k \in \mathbb{N}} A_k \in R $.
+		\item $ \forall \ A, B \in R: A \cap B \in R $;
+		\item $ \forall \ A, B \in R: A \vartriangle B \in R $.
 	\end{enumerate}
+	
+	Следующее утверждение проверяется непосредственно, исходя из теоретико-множественных тождеств,
+	но его доказательство приведено, например, в книге \cite{DiyachenoUliyanov}.
+	
+	\begin{proposition}
+		Пусть $ R $ --- кольцо. Тогда $ R $ является полукольцом.
+		Кроме того, для любых элементов $ A, B \in R $ в $ R $ также содержатся их объединение $ A \cup B $
+		и разность $ A \setminus B $. 
+	\end{proposition}
+	
+	Кольцо называется \defin{$ \sigma $-кольцом}{sigma-ring}, если 
+	для любого счётного набора его элементов $ \{A_k\}_{k \in R} \subset R $ их объединение содержится в $ R $
+	($ \bigcup\limits_{k \in \mathbb{N}} A_k \in R $)
+	и \defin{$ \delta $-кольцом}{delta-ring},
+	если для любого счётного набора его элементов $ \{A_k\}_{k \in R} \subset R $ их пересечение содержится в $ R $.
+	
+	Кольцо с единицей $ \Omega $ называется \defin{алгеброй (подмножеств множества $ \Omega $)}{unit}.
+	
+	В книгах по теории вероятностей понятие алгебры часто вводится с использование другого равносильного набора аксиом,
+	что выражает следующее
+	
+	\begin{proposition}[Определение алгебры в традиции теории вероятностей]
+		Система множеств $ R $ является алгеброй подмножеств множества $ \Omega $
+		тогда и только тогда, когда $ R $ удовлетворяет следующим аксиомам
+		\begin{enumerate}
+			\item $ \Omega \in R $;
+			\item $ \forall \ A, B \in R: A \cup B, A \cap B \in R $;
+			\item $ \forall \ A \in R: \ \Omega \setminus A := \overline{A} \in R $.
+		\end{enumerate}
+	\end{proposition}
+	Мы снова опускаем доказательство, сводящееся к тождествам теории множеств.
+	
+	Если алгебра является $ \sigma $-кольцом или $ \delta $-кольцом, 
+	то её называют \defin{$ \sigma $-алгеброй}{sigma-algebra} или \defin{$ \delta $-алгеброй}{delta-algebra}, соответственно.
+	
+	\begin{proposition}
+		Имеет место следующее:
+		\begin{enumerate}
+			\item Всякое $ \sigma $-кольцо является $ \delta $-кольцом,
+			обратное вообще говоря не верно.
+			\item Всякая $ \sigma $-алгебра является $ \delta $-алгеброй
+			и наоборот.
+		\end{enumerate}
+	\end{proposition}
 	 
-	Далее, если не оговорено иное, все алгебры являются ($ \sigma $-)алгебрами с единицей $ \Omega $
-	и будут называться <<($ \sigma $-)алгебрами>>.
-	
-	Будем называть функцию $ \mu \colon R \to \RR $ \defin{(конечной) мерой}{measure} на ($ \sigma $-)алгебре $ R $, 
-	если $ \nu $ удовлетворяет аксиоме аддитивности
-	$$ \forall A, B \in R, A \cap B = \varnothing \ \mu(A \sqcup B) = \mu(S) + \mu(B). $$
-	Если дополнительно для любой последовательности попарно непересекающихся подмножеств $ \{A_k\}_{k \in \mathbb{N}} $,
-	объединение которых есть элемент $ R $ (отметим, что это автоматически выполнено для $ \sigma $-алгебры)
-	имеет место равенство 
-	$$ \mu\left(\bigsqcup\limits_{k = 1}^{\infty} A_k \right) = \sum\limits_{k = 1}^{\infty} \mu(A_k), $$
-	то мера $ \mu $ называется \defin{$ \sigma $-аддитивной}{sigma-measure} (аксиома $ \sigma $-аддитивности).
-	Можно показать, что из этой аксиомы следует, что $ \mu(\varnothing) = 0 $ и поэтому из неё следует аксиома аддитивности.
-	
-	\begin{lemma} \label{algebra restriction}
-		Пусть $ \events $ --- ($ \sigma $-)алгебра и $ A \in \events $.
-		Тогда множество $$ \events \cap A := \defineset{B \cap A}{B \in \events} $$ является ($ \sigma $-)алгеброй
-		с единицей $ A $.
+	\begin{lemma} \label{ring restriction}
+		Пусть $ R $ --- $ ( $$ \sigma $-$ ) $кольцо и $ A \in R $.
+		Тогда множество $$ R \cap A := \defineset{B \cap A}{B \in R} $$ является $ ( $$ \sigma $-$ ) $алгеброй
+		подмножеств $ A $. Также $ R \cap A \subset R $.
 	\end{lemma}
 	
 	\begin{proof}
-		По построению $ \Omega \cap A = A $ содержится в $ \events \cap A $.
+		По построению $ \Omega \cap A = A $ содержится в $ R \cap A $
+		и всякий элемент $ R \cap A $ есть подмножество $ A $.
+		Так как кольцо замкнуто относительно пересечений, то $ R \cap A \subset R $.
 		
-		Пусть теперь $ C_1 = B_1 \cap A, C_2 = B_2 \cap A \in \events \cap A $ --- два множества.
-		Тогда $ C_1 \cap C_2 = (B_1 \cap B_2)  \cap A \in \events \cap A $, так как $ B_1 \cap B_2 \in \events $.
-		Далее, $ C_1 \cup C_2 = (B_1 \cup B_2) \cap A \in \events \cap A $, так как $ B_1 \cup B_2 \in \events $.
-		Окончательно, $ A \setminus C_1 = (A \setminus B_1) = (\Omega \setminus B_1) \cap A \in \events \cap A $,
-		поскольку $ \Omega \setminus B_1 \in \events $.
+		Пусть теперь $ C_1 = B_1 \cap A, C_2 = B_2 \cap A \in R \cap A $ --- два множества.
+		Тогда $ C_1 \cap C_2 = (B_1 \cap B_2)  \cap A \in R \cap A $, так как $ B_1 \cap B_2 \in R $.
+		Далее, $ C_1 \cup C_2 = (B_1 \cup B_2) \cap A \in R \cap A $, так как $ B_1 \cup B_2 \in R $.
+		Окончательно, $ A \setminus C_1 = (A \setminus B_1) = (\Omega \setminus B_1) \cap A \in R \cap A $,
+		поскольку $ \Omega \setminus B_1 \in R $.
 		
-		Предположим, что $ \events $ являлось $ \sigma $-алгеброй. Пусть $ \{C_k\} $ --- счётное семейство 
-		элементов $ \events \cap A $ и $ C_k = B_k \cap A $.
+		Предположим, что $ R $ являлось $ \sigma $-алгеброй. Пусть $ \{C_k\} $ --- счётное семейство 
+		элементов $ R \cap A $ и $ C_k = B_k \cap A $.
 		Тогда
 		$$ \bigcup\limits_{i = 1}^{\infty} C_k = \bigcup\limits_{i = 1}^{\infty} (B_k \cap A) 
-		= \left(\bigcup\limits_{i = 1}^{\infty} B_k \right) \cap A \in \events \cap A, $$
-		принадлежность справедлива в силу того, что $ \bigcup\limits_{i = 1}^{\infty} B_k \in \events $.
+		= \left(\bigcup\limits_{i = 1}^{\infty} B_k \right) \cap A \in R \cap A, $$
+		принадлежность справедлива в силу того, что $ \bigcup\limits_{i = 1}^{\infty} B_k \in R $.
 	\end{proof}
 	
+	Можно показать, 
+	что кольцо множеств является кольцом в алгебраическом смысле этого слова с операциями сложения $ \vartriangle $
+	и умножения $ \cap $, а алгебра множеств является булевой алгеброй (в частности, $ \FF_2 $-алгеброй).
+	
+	
+	\subsubsection{Минимальное кольцо и минимальная алгебра}
+	
+	Следующее утверждение сводится к проверке аксиом кольца или алгебры,
+	но его доказательство также можно прочитать в книге $ \cite{DiyachenoUliyanov} $.
+	
+	\begin{proposition} \label{intersection of rings}
+		Пусть $ \{R_{\alpha}\}_{\alpha \in \mathcal{A}} $ --- семейство $ ( $$ \sigma $-,$ \delta $-$ ) $колец множеств.
+		Тогда  система $ R = \bigcap\limits_{\alpha \in \mathcal{A}} R_{\alpha} $ является $ ( $$ \sigma $-,$ \delta $-$ ) $кольцом.
+		Кроме того, если все кольца $ R_{\alpha} $ являются $ ( $$ \sigma $-$ ) $алгебрами подмножеств множества $ \Omega $
+		$ ( $то есть у них есть общая единица$ ) $, то $ R $ также является $ ( $$ \sigma $-$ ) $алгеброй подмножеств множества $ \Omega $.
+	\end{proposition}
+	
+	\begin{theorem} \label{min ring exists}
+		Пусть $ U $ --- система множеств. Тогда существует как минимум одно $ ( $$ \sigma $-$ ) $кольцо, содержащее $ U $.
+		Пересечение всех таких $ ( $$ \sigma $-$ ) $колец $ R(U) $ $ (R_{\sigma}(U)) $ само является $ ( $$ \sigma $-$ ) $кольцом. 
+		Всякое $ ( $$ \sigma $-$ ) $кольцо, содержащее $ U $, содержит и $ R(U) $. 
+		Если $ \Omega \in U $ --- единица $ U $, 
+		то $ R(U) $ $ (R_{\sigma}(U)) $ является $ ( $$ \sigma $-$ ) $алгеброй подмножеств множества $ \Omega $.
+	\end{theorem}
+	
+	\begin{proof}
+		В качестве ($ \sigma $-)кольца, содержащего $ U $ можно взять булеан $ 2^{\Sigma} $, 
+		где множество $ \Sigma $ определено как объединение $ \bigcup\limits_{A \in U} A $.
+		
+		Пересечение всех таких ($ \sigma $-)колец существует, поскольку имеется хотя бы одно кольцо и
+		по предложению \ref{intersection of rings} это пересечение само является ($ \sigma $-)кольцом.
+		
+		Пусть ($ \sigma $-)кольцо $ R' $ содержит множество $ U $. 
+		Тогда по построению $ R(U) $ ($ R_{\sigma}(U) $) содержится в пересечении $ 2^{\Sigma} \cap R' $,
+		откуда $ R(U) \subset R' $ ($ R_{\sigma}(U) \subset R' $).
+		
+		Если $ \Omega $ --- единица $ U $, то по построению $ \Sigma = \Omega $.
+		Для всякого ($ \sigma $-)кольца $ R' $, содержащего $ U $ имеем $ \Omega \in R $ и по лемме \ref{ring restriction}
+		система множеств $ R' \cap \Omega \subset R' $ является ($ \sigma $-)алгеброй подмножеств $ \Omega $.
+		Так как $ \Omega $ являлось единицей $ U $, то $ U $ содержится в $ R' \cap \Omega $.
+		Следовательно, достаточно рассматривать пересечение только ($ \sigma $-)алгебр подмножеств множества $ \Omega $,
+		содержащих $ U $. По предложению \ref{intersection of rings} их пересечение является ($ \sigma $-)алгеброй подмножеств $ \Omega $.
+		
+	\end{proof}
+	
+	Опираясь на предложение $ \ref{min ring exists} $ дадим определение. 
+	Для системы множеств $ U $ пересечение всех колец, содержащих $ U $ называется \defin{минимальным кольцом,
+	порождённым $ U $}{min-ring} и обозначается $ R(U) $.
+	
+	\begin{proposition} \label{min ring description}
+		Пусть $ S $ --- полукольцо и $ R(S) $ --- минимальное кольцо, порождённое $ S $.
+		Тогда $ R(S) $ допускает следующие описания
+		\begin{itemize}
+			\item $ R(S) = \defineset{A_1 \cup \ldots \cup A_n}{n \in \mathbb{N}, \{A_i\}_{i = 1}^{n} \subset S}; $
+			\item $ R(S) = \defineset{A_1 \sqcup \ldots \sqcup A_n}{n \in \mathbb{N}, \{A_i\}_{i = 1}^{n} \subset S}. $
+		\end{itemize}
+	\end{proposition}
+	
+	\subsubsection{Мера на полукольце и её продолжение на минимальное кольцо}
+	
+	Пусть $ S $ --- некоторое полукольцо.
+	Будем называть неотрицательную функцию $ m \colon S \to \RR $ \defin{мерой}{measure} на полукольце $ S $, 
+	если $ m $ удовлетворяет аксиоме аддитивности
+	$$ \forall A, B \in S, A \cap B = \varnothing, A \cup B \in S: m(A \sqcup B) = m(A) + m(B). $$
+	Если дополнительно для любой последовательности попарно непересекающихся подмножеств $ \{A_k\}_{k \in \mathbb{N}} $,
+	объединение которых есть элемент $ S $ (отметим, что это автоматически выполнено, если $ S $ является $ \sigma $-кольцом)
+	имеет место равенство 
+	$$ m\left(\bigsqcup\limits_{k = 1}^{\infty} A_k \right) = \sum\limits_{k = 1}^{\infty} m(A_k), $$
+	то мера $ m $ называется \defin{$ \sigma $-аддитивной}{sigma-measure} (аксиома $ \sigma $-аддитивности).
+	Можно показать, что из этой аксиомы следует, что $ m(\varnothing) = 0 $ и поэтому из неё следует аксиома аддитивности.
+	
+	Пользуясь предложением \ref{min ring description} введём функцию $ \nu \colon R(S) \to \RR $
+	по правилу $ \nu(A_1 \sqcup \ldots \sqcup A_n) = \sum\limits_{i = 1}^{n} m(A_i) $, где $ A_i \in S $.
+	Следующее предложение позволяет назвать $ \nu $ \defin{продолжением меры $ m $ с полукольца $ S $ на его минимальное кольцо}
+	{extension-to-min-ring}.
+	
+	\begin{proposition}
+		Справедливо следующее
+		\begin{enumerate}
+			\item функция $ \nu $ определена корректно, то есть значение $ \nu $ не зависит от выбора представления
+			$ A_1 \sqcup \ldots \sqcup A_n; $
+			\item функция $ \nu $ является мерой на кольце $ R(S); $
+			\item ограничение функции $ \nu $ на полукольцо $ S $ совпадает с $ m; $
+			\item если мера $ m $ была $ \sigma $-аддитивной, то функция $ \nu $ также является $ \sigma $-аддитивной.
+		\end{enumerate}
+	\end{proposition}
+	
+	\begin{proof}
+		См. доказательство в \cite[Глава 1, Теорема 2.2]{DiyachenoUliyanov}.
+	\end{proof}
+	
+	\begin{lemma}
+		Пусть $ S $ --- полукольцо и $ m \colon S \to \mathbb{R} $ --- мера на $ S $.
+		Тогда $ m $ удовлетворяет следующим свойствам
+		\begin{enumerate}
+			\item если для $ A, B \in S $ выполнено $ A \subset B $, то $ m(A) \leqslant m(B) $;
+			\item если $ A, A_1, \ldots, A_n \in S $ и $ A \subset \bigcup\limits_{i = 1}^{n} A_i $, 
+			то $$ m(A) \leqslant \sum\limits_{i = 1}^{n} m(A_i); $$
+			\item если $ A_1, \ldots, A_n \subset S $ ---  попарно не пересекающиеся множества
+			и $ \bigsqcup\limits_{i = 1}^{n} A_i \subset A \in S $, то 
+			$$ \sum\limits_{i = 1}^{n} m(A_i) \leqslant m(A); $$
+			\item если $ \{A_i\}_{i = 1}^{+\infty} \subset S $ ---  попарно не пересекающиеся множества
+			и $ \bigsqcup\limits_{i = 1}^{+\infty} A_i \subset A \in S $, то 
+			$$ \sum\limits_{i = 1}^{+\infty} m(A_i) \leqslant m(A). $$
+		\end{enumerate}
+	\end{lemma}
+	
 	\subsubsection{Лебеговское продолжение меры}
+	
+	Далее будем рассматривать полукольцо $ S $ с единицей $ \Omega $
+	и $ \sigma $-аддитивной мерой $ m $.
+	Пусть $ \nu \colon R(S) \to \RR $ --- продолжение этой меры на минимальное кольцо.
+	
+	Введём функцию \defin{внешней меры}{outer-measure} $ \mu^* \colon 2^{\Omega} \to \RR $, заданную по правилу
+	$$ \mu^*(A) := \inf\limits_{A \subset \bigsqcup\limits_{i = 1}^{+\infty} B_i, B_i \in S} 
+	\sum\limits_{i = 1}^{+\infty} m(B_i). $$
+	
+	\begin{proposition}
+		Для всякого $ A \subset \Omega $ в определении внешней меры можно заменить дизъюнктные объединения на произвольные:
+		$$ \mu^*(A) = \inf\limits_{A \subset \bigcup\limits_{i = 1}^{+\infty} B_i, B_i \in S} 
+		\sum\limits_{i = 1}^{+\infty} m(B_i). $$
+	\end{proposition}
+	
+	Множество $ A \subset \Omega $ называется \defin{измеримым}{measurable set}, если для любого $ \varepsilon > 0 $
+	найдётся множество $ B \in R(S) $ такое, что $ \mu^*(A \vartriangle B) < \varepsilon $.
+	Если $ A $ измеримо, то его \defin{мерой}{measure of set} называется значение $ \mu(A) := \mu^*(A) $.
+	Обозначим через $ M $ системы всех измеримых подмножеств единицы $ \Omega $.
+	
+	\begin{lemma}
+		Пусть $ \{A_i\}_{i = 1}^{+\infty} \subset M $ --- последовательность множеств,
+		$ A \in M $
+		и $ A \subset \bigcup\limits_{i = 1}^{n} A_i $.
+		Тогда $$ \mu^*(A) \leqslant \sum\limits_{i = 1}^{n} \mu^*(A_i); $$
+	\end{lemma}
+	
+	\begin{theorem}
+		Система измеримых множеств $ M $ является алгеброй.
+	\end{theorem}
+	
+	\begin{theorem}
+		Функция $ \mu $ на алгебре множеств $ M $ является мерой.
+	\end{theorem}
+	
+	\begin{theorem}
+		Алгебра измеримых множеств $ M $ является $ \sigma $-алгеброй.
+	\end{theorem}
+	
+	\begin{theorem}
+		Мера $ \mu $ на $ \sigma $-алгебре измеримых множеств является $ \sigma $-аддитивной.
+	\end{theorem}
 	
 	\subsubsection{Мера Лебега-Стилтьеса}
 	
@@ -260,6 +445,202 @@
 	\subsubsection{Интеграл Лебега}
 	
 	\subsubsection{Прямой образ меры (pushforward measure)}
+	
+	Далее, если не оговорено иное, все алгебры являются ($ \sigma $-)алгебрами с единицей $ \Omega $
+	и будут называться <<($ \sigma $-)алгебрами>>.
+	
+	
+	\subsection{Теория категорий и взгляд на измеримые пространства с её точки зрения}
+	
+	Теория категорий в её лучшем проявлении выражает собой формализацию понятия "математическая конструкция"
+	через понятие объектов, морфизмов, функторов, естественных преобразований,
+	а также формализует интуицию в виде универсальных свойств, сопряжённости функторов, эквивалентности категорий и так далее.
+	
+	В этом подразделе будет предполагаться, что вы знакомы с определением категории 
+	(например, основанном на теории множеств) и знакомы с понятиями объекта, морфизма между объектами и функтором из одной категории в другую. Остальные определения по возможности будут приведены здесь.
+	
+	\subsubsection{Категория измеримых пространств}
+	
+	Пусть $ \calA_X $ --- $ \sigma $-алгебра подмножеств множества $ X $.
+	Пара $ (X, \calA_X) $ называется \defin{измеримым пространством}{measurable-space}.
+	
+	Пусть $ (X, \calA_X) $ и $ (Y, \calA_Y) $ --- пара измеримых пространств.
+	\defin{Морфизмом измеримых пространств}{morphism-of-measurable-spaces} 
+	$ f \colon (X, \calA_X) \to (Y, \calA_Y) $ называется отображение
+	множеств $ f \colon X \to Y $ такое, что для любого $ U \in \calA_Y $ выполнено $ f^{-1}(U) \in \calA_X $,
+	где $ f^{-1} $ --- это полный прообраз.
+	
+	В категории измеримых пространств $ \Meas $ объектами являются измеримые пространства, а морфизмами
+	--- морфизмы измеримых пространств.
+	
+	\subsubsection{Прямой образ $ \sigma $-алгебры}
+	
+	Пусть $ (X, \calA_X) $ --- измеримое пространство и $ f \colon X \to Y $ --- отображение множеств.
+	Существует способ естественным образом построить $ \sigma $-алгебру подмножеств $ Y $.
+	
+	Положим $ f_{*}(\calA_X) = \defineset{B \subset Y}{f^{-1}(B) \in \calA_X} $ --- все подмножества $ Y $,
+	полный прообраз которых лежит в $ \calA_X $.
+	
+	\begin{proposition} \label{direct image of sigma algebra}
+		Конструкция $ f_{*} $ обладает следующими свойствами.
+		\begin{enumerate}
+			\item Система множеств $ f_{*}(\calA_X) $ является $ \sigma $-алгеброй подмножеств множества $ Y $.
+			\item Отображение $ f $ является морфизмом измеримых пространств $ f \colon (X, \calA_X) \to (Y, f_{*}(\calA_X)) $.
+			\item Если $ \calA_Y $ --- $ \sigma $-алгебра подмножеств $ Y $,
+			то отображение $ f $ является морфизмом измеримых пространств $ f \colon (X, \calA_X) \to (Y, \calA_Y) $
+			тогда и только тогда, когда $ \calA_Y \subset f_{*}(\calA_X) $.
+			\item Пусть имеются отображения множеств $ f \colon X \to Y, g \colon X \to Z $ и $ h \colon Y \to Z $
+			такие, что $ h \circ f = g $, то $ h $ является морфизмом измеримых пространств
+			$ h \colon (Y, f_{*}(\calA_X)) \to (Z, g_{*}(\calA_X)). $
+		\end{enumerate}
+		$$ \begin{tikzcd}
+			 & Y \ar{dd}{h} \\
+			X \ar{ru}{f} \ar{rd}{g} &  \\
+			& Z, \\
+		\end{tikzcd} \
+		\begin{tikzcd}
+			& (Y, f_{*}(\calA_X)) \ar{dd}{h} \\
+			(X, \calA_X) \ar{ru}{f} \ar{rd}{g} &  \\
+			& (Z, g_{*}(\calA_X)). \\
+		\end{tikzcd} $$
+		
+	\end{proposition}
+	
+	\subsubsection{Обратный образ $ \sigma $-алгебры}
+	
+	Пусть $ (Y, \calA_Y) $ --- измеримое пространство и $ f \colon X \to Y $ --- отображение множеств.
+	Существует способ естественным образом построить $ \sigma $-алгебру подмножеств $ X $.
+	
+	Положим $ f^{*}(\calA_Y) = \defineset{f^{-1}(B)}{B \in \calA_Y} $ --- полные прообразы всех элементов $ \sigma $-алгебры $ \calA_Y $.
+	
+	\begin{proposition} \label{inverse image of sigma algebra}
+		Конструкция $ f^{*} $ обладает следующими свойствами.
+		\begin{enumerate}
+			\item Система множеств $ f^{*}(\calA_Y) $ является $ \sigma $-алгеброй подмножеств множества $ X $.
+			\item Отображение $ f $ является морфизмом измеримых пространств $ f \colon (X, f^{*}(\calA_Y)) \to (Y, \calA_Y) $.
+			\item Если $ \calA_X $ --- $ \sigma $-алгебра подмножеств $ X $,
+			то отображение $ f $ является морфизмом измеримых пространств $ f \colon (X, \calA_X) \to (Y, \calA_Y) $
+			тогда и только тогда, когда $ f^{*}(\calA_Y) \subset \calA_X $.
+			\item Пусть имеются отображения множеств $ f \colon X \to Y, g \colon Z \to Y $ и $ h \colon X \to Z $
+			такие, что $ g \circ h = f $, то $ h $ является морфизмом измеримых пространств
+			$ h \colon (X, f^{*}(\calA_Y)) \to (Z, g^{*}(\calA_Y)). $
+		\end{enumerate}
+		$$ \begin{tikzcd}
+			X \ar{dd}{h} \ar{dr}{f} & \\
+			& Y, \\
+			Z \ar{ur}{g} & \\
+		\end{tikzcd} \
+		\begin{tikzcd}
+			(X, f^{*}(\calA_Y)) \ar{dd}{h} \ar{dr}{f} & \\
+			 & (Y, \calA_Y).  \\
+			(Z, g^{*}(\calA_Y)) \ar{ur}{g} &  \\
+		\end{tikzcd} $$
+	\end{proposition}
+	
+	\subsubsection{Связь между минимальной $ \sigma $-алгеброй, прямым и обратным образом $ \sigma $-алгебры}
+	
+	\begin{lemma} \label{inclusions direct-inverse}
+		Пусть $ X, Y $ --- множества, $ f \colon X \to Y $ --- отображение множеств.
+		Если $ \calA_X $ --- $ \sigma $-алгебра подмножеств $ X $, то $ f^*(f_*(\calA_X)) \subset  \calA_X $.
+		Если $ \calA_Y $ --- $ \sigma $-алгебра подмножество $ Y $, то $ \calA_Y \subset f_*(f^*(\calA_Y)) $.
+	\end{lemma}
+	
+	\begin{proof}
+		По предложению \ref{direct image of sigma algebra} отображение $ f $ является
+		морфизмом измеримых пространств $ f \colon (X, \calA_X) \to (Y, f_*(\calA_X)) $.
+		Тогда по предложению \ref{inverse image of sigma algebra} имеем включение
+		$ f^*(f_*(\calA_X)) \subset  \calA_X $.
+		
+		Теперь По предложению \ref{inverse image of sigma algebra} отображение $ f $ является
+		морфизмом измеримых пространств $ f \colon (X, f^*(\calA_Y)) \to (Y, \calA_Y) $.
+		Тогда по предложению \ref{direct image of sigma algebra} имеем включение
+		$ \calA_Y \subset f_*(f^*(\calA_Y)) $.
+	\end{proof}
+	
+	\begin{lemma}
+		Пусть $ X, Y $ --- множества, $ T $ --- система подмножеств $ Y $, $ Y \in T $.
+		Пусть $ f \colon X \to Y $ --- отображение множеств.
+		Обозначим через $ f^{-1}(T) $ систему множеств $ \defineset{f^{-1}(U)}{U \in T} $.
+		Тогда $ R_{\sigma}(f^{-1}(T)) = f^{*}(R_{\sigma}(T)) $.
+	\end{lemma}
+	
+	\begin{proof}
+		Так как $ T \subset R_{\sigma}(T) $, то по построению $ f^* $ имеем включение $ f^{-1}(T) \subset f^*(R_{\sigma}(T)) $.
+		По предложению \ref{inverse image of sigma algebra} система множеств $ f^*(R_{\sigma}(T)) $ является $ \sigma $-алгеброй.
+		Тогда по теореме \ref{min ring exists} имеем включение $ R_{\sigma}(f^{-1}(T)) \subset f^{*}(R_{\sigma}(T)) $.
+		
+		Далее, система множеств $ f_*(R_{\sigma}(f^{-1}(T))) $ является $ \sigma $-алгеброй по предложению
+		\ref{direct image of sigma algebra}. По построению $ f_* $ имеем включение $ T \subset f_*(R_{\sigma}(f^{-1}(T))) $.
+		Снова по теореме \ref{min ring exists} имеем включение $ R_{\sigma}(T) \subset f_*(R_{\sigma}(f^{-1}(T))) $.
+		
+		По лемме \ref{inclusions direct-inverse} имеем включение $ f^*(f_*(R_{\sigma}(f^{-1}(T))) \subset R_{\sigma}(f^{-1}(T)) $.
+		Собирая вместе все включения и пользуясь тем, что $ f^*(A) \subset f^*(B) $ для $ A \subset B $ получаем
+		$$ f^*(R_{\sigma}(T)) \subset f^*(f_*(R_{\sigma}(f^{-1}(T))) \subset R_{\sigma}(f^{-1}(T)) \subset f^{*}(R_{\sigma}(T)), $$
+		откуда следует требуемое.
+	\end{proof}
+	
+	
+	\subsubsection{Функтор борелевской $ \sigma $-алгебры}
+	
+	Пусть $ (X, \tau) $ --- топологическое пространство.
+	Минимальная $ \sigma $-алгебра, порождённая системой открытых множеств $ \tau $ 
+	называется \defin{борелевской $ \sigma $-алгеброй}{borel-sigma-algebra}.
+	Мы будем обозначать её через $ \calB(\tau) $, а соответствующее измеримое пространство
+	через $ \Bor((X, \tau)) = (X, \calB(\tau)) $.
+	Мы докажем, что конструкция $ \Bor \colon \Top \to \Meas $, сопоставляющая топологическому пространству $ (X, \tau) $
+	измеримое пространство $ (X, \calB(\tau)) $, а непрерывному отображению $ f $
+	его же как отображение множеств, функториальна.
+	
+	\begin{lemma} \label{measurability of continuous map}
+		Пусть $ f \colon X \to Y $ --- отображение множеств,
+		$ \theta $ --- топология $ Y $, $ A $ --- $ \sigma $-алгебра подмножеств $ X $.
+		Пусть также $ S $ --- база топологии $ \theta $ такая, 
+		что всякое открытое подмножество представляется в виде не более, чем счётного объединения элементов базы, 
+		и $ T $ --- предбаза топологии $ \theta $ такая, что всякое открытое множество представляется в виде не
+		более, чем счётного объединения конечных пересечений элементов $ T $.
+		Тогда следующие утверждения равносильны
+		\begin{enumerate}
+			\item прообраз всякого элемента борелевской $ \sigma $-алгебры $ \calB(\theta) $ лежит в $ A; $ \label{measurability of continuous map | all}
+			\item прообраз всякого открытого множества лежит в $ A; $ \label{measurability of continuous map | open}
+			\item прообраз всякого элемента базы $ S $ лежит в $ A; $ \label{measurability of continuous map | base}
+			\item прообраз всякого элемента предбазы $ T $ лежит в $ A. $ \label{measurability of continuous map | prebase}
+		\end{enumerate}
+	\end{lemma}
+	
+	\begin{proof}
+		Все пункты являются частным случаем пункта \ref{measurability of continuous map | all},
+		а пункты \ref{measurability of continuous map | base} и \ref{measurability of continuous map | prebase}
+		--- пункта \ref{measurability of continuous map | open}.
+		Так как база топологии (с данным дополнительным условие) 
+		является частным случаем предбазы топологии (с дополнительным условием),
+		то достаточно вывести из пункта $ \ref{measurability of continuous map | prebase} $
+		пункт \ref{measurability of continuous map | all}.
+		
+		Рассмотрим систему множеств $ T_X = f^{-1}(T) \cup \{X\} := \defineset{f^{-1}(U)}{U \in T} \cup \{X\} $.
+		По условию $ T_X \subset A $. Пусть $ R_{\sigma}(T_X) $ --- минимальная $ \sigma $-алгебра, содержащая $ T_X $.
+		Так как $ A $ является $ \sigma $-алгеброй, то $ R_{\sigma}(T_X) \subset A $.
+		Из построения $ f_* $ имеем $ f_*(R_{\sigma}(T_X)) \subset f_*(A) $.
+		Так же из построения $ f_* $ имеем включение $ T \subset f_*(R_{\sigma}(T_X)) $.
+		Из условия наложенного на $ T $ следует, что минимальная $ \sigma $-алгебра, порождённая $ T $
+		совпадает с $ \calB(\theta) $. Тогда по теореме \ref{min ring exists}
+		имеем включение $ \calB(\theta) \subset f_*(R_{\sigma}(T_X)) $.
+		Следовательно, $ \calB(\theta) \subset f_{*}(A) $ и по предложению \ref{direct image of sigma algebra}
+		$ f $ является морфизмом измеримых пространств $ f \colon (X, A) \to (Y, \calB(\theta)) $,
+		что и утверждается в пункте \ref{measurability of continuous map | all}.
+	\end{proof}
+	
+	\begin{theorem}
+		Пусть $ (X, \tau), (Y, \theta) $ --- топологические пространства,
+		$ f \colon (X, \tau) \to (Y, \theta) $ --- непрерывное отображение.
+		Тогда отображение $ f $ является морфизмом измеримых пространств
+		$ f \colon (X, \calB(\tau)) \to (Y, \calB(\theta)) $.
+	\end{theorem}
+	
+	\begin{proof}
+		Следует из эквивалентности пунктов \ref{measurability of continuous map | all}
+		и $ \ref{measurability of continuous map | open} $ леммы \ref{measurability of continuous map} 
+		для случая, когда $ A = \calB(\tau) $.
+	\end{proof}
 	
 	\subsection{Предварительные сведения из анализа Фурье}
 	
@@ -369,16 +750,6 @@
 		и $ u + t_0S(u, v)v = 0 $, то есть $ u $ и $ v $ пропорциональны.
 	\end{proof}
 	
-	\subsection{Теория категорий и взгляд на измеримые пространства с её точки зрения}
-	
-	\subsubsection{Категория измеримых пространств}
-	
-	\subsubsection{Прямой образ $ \sigma $-алгебры}
-	
-	\subsubsection{Обратный образ $ \sigma $-алгебры}
-	
-	\subsubsection{Функтор борелевской $ \sigma $-алгебры}
-	
 	\section{Вероятностное пространство, случайные события}
 	
 	Пусть $ \Omega $ --- некоторое множество, $ \mathfrak{F} $ --- $ \sigma $-алгебра с единицей $ \Omega $
@@ -473,7 +844,7 @@
 			\item $ \prob(A \cup B) = \prob(A) + \prob(B) - \prob(AB); $ \label{prob-prop3}
 			\item $ \prob(A \cup B) \leqslant \prob(A) + \prob(B) $; \label{prob-prop4}
 			\item $ \prob(\bigcup\limits_{k = 1}^{n} A_k) = \sum\limits_{k = 1}^{n} 
-			(-1)^{k - 1}\sum\limits_{i_1 < i_2 < \ldots < i_k} \prob(A_{i_1} \ldots A_{i_k}); $ \label{prob-prop5}
+			\left(\sum\limits_{i_1 < i_2 < \ldots < i_k} (-1)^{k - 1}\prob(A_{i_1} \ldots A_{i_k})\right); $ \label{prob-prop5}
 			\item $ \prob\left(\bigcup\limits_{k = 1}^{+\infty} A_k \right) \leqslant \sum\limits_{k = 1}^{+\infty} \prob(A_k) $ 
 			(это свойство называется \defin{субаддитивностью}{subadditivity}). \label{prob-prop6}
 		\end{enumerate}
@@ -504,12 +875,12 @@
 		Далее, положим $ B_k = A_kA_n $. Тогда $ BA_n = \bigcup\limits_{k = 1}^{n - 1} B_k $.
 		По индукционному предположению вероятность $ \prob(B \cup A_n) $ равна
 		$$ \sum\limits_{k = 1}^{n - 1} 
-		(-1)^{k - 1}\sum\limits_{i_1 < i_2 < \ldots < i_k} \prob(A_{i_1} \ldots A_{i_k})
+		\left(\sum\limits_{i_1 < i_2 < \ldots < i_k} (-1)^{k - 1}\prob(A_{i_1} \ldots A_{i_k})\right)
 		+ \prob(A_n)
-		- \left(\sum\limits_{k = 1}^{n - 1} 
-		(-1)^{k - 1}\sum\limits_{i_1 < i_2 < \ldots < i_k} \prob(A_{i_1} \ldots A_{i_k} A_{n})\right) = $$
+		- \sum\limits_{k = 1}^{n - 1} 
+		\left(\sum\limits_{i_1 < i_2 < \ldots < i_k} (-1)^{k - 1}\prob(A_{i_1} \ldots A_{i_k} A_{n})\right) = $$
 		$$ = \sum\limits_{k = 1}^{n} 
-		(-1)^{k - 1}\sum\limits_{i_1 < i_2 < \ldots < i_k} \prob(A_{i_1} \ldots A_{i_k}). $$
+		\left(\sum\limits_{i_1 < i_2 < \ldots < i_k} (-1)^{k - 1}\prob(A_{i_1} \ldots A_{i_k})\right). $$
 		
 		Докажем неравенство $ \ref{prob-prop6} $.
 		Положим $ B_k = A_k \setminus \bigcup\limits_{i = 1}^{k - 1} A_i $.
@@ -734,7 +1105,7 @@
 		можно построить пример вероятностного пространства $ (\Omega, \events, \prob) $ 
 		и событий $ A_1, \ldots, A_n \in \events $ 
 		для которых множество наборов, на которых выполнены равенства
-		$$ \prob\left(\bigcap\limits_{s = 1}^{k} B_{i_s}\right) = \prod_{s = 1}^{k} \prob(B_{i_s}) $$
+		$$ \prob\left(\bigcap\limits_{s = 1}^{k} A_{i_s}\right) = \prod_{s = 1}^{k} \prob(A_{i_s}) $$
 		в точности совпадает с $ J $.
 		
 		Построим пример для дискретного вероятностного пространства.
@@ -959,11 +1330,11 @@
 	
 	\begin{thebibliography}{2}
 		
-		\bibitem{KolmogorovFomin} Колмогоров А.Н., Фомин С.В. {\it Элементы теории функций и функционального анализа}, Физматлит, 2004, 572с.
+		\bibitem{KolmogorovFomin} Колмогоров~А.~Н., Фомин~С.~В. {\it Элементы теории функций и функционального анализа}, Физматлит, 2004, 572с.
 		
 		\bibitem{DiyachenoUliyanov} Дьяченко~М.~И., Ульянов~П.~Л. {\it Мера и интеграл}, Факториал, 1998, 160с.
 	
-		\bibitem{Borovkov} Боровков А. А. {\it Теория вероятностей}, Физматлит, 1986, 432с.
+		\bibitem{Borovkov} Боровков~А.~А. {\it Теория вероятностей}, Физматлит, 1986, 432с.
 	
 	\end{thebibliography}
 	
