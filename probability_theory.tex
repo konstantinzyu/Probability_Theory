@@ -4,7 +4,7 @@
 \pagestyle{plain}
 \usepackage[margin=3cm]{geometry} 
 
-\usepackage{amsmath,amssymb,amsfonts,enumerate,latexsym, amsthm,textcomp,wasysym,longtable}
+\usepackage{amsmath,amssymb,amsfonts,enumerate,latexsym, amsthm,textcomp,wasysym,longtable,dsfont}
 
 % \usepackage{indentfirst}
 \usepackage[matrix, arrow, curve]{xy} % Для коммутативных диаграмм
@@ -53,14 +53,13 @@
 \emergencystretch=5pt
 
 \newtheorem{theorem}{Теорема}
-\newtheorem{proposition}{Предложение}
+\newtheorem{proposition}[theorem]{Предложение}
 \newtheorem*{definition}{Определение}
 \newtheorem{lemma}[theorem]{Лемма}
 \newtheorem{corollary}[theorem]{Следствие}
 
 
 \numberwithin{theorem}{section}
-\numberwithin{proposition}{section}
 
 \theoremstyle{definition}
 
@@ -122,6 +121,9 @@
 \newcommand{\Bor}{\operatorname{Bor}}
 \newcommand{\Top}{\mathfrak{Top}}
 \newcommand{\Meas}{\mathfrak{Meas}}
+
+\newcommand{\ind}{\mathds{1}}
+\newcommand{\diff}{\mathrm{d}}
 
 % Цвета
 \definecolor{linkcolor}{HTML}{0000FF} % цвет ссылок
@@ -329,7 +331,6 @@
 		Так как $ \Omega $ являлось единицей $ U $, то $ U $ содержится в $ R' \cap \Omega $.
 		Следовательно, достаточно рассматривать пересечение только ($ \sigma $-)алгебр подмножеств множества $ \Omega $,
 		содержащих $ U $. По предложению \ref{intersection of rings} их пересечение является ($ \sigma $-)алгеброй подмножеств $ \Omega $.
-		
 	\end{proof}
 	
 	Опираясь на предложение $ \ref{min ring exists} $ дадим определение. 
@@ -344,6 +345,10 @@
 			\item $ R(S) = \defineset{A_1 \sqcup \ldots \sqcup A_n}{n \in \mathbb{N}, \{A_i\}_{i = 1}^{n} \subset S}. $
 		\end{itemize}
 	\end{proposition}
+	
+	\begin{proof}
+		\TODO{дописать доказательство или сослаться}
+	\end{proof}
 	
 	\subsubsection{Мера на полукольце и её продолжение на минимальное кольцо}
 	
@@ -394,6 +399,10 @@
 		\end{enumerate}
 	\end{lemma}
 	
+	\begin{proof}
+		\TODO{дописать доказательство или сослаться}
+	\end{proof}
+	
 	\subsubsection{Лебеговское продолжение меры}
 	
 	Далее будем рассматривать полукольцо $ S $ с единицей $ \Omega $
@@ -410,6 +419,10 @@
 		\sum\limits_{i = 1}^{+\infty} m(B_i). $$
 	\end{proposition}
 	
+	\begin{proof}
+		\TODO{дописать доказательство или сослаться}
+	\end{proof}
+	
 	Множество $ A \subset \Omega $ называется \defin{измеримым}{measurable set}, если для любого $ \varepsilon > 0 $
 	найдётся множество $ B \in R(S) $ такое, что $ \mu^*(A \vartriangle B) < \varepsilon $.
 	Если $ A $ измеримо, то его \defin{мерой}{measure of set} называется значение $ \mu(A) := \mu^*(A) $.
@@ -422,38 +435,311 @@
 		Тогда $$ \mu^*(A) \leqslant \sum\limits_{i = 1}^{n} \mu^*(A_i); $$
 	\end{lemma}
 	
+	\begin{proof}
+		\TODO{дописать доказательство или сослаться}
+	\end{proof}
+	
 	\begin{theorem}
 		Система измеримых множеств $ M $ является алгеброй.
 	\end{theorem}
+	
+	\begin{proof}
+		\TODO{дописать доказательство или сослаться}
+	\end{proof}
 	
 	\begin{theorem}
 		Функция $ \mu $ на алгебре множеств $ M $ является мерой.
 	\end{theorem}
 	
+	\begin{proof}
+		\TODO{дописать доказательство или сослаться}
+	\end{proof}
+	
 	\begin{theorem}
 		Алгебра измеримых множеств $ M $ является $ \sigma $-алгеброй.
 	\end{theorem}
+	
+	\begin{proof}
+		\TODO{дописать доказательство или сослаться}
+	\end{proof}
 	
 	\begin{theorem}
 		Мера $ \mu $ на $ \sigma $-алгебре измеримых множеств является $ \sigma $-аддитивной.
 	\end{theorem}
 	
+	\begin{proof}
+		\TODO{дописать доказательство или сослаться}
+	\end{proof}
+	
+	\subsubsection{$ \sigma $-конечная мера}
+	
+	\subsubsection{Непрерывность и полнота меры}
+	
+	Мера $ \mu $ на кольце $ R $ называется \defin{непрерывной}{continuous-measure},
+	если для любой последовательности вложенных подмножеств $ \{A_i\}_{i = 1}^{+\infty} \subset R $,
+	$ A_1 \supset A_2 \supset A_3 \supset \ldots $, пересечения которых $ A = \bigcap\limits_{i = 1}^{\infty} A_i $
+	лежит в $ R $,
+	имеет место равенство
+	$$ \lim\limits_{i \to +\infty} \mu(A_i) = \mu(A) = \mu\left(\bigcap\limits_{i = 1}^{\infty} A_i\right). $$
+	
+	\begin{proposition}
+		Конечная мера $ \mu $ на кольце $ R $ непрерывна тогда и только тогда, когда она непрерывна.
+	\end{proposition}
+	
+	\begin{proof}
+		\TODO{дописать доказательство}
+	\end{proof}
+	
+	\begin{corollary}
+		Пусть задана мера $ \mu $ на кольце $ R $
+		и последовательность вложенных подмножеств $ \{A_i\}_{i = 1}^{+\infty} \subset R $,
+		$ A_1 \supset A_2 \supset A_3 \supset \ldots $, пересечение которых $ A = \bigcap\limits_{i = 1}^{\infty} A_i $
+		лежит в $ R $ и, кроме того, мера $ \mu(A_1) < +\infty $. Тогда
+		имеет место равенство
+		$$ \lim\limits_{i \to +\infty} \mu(A_i) = \mu(A) = \mu\left(\bigcap\limits_{i = 1}^{\infty} A_i\right). $$
+	\end{corollary}
+	
+	\begin{proof}
+		\TODO{дописать доказательство}
+	\end{proof}
+	
+	\begin{proposition}
+		Пусть задана конечная $ \sigma $-аддитивная мера $ \mu $ на кольце $ R $.
+		Тогда для любой последовательности вложенных подмножеств $ \{A_i\}_{i = 1}^{+\infty} \subset R $,
+		$ A_1 \subset A_2 \subset A_3 \subset \ldots $, объединение которых $ A = \bigcup\limits_{i = 1}^{\infty} A_i $
+		лежит в $ R $,
+		имеет место равенство
+		$$ \lim\limits_{i \to +\infty} \mu(A_i) = \mu(A) = \mu\left(\bigcup\limits_{i = 1}^{\infty} A_i\right). $$
+	\end{proposition}
+	
+	\begin{proof}
+		\TODO{дописать доказательство}
+	\end{proof}
+	
+	Мера $ \mu $ на кольце $ R $ называется \defin{полной}{complete measure}, если для любого множества $ A \in R $ 
+	из равенства нулю меры $ \mu(A) = 0 $ вытекает, что всякое подмножество $ B \subset A $ лежит в $ R $.
+	Из свойств меры в этом случае $ \mu(B) = 0 $.
+	
 	\subsubsection{Мера Лебега-Стилтьеса}
 	
-	\subsubsection{Измеримое отображение}
+	Пусть $ f \colon \RR \to \RR $ --- неубывающая ограниченная функция. Можно рассматривать и случай, когда функция не ограничена и для неё развить теорию, используя $ \sigma $-конечную меры, но мы не будем сталкиваться с такими случаями в дальнейшем и поэтому остановимся на рассмотрении ограниченной функции $ f $.
+	Рассмотрим полукольцо $ S $ полуинтервалов вида $ (a, b] $ или $ (a; +\infty), (-\infty; b] $
+	и введём на нём функцию $ m_f $ по правилу $ m_f((a, b]) = f(b) - f(a) $,
+	$ m_f((a; +\infty)) = \lim\limits_{x \to +\infty} f(x) - f(a) $
+	и $ m_f((-\infty; b]) = f(b) - \lim\limits_{x \to -\infty} f(x) $.
+	
+	\begin{proposition}
+		Функция $ m_f $ является мерой на полукольце $ S $.
+		Функция $ f $ непрерывна справа тогда и только тогда, когда мера $ m_f $ является $ \sigma $-аддитивной.
+	\end{proposition}
+	
+	\begin{proof}
+		\TODO{дописать доказательство}
+	\end{proof}
+	
+	\defin{Мерой Лебега-Стилтьеса (порождённой функцией $ f $)}{Lebesgue-Stieltjes-measure} 
+	мы назовём лебеговское продолжение меры $ m_f $ и обозначим через $ \mu_f $.
+	
+	\subsubsection{Измеримые функции}
+	
+	Пусть $ \events $ --- $ \sigma $-алгебра подмножеств $ \Omega $.
+	Назовём отображение $ f \colon \Omega \to \RR $ \defin{измеримой функцией}{measurable function},
+	если для любого \hyperlink{borel-sets}{борелевского множества} $ B \subset \RR $
+	его прообраз является элементом $ \events $.
+	Можно показать (см. лемму \ref{measurability of map}), что данное требование равносильно тому, что прообраз любого интервала
+	или тому, что прообраз любого бесконечного полуинтервала $ (-\infty, b] $ измерим.
+	
+	Далее будем считать, что на $ \sigma $-алгебре $ \events $ задана $ \sigma $-аддитивная мера $ \mu $
+	и элементы $ \events $ мы будем называет измеримыми множествами.
+	
+	\defin{Простой функцией}{simple-function} мы будем называть измеримую функцию $ f $ такую, что
+	множество значений $ f $ конечно и мера множества, на котором $ f $ принимает ненулевые значения конечна.
+	
+	\defin{Обобщённой простой функцией}{deneralized-simple-function} мы будем называть произвольную измеримую функцию, 
+	принимающую не более чем счётное число значений. Всякая простая функция является обобщённой простой функцией.
+	
+	\defin{Индикатором множества $ A $}{indicator} мы будем называть функцию $ \ind_{A} $, заданную по правилу
+	$$ \ind_A(x) = \definefuntwo{1}{x \in A}{0}{x \notin A}. $$
+	
+	\begin{proposition} \label{simple function description}
+		Верно следующее.
+		\begin{enumerate}
+			\item Индикатор $ \ind_A $ измеримого множества $ A $ является простой функцией.
+			\item Всякая $ ( $обобщённая$ ) $ простая функция 
+			может единственным образом быть представления в виде конечной линейной комбинации $ ( $ряда$ ) $
+			с попарно различными коэффициентами индикаторов попрано не пересекающихся множеств, объединение которых равно $ \Omega $.
+			\item Всякая $ ( $обобщённая$ ) $ простая функция 
+			может единственным образом быть представления в виде линейной комбинации
+			$ ( $ряда$ ) $ с попарно различными ненулевыми коэффициентами 
+			индикаторов попрано не пересекающихся множеств.
+			\item Всякая простая функция является обобщённой простой и её представления из пунктов выше
+			как для простой и как для обобщённой простой функции совпадают.
+		\end{enumerate}
+	\end{proposition}
+	
+	\begin{proof}
+		\TODO{дописать доказательство}
+	\end{proof}
+	
+	\begin{proposition}
+		Сумму двух $ ( $обобщённых$ ) $ простых функций является $ ( $обобщённой$ ) $ простой функцией.
+		Функция, пропорциональная $ ( $обобщённой$ ) $ простой функции, сама является таковой.
+		Модуль $ ( $обобщённой$ ) $ простой функции, является таковой функцией.
+	\end{proposition}
+
+	\begin{proof}
+		\TODO{дописать доказательство}
+	\end{proof}
+
+	\begin{proposition}
+		Для всякой измеримой функции $ f $ существует последовательность обобщённых простых функций $ \{f_n\} $,
+		равномерно сходящаяся к $ f $.
+	\end{proposition}
+	
+	\begin{proof}
+		Поскольку $ f $ измерима, то для всяких натурального $ n $ и целого $ k $
+		множество $ A_{n, k} = f^{-1}([\tfrac{k}{2^n}, \tfrac{k + 1}{2^n})) $ измеримо
+		и для фиксированного $ n $ и различных $ k $ эти множества образуют разбиение $ \Omega $.
+		Положим 
+		$$ f_n(x) = \sum\limits_{k \in \mathbb{Z}} \tfrac{k}{2^n}\ind_{A_{n, k}}. $$
+		Тогда $ f_n $ удовлетворяет определению обобщённой простой функции.
+		Кроме того, для всякого $ n $ и $ x \in \Omega $ 
+		выполнены неравенства $ 0 \leqslant f(x) - f_n(x) \leqslant \tfrac{1}{2^n} $.
+		Поэтому последовательность $ \{f_n\} $ сходится к $ f $ равномерно.
+	\end{proof}
 	
 	\subsubsection{Интеграл Лебега}
 	
+	Пусть $ f = \sum\limits_{i = 1}^{n}c_i\ind_{A_i}, c_i \neq 0 $ --- простая функция в представлении из предложения
+	$ \ref{simple function description} $.
+	\defin{Интегралом простой функции $ f $ на пространстве $ \Omega $ по мере $ \mu $}{simple-function-integral} 
+	мы назовём сумму $ \sum\limits_{i = 1}^{n} c_i\cdot\mu(A_i) $ и обозначим через $ \int\limits_{\Omega} f\diff\mu $.
+	
+	Обобщённую простую функцию $ f = \sum\limits_{i = 1}^{+\infty}c_i\ind_{A_i} $ (в представлении из предложения
+	$ \ref{simple function description} $) назовём 
+	\defin{интегрируемой по Лебегу на пространстве $ \Omega $ по мере $ \mu $}{generalized-simple-function-integrability},
+	если для $ c_i \neq 0 $ меры $ \mu(A_i) $ конечны и 
+	ряд $ \sum\limits_{i = 1}^{+\infty} c_i\cdot\mu(A_i) $ сходится абсолютно (предполагается, что $ 0 \cdot \mu(A) = 0 $, даже если мера $ \mu(A) $ бесконечна).
+	В этом случае обозначим через $ \int\limits_{\Omega} f\diff\mu $ сумму ряда и назовём её
+	\defin{интегралом обобщённой простой функции $ f $ на пространстве $ \Omega $ по мере $ \mu $}{generalized-simple-function-integral}. 
+	
+	Из определения простой функции следует, что она является интегрируемой на пространстве $ \Omega $ по мере $ \mu $
+	обобщённой простой функцией.
+	
+	\begin{lemma} \label{integrability of generalized simple functions}
+		Пусть $ f, g $ ---  обобщённые простые функции.
+		Тогда
+		\begin{enumerate}
+			\item если $ f, g $ --- интегрируемые на $ \Omega $ по мере $ \mu $, 
+			то функция $ f + g $ интегрируема и имеет место формула
+			$$ \int\limits_{\Omega} f\diff\mu + \int\limits_{\Omega} g\diff\mu = \int\limits_{\Omega} (f + g)\diff\mu; $$
+			\item интегрируемость функции $ f $ равносильна интегрируемости функции $ |f| $ 
+			и в случае интегрируемости справедливо неравенство
+			$$ \left|\int\limits_{\Omega} f\diff\mu\right| \leqslant \int\limits_{\Omega} |f|\diff\mu; $$
+			\item если $ |f| \leqslant g $ и $ g $ интегрируема, то $ |f| $ интегрируема и выполнено неравенство
+			$$ \int\limits_{\Omega} /f|\diff\mu \leqslant \int\limits_{\Omega} g\diff\mu. $$
+		\end{enumerate}
+	\end{lemma}
+	
+	\begin{proof}
+		\TODO{дописать доказательство}
+	\end{proof}
+	
+	\begin{lemma} \label{finite measure and generalized simple functions}
+		Пусть мера $ \mu $ конечна на $ \Omega $. Тогда выполнены следующие утверждения
+		\begin{enumerate}
+			\item Всякая ограниченная обобщённая простая функция интегрируема на $ \Omega $ по $ \mu $.
+			\item Интеграл $ \int\limits_{\Omega} \ind_{A}\diff\mu $ от индикатора $ \ind_{A} $ равен мере $ A $.
+		\end{enumerate}
+	\end{lemma}
+	
+	\begin{proof}
+		\TODO{дописать доказательство}
+	\end{proof}
+	
+	\begin{theorem} \label{integrability}
+		Пусть $ \mu(X) < +\infty $.
+		Пусть $ f $ --- измеримая функция и существует последовательность интегрируемых обобщённых простых функций $ \{f_n\} $,
+		равномерно сходящаяся к $ f $. Тогда
+		\begin{enumerate}
+			\item существует предел $ \int\limits_{\Omega} f_n \diff\mu =: I; $
+			\item для любой другой последовательности интегрируемых обобщённых простых функций $ \{g_n\} $,
+			равномерно сходящихся к $ f $ предел $ \int\limits_{\Omega} g_n \diff\mu $ также равен $ I; $
+			\item если $ f $ --- обобщённая простая функция, то $ f $ интегрируема и $ \int\limits_{\Omega} f\diff\mu = I. $
+		\end{enumerate}
+	\end{theorem}
+	
+	\begin{proof}
+		Фиксируем $ \varepsilon > 0 $.
+		Так как функции $ f_n $ равномерно сходятся к $ f $, то начиная с некоторого $ N $
+		для $ n, m > N $ и для любого $ x \in \Omega $ выполнено равенство $ |f_n(x) - f_m(x)| < \varepsilon $.
+		Тогда по леммам \ref{finite measure and generalized simple functions} и \ref{finite measure and generalized simple functions} имеем
+		$$ \left|\int\limits_{\Omega} f_n\diff\mu - \int\limits_{\Omega} f_m\diff\mu\right| \leqslant \int\limits_{\Omega} |f_n - f_m|\diff\mu \leqslant \varepsilon \mu(X). $$
+		По критерию Коши существует предел $ \int\limits_{\Omega} f_n \diff\mu =: I. $
+		
+		Заметим, что если $ f = 0 $, то для $ n > N(\varepsilon) $ выполнено равенство
+		$$ \left|\int\limits_{\Omega} f_n\diff\mu\right| < \varepsilon\mu(X). $$
+		Поэтому в данном случае $ I = 0 $. Поскольку, если последовательности $ f_n $ и $ g_n $ сходятся равномерно
+		к $ f $, то последовательность $ f_n - g_n $ сходится равномерно к нулевой функции,
+		то предел $ I $ будет одинаковым для обеих последовательностей.
+		
+		Пусть $ f $ сама является обобщённой простой функцией.
+		Найдётся индекс $ n $ такой, что для любого $ x \in \Omega $
+		выполнено неравенство $ |f(x) - f_n(x)| < 1 $.
+		По леммам \ref{finite measure and generalized simple functions}
+		и \ref{integrability of generalized simple functions}
+		функция $ f - f_n $ интегрируема.
+		Так как $ f_n $ интегрируема, то снова по лемме \ref{integrability of generalized simple functions} функция $ f = (f - f_n) + f_n $ интегрируема.
+		Теперь возьмём в качестве последовательности $ f_n $ постоянную последовательность из функции $ f $.
+		Тогда предел этой последовательности равен одновременно $ \int\limits_{\Omega} f\diff\mu $ и $ I $.
+	\end{proof}
+	
+	Измеримая функция $ f $ на $ \Omega $ с $ \mu(\Omega) < +\infty $ называется \defin{интегрируемой}{integrable},
+	если существует последовательность интегрируемых обобщённых простых функций $ \{f_n\} $,
+	равномерно сходящаяся к $ f $. \defin{Интегралом (Лебега) $ f $ на $ \Omega $ по мере $ \mu $}{integral} 
+	называется предел $ \int\limits_{\Omega} f_n \diff\mu $. В дальнейшем мы будем обозначать его через $ \int\limits_{\Omega} f\diff\mu $.
+	
 	\subsubsection{Прямой образ меры (pushforward measure)}
 	
-	Далее, если не оговорено иное, все алгебры являются ($ \sigma $-)алгебрами с единицей $ \Omega $
-	и будут называться <<($ \sigma $-)алгебрами>>.
+	Пусть $ (X, \calA_X) $ и $ (Y, \calA_Y) $ --- \hyperlink{measurable-space}{измеримые пространства},
+	$ \mu $ --- мера на $ \sigma $-алгебре $ \calA_X $ и $ f \colon (X, \calA_X) \to (Y, \calA_Y) $
+	--- \hyperlink{morphism-of-measurable-spaces}{измеримое отображение}.
+	Тогда \defin{прямым образом меры $ \mu $ при отображении $ f $}{pushforward-measure} называется функция $ f_{*}(\mu) $,
+	заданная по правилу $ f_*(\mu)(A) = \mu(f^{-1}(A)) $ для $ A \in \calA_Y $.
 	
+	\begin{proposition}
+		Прямой образ меры $ f_*(\mu) $ является мерой на алгебре $ \calA_Y $.
+	\end{proposition}
+	
+	\begin{proof}
+		\TODO{дописать доказательство}
+	\end{proof}
+	
+	\begin{theorem}
+		Пусть мера $ \mu $ конечна на $ X $.
+		Рассмотрим измеримую функцию $ g \colon (Y, \calA_Y) \to (\RR, \calB) $.
+		Тогда $ g $ интегрируема на $ Y $ по прямому образу меры $ f_*(\mu) $
+		тогда и только тогда, когда композиция $ g \circ f $ интегрируема на $ X $ по мере $ \mu $.
+		В случае интегрируемости равны интегралы
+		$$ \int\limits_{X} (g \circ f)\diff\mu = \int\limits_{Y} g\diff f_*(\mu). $$
+	\end{theorem}
+	
+	\begin{proof}
+		Из определения обобщённых простых функций $ g $ и $ g \circ f $ одновременно являются или не являются простыми обобщёнными функциями.
+		
+		Для обобщённой простой функции истинность утверждения следует из того, что
+		интегралы $ \int\limits_{X} (g \circ f)\diff\mu $ и $ \int\limits_{Y} g\diff f_*(\mu) $
+		равны сумме одного и того же ряда 
+		(поскольку $ f_*(\mu)(g^{-1}(\{a\})) = \mu(f^{-1}(g^{-1}(\{a\}))) = \mu((g \circ f)^{-1}(\{a\})) $
+		для $ a \in \RR $).
+		
+		\TODO{дописать доказательство}
+	\end{proof}
 	
 	\subsection{Теория категорий и взгляд на измеримые пространства с её точки зрения}
 	
-	Теория категорий в её лучшем проявлении выражает собой формализацию понятия "математическая конструкция"
-	через понятие объектов, морфизмов, функторов, естественных преобразований,
+	Теория категорий в её лучшем проявлении выражает собой формализацию понятия <<математическая конструкция>>
+	через понятия объектов, морфизмов, функторов, естественных преобразований,
 	а также формализует интуицию в виде универсальных свойств, сопряжённости функторов, эквивалентности категорий и так далее.
 	
 	В этом подразделе будет предполагаться, что вы знакомы с определением категории 
@@ -465,7 +751,7 @@
 	Пара $ (X, \calA_X) $ называется \defin{измеримым пространством}{measurable-space}.
 	
 	Пусть $ (X, \calA_X) $ и $ (Y, \calA_Y) $ --- пара измеримых пространств.
-	\defin{Морфизмом измеримых пространств}{morphism-of-measurable-spaces} 
+	\defin{Морфизмом измеримых пространств (измеримым отображением)}{morphism-of-measurable-spaces} 
 	$ f \colon (X, \calA_X) \to (Y, \calA_Y) $ называется отображение
 	множеств $ f \colon X \to Y $ такое, что для любого $ U \in \calA_Y $ выполнено $ f^{-1}(U) \in \calA_X $,
 	где $ f^{-1} $ --- это полный прообраз.
@@ -503,8 +789,11 @@
 			(X, \calA_X) \ar{ru}{f} \ar{rd}{g} &  \\
 			& (Z, g_{*}(\calA_X)). \\
 		\end{tikzcd} $$
-		
 	\end{proposition}
+	
+	\begin{proof}
+		\TODO{дописать доказательство}
+	\end{proof}
 	
 	\subsubsection{Обратный образ $ \sigma $-алгебры}
 	
@@ -536,6 +825,10 @@
 			(Z, g^{*}(\calA_Y)) \ar{ur}{g} &  \\
 		\end{tikzcd} $$
 	\end{proposition}
+	
+	\begin{proof}
+		\TODO{дописать доказательство}
+	\end{proof}
 	
 	\subsubsection{Связь между минимальной $ \sigma $-алгеброй, прямым и обратным образом $ \sigma $-алгебры}
 	
@@ -584,14 +877,15 @@
 	
 	Пусть $ (X, \tau) $ --- топологическое пространство.
 	Минимальная $ \sigma $-алгебра, порождённая системой открытых множеств $ \tau $ 
-	называется \defin{борелевской $ \sigma $-алгеброй}{borel-sigma-algebra}.
+	называется \defin{борелевской $ \sigma $-алгеброй}{borel-sigma-algebra},
+	а её элементы называются \defin{борелевскими множествами}{borel-sets}.
 	Мы будем обозначать её через $ \calB(\tau) $, а соответствующее измеримое пространство
 	через $ \Bor((X, \tau)) = (X, \calB(\tau)) $.
 	Мы докажем, что конструкция $ \Bor \colon \Top \to \Meas $, сопоставляющая топологическому пространству $ (X, \tau) $
 	измеримое пространство $ (X, \calB(\tau)) $, а непрерывному отображению $ f $
 	его же как отображение множеств, функториальна.
 	
-	\begin{lemma} \label{measurability of continuous map}
+	\begin{lemma} \label{measurability of map}
 		Пусть $ f \colon X \to Y $ --- отображение множеств,
 		$ \theta $ --- топология $ Y $, $ A $ --- $ \sigma $-алгебра подмножеств $ X $.
 		Пусть также $ S $ --- база топологии $ \theta $ такая, 
@@ -600,21 +894,21 @@
 		более, чем счётного объединения конечных пересечений элементов $ T $.
 		Тогда следующие утверждения равносильны
 		\begin{enumerate}
-			\item прообраз всякого элемента борелевской $ \sigma $-алгебры $ \calB(\theta) $ лежит в $ A; $ \label{measurability of continuous map | all}
-			\item прообраз всякого открытого множества лежит в $ A; $ \label{measurability of continuous map | open}
-			\item прообраз всякого элемента базы $ S $ лежит в $ A; $ \label{measurability of continuous map | base}
-			\item прообраз всякого элемента предбазы $ T $ лежит в $ A. $ \label{measurability of continuous map | prebase}
+			\item прообраз всякого элемента борелевской $ \sigma $-алгебры $ \calB(\theta) $ лежит в $ A; $ \label{measurability of map | all}
+			\item прообраз всякого открытого множества лежит в $ A; $ \label{measurability of map | open}
+			\item прообраз всякого элемента базы $ S $ лежит в $ A; $ \label{measurability of map | base}
+			\item прообраз всякого элемента предбазы $ T $ лежит в $ A. $ \label{measurability of map | prebase}
 		\end{enumerate}
 	\end{lemma}
 	
 	\begin{proof}
-		Все пункты являются частным случаем пункта \ref{measurability of continuous map | all},
-		а пункты \ref{measurability of continuous map | base} и \ref{measurability of continuous map | prebase}
-		--- пункта \ref{measurability of continuous map | open}.
+		Все пункты являются частным случаем пункта \ref{measurability of map | all},
+		а пункты \ref{measurability of map | base} и \ref{measurability of map | prebase}
+		--- пункта \ref{measurability of map | open}.
 		Так как база топологии (с данным дополнительным условие) 
 		является частным случаем предбазы топологии (с дополнительным условием),
-		то достаточно вывести из пункта $ \ref{measurability of continuous map | prebase} $
-		пункт \ref{measurability of continuous map | all}.
+		то достаточно вывести из пункта $ \ref{measurability of map | prebase} $
+		пункт \ref{measurability of map | all}.
 		
 		Рассмотрим систему множеств $ T_X = f^{-1}(T) \cup \{X\} := \defineset{f^{-1}(U)}{U \in T} \cup \{X\} $.
 		По условию $ T_X \subset A $. Пусть $ R_{\sigma}(T_X) $ --- минимальная $ \sigma $-алгебра, содержащая $ T_X $.
@@ -626,10 +920,10 @@
 		имеем включение $ \calB(\theta) \subset f_*(R_{\sigma}(T_X)) $.
 		Следовательно, $ \calB(\theta) \subset f_{*}(A) $ и по предложению \ref{direct image of sigma algebra}
 		$ f $ является морфизмом измеримых пространств $ f \colon (X, A) \to (Y, \calB(\theta)) $,
-		что и утверждается в пункте \ref{measurability of continuous map | all}.
+		что и утверждается в пункте \ref{measurability of map | all}.
 	\end{proof}
 	
-	\begin{theorem}
+	\begin{theorem} \label{borel functor}
 		Пусть $ (X, \tau), (Y, \theta) $ --- топологические пространства,
 		$ f \colon (X, \tau) \to (Y, \theta) $ --- непрерывное отображение.
 		Тогда отображение $ f $ является морфизмом измеримых пространств
@@ -637,8 +931,8 @@
 	\end{theorem}
 	
 	\begin{proof}
-		Следует из эквивалентности пунктов \ref{measurability of continuous map | all}
-		и $ \ref{measurability of continuous map | open} $ леммы \ref{measurability of continuous map} 
+		Следует из эквивалентности пунктов \ref{measurability of map | all}
+		и $ \ref{measurability of map | open} $ леммы \ref{measurability of map} 
 		для случая, когда $ A = \calB(\tau) $.
 	\end{proof}
 	
