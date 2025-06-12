@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage[utf8x]{inputenc} % Включаем поддержку UTF8  
+\usepackage[russian]{babel} % Required for inserting images
+
+\title{Отрицательноe биноминальное распределение}
+\author{Семён Дубков}
+\date{May 2025}
+
+\begin{document}
+\maketitle
+\fontsize{13}{15}\selectfont
+\section{Определение}
+Говорят что случайная велечина $\xi$ имеет отрицательное биноминальное распределение с парамeтрами $p$ и $r$, если :
+\[
+p_k = \mathbb{P}( \xi = k) = C_{k-1}^{r-1} p^rq^{k-r},\ k=r,r+1 \dots ,r+k, \ q = 1-p
+\]
+Обозначается так: $\xi \sim NB(p,r) $\\
+Например число испытаний в схеме Бернулли необходимых для $r$ успехов имеет отрицательное биноминальное распределение
+
+\section{Математическое ожидание и дисперсия}
+Найдем математическое ожидание с помощью производящей функции
+\begin{align*}
+\varphi(x)=\sum_{k=0}^{\infty}p_kx^k = \sum_{k=r}^{\infty}C_{k-1}^{r-1}p^rq^{k-r}x^k=p^r\sum_{k=0}^{\infty}C_{k+r-1}^{r-1}q^kx^{k+r}=\\
+p^rx^r\sum_{k=0}^{\infty}C_{k+r-1}^{r-1}(qx)^k=p^rx^r(1-qx)^{-r}=\left(\frac{px}{1-qx}\right)^r
+\end{align*}
+Последний переход следует из разложения в ряд Тейлора функции:
+\begin{align*}
+    (1+t)^{\alpha}=1+\alpha t+\frac{\alpha(\alpha-1)}{2}t^2+\dots
+\end{align*}
+Так как $\mathbb{M}\xi^{[k]}=\varphi^{(k)}(1-) $, где $\xi^{[k]}\overset{def}{=}\xi(\xi-1)\dots(\xi-k+1)$, то при $k=1$ получаем $\mathbb{M}\xi=\varphi'(1-)$
+\begin{align*}
+    \varphi'(x) = p^rr(\frac{x}{1-qx})^{r-1}\frac{1-qx+qx}{(1-qx)^2}=p^rr\frac{x^{r-1}}{(1-qx)^{r+1}}
+\end{align*}
+\begin{align*}
+    \varphi'(1-)=p^rr\frac{1^{r-1}}{(1-q)^{r+1}}=\frac{p^rr}{p^{r+1}}=\frac{r}{p}
+\end{align*}
+Получаем ответ:
+\[
+\boxed{\mathbb{M}\xi=\frac{r}{p}}
+\]
+Найдем дисперсию $\mathbb{D\xi}=\mathbb{M}\xi^{2}-(\mathbb{M\xi})^2$
+\[
+\mathbb{M}\xi^{[2]}=\varphi''(1-),\ \mathbb{M}\xi=\varphi'(1-)
+\]
+\[
+\mathbb{M}\xi^{[2]}=\mathbb{M}\xi(\xi-1)=\mathbb{M}\xi^2-\mathbb{M}\xi
+\]
+Выражаем $\mathbb{M}\xi^2 = \mathbb{M}\xi^{[2]}+\mathbb{M}\xi=\varphi''(1-)+\varphi'(1-)$, и подставляем в дисперсию $\mathbb{D\xi}=\varphi''(1-)+\varphi'(1-)-(\varphi'(1-))^2$. Получили связь между дисперсией и производящей функцией. Найдем $\varphi''(1-)$
+\begin{center}
+$\varphi''(x)=\left(p^rr\frac{x^{r-1}}{(1-qx)^{r+1}}\right)'=p^rr\frac{(r-1)x^{r-2}(1-qx)^{r+1}+q(r+1)(1-qx)^rx^{r-1}}{(1-qx)^{2r+2}}$    
+\end{center}
+
+
+\begin{center}
+$\varphi''(1-)=p^rr\frac{(r-1)(1-q)^{r+1}+q(r+1)(1-q)^r}{(1-q)^{2r+2}}= 
+p^rr\frac{(r-1)p^{r+1}+q(r+1)p^r}{p^{2r+2}}=
+p^{2r}r\frac{(r-1)p+q(r+1)}{p^{2r+2}}=r\frac{rp-p+qr+q}{p^2}=r\frac{r-p+q}{p^2}
+$    
+\end{center}
+\[
+\mathbb{D\xi}=\varphi''(1-)+\varphi'(1-)-(\varphi'(1-))^2=
+\]
+\[
+r\frac{r-p+q}{p^2}+\frac{r}{p}-\frac{r^2}{p^2}=\frac{r^2-pr+qr+pr-r^2}{p^2}=\frac{qr}{p^2}
+\]
+\[
+\boxed{\mathbb{D}\xi=\frac{qr}{p^2}}
+\]
+
+\end{document}
