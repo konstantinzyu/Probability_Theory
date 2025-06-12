@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.29)  11 JUN 2025 23:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.29)  12 JUN 2025 15:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -181,6 +181,9 @@ Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
 )
 (/home/konstantin/.miktex/texmfs/install/tex/latex/doublestroke/dsfont.sty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
+)
+(/home/konstantin/.miktex/texmfs/install/tex/latex/cmap/cmap.sty
+Package: cmap 2021/02/06 v1.0j CMap support: searchable PDF
 )
 (/home/konstantin/.miktex/texmfs/install/tex/generic/xypic/xy.sty
 (/home/konstantin/.miktex/texmfs/install/tex/generic/xypic/xy.tex
@@ -1030,7 +1033,7 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowlinewidth=\dimen312
 )))
 \c@theorem=\count336
-Package hyperref Info: Option `colorlinks' set `true' on input line 135.
+Package hyperref Info: Option `colorlinks' set `true' on input line 138.
 
 (/home/konstantin/.miktex/texmfs/install/tex/latex/l3backend/l3backend-pdftex.d
 ef
@@ -1043,29 +1046,29 @@ LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 8
 
 (/home/konstantin/.miktex/texmfs/install/tex/latex/cyrillic/t2acmr.fd
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-))
+)<<t2a.cmap>>)
 \openout1 = `probability_theory.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1101,31 +1104,33 @@ LaTeX Font Info:    ... okay on input line 172.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 172
+<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
+LaTeX Font Info:    Trying to load font information for U+msa on input line 175
 .
+
 (/home/konstantin/.miktex/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 172
+LaTeX Font Info:    Trying to load font information for U+msb on input line 175
 .
 
 (/home/konstantin/.miktex/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 17
-2.
+5.
 
 (/home/konstantin/.miktex/texmfs/install/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Trying to load font information for U+wasy on input line 17
-2.
+5.
 
 (/home/konstantin/.miktex/texmfs/install/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
-Package xypdf Info: Line width: 0.47998pt on input line 172.
-LaTeX Info: Redefining \th on input line 172.
+Package xypdf Info: Line width: 0.47998pt on input line 175.
+LaTeX Info: Redefining \th on input line 175.
 
 (/home/konstantin/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1149,7 +1154,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
  (/home/konstantin/.miktex/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring ON on input line 172.
+Package hyperref Info: Link coloring ON on input line 175.
  (probability_theory.out) (probability_theory.out)
 \@outlinefile=\write5
 \openout5 = `probability_theory.out'.
@@ -1164,7 +1169,7 @@ Package hyperref Info: Link coloring ON on input line 172.
 \tf@toc=\write6
 \openout6 = `probability_theory.toc'.
 
-LaTeX Font Info:    Trying to load font information for U+euf on input line 195
+LaTeX Font Info:    Trying to load font information for U+euf on input line 198
 .
  (/home/konstantin/.miktex/texmfs/install/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
@@ -1177,11 +1182,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{unit}) has be
 en already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.286 		
+l.283 		
         ]
 
 [5]
-Overfull \hbox (15.63802pt too wide) in paragraph at lines 382--383
+
+[6]
+Overfull \hbox (15.63802pt too wide) in paragraph at lines 385--386
 []\T2A/cmr/m/it/12 если ме-ра $\OML/cmm/m/it/12 m$ \T2A/cmr/m/it/12 бы-ла $\OML
 /cmm/m/it/12 ^^[$\T2A/cmr/m/it/12 -аддитивной, то функ-ция $\OML/cmm/m/it/12 ^^
 W$ \T2A/cmr/m/it/12 так-же яв-ля-ет-ся $\OML/cmm/m/it/12 ^^[$\T2A/cmr/m/it/12 -
@@ -1190,38 +1197,58 @@ W$ \T2A/cmr/m/it/12 так-же яв-ля-ет-ся $\OML/cmm/m/it/12 ^^[$\T2A/cmr/m/it/12 -
 
 
 
-[6]
-
 [7]
-Overfull \hbox (9.3924pt too wide) in paragraph at lines 471--472
+Overfull \hbox (26.80246pt too wide) in paragraph at lines 474--475
 [][]\T2A/cmr/bx/n/12 Теорема 0.15. []\T2A/cmr/m/it/12 Ме-ра $\OML/cmm/m/it/12 ^
 ^V$ \T2A/cmr/m/it/12 на $\OML/cmm/m/it/12 ^^[$\T2A/cmr/m/it/12 -алгебре из-ме-р
-и-мых мно-жеств яв-ля-ет-ся $\OML/cmm/m/it/12 ^^[$\T2A/cmr/m/it/12 -аддитивной.
- 
+и-мых мно-жеств $\OMS/cmsy/m/n/12 M$ \T2A/cmr/m/it/12 яв-ля-ет-ся $\OML/cmm/m/i
+t/12 ^^[$\T2A/cmr/m/it/12 -аддитивной. 
  []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 486.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sigma' on input line 486.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 486.
 
 
 
 [8]
 
 [9]
-Overfull \hbox (0.72601pt too wide) in paragraph at lines 575--581
-[][]\T2A/cmr/bx/n/12 Предложение 0.21. []\T2A/cmr/m/it/12 Пусть $\OML/cmm/m/it/
-12 f; g$ \T2A/cmr/m/it/12 --- из-ме-ри-мые функ-ции. То-гда мно-же-ство $\OML/c
-mm/m/it/12 A[] \OT1/cmr/m/n/12 =
+Overfull \hbox (1.96298pt too wide) in paragraph at lines 560--563
+[]\T2A/cmr/m/n/12 Для до-ка-за-тель-ства су-ще-ство-ва-ния рас-смот-рим ле-бе-г
+ов-ское про-
  []
 
-LaTeX Font Info:    Trying to load font information for U+dsrom on input line 6
-32.
-(/home/konstantin/.miktex/texmfs/install/tex/latex/doublestroke/Udsrom.fd
-File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-)
+
 
 [10]
 
 [11]
-Overfull \hbox (44.0439pt too wide) in paragraph at lines 692--695
-[][]\T2A/cmr/bx/n/12 Предложение 0.23. []\T2A/cmr/m/it/12 Сум-му двух $\OT1/cmr
+Overfull \hbox (0.72601pt too wide) in paragraph at lines 685--691
+[][]\T2A/cmr/bx/n/12 Предложение 0.23. []\T2A/cmr/m/it/12 Пусть $\OML/cmm/m/it/
+12 f; g$ \T2A/cmr/m/it/12 --- из-ме-ри-мые функ-ции. То-гда мно-же-ство $\OML/c
+mm/m/it/12 A[] \OT1/cmr/m/n/12 =
+ []
+
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 7
+42.
+(/home/konstantin/.miktex/texmfs/install/tex/latex/doublestroke/Udsrom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+)
+
+[12]
+
+[13]
+Overfull \hbox (44.0439pt too wide) in paragraph at lines 802--805
+[][]\T2A/cmr/bx/n/12 Предложение 0.25. []\T2A/cmr/m/it/12 Сум-му двух $\OT1/cmr
 /m/n/12 ($\T2A/cmr/m/it/12 обобщјнных$\OT1/cmr/m/n/12 )$ \T2A/cmr/m/it/12 про-с
 тых функ-ций яв-ля-ет-ся $\OT1/cmr/m/n/12 ($\T2A/cmr/m/it/12 обобщјнной$\OT1/cm
 r/m/n/12 )$
@@ -1229,26 +1256,26 @@ r/m/n/12 )$
 
 
 
-[12]
+[14]
 
-[13]
-Overfull \hbox (4.7387pt too wide) in paragraph at lines 826--832
+[15]
+Overfull \hbox (4.7387pt too wide) in paragraph at lines 936--942
 []\T2A/cmr/m/n/12 Рассмотрим неко-то-рую по-сле-до-ва-тель-ность ин-те-гри-ру-е
 -мых обоб-
  []
 
 
 
-[14]
-Overfull \hbox (29.3645pt too wide) in paragraph at lines 843--844
-[][]\T2A/cmr/bx/n/12 Предложение 0.29. []\T2A/cmr/m/it/12 Пря-мой об-раз ($\OML
+[16]
+Overfull \hbox (29.3645pt too wide) in paragraph at lines 953--954
+[][]\T2A/cmr/bx/n/12 Предложение 0.31. []\T2A/cmr/m/it/12 Пря-мой об-раз ($\OML
 /cmm/m/it/12 ^^[$\T2A/cmr/m/it/12 -аддитивной) ме-ры $\OML/cmm/m/it/12 f[]^^V$ 
 \T2A/cmr/m/it/12 яв-ля-ет-ся ($\OML/cmm/m/it/12 ^^[$\T2A/cmr/m/it/12 -аддитивно
 й)
  []
 
 
-Overfull \hbox (16.09796pt too wide) detected at line 854
+Overfull \hbox (16.09796pt too wide) detected at line 964
 \OML/cmm/m/it/12 f[]^^V [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^V [] \OT1/cmr/m
 /n/12 = \OML/cmm/m/it/12 ^^V [] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 ^^V\OT1/c
 mr/m/n/12 (\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 A[]\OT1/cmr/m
@@ -1257,30 +1284,30 @@ mr/m/n/12 )\OML/cmm/m/it/12 :
  []
 
 
-Overfull \hbox (7.87231pt too wide) in paragraph at lines 877--883
+Overfull \hbox (7.87231pt too wide) in paragraph at lines 987--993
 []\T2A/cmr/m/n/12 Если су-ще-ству-ет по-сле-до-ва-тель-ность ин-те-гри-ру-е-мых
  обоб-щјн-ных про-стых функ-
  []
 
 
 
-[15]
+[17]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 924.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 924.
+(hyperref)                removing `math shift' on input line 1034.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 924.
+(hyperref)                removing `\sigma' on input line 1034.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1034.
 
 
 
-[16]
-Overfull \hbox (6.40115pt too wide) in paragraph at lines 936--937
+[18]
+Overfull \hbox (6.40115pt too wide) in paragraph at lines 1046--1047
 []\T2A/cmr/m/it/12 Отображение $\OML/cmm/m/it/12 f$ \T2A/cmr/m/it/12 яв-ля-ет-с
 я мор-физ-мом из-ме-ри-мых про-странств $\OML/cmm/m/it/12 f [] [] \OT1/cmr/m/n/
 12 (\OML/cmm/m/it/12 X; \OMS/cmsy/m/n/12 A[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 
@@ -1288,25 +1315,25 @@ Overfull \hbox (6.40115pt too wide) in paragraph at lines 936--937
  []
 
 
-Overfull \hbox (17.62596pt too wide) in paragraph at lines 957--959
+Overfull \hbox (17.62596pt too wide) in paragraph at lines 1067--1069
 []\T2A/cmr/m/n/12 Первый пункт про-ве-ря-ет-ся непо-сред-ствен-но и сле-ду-ет и
 з теоретико-
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 965.
+(hyperref)                removing `math shift' on input line 1075.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 965.
+(hyperref)                removing `\sigma' on input line 1075.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 965.
+(hyperref)                removing `math shift' on input line 1075.
 
 
-Overfull \hbox (26.56288pt too wide) in paragraph at lines 976--977
+Overfull \hbox (26.56288pt too wide) in paragraph at lines 1086--1087
 []\T2A/cmr/m/it/12 Отображение $\OML/cmm/m/it/12 f$ \T2A/cmr/m/it/12 яв-ля-ет-с
 я мор-физ-мом из-ме-ри-мых про-странств $\OML/cmm/m/it/12 f [] [] \OT1/cmr/m/n/
 12 (\OML/cmm/m/it/12 X; f[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 A[]\OT1/cmr/m/n/12
@@ -1315,57 +1342,57 @@ Overfull \hbox (26.56288pt too wide) in paragraph at lines 976--977
 
 
 
-[17]
-Overfull \hbox (17.62596pt too wide) in paragraph at lines 997--999
+[19]
+Overfull \hbox (17.62596pt too wide) in paragraph at lines 1107--1109
 []\T2A/cmr/m/n/12 Первый пункт про-ве-ря-ет-ся непо-сред-ствен-но и сле-ду-ет и
 з теоретико-
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1005.
+(hyperref)                removing `math shift' on input line 1115.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 1005.
+(hyperref)                removing `\sigma' on input line 1115.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1005.
+(hyperref)                removing `math shift' on input line 1115.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1005.
+(hyperref)                removing `math shift' on input line 1115.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 1005.
+(hyperref)                removing `\sigma' on input line 1115.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1005.
+(hyperref)                removing `math shift' on input line 1115.
 
 
-
-[18]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1048.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 1048.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1048.
-
-
-
-[19]
 
 [20]
-Overfull \hbox (28.88065pt too wide) detected at line 1163
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1159.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sigma' on input line 1159.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1159.
+
+
+
+[21]
+
+[22]
+Overfull \hbox (28.88065pt too wide) detected at line 1274
 \OML/cmm/m/it/12 B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u \OT1/cmr/m/n/12 + \OML/cm
 m/m/it/12 tv; u \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 tv\OT1/cmr/m/n/12 ) = \OML/c
 mm/m/it/12 B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u; u\OT1/cmr/m/n/12 ) + \OML/cmm/
@@ -1380,8 +1407,8 @@ t[]B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v; v\OT1/cmr/m/n/12 ) \U/msa/m/n/12 > \OT
 
 
 
-[21]
-Overfull \hbox (20.69383pt too wide) detected at line 1214
+[23]
+Overfull \hbox (20.69383pt too wide) detected at line 1325
 \OML/cmm/m/it/12 D \OT1/cmr/m/n/12 = 4\OML/cmm/m/it/12 S\OT1/cmr/m/n/12 (\OML/c
 mm/m/it/12 u; v\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 S\OT1/cmr/m/n/12 (\OML/cmm/m
 /it/12 v; u\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 4\OML/cmm/m
@@ -1398,38 +1425,38 @@ m/n/12 ) \U/msa/m/n/12 6 \OML/cmm/m/it/12 S\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u;
 
 
 
-[22]
-
-[23]
-
-Package hyperref Warning: Ignoring empty anchor on input line 1314.
-
-
-Package hyperref Warning: Ignoring empty anchor on input line 1314.
-
-
-Package hyperref Warning: Ignoring empty anchor on input line 1316.
-
-
-
 [24]
-Overfull \hbox (28.00813pt too wide) detected at line 1363
+
+[25]
+
+Package hyperref Warning: Ignoring empty anchor on input line 1425.
+
+
+Package hyperref Warning: Ignoring empty anchor on input line 1425.
+
+
+Package hyperref Warning: Ignoring empty anchor on input line 1427.
+
+
+
+[26]
+Overfull \hbox (28.00813pt too wide) detected at line 1474
 [] [] \OT1/cmr/m/n/12 + [](\OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/
 12 ^^@ [] [] \OT1/cmr/m/n/12 =
  []
 
 
 
-[25]
-Overfull \hbox (8.6785pt too wide) detected at line 1412
+[27]
+Overfull \hbox (8.6785pt too wide) detected at line 1523
 [][] [] \OT1/cmr/m/n/12 = [] [] [] = [] [] [] = [] [] = [] [][] (\OML/cmm/m/it/
 12 B[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 :
  []
 
 
 
-[26]
-Overfull \hbox (17.29565pt too wide) detected at line 1466
+[28]
+Overfull \hbox (17.29565pt too wide) detected at line 1577
 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A[]B\OT1/cmr/m/n/12 ) = [](\OML/cmm/m/it/12
  A[] \OMS/cmsy/m/n/12 j \OML/cmm/m/it/12 B\OT1/cmr/m/n/12 ) [](\OML/cmm/m/it/12
  B\OT1/cmr/m/n/12 ) = [](\OML/cmm/m/it/12 A[] \OMS/cmsy/m/n/12 j \OML/cmm/m/it/
@@ -1441,16 +1468,16 @@ ML/cmm/m/it/12 A[] [] A[]\OT1/cmr/m/n/12 ) [] [](\OML/cmm/m/it/12 A[] \OMS/cmsy
 
 
 
-[27]
-
-[28]
-
 [29]
 
 [30]
 
 [31]
-Overfull \hbox (26.85794pt too wide) in paragraph at lines 1705--1710
+
+[32]
+
+[33]
+Overfull \hbox (26.85794pt too wide) in paragraph at lines 1816--1821
 \OML/cmm/m/it/12 a$\T2A/cmr/m/n/12 >>. Так-же вме-сто гро-мозд-ких вы-ра-же-ний
  $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^X[]\OT1/cmr/m/n/12 ((\OMS/cmsy/m/n/12 ^
 ^@1\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 b\OT1/cmr/m/n/12 )))\OML/cmm/m/it/12 ; []
@@ -1461,7 +1488,7 @@ mr/m/n/12 (\OML/cmm/m/it/12 ^^X[]\OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 a\OT1/cmr/m
  []
 
 
-Overfull \hbox (4.99045pt too wide) in paragraph at lines 1754--1758
+Overfull \hbox (4.99045pt too wide) in paragraph at lines 1865--1869
 \OML/cmm/m/it/12 x[]$ \T2A/cmr/m/n/12 спра-ва (мож-но счи-тать, что по-сле-до-в
 а-тель-ность воз-рас-та-ет). То-гда $[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@1\O
 T1/cmr/m/n/12 ; \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ] =
@@ -1469,27 +1496,69 @@ T1/cmr/m/n/12 ; \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ] =
 
 
 
-[32]
-
-[33]
-
 [34]
 
 [35]
+Overfull \hbox (32.61342pt too wide) detected at line 1935
+\OML/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ])
+ = \OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 b\OT1/cmr/m/n/12 ) \OM
+S/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/c
+mr/m/n/12 ) = [](\OML/cmm/m/it/12 ^^X \U/msa/m/n/12 6 \OML/cmm/m/it/12 b\OT1/cm
+r/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^X \U/msa/
+m/n/12 6 \OML/cmm/m/it/12 a\OT1/cmr/m/n/12 ) = [](\OML/cmm/m/it/12 a < ^^X \U/m
+sa/m/n/12 6 \OML/cmm/m/it/12 b\OT1/cmr/m/n/12 ) = [](\OML/cmm/m/it/12 ^^X[]\OT1
+/cmr/m/n/12 ((\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ])) = \OML/cmm/m/it/12 ^^X[]
+ []\OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ]);
+ []
 
-[36] (probability_theory.aux)
+
+Overfull \hbox (42.14095pt too wide) detected at line 1937
+\OML/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 a; \OT1/cmr/m/n/12 +\O
+MS/cmsy/m/n/12 1\OT1/cmr/m/n/12 )) = \OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (+\OMS
+/cmsy/m/n/12 1\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 F[]\OT1/c
+mr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/m/n/12 ) = 1 \OMS/cmsy/m/n/12 ^^@ []\OT1/
+cmr/m/n/12 (\OML/cmm/m/it/12 ^^X \U/msa/m/n/12 6 \OML/cmm/m/it/12 a\OT1/cmr/m/n
+/12 ) = [](\OML/cmm/m/it/12 ^^X > a\OT1/cmr/m/n/12 ) = [](\OML/cmm/m/it/12 ^^X[
+]\OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 a; \OT1/cmr/m/n/12 +\OMS/cmsy/m/n/12 1\OT1/
+cmr/m/n/12 ))) = \OML/cmm/m/it/12 ^^X[] []\OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 a;
+ \OT1/cmr/m/n/12 +\OMS/cmsy/m/n/12 1\OT1/cmr/m/n/12 ));
+ []
+
+
+Overfull \hbox (32.16379pt too wide) detected at line 1939
+\OML/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 ((\OMS/cmsy/m/n/12 ^^@1\OT1/cmr/m/n/12 ; 
+\OML/cmm/m/it/12 b\OT1/cmr/m/n/12 ]) = \OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (\OM
+L/cmm/m/it/12 b\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 F[]\OT1/
+cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@1\OT1/cmr/m/n/12 ) = [](\OML/cmm/m/it/12 ^^X \U
+/msa/m/n/12 6 \OML/cmm/m/it/12 b\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OT1/cmr
+/m/n/12 0 = [](\OML/cmm/m/it/12 ^^X \U/msa/m/n/12 6 \OML/cmm/m/it/12 b\OT1/cmr/
+m/n/12 ) = [](\OML/cmm/m/it/12 ^^X[]\OT1/cmr/m/n/12 ((\OMS/cmsy/m/n/12 ^^@1\OT1
+/cmr/m/n/12 ; \OML/cmm/m/it/12 b\OT1/cmr/m/n/12 ])) = \OML/cmm/m/it/12 ^^X[] []
+\OT1/cmr/m/n/12 ((\OMS/cmsy/m/n/12 ^^@1\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 b\OT1
+/cmr/m/n/12 ])\OML/cmm/m/it/12 :
+ []
+
+
+
+[36]
+
+[37]
+
+[38]
+
+[39] (probability_theory.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
  ***********
 Package rerunfilecheck Info: File `probability_theory.out' has not changed.
-(rerunfilecheck)             Checksum: 079A1C62BA7DC789B255A8178F434D55;17761.
+(rerunfilecheck)             Checksum: 590CCF3A747071A62D951F81AF01D7B7;18275.
  ) 
 Here is how much of TeX's memory you used:
- 27125 strings out of 473566
- 489919 string characters out of 5718235
- 917339 words of memory out of 5000000
- 49535 multiletter control sequences out of 15000+600000
+ 27234 strings out of 473566
+ 491803 string characters out of 5718235
+ 919184 words of memory out of 5000000
+ 49594 multiletter control sequences out of 15000+600000
  577624 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,15n,101p,1411b,1075s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1519,9 +1588,9 @@ ke/dsrom12.pfb></home/konstantin/.miktex/texmfs/install/fonts/type1/public/amsf
 onts/euler/eufm10.pfb></home/konstantin/.miktex/texmfs/install/fonts/type1/publ
 ic/amsfonts/symbols/msam10.pfb></home/konstantin/.miktex/texmfs/install/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb>
-Output written on probability_theory.pdf (36 pages, 518789 bytes).
+Output written on probability_theory.pdf (39 pages, 532716 bytes).
 PDF statistics:
- 1289 PDF objects out of 1440 (max. 8388607)
- 300 named destinations out of 1000 (max. 500000)
- 477 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1326 PDF objects out of 1440 (max. 8388607)
+ 312 named destinations out of 1000 (max. 500000)
+ 505 words of extra memory for PDF output out of 10000 (max. 10000000)
 
