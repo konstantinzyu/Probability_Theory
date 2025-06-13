@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.29)  13 JUN 2025 00:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.29)  13 JUN 2025 21:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -185,6 +185,461 @@ Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 (/home/konstantin/.miktex/texmfs/install/tex/latex/cmap/cmap.sty
 Package: cmap 2021/02/06 v1.0j CMap support: searchable PDF
 )
+(/home/konstantin/.miktex/texmfs/install/tex/latex/pgfplots/pgfplots.sty
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.revision
+.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+ (/home/konstantin/.miktex/texmfs/install/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/home/konstantin/.miktex/texmfs/install/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/home/konstantin/.miktex/texmfs/install/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/home/konstantin/.miktex/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(/home/konstantin/.miktex/texmfs/install/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen160
+\Gin@req@width=\dimen161
+)
+(/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/frontendlayer/tikz.sty
+(/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/basiclayer/pgf.sty
+(/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfrcs.sty
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-comm
+on.tex
+\pgfutil@everybye=\toks32
+\pgfutil@tempdima=\dimen162
+\pgfutil@tempdimb=\dimen163
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-late
+x.def
+\pgfutil@abb=\box59
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfrcs.code.
+tex (/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/basiclayer/pgfcore.sty 
+(/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/systemlayer/pgfsys.sty
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys.cod
+e.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.code
+.tex
+\pgfkeys@pathtoks=\toks33
+\pgfkeys@temptoks=\toks34
+
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeyslibra
+ryfiltered.code.tex
+\pgfkeys@tmptoks=\toks35
+))
+\pgf@x=\dimen164
+\pgf@y=\dimen165
+\pgf@xa=\dimen166
+\pgf@ya=\dimen167
+\pgf@xb=\dimen168
+\pgf@yb=\dimen169
+\pgf@xc=\dimen170
+\pgf@yc=\dimen171
+\pgf@xd=\dimen172
+\pgf@yd=\dimen173
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count290
+\c@pgf@countb=\count291
+\c@pgf@countc=\count292
+\c@pgf@countd=\count293
+\t@pgf@toka=\toks36
+\t@pgf@tokb=\toks37
+\t@pgf@tokc=\toks38
+\pgf@sys@id@count=\count294
+
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys-pdf
+tex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys-com
+mon-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsyssoft
+path.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count295
+\pgfsyssoftpath@bigbuffer@items=\count296
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsysprot
+ocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/home/konstantin/.miktex/texmfs/install/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(/home/konstantin/.miktex/texmfs/install/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(/home/konstantin/.miktex/texmfs/install/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcore.cod
+e.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathutil.code.
+tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathparser.cod
+e.tex
+\pgfmath@dimen=\dimen174
+\pgfmath@count=\count297
+\pgfmath@box=\box60
+\pgfmath@toks=\toks39
+\pgfmath@stack@operand=\toks40
+\pgfmath@stack@operation=\toks41
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
+code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
+basic.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
+trigonometric.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
+random.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
+comparison.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
+base.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
+round.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
+misc.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
+integerarithmetics.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathcalc.code.
+tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfloat.code
+.tex
+\c@pgfmathroundto@lastzeros=\count298
+))
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfint.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepoin
+ts.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen175
+\pgf@picmaxx=\dimen176
+\pgf@picminy=\dimen177
+\pgf@picmaxy=\dimen178
+\pgf@pathminx=\dimen179
+\pgf@pathmaxx=\dimen180
+\pgf@pathminy=\dimen181
+\pgf@pathmaxy=\dimen182
+\pgf@xx=\dimen183
+\pgf@xy=\dimen184
+\pgf@yx=\dimen185
+\pgf@yy=\dimen186
+\pgf@zx=\dimen187
+\pgf@zy=\dimen188
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepath
+construct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen189
+\pgf@path@lasty=\dimen190
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepath
+usage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen191
+\pgf@shorten@start@additional=\dimen192
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorescop
+es.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box61
+\pgf@hbox=\box62
+\pgf@layerbox@main=\box63
+\pgf@picture@serial@count=\count299
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoregrap
+hicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen193
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretran
+sformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen194
+\pgf@pt@y=\dimen195
+\pgf@pt@temp=\dimen196
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorequic
+k.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreobje
+cts.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepath
+processing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorearro
+ws.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen197
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreshad
+e.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen198
+\pgf@sys@shading@range@num=\count300
+\pgf@shadingcount=\count301
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreimag
+e.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreexte
+rnal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box64
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorelaye
+rs.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretran
+sparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepatt
+erns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorerdf.
+code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleshape
+s.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box65
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleplot.
+code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/compatibility/pgfcomp-ve
+rsion-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen199
+\pgf@nodesepend=\dimen256
+)
+(/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/compatibility/pgfcomp-ve
+rsion-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+))
+(/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/utilities/pgffor.sty
+(/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfkeys.sty
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.code
+.tex)) (/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/math/pgfmath.sty
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex)
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/utilities/pgffor.code.
+tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen257
+\pgffor@skip=\dimen258
+\pgffor@stack=\toks42
+\pgffor@toks=\toks43
+))
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/tik
+z.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibrarypl
+othandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count302
+\pgfplotmarksize=\dimen259
+)
+\tikz@lastx=\dimen260
+\tikz@lasty=\dimen261
+\tikz@lastxsaved=\dimen262
+\tikz@lastysaved=\dimen263
+\tikz@lastmovetox=\dimen264
+\tikz@lastmovetoy=\dimen265
+\tikzleveldistance=\dimen266
+\tikzsiblingdistance=\dimen267
+\tikz@figbox=\box66
+\tikz@figbox@bg=\box67
+\tikz@tempbox=\box68
+\tikz@tempbox@bg=\box69
+\tikztreelevel=\count303
+\tikznumberofchildren=\count304
+\tikznumberofcurrentchild=\count305
+\tikz@fig@count=\count306
+
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmodulematri
+x.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count307
+\pgfmatrixcurrentcolumn=\count308
+\pgf@matrix@numberofcolumns=\count309
+)
+\tikz@expandcount=\count310
+
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/lib
+raries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.code.tex
+
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotscore.code
+.tex
+\t@pgfplots@toka=\toks44
+\t@pgfplots@tokb=\toks45
+\t@pgfplots@tokc=\toks46
+\pgfplots@tmpa=\dimen268
+\c@pgfplots@coordindex=\count311
+\c@pgfplots@scanlineindex=\count312
+
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/sys/pgfplotssysge
+neric.code.tex))
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/libs/pgfplotslibr
+ary.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/oldpgfcompatib/pg
+fplotsoldpgfsupp_loader.code.tex
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibraryfp
+u.code.tex)
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks47
+\t@pgf@tokb=\toks48
+\t@pgf@tokc=\toks49
+
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/oldpgfcompatib/pg
+fplotsoldpgfsupp_pgfutil-common-lists.tex))
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotsutil
+.code.tex
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgf
+plotsliststructure.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgf
+plotsliststructureext.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgf
+plotsarray.code.tex
+\c@pgfplotsarray@tmp=\count313
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgf
+plotsmatrix.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/numtable/pgfplots
+tableshared.code.tex
+\c@pgfplotstable@counta=\count314
+\t@pgfplotstable@a=\toks50
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgf
+plotsdeque.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotsbina
+ry.code.tex
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotsbina
+ry.data.code.tex))
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotsutil
+.verb.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/libs/pgflibrarypg
+fplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count315
+
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/sys/pgflibrarypgf
+plots.surfshading.pgfsys-pdftex.def)))
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotscolo
+rmap.code.tex
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotscolo
+r.code.tex))
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsstackedpl
+ots.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsplothandl
+ers.code.tex
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsmeshploth
+andler.code.tex
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsmeshploti
+mage.code.tex)))
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.scaling.
+code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotscoordproc
+essing.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.errorbar
+s.code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.markers.
+code.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsticks.cod
+e.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.paths.co
+de.tex)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/lib
+raries/tikzlibrarydecorations.code.tex
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduledecor
+ations.code.tex
+\pgfdecoratedcompleteddistance=\dimen269
+\pgfdecoratedremainingdistance=\dimen270
+\pgfdecoratedinputsegmentcompleteddistance=\dimen271
+\pgfdecoratedinputsegmentremainingdistance=\dimen272
+\pgf@decorate@distancetomove=\dimen273
+\pgf@decorate@repeatstate=\count316
+\pgfdecorationsegmentamplitude=\dimen274
+\pgfdecorationsegmentlength=\dimen275
+)
+\tikz@lib@dec@box=\box70
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/lib
+raries/tikzlibrarydecorations.pathmorphing.code.tex
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/libraries/decorations/
+pgflibrarydecorations.pathmorphing.code.tex))
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/lib
+raries/tikzlibrarydecorations.pathreplacing.code.tex
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/libraries/decorations/
+pgflibrarydecorations.pathreplacing.code.tex))
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgfplots/libs/tikzlibraryp
+gfplots.contourlua.code.tex)
+\pgfplots@numplots=\count317
+\pgfplots@xmin@reg=\dimen276
+\pgfplots@xmax@reg=\dimen277
+\pgfplots@ymin@reg=\dimen278
+\pgfplots@ymax@reg=\dimen279
+\pgfplots@zmin@reg=\dimen280
+\pgfplots@zmax@reg=\dimen281
+)
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/lib
+raries/tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibrarypl
+otmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
 (/home/konstantin/.miktex/texmfs/install/tex/generic/xypic/xy.sty
 (/home/konstantin/.miktex/texmfs/install/tex/generic/xypic/xy.tex
 Bootstrap'ing: catcodes, docmode,
@@ -196,51 +651,51 @@ Bootstrap'ing: catcodes, docmode,
  Xy-pic is free software: see the User's Guide for details.
 
 Loading kernel: messages; fonts; allocations: state,
-\X@c=\dimen160
-\Y@c=\dimen161
-\U@c=\dimen162
-\D@c=\dimen163
-\L@c=\dimen164
-\R@c=\dimen165
-\Edge@c=\toks32
-\X@p=\dimen166
-\Y@p=\dimen167
-\U@p=\dimen168
-\D@p=\dimen169
-\L@p=\dimen170
-\R@p=\dimen171
-\Edge@p=\toks33
-\X@origin=\dimen172
-\Y@origin=\dimen173
-\X@xbase=\dimen174
-\Y@xbase=\dimen175
-\X@ybase=\dimen176
-\Y@ybase=\dimen177
-\X@min=\dimen178
-\Y@min=\dimen179
-\X@max=\dimen180
-\Y@max=\dimen181
-\lastobjectbox@=\box59
-\zerodotbox@=\box60
-\almostz@=\dimen182
+\X@c=\dimen282
+\Y@c=\dimen283
+\U@c=\dimen284
+\D@c=\dimen285
+\L@c=\dimen286
+\R@c=\dimen287
+\Edge@c=\toks51
+\X@p=\dimen288
+\Y@p=\dimen289
+\U@p=\dimen290
+\D@p=\dimen291
+\L@p=\dimen292
+\R@p=\dimen293
+\Edge@p=\toks52
+\X@origin=\dimen294
+\Y@origin=\dimen295
+\X@xbase=\dimen296
+\Y@xbase=\dimen297
+\X@ybase=\dimen298
+\Y@ybase=\dimen299
+\X@min=\dimen300
+\Y@min=\dimen301
+\X@max=\dimen302
+\Y@max=\dimen303
+\lastobjectbox@=\box71
+\zerodotbox@=\box72
+\almostz@=\dimen304
  direction,
-\d@X=\dimen183
-\d@Y=\dimen184
-\K@=\count290
-\KK@=\count291
-\Direction=\count292
-\K@dXdY=\dimen185
-\K@dYdX=\dimen186
-\xyread@=\read2
-\xywrite@=\write3
-\csp@=\count293
-\quotPTK@=\dimen187
+\d@X=\dimen305
+\d@Y=\dimen306
+\K@=\count318
+\KK@=\count319
+\Direction=\count320
+\K@dXdY=\dimen307
+\K@dYdX=\dimen308
+\xyread@=\read3
+\xywrite@=\write4
+\csp@=\count321
+\quotPTK@=\dimen309
 
 utility macros; pictures: \xy, positions,
-\swaptoks@@=\toks34
-\connectobjectbox@@=\box61
+\swaptoks@@=\toks53
+\connectobjectbox@@=\box73
  objects,
-\styletoks@=\toks35
+\styletoks@=\toks54
  decorations;
 kernel objects: directionals, circles, text; options; algorithms: directions,
 edges, connections;  Xy-pic loaded)
@@ -251,46 +706,46 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
 
 (/home/konstantin/.miktex/texmfs/install/tex/generic/xypic/xymatrix.tex
  Xy-pic option: Matrix feature v.3.14
-\Row=\count294
-\Col=\count295
-\queue@=\toks36
-\queue@@=\toks37
-\qcount@=\count296
-\qcount@@=\count297
-\matrixsize@=\count298
+\Row=\count322
+\Col=\count323
+\queue@=\toks55
+\queue@@=\toks56
+\qcount@=\count324
+\qcount@@=\count325
+\matrixsize@=\count326
  loaded)
 (/home/konstantin/.miktex/texmfs/install/tex/generic/xypic/xyarrow.tex
  Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded)
 (/home/konstantin/.miktex/texmfs/install/tex/generic/xypic/xycurve.tex
  Xy-pic option: Curve and Spline extension v.3.12 curve,
-\crv@cnt@=\count299
-\crvpts@=\toks38
-\splinebox@=\box62
-\splineval@=\dimen188
-\splinedepth@=\dimen189
-\splinetol@=\dimen190
-\splinelength@=\dimen191
+\crv@cnt@=\count327
+\crvpts@=\toks57
+\splinebox@=\box74
+\splineval@=\dimen310
+\splinedepth@=\dimen311
+\splinetol@=\dimen312
+\splinelength@=\dimen313
  circles,
-\L@=\dimen192
+\L@=\dimen314
  loaded)
 (/home/konstantin/.miktex/texmfs/install/tex/generic/xypic/xypdf.tex
  Xy-pic option: PDF driver v.1.7 Xy-pic pdf driver: `curve' extension support
 (/home/konstantin/.miktex/texmfs/install/tex/generic/xypic/xypdf-cu.tex loaded)
 loaded)) (/home/konstantin/.miktex/texmfs/install/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
-\inpenc@prehook=\toks39
-\inpenc@posthook=\toks40
+\inpenc@prehook=\toks58
+\inpenc@posthook=\toks59
 )
 (/home/konstantin/.miktex/texmfs/install/tex/generic/babel/babel.sty
 Package: babel 2025/01/01 v25.1 The multilingual framework for pdfLaTeX, LuaLaT
 eX and XeLaTeX
-\babel@savecnt=\count300
-\U@D=\dimen193
+\babel@savecnt=\count328
+\U@D=\dimen315
 \l@unhyphenated=\language79
 
 (/home/konstantin/.miktex/texmfs/install/tex/generic/babel/txtbabel.def)
-\bbl@readstream=\read3
-\bbl@dirlevel=\count301
+\bbl@readstream=\read4
+\bbl@dirlevel=\count329
 
 *************************************
 * Local config file bblopts.cfg used
@@ -524,65 +979,26 @@ Package babel Info: Importing font and identification data for russian
 (babel)             from babel-ru.ini. Reported on input line 11.
 ) (/home/konstantin/.miktex/texmfs/install/tex/latex/tools/verbatim.sty
 Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks41
-\verbatim@line=\toks42
-\verbatim@in@stream=\read4
+\every@verbatim=\toks60
+\verbatim@line=\toks61
+\verbatim@in@stream=\read5
 ) (/home/konstantin/.miktex/texmfs/install/tex/latex/cancel/cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
-)
-(/home/konstantin/.miktex/texmfs/install/tex/latex/graphics/graphicx.sty
-Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/home/konstantin/.miktex/texmfs/install/tex/latex/graphics/graphics.sty
-Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
-
-(/home/konstantin/.miktex/texmfs/install/tex/latex/graphics/trig.sty
-Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-)
-(/home/konstantin/.miktex/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
-)
-Package graphics Info: Driver file: pdftex.def on input line 106.
-
-(/home/konstantin/.miktex/texmfs/install/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
-))
-\Gin@req@height=\dimen194
-\Gin@req@width=\dimen195
-)
-(/home/konstantin/.miktex/texmfs/install/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
-
-(/home/konstantin/.miktex/texmfs/install/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 274.
-
-(/home/konstantin/.miktex/texmfs/install/tex/latex/graphics/mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
-Package xcolor Info: Model `RGB' extended on input line 1365.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 )
 (/home/konstantin/.miktex/texmfs/install/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 )
 (/home/konstantin/.miktex/texmfs/install/tex/latex/ulem/ulem.sty
-\UL@box=\box63
-\UL@hyphenbox=\box64
+\UL@box=\box75
+\UL@hyphenbox=\box76
 \UL@skip=\skip61
-\UL@hook=\toks43
-\UL@height=\dimen196
-\UL@pe=\count302
-\UL@pixel=\dimen197
-\ULC@box=\box65
+\UL@hook=\toks62
+\UL@height=\dimen316
+\UL@pe=\count330
+\UL@pixel=\dimen317
+\ULC@box=\box77
 Package: ulem 2019/11/18
-\ULdepth=\dimen198
+\ULdepth=\dimen318
 )
 (/home/konstantin/.miktex/texmfs/install/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
@@ -626,19 +1042,19 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (/home/konstantin/.miktex/texmfs/install/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count303
+\c@section@level=\count331
 )
 (/home/konstantin/.miktex/texmfs/install/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count304
+\etb@tempcnta=\count332
 )
 (/home/konstantin/.miktex/texmfs/install/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen199
-\Hy@linkcounter=\count305
-\Hy@pagecounter=\count306
+\@linkdim=\dimen319
+\Hy@linkcounter=\count333
+\Hy@pagecounter=\count334
 
 (/home/konstantin/.miktex/texmfs/install/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
@@ -648,7 +1064,7 @@ Now handling font encoding PD1 ...
 (/home/konstantin/.miktex/texmfs/install/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count307
+\Hy@SavedSpaceFactor=\count335
 
 (/home/konstantin/.miktex/texmfs/install/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
@@ -663,14 +1079,14 @@ Package hyperref Info: Plain pages OFF on input line 4172.
 Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count308
+\c@Hy@tempcnt=\count336
 
 (/home/konstantin/.miktex/texmfs/install/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen256
+\XeTeXLinkMargin=\dimen320
 
 (/home/konstantin/.miktex/texmfs/install/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -679,9 +1095,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count309
-\Field@Width=\dimen257
-\Fld@charsize=\dimen258
+\Fld@menulength=\count337
+\Field@Width=\dimen321
+\Fld@charsize=\dimen322
 Package hyperref Info: Hyper figures OFF on input line 6042.
 Package hyperref Info: Link nesting OFF on input line 6047.
 Package hyperref Info: Hyper index ON on input line 6050.
@@ -693,9 +1109,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6072.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count310
-\c@Item=\count311
-\c@Hfootnote=\count312
+\Hy@abspage=\count338
+\c@Item=\count339
+\c@Hfootnote=\count340
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -707,8 +1123,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count313
-\c@bookmark@seq@number=\count314
+\Fld@listcount=\count341
+\c@bookmark@seq@number=\count342
 
 (/home/konstantin/.miktex/texmfs/install/tex/latex/rerunfilecheck/rerunfilechec
 k.sty
@@ -724,296 +1140,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip62
 ) (/home/konstantin/.miktex/texmfs/install/tex/latex/tikz-cd/tikz-cd.sty
 Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
-(/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/frontendlayer/tikz.sty
-(/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/basiclayer/pgf.sty
-(/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfrcs.sty
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-comm
-on.tex
-\pgfutil@everybye=\toks44
-\pgfutil@tempdima=\dimen259
-\pgfutil@tempdimb=\dimen260
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-late
-x.def
-\pgfutil@abb=\box66
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfrcs.code.
-tex (/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/pgf.revision.tex)
-Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
-))
-Package: pgf 2023-01-15 v3.1.10 (3.1.10)
- (/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/basiclayer/pgfcore.sty 
-(/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/systemlayer/pgfsys.sty
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys.cod
-e.tex
-Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.code
-.tex
-\pgfkeys@pathtoks=\toks45
-\pgfkeys@temptoks=\toks46
-
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeyslibra
-ryfiltered.code.tex
-\pgfkeys@tmptoks=\toks47
-))
-\pgf@x=\dimen261
-\pgf@y=\dimen262
-\pgf@xa=\dimen263
-\pgf@ya=\dimen264
-\pgf@xb=\dimen265
-\pgf@yb=\dimen266
-\pgf@xc=\dimen267
-\pgf@yc=\dimen268
-\pgf@xd=\dimen269
-\pgf@yd=\dimen270
-\w@pgf@writea=\write4
-\r@pgf@reada=\read5
-\c@pgf@counta=\count315
-\c@pgf@countb=\count316
-\c@pgf@countc=\count317
-\c@pgf@countd=\count318
-\t@pgf@toka=\toks48
-\t@pgf@tokb=\toks49
-\t@pgf@tokc=\toks50
-\pgf@sys@id@count=\count319
-
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgf.cfg
-File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
-)
-Driver file for pgf: pgfsys-pdftex.def
-
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys-pdf
-tex.def
-File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
-
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys-com
-mon-pdf.def
-File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
-)))
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsyssoft
-path.code.tex
-File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count320
-\pgfsyssoftpath@bigbuffer@items=\count321
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsysprot
-ocol.code.tex
-File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcore.cod
-e.tex
-Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
-
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathutil.code.
-tex)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathparser.cod
-e.tex
-\pgfmath@dimen=\dimen271
-\pgfmath@count=\count322
-\pgfmath@box=\box67
-\pgfmath@toks=\toks51
-\pgfmath@stack@operand=\toks52
-\pgfmath@stack@operation=\toks53
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
-code.tex)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
-basic.code.tex)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
-trigonometric.code.tex)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
-random.code.tex)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
-comparison.code.tex)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
-base.code.tex)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
-round.code.tex)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
-misc.code.tex)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.
-integerarithmetics.code.tex)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathcalc.code.
-tex)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfloat.code
-.tex
-\c@pgfmathroundto@lastzeros=\count323
-))
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfint.code.tex)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepoin
-ts.code.tex
-File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen272
-\pgf@picmaxx=\dimen273
-\pgf@picminy=\dimen274
-\pgf@picmaxy=\dimen275
-\pgf@pathminx=\dimen276
-\pgf@pathmaxx=\dimen277
-\pgf@pathminy=\dimen278
-\pgf@pathmaxy=\dimen279
-\pgf@xx=\dimen280
-\pgf@xy=\dimen281
-\pgf@yx=\dimen282
-\pgf@yy=\dimen283
-\pgf@zx=\dimen284
-\pgf@zy=\dimen285
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepath
-construct.code.tex
-File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen286
-\pgf@path@lasty=\dimen287
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepath
-usage.code.tex
-File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen288
-\pgf@shorten@start@additional=\dimen289
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorescop
-es.code.tex
-File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box68
-\pgf@hbox=\box69
-\pgf@layerbox@main=\box70
-\pgf@picture@serial@count=\count324
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoregrap
-hicstate.code.tex
-File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen290
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretran
-sformations.code.tex
-File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen291
-\pgf@pt@y=\dimen292
-\pgf@pt@temp=\dimen293
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorequic
-k.code.tex
-File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreobje
-cts.code.tex
-File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepath
-processing.code.tex
-File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorearro
-ws.code.tex
-File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen294
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreshad
-e.code.tex
-File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen295
-\pgf@sys@shading@range@num=\count325
-\pgf@shadingcount=\count326
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreimag
-e.code.tex
-File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreexte
-rnal.code.tex
-File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box71
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorelaye
-rs.code.tex
-File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretran
-sparency.code.tex
-File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepatt
-erns.code.tex
-File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorerdf.
-code.tex
-File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)))
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleshape
-s.code.tex
-File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box72
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleplot.
-code.tex
-File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/compatibility/pgfcomp-ve
-rsion-0-65.sty
-Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen296
-\pgf@nodesepend=\dimen297
-)
-(/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/compatibility/pgfcomp-ve
-rsion-1-18.sty
-Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
-))
-(/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/utilities/pgffor.sty
-(/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfkeys.sty
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.code
-.tex)) (/home/konstantin/.miktex/texmfs/install/tex/latex/pgf/math/pgfmath.sty
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex)
-)
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/utilities/pgffor.code.
-tex
-Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen298
-\pgffor@skip=\dimen299
-\pgffor@stack=\toks54
-\pgffor@toks=\toks55
-))
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/tik
-z.code.tex
-Package: tikz 2023-01-15 v3.1.10 (3.1.10)
-
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibrarypl
-othandlers.code.tex
-File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count327
-\pgfplotmarksize=\dimen300
-)
-\tikz@lastx=\dimen301
-\tikz@lasty=\dimen302
-\tikz@lastxsaved=\dimen303
-\tikz@lastysaved=\dimen304
-\tikz@lastmovetox=\dimen305
-\tikz@lastmovetoy=\dimen306
-\tikzleveldistance=\dimen307
-\tikzsiblingdistance=\dimen308
-\tikz@figbox=\box73
-\tikz@figbox@bg=\box74
-\tikz@tempbox=\box75
-\tikz@tempbox@bg=\box76
-\tikztreelevel=\count328
-\tikznumberofchildren=\count329
-\tikznumberofcurrentchild=\count330
-\tikz@fig@count=\count331
-
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmodulematri
-x.code.tex
-File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count332
-\pgfmatrixcurrentcolumn=\count333
-\pgf@matrix@numberofcolumns=\count334
-)
-\tikz@expandcount=\count335
-
-(/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/lib
-raries/tikzlibrarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)))
 (/home/konstantin/.miktex/texmfs/install/tex/latex/tikz-cd/tikzlibrarycd.code.t
 ex
 (/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/lib
@@ -1027,19 +1154,19 @@ File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/home/konstantin/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibraryar
 rows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen309
-\pgfarrowlength=\dimen310
-\pgfarrowwidth=\dimen311
-\pgfarrowlinewidth=\dimen312
+\pgfarrowinset=\dimen323
+\pgfarrowlength=\dimen324
+\pgfarrowwidth=\dimen325
+\pgfarrowlinewidth=\dimen326
 )))
-\c@theorem=\count336
-Package hyperref Info: Option `colorlinks' set `true' on input line 141.
+\c@theorem=\count343
+Package hyperref Info: Option `colorlinks' set `true' on input line 144.
 
 (/home/konstantin/.miktex/texmfs/install/tex/latex/l3backend/l3backend-pdftex.d
 ef
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count337
-\l__pdf_internal_box=\box77
+\l__color_backend_stack_int=\count344
+\l__pdf_internal_box=\box78
 ) (probability_theory.aux
 LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 8
 .
@@ -1049,26 +1176,26 @@ File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )<<t2a.cmap>>)
 \openout1 = `probability_theory.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 178.
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 178.
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 178.
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 178.
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 178.
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 178.
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 178.
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 178.
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 178.
-LaTeX Font Info:    ... okay on input line 178.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 178.
-LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 190.
+LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 190.
+LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 190.
+LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 190.
+LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 190.
+LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 190.
+LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 190.
+LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 190.
+LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 190.
+LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 190.
+LaTeX Font Info:    ... okay on input line 190.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1104,47 +1231,19 @@ LaTeX Font Info:    ... okay on input line 178.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
-LaTeX Font Info:    Trying to load font information for U+msa on input line 178
-.
-
-(/home/konstantin/.miktex/texmfs/install/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 178
-.
-
-(/home/konstantin/.miktex/texmfs/install/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 17
-8.
-
-(/home/konstantin/.miktex/texmfs/install/tex/latex/base/ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 17
-8.
-
-(/home/konstantin/.miktex/texmfs/install/tex/latex/wasysym/uwasy.fd
-File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
-)
-Package xypdf Info: Line width: 0.47998pt on input line 178.
-LaTeX Info: Redefining \th on input line 178.
-
 (/home/konstantin/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count338
-\scratchdimen=\dimen313
-\scratchbox=\box78
-\nofMPsegments=\count339
-\nofMParguments=\count340
-\everyMPshowfont=\toks56
-\MPscratchCnt=\count341
-\MPscratchDim=\dimen314
-\MPnumerator=\count342
-\makeMPintoPDFobject=\count343
-\everyMPtoPDFconversion=\toks57
+\scratchcounter=\count345
+\scratchdimen=\dimen327
+\scratchbox=\box79
+\nofMPsegments=\count346
+\nofMParguments=\count347
+\everyMPshowfont=\toks63
+\MPscratchCnt=\count348
+\MPscratchDim=\dimen328
+\MPnumerator=\count349
+\makeMPintoPDFobject=\count350
+\everyMPtoPDFconversion=\toks64
 )
 (/home/konstantin/.miktex/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.s
 ty
@@ -1154,8 +1253,39 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
  (/home/konstantin/.miktex/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring ON on input line 178.
- (probability_theory.out) (probability_theory.out)
+Package pgfplots notification 'compat/show suggested version=true': you might b
+enefit from \pgfplotsset{compat=1.18} (current compat level: 1.9).
+
+<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
+LaTeX Font Info:    Trying to load font information for U+msa on input line 190
+.
+
+(/home/konstantin/.miktex/texmfs/install/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 190
+.
+
+(/home/konstantin/.miktex/texmfs/install/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 19
+0.
+
+(/home/konstantin/.miktex/texmfs/install/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 19
+0.
+
+(/home/konstantin/.miktex/texmfs/install/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
+)
+Package xypdf Info: Line width: 0.47998pt on input line 190.
+LaTeX Info: Redefining \th on input line 190.
+Package hyperref Info: Link coloring ON on input line 190.
+
+(probability_theory.out) (probability_theory.out)
 \@outlinefile=\write5
 \openout5 = `probability_theory.out'.
 
@@ -1169,7 +1299,7 @@ Package hyperref Info: Link coloring ON on input line 178.
 \tf@toc=\write6
 \openout6 = `probability_theory.toc'.
 
-LaTeX Font Info:    Trying to load font information for U+euf on input line 201
+LaTeX Font Info:    Trying to load font information for U+euf on input line 213
 .
  (/home/konstantin/.miktex/texmfs/install/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
@@ -1182,14 +1312,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{unit}) has be
 en already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.263 	Р•
-         СЃР»Рё Р°Р»РіРµР±СЂР° СЏРІР»СЏРµС‚СЃСЏ $ \sigma $-РєРѕР»СЊС†РѕРј Рё...
-]
+l.271 		\end{enumerate}
+                       ]
 
 [5]
 
 [6]
-Overfull \hbox (15.63802pt too wide) in paragraph at lines 388--389
+Overfull \hbox (15.63802pt too wide) in paragraph at lines 400--401
 []\T2A/cmr/m/it/12 если ме-ра $\OML/cmm/m/it/12 m$ \T2A/cmr/m/it/12 бы-ла $\OML
 /cmm/m/it/12 ^^[$\T2A/cmr/m/it/12 -аддитивной, то функ-ция $\OML/cmm/m/it/12 ^^
 W$ \T2A/cmr/m/it/12 так-же яв-ля-ет-ся $\OML/cmm/m/it/12 ^^[$\T2A/cmr/m/it/12 -
@@ -1199,7 +1328,9 @@ W$ \T2A/cmr/m/it/12 так-же яв-ля-ет-ся $\OML/cmm/m/it/12 ^^[$\T2A/cmr/m/it/12 -
 
 
 [7]
-Overfull \hbox (26.80246pt too wide) in paragraph at lines 479--480
+
+[8]
+Overfull \hbox (26.80246pt too wide) in paragraph at lines 491--492
 [][]\T2A/cmr/bx/n/12 Теорема 0.15. []\T2A/cmr/m/it/12 Ме-ра $\OML/cmm/m/it/12 ^
 ^V$ \T2A/cmr/m/it/12 на $\OML/cmm/m/it/12 ^^[$\T2A/cmr/m/it/12 -алгебре из-ме-р
 и-мых мно-жеств $\OMS/cmsy/m/n/12 M$ \T2A/cmr/m/it/12 яв-ля-ет-ся $\OML/cmm/m/i
@@ -1207,24 +1338,21 @@ t/12 ^^[$\T2A/cmr/m/it/12 -аддитивной.
  []
 
 
-
-[8]
-
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 491.
+(hyperref)                removing `math shift' on input line 503.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 491.
+(hyperref)                removing `\sigma' on input line 503.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 491.
+(hyperref)                removing `math shift' on input line 503.
 
 
 
 [9]
-Overfull \hbox (1.96298pt too wide) in paragraph at lines 565--568
+Overfull \hbox (1.96298pt too wide) in paragraph at lines 577--580
 []\T2A/cmr/m/n/12 Для до-ка-за-тель-ства су-ще-ство-ва-ния рас-смот-рим ле-бе-г
 ов-ское про-
  []
@@ -1236,14 +1364,14 @@ Overfull \hbox (1.96298pt too wide) in paragraph at lines 565--568
 [11]
 
 [12]
-Overfull \hbox (0.72601pt too wide) in paragraph at lines 720--726
+Overfull \hbox (0.72601pt too wide) in paragraph at lines 732--738
 [][]\T2A/cmr/bx/n/12 Предложение 0.23. []\T2A/cmr/m/it/12 Пусть $\OML/cmm/m/it/
 12 f; g$ \T2A/cmr/m/it/12 --- из-ме-ри-мые функ-ции. То-гда мно-же-ство $\OML/c
 mm/m/it/12 A[] \OT1/cmr/m/n/12 =
  []
 
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 7
-77.
+89.
 (/home/konstantin/.miktex/texmfs/install/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
@@ -1251,7 +1379,7 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 [13]
 
 [14]
-Overfull \hbox (44.0439pt too wide) in paragraph at lines 837--840
+Overfull \hbox (44.0439pt too wide) in paragraph at lines 849--852
 [][]\T2A/cmr/bx/n/12 Предложение 0.25. []\T2A/cmr/m/it/12 Сум-му двух $\OT1/cmr
 /m/n/12 ($\T2A/cmr/m/it/12 обобщјнных$\OT1/cmr/m/n/12 )$ \T2A/cmr/m/it/12 про-с
 тых функ-ций яв-ля-ет-ся $\OT1/cmr/m/n/12 ($\T2A/cmr/m/it/12 обобщјнной$\OT1/cm
@@ -1263,7 +1391,7 @@ r/m/n/12 )$
 [15]
 
 [16]
-Overfull \hbox (4.7387pt too wide) in paragraph at lines 971--977
+Overfull \hbox (4.7387pt too wide) in paragraph at lines 983--989
 []\T2A/cmr/m/n/12 Рассмотрим неко-то-рую по-сле-до-ва-тель-ность ин-те-гри-ру-е
 -мых обоб-
  []
@@ -1271,7 +1399,7 @@ Overfull \hbox (4.7387pt too wide) in paragraph at lines 971--977
 
 
 [17]
-Overfull \hbox (29.3645pt too wide) in paragraph at lines 988--989
+Overfull \hbox (29.3645pt too wide) in paragraph at lines 1000--1001
 [][]\T2A/cmr/bx/n/12 Предложение 0.31. []\T2A/cmr/m/it/12 Пря-мой об-раз ($\OML
 /cmm/m/it/12 ^^[$\T2A/cmr/m/it/12 -аддитивной) ме-ры $\OML/cmm/m/it/12 f[]^^V$ 
 \T2A/cmr/m/it/12 яв-ля-ет-ся ($\OML/cmm/m/it/12 ^^[$\T2A/cmr/m/it/12 -аддитивно
@@ -1279,7 +1407,7 @@ Overfull \hbox (29.3645pt too wide) in paragraph at lines 988--989
  []
 
 
-Overfull \hbox (16.09796pt too wide) detected at line 999
+Overfull \hbox (16.09796pt too wide) detected at line 1011
 \OML/cmm/m/it/12 f[]^^V [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^V [] \OT1/cmr/m
 /n/12 = \OML/cmm/m/it/12 ^^V [] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 ^^V\OT1/c
 mr/m/n/12 (\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 A[]\OT1/cmr/m
@@ -1288,7 +1416,7 @@ mr/m/n/12 )\OML/cmm/m/it/12 :
  []
 
 
-Overfull \hbox (7.87231pt too wide) in paragraph at lines 1022--1028
+Overfull \hbox (7.87231pt too wide) in paragraph at lines 1034--1040
 []\T2A/cmr/m/n/12 Если су-ще-ству-ет по-сле-до-ва-тель-ность ин-те-гри-ру-е-мых
  обоб-щјн-ных про-стых функ-
  []
@@ -1300,18 +1428,18 @@ Overfull \hbox (7.87231pt too wide) in paragraph at lines 1022--1028
 [19]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1102.
+(hyperref)                removing `math shift' on input line 1114.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 1102.
+(hyperref)                removing `\sigma' on input line 1114.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1102.
+(hyperref)                removing `math shift' on input line 1114.
 
 
-Overfull \hbox (6.40115pt too wide) in paragraph at lines 1114--1115
+Overfull \hbox (6.40115pt too wide) in paragraph at lines 1126--1127
 []\T2A/cmr/m/it/12 Отображение $\OML/cmm/m/it/12 f$ \T2A/cmr/m/it/12 яв-ля-ет-с
 я мор-физ-мом из-ме-ри-мых про-странств $\OML/cmm/m/it/12 f [] [] \OT1/cmr/m/n/
 12 (\OML/cmm/m/it/12 X; \OMS/cmsy/m/n/12 A[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 
@@ -1321,25 +1449,25 @@ Overfull \hbox (6.40115pt too wide) in paragraph at lines 1114--1115
 
 
 [20]
-Overfull \hbox (17.62596pt too wide) in paragraph at lines 1135--1137
+Overfull \hbox (17.62596pt too wide) in paragraph at lines 1147--1149
 []\T2A/cmr/m/n/12 Первый пункт про-ве-ря-ет-ся непо-сред-ствен-но и сле-ду-ет и
 з теоретико-
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1143.
+(hyperref)                removing `math shift' on input line 1155.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 1143.
+(hyperref)                removing `\sigma' on input line 1155.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1143.
+(hyperref)                removing `math shift' on input line 1155.
 
 
-Overfull \hbox (26.56288pt too wide) in paragraph at lines 1154--1155
+Overfull \hbox (26.56288pt too wide) in paragraph at lines 1166--1167
 []\T2A/cmr/m/it/12 Отображение $\OML/cmm/m/it/12 f$ \T2A/cmr/m/it/12 яв-ля-ет-с
 я мор-физ-мом из-ме-ри-мых про-странств $\OML/cmm/m/it/12 f [] [] \OT1/cmr/m/n/
 12 (\OML/cmm/m/it/12 X; f[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 A[]\OT1/cmr/m/n/12
@@ -1349,53 +1477,53 @@ Overfull \hbox (26.56288pt too wide) in paragraph at lines 1154--1155
 
 
 [21]
-Overfull \hbox (17.62596pt too wide) in paragraph at lines 1175--1177
+Overfull \hbox (17.62596pt too wide) in paragraph at lines 1187--1189
 []\T2A/cmr/m/n/12 Первый пункт про-ве-ря-ет-ся непо-сред-ствен-но и сле-ду-ет и
 з теоретико-
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1183.
+(hyperref)                removing `math shift' on input line 1195.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 1183.
+(hyperref)                removing `\sigma' on input line 1195.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1183.
+(hyperref)                removing `math shift' on input line 1195.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1183.
+(hyperref)                removing `math shift' on input line 1195.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 1183.
+(hyperref)                removing `\sigma' on input line 1195.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1183.
+(hyperref)                removing `math shift' on input line 1195.
 
 
 
 [22]
-Overfull \hbox (44.24745pt too wide) in paragraph at lines 1245--1246
+Overfull \hbox (44.24745pt too wide) in paragraph at lines 1257--1258
  [] 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1273.
+(hyperref)                removing `math shift' on input line 1285.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 1273.
+(hyperref)                removing `\sigma' on input line 1285.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1273.
+(hyperref)                removing `math shift' on input line 1285.
 
 
 
@@ -1404,7 +1532,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [24]
 
 [25]
-Overfull \hbox (28.88065pt too wide) detected at line 1388
+Overfull \hbox (28.88065pt too wide) detected at line 1400
 \OML/cmm/m/it/12 B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u \OT1/cmr/m/n/12 + \OML/cm
 m/m/it/12 tv; u \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 tv\OT1/cmr/m/n/12 ) = \OML/c
 mm/m/it/12 B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u; u\OT1/cmr/m/n/12 ) + \OML/cmm/
@@ -1420,7 +1548,7 @@ t[]B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v; v\OT1/cmr/m/n/12 ) \U/msa/m/n/12 > \OT
 
 
 [26]
-Overfull \hbox (20.69383pt too wide) detected at line 1439
+Overfull \hbox (20.69383pt too wide) detected at line 1451
 \OML/cmm/m/it/12 D \OT1/cmr/m/n/12 = 4\OML/cmm/m/it/12 S\OT1/cmr/m/n/12 (\OML/c
 mm/m/it/12 u; v\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 S\OT1/cmr/m/n/12 (\OML/cmm/m
 /it/12 v; u\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 4\OML/cmm/m
@@ -1441,18 +1569,18 @@ m/n/12 ) \U/msa/m/n/12 6 \OML/cmm/m/it/12 S\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u;
 
 [28]
 
-Package hyperref Warning: Ignoring empty anchor on input line 1551.
+Package hyperref Warning: Ignoring empty anchor on input line 1569.
 
 
-Package hyperref Warning: Ignoring empty anchor on input line 1551.
+Package hyperref Warning: Ignoring empty anchor on input line 1569.
 
 
-Package hyperref Warning: Ignoring empty anchor on input line 1553.
+Package hyperref Warning: Ignoring empty anchor on input line 1571.
 
 
 
 [29]
-Overfull \hbox (28.00813pt too wide) detected at line 1600
+Overfull \hbox (28.00813pt too wide) detected at line 1618
 [] [] \OT1/cmr/m/n/12 + [](\OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/
 12 ^^@ [] [] \OT1/cmr/m/n/12 =
  []
@@ -1460,7 +1588,7 @@ Overfull \hbox (28.00813pt too wide) detected at line 1600
 
 
 [30]
-Overfull \hbox (8.6785pt too wide) detected at line 1649
+Overfull \hbox (8.6785pt too wide) detected at line 1667
 [][] [] \OT1/cmr/m/n/12 = [] [] [] = [] [] [] = [] [] = [] [][] (\OML/cmm/m/it/
 12 B[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 :
  []
@@ -1468,7 +1596,7 @@ Overfull \hbox (8.6785pt too wide) detected at line 1649
 
 
 [31]
-Overfull \hbox (17.29565pt too wide) detected at line 1703
+Overfull \hbox (17.29565pt too wide) detected at line 1721
 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A[]B\OT1/cmr/m/n/12 ) = [](\OML/cmm/m/it/12
  A[] \OMS/cmsy/m/n/12 j \OML/cmm/m/it/12 B\OT1/cmr/m/n/12 ) [](\OML/cmm/m/it/12
  B\OT1/cmr/m/n/12 ) = [](\OML/cmm/m/it/12 A[] \OMS/cmsy/m/n/12 j \OML/cmm/m/it/
@@ -1491,20 +1619,19 @@ ML/cmm/m/it/12 A[] [] A[]\OT1/cmr/m/n/12 ) [] [](\OML/cmm/m/it/12 A[] \OMS/cmsy
 [36]
 
 [37]
-Overfull \hbox (26.85794pt too wide) in paragraph at lines 2007--2012
-\OML/cmm/m/it/12 a$\T2A/cmr/m/n/12 >>. Так-же вме-сто гро-мозд-ких вы-ра-же-ний
- $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^X[]\OT1/cmr/m/n/12 ((\OMS/cmsy/m/n/12 ^
-^@1\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 b\OT1/cmr/m/n/12 )))\OML/cmm/m/it/12 ; []
-\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^X[]\OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 a\OT1
-/cmr/m/n/12 ; +\OMS/cmsy/m/n/12 1\OT1/cmr/m/n/12 )))\OML/cmm/m/it/12 ; []\OT1/c
-mr/m/n/12 (\OML/cmm/m/it/12 ^^X[]\OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 a\OT1/cmr/m
-/n/12 ; \OML/cmm/m/it/12 b\OT1/cmr/m/n/12 )))$
+Overfull \hbox (31.6925pt too wide) in paragraph at lines 2027--2033
+\OML/cmm/m/it/12 a$\T2A/cmr/m/n/12 >>. Так-же вме-сто пе-ре-гру-жен-ных скоб-ка
+-ми вы-ра-же-ний $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^X[]\OT1/cmr/m/n/12 ((\O
+MS/cmsy/m/n/12 ^^@1\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 b\OT1/cmr/m/n/12 )))\OML/
+cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^X[]\OT1/cmr/m/n/12 ((\OML/c
+mm/m/it/12 a\OT1/cmr/m/n/12 ; +\OMS/cmsy/m/n/12 1\OT1/cmr/m/n/12 )))\OML/cmm/m/
+it/12 ; [] 
  []
 
 
 
 [38]
-Overfull \hbox (4.99045pt too wide) in paragraph at lines 2064--2068
+Overfull \hbox (4.99045pt too wide) in paragraph at lines 2120--2124
 \OML/cmm/m/it/12 x[]$ \T2A/cmr/m/n/12 спра-ва (мож-но счи-тать, что по-сле-до-в
 а-тель-ность воз-рас-та-ет). То-гда $[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@1\O
 T1/cmr/m/n/12 ; \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ] =
@@ -1513,7 +1640,9 @@ T1/cmr/m/n/12 ; \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ] =
 
 
 [39]
-Overfull \hbox (32.61342pt too wide) detected at line 2149
+
+[40]
+Overfull \hbox (32.61342pt too wide) detected at line 2209
 \OML/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ])
  = \OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 b\OT1/cmr/m/n/12 ) \OM
 S/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/c
@@ -1526,7 +1655,7 @@ sa/m/n/12 6 \OML/cmm/m/it/12 b\OT1/cmr/m/n/12 ) = [](\OML/cmm/m/it/12 ^^X[]\OT1
  []
 
 
-Overfull \hbox (42.14095pt too wide) detected at line 2151
+Overfull \hbox (42.14095pt too wide) detected at line 2211
 \OML/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 a; \OT1/cmr/m/n/12 +\O
 MS/cmsy/m/n/12 1\OT1/cmr/m/n/12 )) = \OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (+\OMS
 /cmsy/m/n/12 1\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 F[]\OT1/c
@@ -1539,7 +1668,7 @@ cmr/m/n/12 ))) = \OML/cmm/m/it/12 ^^X[] []\OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 a;
  []
 
 
-Overfull \hbox (32.16379pt too wide) detected at line 2153
+Overfull \hbox (32.16379pt too wide) detected at line 2213
 \OML/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 ((\OMS/cmsy/m/n/12 ^^@1\OT1/cmr/m/n/12 ; 
 \OML/cmm/m/it/12 b\OT1/cmr/m/n/12 ]) = \OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (\OM
 L/cmm/m/it/12 b\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 F[]\OT1/
@@ -1554,10 +1683,10 @@ m/n/12 ) = [](\OML/cmm/m/it/12 ^^X[]\OT1/cmr/m/n/12 ((\OMS/cmsy/m/n/12 ^^@1\OT1
 
 
 
-[40]
-
 [41]
-Overfull \hbox (9.7256pt too wide) in paragraph at lines 2231--2238
+
+[42]
+Overfull \hbox (9.7256pt too wide) in paragraph at lines 2306--2313
 []\T2A/cmr/bx/n/12 Пример. \T2A/cmr/m/n/12 Рас-смот-рим дис-крет-ное ве-ро-ят-н
 ост-ное про-стран-ство $\OT1/cmr/m/n/12 
  = \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OML/
@@ -1567,44 +1696,61 @@ t/12 ; \OT1/cmr/m/n/12 5\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 6\OMS/cmsy/m/n/12 g$
  []
 
 
+Overfull \hbox (2.20059pt too wide) in paragraph at lines 2324--2327
+\T2A/cmr/m/n/12 Рассмотрим слу-чай-ную ве-ли-чи-ну $\OML/cmm/m/it/12 ^^X$ \T2A/
+cmr/m/n/12 при-ни-ма-ю-щую зна-че-ния из на-бо-ра $\OML/cmm/m/it/12 x[]; x[]; [
+] ; x[]$\T2A/cmr/m/n/12 ,
+ []
 
-[42]
+
 
 [43]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2336.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2336.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2336.
-
-
-
 [44]
+pdfTeX warning (ext4): destination with the same identifier (name{geometric-dis
+tribution}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2456 ...ґРµР»РµРЅРёРµРј}{geometric-distribution}
+                                                  
 
 [45]
 
-[46] (probability_theory.aux)
+[46]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2524.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 2524.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2524.
+
+
+
+[47]
+
+[48]
+
+[49] (probability_theory.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
  ***********
 Package rerunfilecheck Info: File `probability_theory.out' has not changed.
-(rerunfilecheck)             Checksum: 0F8DCB1E5CFE5401F9C866E5CE91E025;22696.
+(rerunfilecheck)             Checksum: 8DC2920B97ACA74E91C8F220165C44D8;23704.
  ) 
 Here is how much of TeX's memory you used:
- 27459 strings out of 473566
- 496622 string characters out of 5718235
- 920237 words of memory out of 5000000
- 49777 multiletter control sequences out of 15000+600000
+ 37427 strings out of 473566
+ 836117 string characters out of 5718235
+ 1352025 words of memory out of 5000000
+ 59600 multiletter control sequences out of 15000+600000
  578620 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,15n,101p,1411b,1077s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,15n,107p,1411b,1113s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{semiadditivity} has been referenced but does not ex
 ist, replaced by a fixed one
@@ -1636,9 +1782,9 @@ roke/dsrom12.pfb></home/konstantin/.miktex/texmfs/install/fonts/type1/public/am
 sfonts/euler/eufm10.pfb></home/konstantin/.miktex/texmfs/install/fonts/type1/pu
 blic/amsfonts/symbols/msam10.pfb></home/konstantin/.miktex/texmfs/install/fonts
 /type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on probability_theory.pdf (46 pages, 592945 bytes).
+Output written on probability_theory.pdf (49 pages, 612067 bytes).
 PDF statistics:
- 1473 PDF objects out of 1728 (max. 8388607)
- 353 named destinations out of 1000 (max. 500000)
- 617 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1508 PDF objects out of 1728 (max. 8388607)
+ 363 named destinations out of 1000 (max. 500000)
+ 641 words of extra memory for PDF output out of 10000 (max. 10000000)
 
