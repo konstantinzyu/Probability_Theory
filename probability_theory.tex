@@ -69,6 +69,10 @@
 
 \newenvironment{example}{\indent \textbf{Пример.}}{\indent}
 
+%\newcommand{\defin}[2]{\hypertarget{#2}{{\color{red} #1}} \label{def:#2}}
+\newcommand{\defin}[2]{\hypertarget{#2}{{\color{red} #1}}}
+
+
 \newtheorem*{remark*}{Замечание}
 
 \newcommand{\Alt}{\mathfrak{A}}
@@ -114,13 +118,10 @@
 \newcommand{\rd}{\operatorname{rd}}
 \newcommand{\ed}{\operatorname{ed}}
 \newcommand{\id}{\operatorname{id}}
-
 \newcommand{\pr}{\operatorname{pr}}
-
 \newcommand{\ab}[1]{#1^{\mathrm{ab}}}
 
 \newcommand{\prob}{\operatorname{P}}
-\newcommand{\defin}[2]{\hypertarget{#2}{{\color{red} #1}}}
 \newcommand{\events}{\mathfrak{F}}
 \newcommand{\expect}{\operatorname{E}}
 \newcommand{\disp}{\operatorname{D}}
@@ -131,11 +132,11 @@
 \newcommand{\Meas}{\mathfrak{Meas}}
 
 \newcommand{\Hom}{\operatorname{Hom}}
-
 \newcommand{\Image}{\operatorname{Im}}
-
 \newcommand{\ind}{\mathds{1}}
 \newcommand{\diff}{\mathrm{d}}
+
+
 
 % Цвета
 \definecolor{linkcolor}{HTML}{0000FF} % цвет ссылок
@@ -178,6 +179,12 @@
 		#1 & #2 \\
 		#3 & #4
 	\end{smallmatrix} \right)
+}
+
+\pgfmathdeclarefunction{erf}{1}{%
+	\pgfmathparse{%
+		sign(#1) * (1 - exp(-#1*#1*(4/pi + 0.147*#1*#1)) / (1 + 0.147*#1*#1)^1.5)
+	}%
 }
 
 
@@ -2073,26 +2080,69 @@
 			\ldots \\
 			p_1 + p_2 + \ldots + p_n = 1, & x \geqslant x_n.
 		\end{cases} $$
-		%График $ F_\xi $ будет выглядеть следующим образом
-		%$$ \begin{tikzpicture}
-		%	\begin{axis}[
-		%		axis x line=bottom,
-		%		axis y line=center,
-		%		xlabel = $ x $,
-		%		ylabel = $ F\xi(x) $,
-		%		]
-		%		\addplot[
-		%			domain=-3:-1,
-		%			samples=100,
-		%			color=gray,
-		%		] {0};
-		%		\addplot[
-		%			domain=-1:1,
-		%			samples=100,
-		%			color=gray,
-		%		] {0.12};
-		%	\end{axis}
-		%\end{tikzpicture} $$
+		График $ F_\xi $ будет выглядеть следующим образом.
+		% Спасибо нейронке за картинку
+		$$ \begin{tikzpicture}[scale=2]
+			
+			% Параметры
+			\def\xone{-2}
+			\def\xtwo{1}
+			\def\xnminone{4}
+			\def\xn{5}
+			
+			\def\pone{0.4}
+			\def\ptwo{0.3}
+			\def\poneptwo{0.7}
+			\def\pnminone{0.8}
+			\def\psum{1.5}
+			
+			% Оси
+			\draw[->, thin] (-2.5,0) -- (5.5,0) node[right] {$x$};
+			\draw[->, thin] (0,0) -- (0,2.2) node[above] {$F_\xi(x)$};
+			
+			% Подписи x_i
+			\foreach \x/\label in {\xone/{$x_1$}, \xtwo/{$x_2$}, \xnminone/{$x_{n-1}$}, \xn/{$x_n$}} {
+				\draw (\x,0) node[below] {\label};
+			}
+			
+			% График функции распределения
+			\draw[very thick] (-2.5,0) -- (\xone,0);
+			\draw[very thick] (\xone,\pone) -- (\xtwo,\pone);
+			\draw[very thick] (\xtwo,\poneptwo) -- (\xnminone,\poneptwo);
+			\draw[very thick] (\xnminone,\psum) -- (\xn,\psum);
+			\draw[very thick] (\xn,2.0) -- (5.5,2.0);
+			
+			% Точки скачков (пустой снизу, закрашенный сверху)
+			\draw[fill=white] (\xone,0) circle (0.035);
+			\fill (\xone,\pone) circle (0.035);
+			
+			\draw[fill=white] (\xtwo,\pone) circle (0.035);
+			\fill (\xtwo,\poneptwo) circle (0.035);
+			
+			\draw[fill=white] (\xnminone,\poneptwo) circle (0.035);
+			\fill (\xnminone,\psum) circle (0.035);
+			
+			\draw[fill=white] (\xn,\psum) circle (0.035);
+			\fill (\xn,2.0) circle (0.035);
+			
+			% Красные пунктирные линии уровня от графика до оси Oy
+			\foreach \x/\y/\label in {
+				\xone/\pone/{$p_1$},
+				\xtwo/\poneptwo/{$p_1 + p_2$},
+				\xnminone/\psum/{$p_1 + \ldots + p_{n-1}$},
+				\xn/2.0/{$1$}
+			} {
+				\draw[red, dashed, thin] (\x,\y) -- (0,\y);
+				\node[left, red] at (0,\y) {\label};
+			}
+			
+			% Значение 0 на оси Oy
+			\node[left, red] at (0,0) {$0$};
+			
+			% Многоточие между x_2 и x_{n-1}
+			\node at (2.5, -0.05) {$\cdots$};
+			
+		\end{tikzpicture} $$
 	\end{example}
 	
 	Выделим некоторые свойства этой функции.
@@ -2489,13 +2539,386 @@
 	Абсолютно непрерывным аналогом дискретного равномерного распределения выступает равномерное распределение.
 	Пусть $ \Omega = [a,b] $ --- отрезок, $ \events = \calB \cap [a,b] $ --- борелевская $ \sigma $-алгебра
 	и вероятностная мера задана как $ \prob = \tfrac{1}{b - a}\mu $ --- нормированная мера Лебега.
-	Рассмотрим распределение этого 
+	Рассмотрим распределение случайной величины $ \xi $, которая сопоставляет точке на отрезке её координату.
+	Можно думать об этом, как об эксперименте в котором на отрезок <<бросается>> точка
+	и изучаются её вероятности попасть в разные подмножества отрезка.
+	Распределение случайной величины $ \xi $ называется \defin{равномерным распределением}{uniform-distribution}
+	и обозначается $ \mathrm{R}[a,b] $.
+	Функция распределения $ F_\xi $ это случайной величины может быть задана кусочно.
+	\begin{center}
+		\begin{minipage}{0.45\textwidth}
+			\[
+			F_\xi(x) =
+			\begin{cases}
+				0, & x < a, \\
+				\dfrac{x - a}{b - a}, & x \in [a, b], \\
+				1, & x > b.
+			\end{cases}
+			\]
+		\end{minipage}
+		\def\a{1}
+		\def\b{4}
+		\begin{minipage}{0.5\textwidth}
+			\begin{tikzpicture}
+				\begin{axis}[
+					axis lines=middle,
+					axis line style={very thin},
+					xlabel={$x$}, ylabel={$F_\xi(x)$},
+					ymin=0, ymax=1.2,
+					xmin=0, xmax=5,
+					xtick={1,4}, xticklabels={$a$, $b$},
+					ytick={0,1},
+					width=7cm,
+					height=4.5cm,
+					]
+					\addplot[domain=0:\a, black, ultra thick] {0};
+					\addplot[domain=\a:\b, black, thick] {(x - \a)/(\b - \a)};
+					\addplot[domain=\b:5, black, thick] {1};
+				\end{axis}
+			\end{tikzpicture}
+		\end{minipage}
+	\end{center}
+	Данна случайная величина обладает функцией плотности.
+	\begin{center}
+		\begin{minipage}{0.45\textwidth}
+			\[
+			p_\xi(x) =
+			\begin{cases}
+				\dfrac{1}{b - a}, & x \in [a, b], \\
+				0, & x \notin [a,b].
+			\end{cases}
+			\]
+		\end{minipage}
+		\def\a{1}
+		\def\b{4}
+		\def\h{0.3333}
+		\begin{minipage}{0.5\textwidth}
+			\begin{tikzpicture}
+				\begin{axis}[
+					axis lines=middle,
+					axis line style={very thin},
+					xlabel={$x$}, ylabel={$p_\xi(x)$},
+					ymin=0, ymax=0.5,
+					xmin=0, xmax=5,
+					xtick={1,4}, xticklabels={$a$, $b$},
+					ytick={0,\h},
+					yticklabels={$0$, $\frac{1}{b - a}$},
+					domain=0:5,
+					samples=100,
+					width=7cm,
+					height=4.5cm,
+					]
+					\addplot [
+					black,
+					thick,
+					domain=\a:\b,
+					] {1 / (\b - \a)};
+					\addplot[domain=0:\a, black, ultra thick] {0};
+					\addplot[domain=\b:5, black, ultra thick] {0};
+				\end{axis}
+			\end{tikzpicture}
+		\end{minipage}
+	\end{center}
 	
+ 	
 	\subsubsection{Экспоненциальное (показательное) распределение}
+	
+	Как равномерное распределение выступает аналогом дискретного равномерного распределения,
+	так и экспоненциальное распределение является абсолютно непрерывным аналого геометрического распределения.
+	Пусть $ \Omega = [0,+\infty) $ --- бесконечный полуинтервал, $ \events = \calB \cap [0,+\infty) $ 
+	--- борелевская $ \sigma $-алгебра
+	и вероятностная мера задана на бесконечных полуинтервалах как $ \prob((u; +\infty)) = e^{-\alpha u} $,
+	где $ \alpha > 0 $ --- некоторое число.
+	Рассмотрим распределение случайной величины $ \xi $, которая сопоставляет точке на отрезке её координату.
+	В реальной жизни данная конструкция соответствует, например, ситуации, когда измеряется время до первой поломки
+	электроприбора или до первого прихода автобуса, 
+	если такие события происходят часто и независимо, а частота их наступления (<<интенсивность>> $ \alpha $) постоянна.
+	Распределение случайной величины $ \xi $ называется 
+	\defin{экспоненциальным (или показательным) распределением}{exponential-distribution}
+	и обозначается $ \mathrm{E}(\alpha) $.
+	Экспоненциальная случайная величина обладает функцией плотности,
+	которую, как и функцию распределения можно задать кусочно.
+	Формулы для функции распределения и плотности приведены ниже. 
+	\begin{center}
+		\begin{minipage}{0.45\textwidth}
+			\[
+			F_\xi(x) =
+			\begin{cases}
+				0, & x < 0, \\
+				1 - e^{-\alpha x}, & x \geqslant 0.
+			\end{cases}
+			\]
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{tikzpicture}
+				\begin{axis}[
+					axis lines=middle,
+					axis line style={very thin},
+					xlabel={$x$}, ylabel={$F_\xi(x)$},
+					ymin=0, ymax=1.1,
+					xmin=-1, xmax=6,
+					xtick={0},
+					ytick={0,1},
+					width=7cm,
+					height=4.5cm,
+					]
+					\addplot[
+					black,
+					thick,
+					domain=0:6,
+					samples=200
+					] {1 - exp(-1 * x)}; % alpha = 1
+					
+					\addplot[domain=-1:0, black, ultra thick] {0};
+				\end{axis}
+			\end{tikzpicture}
+		\end{minipage}
+	\end{center}
+	
+	\begin{center}
+		\begin{minipage}{0.45\textwidth}
+			\[
+			p_\xi(x) =
+			\begin{cases}
+				\alpha e^{-\alpha x}, & x \geqslant 0, \\
+				0, & x < 0.
+			\end{cases}
+			\]
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{tikzpicture}
+				\begin{axis}[
+					axis lines=middle,
+					axis line style={very thin},
+					xlabel={$x$}, ylabel={$p_\xi(x)$},
+					ymin=0, ymax=1.2,
+					xmin=-1, xmax=6,
+					xtick={0},
+					ytick={0},
+					domain=0:6,
+					samples=200,
+					width=7cm,
+					height=4.5cm,
+					]
+					\addplot[
+					black,
+					thick,
+					domain=0:6,
+					] {1 * exp(-1 * x)}; % здесь alpha = 1
+					
+					\addplot[domain=-1:0, black, ultra thick] {0};
+				\end{axis}
+			\end{tikzpicture}
+		\end{minipage}
+	\end{center}
+	
+	\begin{example}
+		Будем рассматривать переменную $ x $ на прямой как переменную означающую <<прошедшее время>>.
+		Для абсолютно непрерывной случайной величины $ \xi $ введём 
+		\defin{функцию надёжности}{reliability-function} $ \overline{F}_\xi(x) := 1 - F_\xi(x) = \prob(\xi > x) $
+		выражающую вероятность того, что нечто произойдёт (приедет автобус) или не произойдёт (поломка электроприбора)
+		в течении времени $ x $. Введём также функцию \defin{интенсивности отказов}{failure-rate}
+		полагаемую равной $ \lambda(x) = 
+		\lim\limits_{\Delta x \to 0} \tfrac{\overline{F}_\xi(x + \Delta x) - \overline{F}_\xi(x)}{\overline{F}_\xi(x)\Delta x} $.
+		Интенсивность отказов выражает <<долю отказавших в единицу времени приборов>>.
+		Почти всюду функции $ \lambda(x) $ и 
+		$ - \tfrac{\overline{F}_\xi'(x)}{\overline{F}_\xi(x)} = \tfrac{p_\xi(x)}{\overline{F}_\xi(x)} $
+		совпадают, поэтому будем также писать $ \lambda(x) = \tfrac{p_\xi(x)}{\overline{F}_\xi(x)} $.
+		
+		Пусть теперь интенсивность отказов постоянна на полуинтервале $ [0;+\infty) $ и равна $ \alpha > 0 $.
+		Из формулы выше получаем дифференциальное уравнение $ \overline{F}_\xi' = -\alpha\overline{F}_\xi $,
+		откуда $ \overline{F}_\xi(x) = Ce^{-\alpha x} $ на $ [0;+\infty) $. 
+		Если считать, что $ \overline{F}_\xi(0) = 1 $ (<<изначально всё работает>>), 
+		то  $ C = 1 $ и $ F_\xi(x) = 1 - e^{-\alpha x} $.
+		
+		В общем случае, решив такую же задачу Коши с начальным условием $ \overline{F}_\xi(0) = 1 $,
+		получаем формулу для функции распределения:
+		$$ F_\xi(x) = 1 - e^{-\int\limits_{0}^{x} \lambda(x)\diff x}. $$
+	\end{example}
 	
 	\subsubsection{Нормальное распределение (распределение Гаусса)}
 	
+	Распределение, которое мы рассмотрим сейчас возникает 
+	как предел распределения суммы большого количества малых, 
+	независимых случайных величин (см. Центральную предельную теорему ниже).
+	Нормальное распределение $ \mathcal{N}(a, \sigma^2) $ задаётся двумя параметрами $ a $ и $ \sigma > 0 $,
+	которые, как мы выясним позже равны её математическому ожиданию и квадратному корню из дисперсии, соответственно.
+	Если функция распределения случаной величины $ \xi $ имеет вид, указанный ниже,
+	то её распределение называется \defin{нормальным распределением}{normal-distribution}.
+	Если к тому же параметры имеют особый вид: $ a = 0 $ и $ \sigma^2 = 1 $,
+	то распределение называется \defin{стандартным нормальным распределением}{standard-normal-distribution}.
+	\begin{center}
+		\begin{minipage}{0.45\textwidth}
+			\[
+			\Phi_{a, \sigma^2}(x) := F_\xi(x) = \frac{1}{\sqrt{2\pi}\sigma} \int_{-\infty}^x e^{-\tfrac{(x - a)^2}{2\sigma^2}} \diff t;
+			\]
+			{\color{orange}
+			\[
+			\Phi(x) := F_\xi(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x e^{-\tfrac{x^2}{2}} \diff t.
+			\]}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{tikzpicture}
+				\begin{axis}[
+					axis lines=middle,
+					axis line style={very thin},
+					xlabel={$x$}, ylabel={$F_\xi(x)$},
+					ymin=0, ymax=1.05,
+					xmin=-4, xmax=4,
+					xtick={0,1},
+					ytick={0,1/2,1},
+					samples=200,
+					width=7cm,
+					height=4.5cm,
+					]
+					% Функция распределения стандартного нормального распределения
+					\addplot [
+					orange,
+					thick,
+					domain=-4:4
+					] {0.5 * (1 + erf(x / sqrt(2)))};
+					\addplot [
+					black,
+					thick,
+					domain=-4:4
+					] {0.5 * (1 + erf((x - 1) / (sqrt(2)* 1.5)))};
+				\end{axis}
+			\end{tikzpicture}
+		\end{minipage}
+	\end{center}
+	
+	\begin{center}
+		\begin{minipage}{0.45\textwidth}
+			\[
+			p_\xi(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\tfrac{(x - a)^2}{2\sigma^2}};
+			\]
+			{\color{orange}
+			\[
+			p_\xi(x) = \frac{1}{\sqrt{2\pi}} e^{-\tfrac{x^2}{2}}.
+			\]}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{tikzpicture}
+				\begin{axis}[
+					axis lines=middle,
+					axis line style={very thin},
+					xlabel={$x$}, ylabel={$p_\xi(x)$},
+					ymin=0, ymax=1.05,
+					xmin=-4, xmax=4,
+					xtick={0,1},
+					ytick={0,1/2,1},
+					samples=200,
+					width=7cm,
+					height=4.5cm,
+					]
+					% Функция распределения стандартного нормального распределения
+					\addplot [
+					orange,
+					thick,
+					domain=-4:4
+					] {1 / (sqrt(2*pi))*exp(-x*x/2)};
+					\addplot [
+					black,
+					thick,
+					domain=-4:4
+					] {1 / (sqrt(2*pi)*1.5)*exp(-(x - 1)*(x - 1)/(2*1.5*1.5))};
+				\end{axis}
+			\end{tikzpicture}
+		\end{minipage}
+	\end{center}
+	
+	Функция распределения $ \Phi_{a, \sigma^2} $ выражается через $ \Phi $ по формуле 
+	$ \Phi_{a,\sigma^2}(x) = \Phi(\tfrac{x - a}{\sigma}) $.
+	
 	\subsubsection{Распределение Коши}
+	
+	Ещё одно абсолютно непрерывное распределение, которое мы рассмотрим, похоже на нормальное распределение.
+	Как мы увидим позже, между ними есть существенные различия --- 
+	распределение Коши является классическим примером распределения, которое не имеет матожидания.
+	Если случайная величина имеет описываемую формулой ниже функцию распределения,
+	то её распределение называется \defin{распределением Коши}{Cauchy-distribution}.
+	\begin{center}
+		\begin{minipage}{0.45\textwidth}
+			\[
+			K_{a, \sigma^2}(x) := F_\xi(x) = \frac{1}{\pi} \left(\arctan\left(\tfrac{x - a}{\sigma}\right) + \tfrac{\pi}{2}\right);
+			\]
+			{\color{orange}
+			\[
+			K_{0, 1}(x) := F_\xi(x) = \frac{1}{\pi} \left(\arctan(x) + \tfrac{\pi}{2}\right).
+			\]}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{tikzpicture}
+				\begin{axis}[
+					axis lines=middle,
+					axis line style={very thin},
+					xlabel={$x$}, ylabel={$F_\xi(x)$},
+					ymin=0, ymax=1.05,
+					xmin=-4, xmax=4,
+					xtick={0,1},
+					ytick={0,1/2,1},
+					samples=200,
+					width=7cm,
+					height=4.5cm,
+					]
+					% Функция распределения стандартного нормального распределения
+					\addplot [
+					orange,
+					thick,
+					domain=-4:4
+					] {1 / pi * rad(atan((x - 1)/1.5)) + 0.5};
+					\addplot [
+					black,
+					thick,
+					domain=-4:4
+					] {1 / pi * rad(atan(x)) + 0.5};
+				\end{axis}
+			\end{tikzpicture}
+		\end{minipage}
+	\end{center}
+	
+	\begin{center}
+		\begin{minipage}{0.45\textwidth}
+			\[
+			p_\xi(x) = \frac{1}{\pi} \tfrac{1}{1 + \left(\tfrac{x - a}{\sigma}\right)^2};;
+			\]
+			{\color{orange}
+			\[
+			p_\xi(x) = \frac{1}{\pi} \tfrac{1}{1 + x^2}.
+			\]}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{tikzpicture}
+				\begin{axis}[
+					axis lines=middle,
+					axis line style={very thin},
+					xlabel={$x$}, ylabel={$p_\xi(x)$},
+					ymin=0, ymax=1.05,
+					xmin=-4, xmax=4,
+					xtick={0,1},
+					ytick={0,1/2,1},
+					samples=200,
+					width=7cm,
+					height=4.5cm,
+					]
+					% Функция распределения стандартного нормального распределения
+					\addplot [
+					orange,
+					thick,
+					domain=-4:4
+					] {1 / pi * 1 / (((x - 1)*(x - 1)) / 1.5 / 1.5 + 1)};
+					\addplot [
+					black,
+					thick,
+					domain=-4:4
+					] {1 / pi * 1 / (x*x + 1)};
+				\end{axis}
+			\end{tikzpicture}
+		\end{minipage}
+	\end{center}
+	
+	Аналогично нормальному распределению имеет место формула
+	$ K_{a,\sigma^2}(x) = K_{0, 1}(\tfrac{x - a}{\sigma}) $.
 	
 	\subsection{Сингулярное распределение}
 	
