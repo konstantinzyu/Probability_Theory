@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.29)  14 JUN 2025 00:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.29)  14 JUN 2025 11:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1312,8 +1312,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{unit}) has be
 en already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.278 		\end{enumerate}
-                       ]
+l.276 			\item $
+                 \forall \ A, B \in R: A \cup B, A \cap B \in R $;]
 
 [5]
 
@@ -1742,36 +1742,45 @@ L/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = [] [] ;
 
 
 [49]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2947.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2947.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2947.
+Overfull \hbox (1.91344pt too wide) detected at line 2940
+\OML/cmm/m/it/12 K \OT1/cmr/m/n/12 = [] [] [] = [] [] [] \OMS/cmsy/m/n/12 [ [] 
+\OT1/cmr/m/n/12 = [0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1] \OMS/cmsy/m/n/12 n []
+ [] [] \OML/cmm/m/it/12 ;
+ []
 
 
 
 [50]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2988.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 2988.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2988.
+
+
+
 [51]
 
-[52] (probability_theory.aux)
+[52]
+
+[53] (probability_theory.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
  ***********
 Package rerunfilecheck Info: File `probability_theory.out' has not changed.
-(rerunfilecheck)             Checksum: 8DC2920B97ACA74E91C8F220165C44D8;23704.
+(rerunfilecheck)             Checksum: 09A0355FF25FF45567632504D6F003AC;23704.
  ) 
 Here is how much of TeX's memory you used:
- 38041 strings out of 473566
- 852339 string characters out of 5718235
- 1477347 words of memory out of 5000000
+ 38042 strings out of 473566
+ 852347 string characters out of 5718235
+ 1476349 words of memory out of 5000000
  60204 multiletter control sequences out of 15000+600000
  578620 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1807,9 +1816,9 @@ roke/dsrom12.pfb></home/konstantin/.miktex/texmfs/install/fonts/type1/public/am
 sfonts/euler/eufm10.pfb></home/konstantin/.miktex/texmfs/install/fonts/type1/pu
 blic/amsfonts/symbols/msam10.pfb></home/konstantin/.miktex/texmfs/install/fonts
 /type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on probability_theory.pdf (52 pages, 649827 bytes).
+Output written on probability_theory.pdf (53 pages, 653816 bytes).
 PDF statistics:
- 1529 PDF objects out of 1728 (max. 8388607)
- 373 named destinations out of 1000 (max. 500000)
+ 1533 PDF objects out of 1728 (max. 8388607)
+ 374 named destinations out of 1000 (max. 500000)
  641 words of extra memory for PDF output out of 10000 (max. 10000000)
 
