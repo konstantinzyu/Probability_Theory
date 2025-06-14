@@ -92,6 +92,7 @@
 \newcommand{\LL}{\mathbb{L}}
 
 \newcommand{\calA}{\mathcal{A}}
+\newcommand{\setsigmaalg}{\mathfrak{A}}
 \newcommand{\calB}{\mathcal{B}}
 \newcommand{\calM}{\mathcal{M}}
 \newcommand{\calN}{\mathcal{N}}
@@ -557,14 +558,14 @@
 		Тогда из того, что $ Mon(\calA) $ удовлетворяет свойству монотонности,
 		то $ \bigcup\limits_{i = 1}^{+\infty} A_i \in L(B) $,
 		либо $ \bigcap\limits_{i = 1}^{+\infty} A_i \in L(B) $, соответственно.
-		Таким образом, система множеств $ L(B) $ тоже удовлетворяет свойству монотонности.
+		Поэтому система множеств $ L(B) $ тоже удовлетворяет свойству монотонности.
 		
 		Пусть теперь $ A \in \calA $. Тогда $ \calA \subset L(A) $, то есть $ L(A) $ удовлетворяет обоим свойствам из условия. 
 		Отсюда по минимальности $ Mon(\calA) \subset L(A) $.
 		Тогда для любого $ B \in Mon(\calA) $ имеем $ \calA \subset L(B) $.
 		Поэтому, аналогично, $ Mon(\calA) \subset L(B) $,
 		то есть $ Mon(\calA) = L(B) $ для любого $ B \in Mon(\calA) $.
-		Таким образом, система множеств $ Mon(\calA) $ является алгеброй.
+		Следовательно, система множеств $ Mon(\calA) $ является алгеброй.
 		
 		Из монотонности следует, что $ Mon(\calA) $ является $ \sigma $-алгеброй.
 	\end{proof}
@@ -573,7 +574,7 @@
 	что она остаётся верной и для $ \sigma $-конечной меры.
 	
 	\begin{theorem}[Каратеодори] \label{uniqueness of extention to the minimal sigma algebra}
-		Пусть $ \calA $ --- $ \sigma $-алгебра подмножеств множества $ \Omega $
+		Пусть $ \calA $ --- алгебра подмножеств множества $ \Omega $
 		и $ \nu \colon \calA \to \RR $ --- конечная мера на $ \calA $.
 		Тогда существует единственная $ \sigma $-аддитивная мера $ \mu $ 
 		на минимальной $ \sigma $-алгебре $ R_{\sigma}(\calA) $,
@@ -605,7 +606,7 @@
 		= \lim\limits_{i \to +\infty} \mu_1(A_i) 
 		= \lim\limits_{i \to +\infty} \mu_2(A_i)
 		= \mu_2\left(\bigcap\limits_{i = 1}^{+\infty} A_i\right). $$
-		Таким образом, $ \calA_{=} $ удовлетворяет условию монотонности и по лемме \ref{min sigma algebra monotonic characterization} содержит (поскольку мы не проверили минимальность лемма даёт только такой результате) 
+		Тогда $ \calA_{=} $ удовлетворяет условию монотонности и по лемме \ref{min sigma algebra monotonic characterization} содержит (поскольку мы не проверили минимальность лемма даёт только такой результате) 
 		$ \sigma $-алгебру $ R_{\sigma}(\calA) $.
 		
 		Из всего сказанного следует равенство $ \calA_{=} = R_{\sigma}(\calA) $.
@@ -997,18 +998,18 @@
 	
 	\subsubsection{Прямой образ меры (pushforward measure)}
 	
-	Пусть $ (X, \calA_X) $ и $ (Y, \calA_Y) $ --- \hyperlink{measurable-space}{измеримые пространства},
-	$ \mu $ --- мера на $ \sigma $-алгебре $ \calA_X $ и $ f \colon (X, \calA_X) \to (Y, \calA_Y) $
+	Пусть $ (X, \setsigmaalg_X) $ и $ (Y, \setsigmaalg_Y) $ --- \hyperlink{measurable-space}{измеримые пространства},
+	$ \mu $ --- мера на $ \sigma $-алгебре $ \setsigmaalg_X $ и $ f \colon (X, \setsigmaalg_X) \to (Y, \setsigmaalg_Y) $
 	--- \hyperlink{morphism-of-measurable-spaces}{измеримое отображение}.
 	Тогда \defin{прямым образом меры $ \mu $ при отображении $ f $}{pushforward-measure} называется функция $ f_{*}\mu $,
-	заданная по правилу $ f_*\mu(A) = \mu(f^{-1}(A)) $ для любого $ A \in \calA_Y $.
+	заданная по правилу $ f_*\mu(A) = \mu(f^{-1}(A)) $ для любого $ A \in \setsigmaalg_Y $.
 	
 	\begin{proposition}
-		Прямой образ ($ \sigma $-аддитивной) меры $ f_*\mu $ является ($ \sigma $-аддитивной) мерой на алгебре $ \calA_Y $.
+		Прямой образ ($ \sigma $-аддитивной) меры $ f_*\mu $ является ($ \sigma $-аддитивной) мерой на алгебре $ \setsigmaalg_Y $.
 	\end{proposition}
 	
 	\begin{proof}
-		Пусть $ \{A_k\} $ --- последовательность попрано не пересекающихся множеств из $ \calA_Y $.
+		Пусть $ \{A_k\} $ --- последовательность попрано не пересекающихся множеств из $ \setsigmaalg_Y $.
 		Тогда множества из последовательности $ \{f^{-1}(A_k)\} $ также попарно не пересекаются. 
 		Из определения прямого образа меры $ f_{*}\mu $ имеем цепочку равенств
 		$$ f_*\mu\left(\bigsqcup\limits_{k = 1}^{+\infty} A_k\right) 
@@ -1022,7 +1023,7 @@
 	
 	\begin{theorem} \label{pushforward measure main property}
 		Пусть мера $ \mu $ конечна на $ X $.
-		Рассмотрим измеримую функцию $ g \colon (Y, \calA_Y) \to (\RR, \calB) $.
+		Рассмотрим измеримую функцию $ g \colon (Y, \setsigmaalg_Y) \to (\RR, \calB) $.
 		Тогда $ g $ интегрируема на $ Y $ по прямому образу меры $ f_*\mu $
 		тогда и только тогда, когда композиция $ g \circ f $ интегрируема на $ X $ по мере $ \mu $.
 		В случае интегрируемости равны интегралы
@@ -1073,70 +1074,39 @@
 	
 	\subsubsection{Категория измеримых пространств}
 	
-	Пусть $ \calA_X $ --- $ \sigma $-алгебра подмножеств множества $ X $.
-	Пара $ (X, \calA_X) $ называется \defin{измеримым пространством}{measurable-space}.
+	Пусть $ \setsigmaalg_X $ --- $ \sigma $-алгебра подмножеств множества $ X $.
+	Пара $ (X, \setsigmaalg_X) $ называется \defin{измеримым пространством}{measurable-space}.
 	
-	Пусть $ (X, \calA_X) $ и $ (Y, \calA_Y) $ --- пара измеримых пространств.
+	Пусть $ (X, \setsigmaalg_X) $ и $ (Y, \setsigmaalg_Y) $ --- пара измеримых пространств.
 	\defin{Морфизмом измеримых пространств (измеримым отображением)}{morphism-of-measurable-spaces} 
-	$ f \colon (X, \calA_X) \to (Y, \calA_Y) $ называется отображение
-	множеств $ f \colon X \to Y $ такое, что для любого $ U \in \calA_Y $ выполнено $ f^{-1}(U) \in \calA_X $,
+	$ f \colon (X, \setsigmaalg_X) \to (Y, \setsigmaalg_Y) $ называется отображение
+	множеств $ f \colon X \to Y $ такое, что для любого $ U \in \setsigmaalg_Y $ выполнено $ f^{-1}(U) \in \setsigmaalg_X $,
 	где $ f^{-1} $ --- это полный прообраз.
 	
 	В категории измеримых пространств $ \Meas $ объектами являются измеримые пространства, а морфизмами
 	--- морфизмы измеримых пространств.
 	
-	\subsection{Произведение и копроизведение к категории измеримых пространств}
-	
-	Пусть $ (X, \calA_X) $ и $ (Y, \calA_Y) $ --- измеримые пространства.
-	Построим по ним новые измеримые пространства следующим образом.
-	
-	\defin{Произведением измеримых пространств $ (X, \calA_X) $ и $ (Y, \calA_Y) $}{product-of-measurable-spaces}
-	мы назовём измеримое пространство $ (X \times Y, \calA_X \otimes \calA_Y) $,
-	где $ \calA_X \otimes \calA_Y $ есть минимальная $ \sigma $-алгебра, порождённая полукольцом
-	всех возможных декартовых произведений $ A_X \times A_Y $,
-	где $ A_X \in \calA_X $ и $ A_Y \in \calA_Y $.
-	
-	\begin{proposition}
-		Пусть $ (X, \calA_X) $ и $ (Y, \calA_Y) $ --- измеримые пространства,
-		$ (X \times Y, \calA_X \otimes \calA_Y) $ --- их произведение.
-		Тогда
-		\begin{enumerate}
-			\item отображения проекций $ \pr_X \colon X \times Y \to X $
-			и $ \pr_Y \colon X \times Y \to Y $ являются морфизмами измеримых пространств.
-			\item пространство $ (X \times Y, \calA_X \otimes \calA_Y) $ удовлетворяет универсальному свойству произведения,
-			то есть для всякого измеримого пространства $ (Z, \calA_Z) $ 
-			и всяких двух морфизмов $ f \colon (Z, \calA_Z) \to (X, \calA_X) $,
-			$ g \colon (Z, \calA_Z) \to (Y, \calA_Y) $
-			существует единственный морфизм $ f \times g \colon (Z, \calA_Z) \to (X \times Y, \calA_X \otimes \calA_Y) $,
-			удовлетворяющий условию $ \pr_X \circ (f \times g) = f $ и $ \pr_Y \circ (f \times g) = g $.
-		\end{enumerate}
-		$$ \begin{tikzcd}
-			& (Z, \calA_Z) \ar{dl}[above left]{f} \ar{dr}{g} \ar[dashed]{dd}[description]{f \times g} & \\
-			(X, \calA_X) &  & (Y, \calA_Y) \\
-			& (X \times Y, \calA_X \otimes \calA_Y) \ar{ul}{\pr_X} \ar{ur}[below right]{\pr_Y} &
-		\end{tikzcd} $$
-	\end{proposition}
-	
-	
 	\subsubsection{Прямой образ $ \sigma $-алгебры}
 	
-	Пусть $ (X, \calA_X) $ --- измеримое пространство и $ f \colon X \to Y $ --- отображение множеств.
+	Пусть $ (X, \setsigmaalg_X) $ --- измеримое пространство и $ f \colon X \to Y $ --- отображение множеств.
 	Существует способ естественным образом построить $ \sigma $-алгебру подмножеств $ Y $.
 	
-	Положим $ f_{*}(\calA_X) = \defineset{B \subset Y}{f^{-1}(B) \in \calA_X} $ --- все подмножества $ Y $,
-	полный прообраз которых лежит в $ \calA_X $.
+	Положим $ f_{*}(\setsigmaalg_X) = \defineset{B \subset Y}{f^{-1}(B) \in \setsigmaalg_X} $ --- все подмножества $ Y $,
+	полный прообраз которых лежит в $ \setsigmaalg_X $. 
+	Построенная система множеств называется \defin{прямым образом}{direct-image-of-sigma-algebra} 
+	$ \sigma $-алгебры $ \setsigmaalg_X $ при отображении $ f $.
 	
 	\begin{proposition} \label{direct image of sigma algebra}
 		Конструкция $ f_{*} $ обладает следующими свойствами.
 		\begin{enumerate}
-			\item Система множеств $ f_{*}(\calA_X) $ является $ \sigma $-алгеброй подмножеств множества $ Y $.
-			\item Отображение $ f $ является морфизмом измеримых пространств $ f \colon (X, \calA_X) \to (Y, f_{*}(\calA_X)) $.
-			\item Если $ \calA_Y $ --- $ \sigma $-алгебра подмножеств $ Y $,
-			то отображение $ f $ является морфизмом измеримых пространств $ f \colon (X, \calA_X) \to (Y, \calA_Y) $
-			тогда и только тогда, когда $ \calA_Y \subset f_{*}(\calA_X) $.
+			\item Система множеств $ f_{*}(\setsigmaalg_X) $ является $ \sigma $-алгеброй подмножеств множества $ Y $.
+			\item Отображение $ f $ является морфизмом измеримых пространств $ f \colon (X, \setsigmaalg_X) \to (Y, f_{*}(\setsigmaalg_X)) $.
+			\item Если $ \setsigmaalg_Y $ --- $ \sigma $-алгебра подмножеств $ Y $,
+			то отображение $ f $ является морфизмом измеримых пространств $ f \colon (X, \setsigmaalg_X) \to (Y, \setsigmaalg_Y) $
+			тогда и только тогда, когда $ \setsigmaalg_Y \subset f_{*}(\setsigmaalg_X) $.
 			\item Пусть имеются отображения множеств $ f \colon X \to Y, g \colon X \to Z $ и $ h \colon Y \to Z $
 			такие, что $ h \circ f = g $, то $ h $ является морфизмом измеримых пространств
-			$ h \colon (Y, f_{*}(\calA_X)) \to (Z, g_{*}(\calA_X)). $
+			$ h \colon (Y, f_{*}(\setsigmaalg_X)) \to (Z, g_{*}(\setsigmaalg_X)). $
 		\end{enumerate}
 		$$ \begin{tikzcd}
 			 & Y \ar{dd}{h} \\
@@ -1144,39 +1114,42 @@
 			& Z, \\
 		\end{tikzcd} \
 		\begin{tikzcd}
-			& (Y, f_{*}(\calA_X)) \ar{dd}{h} \\
-			(X, \calA_X) \ar{ru}{f} \ar{rd}{g} &  \\
-			& (Z, g_{*}(\calA_X)). \\
+			& (Y, f_{*}(\setsigmaalg_X)) \ar{dd}{h} \\
+			(X, \setsigmaalg_X) \ar{ru}{f} \ar{rd}{g} &  \\
+			& (Z, g_{*}(\setsigmaalg_X)). \\
 		\end{tikzcd} $$
 	\end{proposition}
 	
 	\begin{proof}
 		Первый пункт проверяется непосредственно и следует из теоретико-множественных тождеств.
-		Второй пункт --- из построения $ f_{*}(\calA_X) $, третий --- из определения морфизма измеримых пространств.
+		Второй пункт --- из построения $ f_{*}(\setsigmaalg_X) $, третий --- из определения морфизма измеримых пространств.
 		
-		Докажем четвёртый пункт. Пусть $ U \in g_*(\calA_X) $. Тогда $ g^{-1}(U) = f^{-1}(h^{-1}(U)) \in \calA_X $.
-		По определению прямого образа $ f_*(\calA_X) $ множество $ h^{-1}(U) $ содержится в нём.
+		Докажем четвёртый пункт. Пусть $ U \in g_*(\setsigmaalg_X) $. Тогда $ g^{-1}(U) = f^{-1}(h^{-1}(U)) \in \setsigmaalg_X $.
+		По определению прямого образа $ f_*(\setsigmaalg_X) $ множество $ h^{-1}(U) $ содержится в нём.
 		Следовательно, $ h $ является морфизмом измеримых пространств.
 	\end{proof}
 	
 	\subsubsection{Обратный образ $ \sigma $-алгебры}
 	
-	Пусть $ (Y, \calA_Y) $ --- измеримое пространство и $ f \colon X \to Y $ --- отображение множеств.
+	Пусть $ (Y, \setsigmaalg_Y) $ --- измеримое пространство и $ f \colon X \to Y $ --- отображение множеств.
 	Существует способ естественным образом построить $ \sigma $-алгебру подмножеств $ X $.
 	
-	Положим $ f^{*}(\calA_Y) = \defineset{f^{-1}(B)}{B \in \calA_Y} $ --- полные прообразы всех элементов $ \sigma $-алгебры $ \calA_Y $.
+	Положим $ f^{*}(\setsigmaalg_Y) = \defineset{f^{-1}(B)}{B \in \setsigmaalg_Y} $ --- 
+	полные прообразы всех элементов $ \sigma $-алгебры $ \setsigmaalg_Y $.
+	Построенная система множеств называется \defin{обратным образом}{inverse-image-of-sigma-algebra} 
+	$ \sigma $-алгебры $ \setsigmaalg_X $ при отображении $ f $.
 	
 	\begin{proposition} \label{inverse image of sigma algebra}
 		Конструкция $ f^{*} $ обладает следующими свойствами.
 		\begin{enumerate}
-			\item Система множеств $ f^{*}(\calA_Y) $ является $ \sigma $-алгеброй подмножеств множества $ X $.
-			\item Отображение $ f $ является морфизмом измеримых пространств $ f \colon (X, f^{*}(\calA_Y)) \to (Y, \calA_Y) $.
-			\item Если $ \calA_X $ --- $ \sigma $-алгебра подмножеств $ X $,
-			то отображение $ f $ является морфизмом измеримых пространств $ f \colon (X, \calA_X) \to (Y, \calA_Y) $
-			тогда и только тогда, когда $ f^{*}(\calA_Y) \subset \calA_X $.
+			\item Система множеств $ f^{*}(\setsigmaalg_Y) $ является $ \sigma $-алгеброй подмножеств множества $ X $.
+			\item Отображение $ f $ является морфизмом измеримых пространств $ f \colon (X, f^{*}(\setsigmaalg_Y)) \to (Y, \setsigmaalg_Y) $.
+			\item Если $ \setsigmaalg_X $ --- $ \sigma $-алгебра подмножеств $ X $,
+			то отображение $ f $ является морфизмом измеримых пространств $ f \colon (X, \setsigmaalg_X) \to (Y, \setsigmaalg_Y) $
+			тогда и только тогда, когда $ f^{*}(\setsigmaalg_Y) \subset \setsigmaalg_X $.
 			\item Пусть имеются отображения множеств $ f \colon X \to Y, g \colon Z \to Y $ и $ h \colon X \to Z $
 			такие, что $ g \circ h = f $, то $ h $ является морфизмом измеримых пространств
-			$ h \colon (X, f^{*}(\calA_Y)) \to (Z, g^{*}(\calA_Y)). $
+			$ h \colon (X, f^{*}(\setsigmaalg_Y)) \to (Z, g^{*}(\setsigmaalg_Y)). $
 		\end{enumerate}
 		$$ \begin{tikzcd}
 			X \ar{dd}{h} \ar{dr}{f} & \\
@@ -1184,18 +1157,18 @@
 			Z \ar{ur}{g} & \\
 		\end{tikzcd} \
 		\begin{tikzcd}
-			(X, f^{*}(\calA_Y)) \ar{dd}{h} \ar{dr}{f} & \\
-			 & (Y, \calA_Y).  \\
-			(Z, g^{*}(\calA_Y)) \ar{ur}{g} &  \\
+			(X, f^{*}(\setsigmaalg_Y)) \ar{dd}{h} \ar{dr}{f} & \\
+			 & (Y, \setsigmaalg_Y).  \\
+			(Z, g^{*}(\setsigmaalg_Y)) \ar{ur}{g} &  \\
 		\end{tikzcd} $$
 	\end{proposition}
 	
 	\begin{proof}
 		Первый пункт проверяется непосредственно и следует из теоретико-множественных тождеств.
-		Второй пункт --- из построения $ f^{*}(\calA_X) $, третий --- из определения морфизма измеримых пространств.
+		Второй пункт --- из построения $ f^{*}(\setsigmaalg_X) $, третий --- из определения морфизма измеримых пространств.
 		
-		Докажем четвёртый пункт. Пусть $ U \in g^*(\calA_Y) $. Тогда для некоторого $ V \in \calA_Y $ выполнено $ g^{-1}(V) = U $. Далее, $ h^{-1}(U) = h^{-1}(g^{-1}(V)) = f^{-1}(V) $.
-		По определению обратного образа $ f^*(\calA_X) $ множество $ h^{-1}(U) $ содержится в нём.
+		Докажем четвёртый пункт. Пусть $ U \in g^*(\setsigmaalg_Y) $. Тогда для некоторого $ V \in \setsigmaalg_Y $ выполнено $ g^{-1}(V) = U $. Далее, $ h^{-1}(U) = h^{-1}(g^{-1}(V)) = f^{-1}(V) $.
+		По определению обратного образа $ f^*(\setsigmaalg_X) $ множество $ h^{-1}(U) $ содержится в нём.
 		Следовательно, $ h $ является морфизмом измеримых пространств.
 	\end{proof}
 	
@@ -1203,26 +1176,26 @@
 	
 	\begin{lemma} \label{inclusions direct-inverse}
 		Пусть $ X, Y $ --- множества, $ f \colon X \to Y $ --- отображение множеств.
-		Если $ \calA_X $ --- $ \sigma $-алгебра подмножеств $ X $, то $ f^*(f_*(\calA_X)) \subset  \calA_X $.
-		Если $ \calA_Y $ --- $ \sigma $-алгебра подмножество $ Y $, то $ \calA_Y \subset f_*(f^*(\calA_Y)) $.
+		Если $ \setsigmaalg_X $ --- $ \sigma $-алгебра подмножеств $ X $, то $ f^*(f_*(\setsigmaalg_X)) \subset  \setsigmaalg_X $.
+		Если $ \setsigmaalg_Y $ --- $ \sigma $-алгебра подмножество $ Y $, то $ \setsigmaalg_Y \subset f_*(f^*(\setsigmaalg_Y)) $.
 	\end{lemma}
 	
 	\begin{proof}
 		По предложению \ref{direct image of sigma algebra} отображение $ f $ является
-		морфизмом измеримых пространств $ f \colon (X, \calA_X) \to (Y, f_*(\calA_X)) $.
+		морфизмом измеримых пространств $ f \colon (X, \setsigmaalg_X) \to (Y, f_*(\setsigmaalg_X)) $.
 		Тогда по предложению \ref{inverse image of sigma algebra} имеем включение
-		$ f^*(f_*(\calA_X)) \subset  \calA_X $.
+		$ f^*(f_*(\setsigmaalg_X)) \subset  \setsigmaalg_X $.
 		
 		Теперь По предложению \ref{inverse image of sigma algebra} отображение $ f $ является
-		морфизмом измеримых пространств $ f \colon (X, f^*(\calA_Y)) \to (Y, \calA_Y) $.
+		морфизмом измеримых пространств $ f \colon (X, f^*(\setsigmaalg_Y)) \to (Y, \setsigmaalg_Y) $.
 		Тогда по предложению \ref{direct image of sigma algebra} имеем включение
-		$ \calA_Y \subset f_*(f^*(\calA_Y)) $.
+		$ \setsigmaalg_Y \subset f_*(f^*(\setsigmaalg_Y)) $.
 	\end{proof}
 	
 	Рассмотрим категорию $ \sigma $-$ \mathfrak{Alg}_X $ всех $ \sigma $-алгебр с единицей $ X $,
 	в которой объектами выступают $ \sigma $-алгебры подмножеств $ X $,
-	а единственный существующий морфизм из $ \sigma $-алгебры $ \calA $ идёт в $ \sigma $-алгебру $ \calA' $,
-	если $ \calA \subset \calA' $. Построенные нами для отображения множеств $ f \colon X \to Y $
+	а единственный существующий морфизм из $ \sigma $-алгебры $ \setsigmaalg $ идёт в $ \sigma $-алгебру $ \setsigmaalg' $,
+	если $ \setsigmaalg \subset \setsigmaalg' $. Построенные нами для отображения множеств $ f \colon X \to Y $
 	конструкции $ f_* $ и $ f^* $ являются функторами между категориями $ \sigma $-$ \mathfrak{Alg}_X $
 	и $ \sigma $-$ \mathfrak{Alg}_Y $ и, более того, что эти функторы сопряжены.
 	
@@ -1233,9 +1206,9 @@
 		--- функторы.
 		Кроме того, функтор $ f^* $ является левым сопряжённым к функтору $ f_* $ 
 		(и обратно, функтор $ f_* $ является правым сопряжённым к $ f^* $). 
-		Другими словами, для любого объекта $ \calA_X \in \sigma $\text{-}$ \mathfrak{Alg}_X $
-		и любого объекта $ \calA_Y \in \sigma $\text{-}$ \mathfrak{Alg}_Y $ и имеется естественный изоморфизм
-		множеств $ \Hom(f^*(\calA_Y), \calA_X)) \cong \Hom(\calA_Y, f_*(\calA_X)) $.
+		Другими словами, для любого объекта $ \setsigmaalg_X \in \sigma $\text{-}$ \mathfrak{Alg}_X $
+		и любого объекта $ \setsigmaalg_Y \in \sigma $\text{-}$ \mathfrak{Alg}_Y $ и имеется естественный изоморфизм
+		множеств $ \Hom(f^*(\setsigmaalg_Y), \setsigmaalg_X)) \cong \Hom(\setsigmaalg_Y, f_*(\setsigmaalg_X)) $.
 	\end{theorem}
 	
 	\begin{proof}
@@ -1243,29 +1216,29 @@
 		поэтому они функториальны.
 		
 		Теперь по предложению \ref{inverse image of sigma algebra} имеет место включение
-		$ f^*(\calA_Y) \subset \calA_X $ тогда и только тогда, когда $ f \colon (X, \calA_X) \to (Y,\calA_Y) $
+		$ f^*(\setsigmaalg_Y) \subset \setsigmaalg_X $ тогда и только тогда, когда $ f \colon (X, \setsigmaalg_X) \to (Y,\setsigmaalg_Y) $
 		является измеримым отображением.
 		По предложению \ref{direct image of sigma algebra} последнее равносильно включению
-		$ \calA_X \subset f_*(\calA_Y) $.
-		Таким образом, множества $ \Hom(f^*(\calA_Y), \calA_X)) $ и $ \Hom(\calA_Y, f_*(\calA_X)) $
+		$ \setsigmaalg_X \subset f_*(\setsigmaalg_Y) $.
+		Множества $ \Hom(f^*(\setsigmaalg_Y), \setsigmaalg_X)) $ и $ \Hom(\setsigmaalg_Y, f_*(\setsigmaalg_X)) $
 		одновременно либо пусты, либо состоят из одного элемента.
 		Тогда пусть данный изоморфизм будет пустым в первом случае 
 		и сопоставляет единственный элемент единственному элементу во втором случае.
 		
-		Если имеются включения $ \calA_{X1} \subset \calA_{X2} $ и $ \calA_{Y1} \subset \calA_{Y2} $,
+		Если имеются включения $ \setsigmaalg_{X1} \subset \setsigmaalg_{X2} $ и $ \setsigmaalg_{Y1} \subset \setsigmaalg_{Y2} $,
 		то возникает коммутативная диаграмма, индуцированная этими включениями, выражающая естественность
 		изоморфизма
 		\begin{center}
 			\begin{tikzcd}[row sep=small,column sep=tiny]
-				& \Hom(f^*(\calA_{Y2}), \calA_{X2})) \ar[dotted]{dd} \ar{rr} & & \Hom(\calA_{Y2}, f_*(\calA_{X2})) \ar{dd} \\
-				\Hom(f^*(\calA_{Y2}), \calA_{X1})) \ar{rr} \ar{ur} \ar{dd} & & \Hom(\calA_{Y2}, f_*(\calA_{X1})) \ar{ur} \ar{dd} \\
-				& \Hom(f^*(\calA_{Y1}), \calA_{X2})) \ar[dotted]{rr} & & \Hom(\calA_{Y1}, f_*(\calA_{X2})) & \\
-				\Hom(f^*(\calA_{Y1}), \calA_{X1})) \ar{rr} \ar[dotted]{ru} & & \Hom(\calA_{Y1}, f_*(\calA_{X1})) \ar{ur} &
+				& \Hom(f^*(\setsigmaalg_{Y2}), \setsigmaalg_{X2})) \ar[dotted]{dd} \ar{rr} & & \Hom(\setsigmaalg_{Y2}, f_*(\setsigmaalg_{X2})) \ar{dd} \\
+				\Hom(f^*(\setsigmaalg_{Y2}), \setsigmaalg_{X1})) \ar{rr} \ar{ur} \ar{dd} & & \Hom(\setsigmaalg_{Y2}, f_*(\setsigmaalg_{X1})) \ar{ur} \ar{dd} \\
+				& \Hom(f^*(\setsigmaalg_{Y1}), \setsigmaalg_{X2})) \ar[dotted]{rr} & & \Hom(\setsigmaalg_{Y1}, f_*(\setsigmaalg_{X2})) & \\
+				\Hom(f^*(\setsigmaalg_{Y1}), \setsigmaalg_{X1})) \ar{rr} \ar[dotted]{ru} & & \Hom(\setsigmaalg_{Y1}, f_*(\setsigmaalg_{X1})) \ar{ur} &
 			\end{tikzcd}
 		\end{center}
 	\end{proof}
 	
-	\begin{lemma}
+	\begin{lemma} (О коммутировании конструкций минимальной $ \sigma $-алгебры и обратного образа) \label{inverse image and min sigma-algebra}
 		Пусть $ X, Y $ --- множества, $ T $ --- система подмножеств $ Y $, $ Y \in T $.
 		Пусть $ f \colon X \to Y $ --- отображение множеств.
 		Обозначим через $ f^{-1}(T) $ систему множеств $ \defineset{f^{-1}(U)}{U \in T} $.
@@ -1288,6 +1261,59 @@
 		откуда следует требуемое.
 	\end{proof}
 	
+	\subsection{Произведение в категории измеримых пространств}
+	
+	Пусть $ (X, \setsigmaalg_X) $ и $ (Y, \setsigmaalg_Y) $ --- измеримые пространства.
+	Построим по ним новые измеримые пространства следующим образом.
+	
+	\defin{Произведением измеримых пространств $ (X, \setsigmaalg_X) $ и $ (Y, \setsigmaalg_Y) $}{product-of-measurable-spaces}
+	мы назовём измеримое пространство $ (X \times Y, \setsigmaalg_X \otimes \setsigmaalg_Y) $,
+	где $ \setsigmaalg_X \otimes \setsigmaalg_Y $ есть минимальная $ \sigma $-алгебра, порождённая полукольцом
+	всех возможных декартовых произведений $ A_X \times A_Y $,
+	где $ A_X \in \setsigmaalg_X $ и $ A_Y \in \setsigmaalg_Y $.
+	
+	\begin{theorem} \label{product of measurable spaces}
+		Пусть $ (X, \setsigmaalg_X) $ и $ (Y, \setsigmaalg_Y) $ --- измеримые пространства,
+		$ (X \times Y, \setsigmaalg_X \otimes \setsigmaalg_Y) $ --- их произведение.
+		Тогда
+		\begin{enumerate}
+			\item отображения проекций $ \pr_X \colon X \times Y \to X $
+			и $ \pr_Y \colon X \times Y \to Y $ являются морфизмами измеримых пространств.
+			\item пространство $ (X \times Y, \setsigmaalg_X \otimes \setsigmaalg_Y) $ удовлетворяет универсальному свойству произведения,
+			то есть для всякого измеримого пространства $ (Z, \setsigmaalg_Z) $ 
+			и всяких двух морфизмов $ f \colon (Z, \setsigmaalg_Z) \to (X, \setsigmaalg_X) $,
+			$ g \colon (Z, \setsigmaalg_Z) \to (Y, \setsigmaalg_Y) $
+			существует единственный морфизм $ f \times g \colon (Z, \setsigmaalg_Z) \to (X \times Y, \setsigmaalg_X \otimes \setsigmaalg_Y) $,
+			удовлетворяющий условию $ \pr_X \circ (f \times g) = f $ и $ \pr_Y \circ (f \times g) = g $.
+		\end{enumerate}
+		$$ \begin{tikzcd}
+			& (Z, \setsigmaalg_Z) \ar{dl}[above left]{f} \ar{dr}{g} \ar[dashed]{dd}[description]{f \times g} & \\
+			(X, \setsigmaalg_X) &  & (Y, \setsigmaalg_Y) \\
+			& (X \times Y, \setsigmaalg_X \otimes \setsigmaalg_Y) \ar{ul}{\pr_X} \ar{ur}[below right]{\pr_Y} &
+		\end{tikzcd} $$
+	\end{theorem}
+	
+	\begin{proof}
+		Пусть $ A \in \setsigmaalg_X $. Тогда $ \pr_X^{-1}(A) = A \times Y \in \setsigmaalg_X \otimes \setsigmaalg_Y $,
+		поэтому отображение проекции на $ X $ является морфизмом. Аналогично доказывается для второй проекции.
+		
+		Пусть теперь $ f, g $ --- морфизмы из условия. Положим $ (f \times g)(z) = (f(z), g(z)) $ 
+		--- единственный возможные вариант определить это отображение так, чтобы выполнялись условия на проекции.
+		Проверим, что $ f \times g $ является морфизмом.
+		Пусть $ A = A_X \times A_Y $, где $ A_X \in \setsigmaalg_X $ и $ A_Y \in \setsigmaalg_Y $. 
+		Тогда $ (f \times g)^{-1}(A) = \defineset{z \in Z}{f(z) \in A_X, g(z) \in A_Y} 
+		= f^{-1}(A_X) \cap g^{-1}(A_Y) \in \setsigmaalg_Z $.
+		Положим $ S = \defineset{A = A_X \times A_Y}{A_X \in \setsigmaalg_X, A_Y \in \setsigmaalg_Y} $.
+		По определению $ \setsigmaalg_X \otimes \setsigmaalg_Y = R_{\sigma}(S) $.
+		По лемме \ref{inverse image and min sigma-algebra} имеем 
+		$ R_{\sigma}((f \times g)^{-1}(S)) = (f \times g)^*(R_{\sigma}(S)) = (f \times g)^*(\setsigmaalg_X \otimes \setsigmaalg_Y) $.
+		Так как $ (f \times g)^{-1}(S) \subset \setsigmaalg_Z $, 
+		то по минимальности (по теореме \ref{min ring exists}) 
+		имеем включение $ R_{\sigma}((f \times g)^{-1}(S)) \subset \setsigmaalg_Z $.
+		Тогда $ (f \times g)^*(\setsigmaalg_X \otimes \setsigmaalg_Y) \subset \setsigmaalg_Z $ и 
+		по свойствам обратного образа (см. предложение \ref{inverse image of sigma algebra})
+		отображение $ f \times g $ является морфизмом.
+	\end{proof}
 	
 	\subsubsection{Функтор борелевской $ \sigma $-алгебры}
 	
@@ -1303,17 +1329,17 @@
 	
 	\begin{lemma} \label{measurability of map}
 		Пусть $ f \colon X \to Y $ --- отображение множеств,
-		$ \theta $ --- топология $ Y $, $ \calA_X $ --- $ \sigma $-алгебра подмножеств $ X $.
+		$ \theta $ --- топология $ Y $, $ \setsigmaalg_X $ --- $ \sigma $-алгебра подмножеств $ X $.
 		Пусть также $ S $ --- база топологии $ \theta $ такая, 
 		что всякое открытое подмножество представляется в виде не более, чем счётного объединения элементов базы, 
 		и $ T $ --- предбаза топологии $ \theta $ такая, что всякое открытое множество представляется в виде не
 		более, чем счётного объединения конечных пересечений элементов $ T $.
 		Тогда следующие утверждения равносильны
 		\begin{enumerate}
-			\item прообраз всякого элемента борелевской $ \sigma $-алгебры $ \calB(\theta) $ лежит в $ \calA_X; $ \label{measurability of map | all}
-			\item прообраз всякого открытого множества лежит в $ \calA_X; $ \label{measurability of map | open}
-			\item прообраз всякого элемента базы $ S $ лежит в $ \calA_X; $ \label{measurability of map | base}
-			\item прообраз всякого элемента предбазы $ T $ лежит в $ \calA_X. $ \label{measurability of map | prebase}
+			\item прообраз всякого элемента борелевской $ \sigma $-алгебры $ \calB(\theta) $ лежит в $ \setsigmaalg_X; $ \label{measurability of map | all}
+			\item прообраз всякого открытого множества лежит в $ \setsigmaalg_X; $ \label{measurability of map | open}
+			\item прообраз всякого элемента базы $ S $ лежит в $ \setsigmaalg_X; $ \label{measurability of map | base}
+			\item прообраз всякого элемента предбазы $ T $ лежит в $ \setsigmaalg_X. $ \label{measurability of map | prebase}
 		\end{enumerate}
 	\end{lemma}
 	
@@ -1327,15 +1353,15 @@
 		пункт \ref{measurability of map | all}.
 		
 		Рассмотрим систему множеств $ T_X = f^{-1}(T) \cup \{X\} := \defineset{f^{-1}(U)}{U \in T} \cup \{X\} $.
-		По условию $ T_X \subset \calA_X $. Пусть $ R_{\sigma}(T_X) $ --- минимальная $ \sigma $-алгебра, содержащая $ T_X $.
-		Так как $ \calA_X $ является $ \sigma $-алгеброй, то $ R_{\sigma}(T_X) \subset \calA_X $.
-		Из построения $ f_* $ имеем $ f_*(R_{\sigma}(T_X)) \subset f_*(\calA_X) $.
+		По условию $ T_X \subset \setsigmaalg_X $. Пусть $ R_{\sigma}(T_X) $ --- минимальная $ \sigma $-алгебра, содержащая $ T_X $.
+		Так как $ \setsigmaalg_X $ является $ \sigma $-алгеброй, то $ R_{\sigma}(T_X) \subset \setsigmaalg_X $.
+		Из построения $ f_* $ имеем $ f_*(R_{\sigma}(T_X)) \subset f_*(\setsigmaalg_X) $.
 		Так же из построения $ f_* $ имеем включение $ T \subset f_*(R_{\sigma}(T_X)) $.
 		Из условия наложенного на $ T $ следует, что минимальная $ \sigma $-алгебра, порождённая $ T $
 		совпадает с $ \calB(\theta) $. Тогда по минимальности (теореме \ref{min ring exists})
 		имеем включение $ \calB(\theta) \subset f_*(R_{\sigma}(T_X)) $.
-		Следовательно, $ \calB(\theta) \subset f_{*}(\calA_X) $ и по предложению \ref{direct image of sigma algebra}
-		$ f $ является морфизмом измеримых пространств $ f \colon (X, \calA_X) \to (Y, \calB(\theta)) $,
+		Следовательно, $ \calB(\theta) \subset f_{*}(\setsigmaalg_X) $ и по предложению \ref{direct image of sigma algebra}
+		$ f $ является морфизмом измеримых пространств $ f \colon (X, \setsigmaalg_X) \to (Y, \calB(\theta)) $,
 		что и утверждается в пункте \ref{measurability of map | all}.
 	\end{proof}
 	
@@ -1349,7 +1375,7 @@
 	\begin{proof}
 		Следует из эквивалентности пунктов \ref{measurability of map | all}
 		и $ \ref{measurability of map | open} $ леммы \ref{measurability of map} 
-		для случая, когда $ \calA_X = \calB(\tau) $.
+		для случая, когда $ \setsigmaalg_X = \calB(\tau) $.
 	\end{proof}
 	
 	\subsection{Предварительные сведения из анализа Фурье}
@@ -1853,7 +1879,7 @@
 		а последняя разбита на три треугольника, покрашенных в те же цвета. 
 		Пусть вероятности выпадения граней равны $ \tfrac{1}{4} $. покажем, что события <<выпала грань с цветом $ A $>>,
 		где $ A $ --- цвет попарно независимы, но не являются таковыми в совокупности. 
-		Формально ситуация выглядит следующим образом $ \Omega = \{\omega_{R}, \omega_{G}, \omega_{B}, \omega_{RGB}\} $
+		Формально ситуация выглядит записывается так: $ \Omega = \{\omega_{R}, \omega_{G}, \omega_{B}, \omega_{RGB}\} $
 		--- элементарное событие --- выпала грань с данной раскраской.
 		По условию $ \prob(\omega_{R}) = \prob(\omega_{G}) = \prob(\omega_{B}) = \prob(\omega_{RGB}) = \tfrac{1}{4} $.
 		Обозначим через $ R = \{\omega_R, \omega_{RGB}\} $  $ (G = \{\omega_G, \omega_{RGB}\}, B = \{\omega_B, \omega_{RGB}\}) $
@@ -1911,7 +1937,7 @@
 		то $ \varphi $ --- линейное отображение.
 		Можно показать, что $ \varphi $ сюръективно (проверьте с помощью элементарных преобразований, 
 		что его матрица имеет ранг $ 2^n $) и, следовательно, биективно.
-		Таким образом, достаточно подобрать значения вероятностей все возможных произведений $ A_i $ так, чтобы
+		Достаточно подобрать значения вероятностей все возможных произведений $ A_i $ так, чтобы
 		вероятности $ p_{(\varepsilon_1, \ldots, \varepsilon_n)} $ были неотрицательны, в сумме давали 1 ($ \prob(\Omega) = 1 $)
 		и при этом выполнялись в точности все желаемые равенства на вероятности произведений событий $ A_i $.
 		Положим $ \prob(A_i) = \tfrac{1}{2^{2n}} $, $ \prob(\Omega) = 1 $.
@@ -1987,7 +2013,7 @@
 	все интервалы одного из двух видов $ (-\infty, b) $ и $ (a, +\infty) $
 	или все полуинтервалы одного из двух видов $ (-\infty, b] $ и $ [a, +\infty) $.
 	
-	Таким образом, случайные величины удовлетворяют всем тем стандартным свойствам, 
+	Случайные величины удовлетворяют всем тем стандартным свойствам, 
 	которым удовлетворяют измеримые функции:
 	
 	\begin{proposition} \label{random variebles composition with continuous}
@@ -2241,7 +2267,7 @@
 	\begin{theorem}
 		Пусть $ \xi $ --- случайная величина и $ F_\xi $ её функция распределения.
 		Пусть $ \mu_\xi $ --- мера Лебега-Стилтьеса на подмножествах $ \RR $, порождённая функцией $ F_\xi $.
-		На \hyperlink{borel-sigma-algebra}{борелевской} $ \sigma $-алгебре с  мера $ \mu_\xi $ совпадает 
+		На \hyperlink{borel-sigma-algebra}{борелевской} $ \sigma $-алгебре $ \calB $ мера $ \mu_\xi $ совпадает 
 		с распределением $ \xi_*\prob $ вероятностной меры $ \prob $.
 	\end{theorem}
 	
@@ -2287,24 +2313,30 @@
 	= \prob(\Omega) = 1 $, то дискретное распределение $ \{p_i\} $ можно задать на дискретном вероятностном пространстве. 
 	
 	Распределение случайной величины $ \xi $ и она сама называются \defin{абсолютно непрерывными}{absolutely-continuous},
-	если существует функция $ p \colon \mathbb{R} \to \mathbb{R} $ такая, что
+	если существует неотрицательная функция $ p_\xi \colon \mathbb{R} \to \mathbb{R} $ такая, что
 	для любого борелевского множества $ B \in \calB $ выполнено равенство
-	$$ \prob(\xi \in B) = \xi_*\prob(B) = \int\limits_{B} f\diff\mu, $$
+	$$ \prob(\xi \in B) = \xi_*\prob(B) = \int\limits_{B} p_\xi\diff\mu, $$
 	где $ \mu $ --- классическая мера Лебега.
 	С точки зрения теории меры и интеграла Лебега это определение эквивалентно тому,
 	что мера $ \xi_*\prob $ абсолютно непрерывна относительно классической меры Лебега $ \mu $ на прямой
 	(это значит, что случайная величина $ \xi $ попадает в множество меры нуль с вероятностью нуль).
 	Теорема Радона-Никодима даёт формулу для $ \xi_*\prob $, принятую нами за определение.
-	
+	Функция $ p_\xi $ называется \defin{функцией плотности}{probability-density-function} \\
+	абсолютно непрерывной случайной величины $ \xi $.
 	
 	В силу доказанных выше теорем мы можем дать эквивалентное определение в терминах функции распределения.
 	Будем говорить, что распределение случайной величины $ \xi $ и она сама называются \defin{абсолютно непрерывными}{absolutely-continuous-2}, если функция распределения $ F_\xi $ может быть выражена как интеграл
-	$$ F_\xi(x) = \int\limits_{(-\infty; x]} p\diff\mu. $$
+	$$ F_\xi(x) = \int\limits_{(-\infty; x]} p_\xi\diff\mu. $$
 	В действительном анализе такая функция $ F_\xi $ называется абсолютно непрерывной,
 	почти всюду существует производная $ F_\xi' $, которая почти всюду совпадает с $ p(x) $,
 	а также имеет место аналог формулы Ньютона-Лейбница: $ F_\xi(b) - F_\xi(a) = \int\limits_{a}^{b} p\diff\mu $.
 	Можно доказать, что функция абсолютно непрерывна тогда и только тогда,
 	когда она непрерывна, имеет ограниченную вариацию и переводим множества меры нуль по Лебегу в множества меры нуль.
+	
+	Во многих рассматриваемых случаях (в частности, во всех примерах следующего раздела) 
+	функция $ p_\xi $ оказывается интегрируемой по Риману на любом отрезке
+	и абсолютно интегрируема на $ \RR $, поэтому можно записать равенства
+	$$ F_\xi(x) = \int\limits_{-\infty}^{x} p_\xi(t)\diff t, \int\limits_{-\infty}^{+\infty} p_\xi(t)\diff t = 1. $$
 	
 	\section{Классические примеры распределений} 
 	
@@ -2502,7 +2534,7 @@
 	(то есть в этот момент будет достигнут $ r $-й <<успех>>, 
 	а среди предыдущих $ k - 1 $ будут как-то разбросаны ещё $ r - 1 $ <<успех>>).
 	Пусть случайная величина $ \xi $ сопоставляет числу из $ \Omega $ его же само.
-	Таким образом, $ \xi $ несёт в себя смысл <<количество испытаний, проведённых до $ r $-го успеха>>.
+	Величина $ \xi $ несёт в себя смысл <<количество испытаний, проведённых до $ r $-го успеха>>.
 	Распределение такой случайной величины называется \defin{геометрическим распределением}{geometric-distribution}
 	и обозначается $ \mathrm{NB}(r,p) $.
 	Изобразим таблицу:
@@ -2948,7 +2980,7 @@
 			\tfrac{j}{2^i}, & x \in \left(\tfrac{1 + 3j}{3^i}, \tfrac{2 + 3j}{3^i}\right); \\
 			\sum\limits_{i = 1}^{+\infty} \tfrac{a_j / 2}{2^i}, & x \in K, x = \sum\limits_{i = 1}^{+\infty} \tfrac{a_j}{3^j}.
 		\end{cases} $$
-		Можно показать, что заданная таким образом функция непрерывна. 
+		Можно показать, что заданная такой формулой функция непрерывна. 
 		Множество точек роста $ c $ совпадает канторовым множеством,
 		и поэтому имеет меру нуль по Лебегу.
 		
@@ -2960,12 +2992,322 @@
 	
 	\section{Совместные распределения случайных величин}
 	
+	Пусть $ \xi_1, \ldots, \xi_n $ --- случайные величины, заданные на вероятностном пространстве 
+	$ (\Omega, \events, \prob) $. Тогда функция $ \xi \colon \Omega \to \RR^n $, 
+	заданная по правилу $ \xi(\omega) = (\xi_1(\omega), \ldots, \xi_n(\omega)) $
+	называется \defin{случайным вектором}{random-vector} или 
+	\defin{многомерной случайной величиной}{higher-dimensional-random-variable}.
 	
+	\begin{proposition}
+		Справедливы следующие утверждение о случайных величинах и многомерных случайных величинах.
+		\begin{enumerate}
+			\item Многомерная случайная величина является измеримым отображением 
+			$ \xi \colon (\Omega, \events) \to (\RR^n, \calB_n) $,
+			где $ \calB_n $ --- борелесвкая $ \sigma $-алгебра подмножеств $ \RR $.
+			\item Если $ \xi \colon (\Omega, \events) \to (\RR^n, \calB_n) $ --- измеримое отображение,
+			то каждая композиция $ \xi_i = \pr_i \circ \xi $ $ (\xi(\omega) = (\xi_1(\omega), \ldots, \xi_n(\omega))) $
+			является случайной величиной и тем самым $ \xi $ является многомерной случайной величиной.
+		\end{enumerate}
+	\end{proposition}
+	
+	\begin{proof}
+		Оба утверждения являются следствиями теоремы \ref{product of measurable spaces}.
+	\end{proof}
+	
+	Аналогично одномерным случайным величинам для случайного вектора определяются
+	его \defin{распределение}{joint-distribution} как \hyperlink{pushforward-measure}{прямой образ} 
+	вероятностной меры $ \xi_*\prob $. Снова напомним, что $ \xi_*\prob(B) := \prob(\xi^{-1}(B)) = \prob(\xi \in B) $.
+	Аналогично же определяется 
+	\defin{функция распределения случайного вектора (функция совместного распределения)}
+	{joint--cumulative-distribution-function}
+	$$ F_{\xi_1, \ldots, \xi_n}(x_1, \ldots, x_n) = \prob(\xi_1 \leqslant x_1, \ldots, \xi_n \leqslant x_n). $$
+	
+	Функция совместного распределения удовлетворяет свойствам, аналогичным свойствам одномерной функции распределения.
+	
+	\begin{proposition} \label{joint distribution function properties}
+		Пусть $ \xi_1,\ldots,\xi_n $ --- случайные величины и $ F_{\xi_1, \ldots, \xi_n} $ --- её функция распределения.
+		Тогда выполнены следующие свойства
+		\begin{enumerate}
+			\item функция $ F_{\xi_1, \ldots, \xi_n} $ 
+			неубывает по каждому аргументу$ ; $ \label{joint distribution function properties | monotonic}
+			\item функция $ F_{\xi_1, \ldots, \xi_n} $ непрерывна справа по каждому аргументу$ ; $ \label{joint distribution function properties | right continuous}
+			\item $ \lim\limits_{x_n \to +\infty} F_{\xi_1, \ldots, \xi_{n}}(x_1, \ldots, x_n) 
+			= F_{\xi_1, \ldots, \xi_{n - 1}}(x_1, \ldots, x_{n - 1}); $ 
+			\label{joint distribution function properties | at +inf}
+			\item $ \lim\limits_{x_n \to -\infty} F_{\xi_1, \ldots, \xi_{n}}(x_1, \ldots, x_n) = 0; $
+			\label{joint distribution function properties | 0 at -inf}
+			\item $ \lim\limits_{x_1 \to +\infty \ldots x_n \to +\infty} F_{\xi_1, \ldots, \xi_{n}}(x_1, \ldots, x_n) = 1; $
+			\label{joint distribution function properties | 1 at all +inf}
+		\end{enumerate}
+	\end{proposition}
+	
+	По функции $ F $, удовлетворяющей свойствам из предложения \ref{joint distribution function properties}
+	модно построить многомерную меру Лебега-Стилтьеса $ \mu_F $.
+	Остаются верны следующие результаты.
+	
+	\begin{theorem}
+		Пусть функция $ F $ удовлетворяет свойствам из предложения \ref{joint distribution function properties}.
+		Тогда существует единственная вероятностная мера $ \prob_F $ на борелевской $ \sigma $-алгебре $ \calB_n $
+		подмножеств $ \RR^n $ такая, что функция $ F $ является функцией совместного распределения многомерной случайной величины
+		$ \id \colon (\RR^n, \calB_n, \prob_F) \to (\RR^n, \calB_n) $.
+	\end{theorem}
+	
+	\begin{theorem}
+		Пусть $ \xi $ --- случайный вектор и $ F_\xi $ его функция распределения.
+		Пусть $ \mu_\xi $ --- мера Лебега-Стилтьеса на подмножествах $ \RR^n $, порождённая функцией $ F_\xi $.
+		На \hyperlink{borel-sigma-algebra}{борелевской} $ \sigma $-алгебре $ \calB_n $ мера $ \mu_\xi $ совпадает 
+		с распределением $ \xi_*\prob $ вероятностной меры $ \prob $.
+	\end{theorem}
+	
+	Многомерная случайная величина называется \defin{дискретной}{joint-discrete},
+	если она принимает не более, чем счётное число значений.
+	Распределение такой случайной величины называется \defin{дискретным}{joint-discrete-distribution-function}.
+	
+	Распределение случайного вектора $ \xi = (\xi_1,\ldots,\xi_n) $ 
+	и он сам называются \defin{абсолютно непрерывными}{joint-absolutely-continuous},
+	если существует функция $ p \colon \mathbb{R}^n \to \mathbb{R} $ такая, что
+	для любого борелевского множества $ B \in \calB_n $ выполнено равенство
+	$$ \prob(\xi \in B) = \xi_*\prob(B) = \int\limits_{B} f\diff\mu^{(n)}, $$
+	где $ \mu^{(n)} $ --- классическая мера Лебега на подмножествах $ \RR^n $.
+	С точки зрения теории меры и интеграла Лебега это определение эквивалентно тому,
+	что мера $ \xi_*\prob $ абсолютно непрерывна относительно классической меры Лебега $ \mu^{(n)} $
+	в многомерном пространстве.
+	(это значит, что случайная величина $ \xi $ попадает в множество меры нуль с вероятностью нуль).
+	Теорема Радона-Никодима даёт формулу для $ \xi_*\prob $, принятую нами за определение.
+	Функция $ p_\xi = p_{\xi_1,\ldots,\xi_n} $ называется \defin{функцией совместной плотности}{joint-probability-density-function}
+	абсолютно непрерывного случайного вектора $ \xi = (\xi_1,\ldots,\xi_n) $.
+	
+	В силу доказанных выше теорем мы можем дать эквивалентное определение в терминах функции совместного распределения.
+	Будем говорить, что совместное распределение случайных величин $ \xi_1,\ldots,\xi_n $ называется \defin{абсолютно непрерывными}{joint-absolutely-continuous-2}, 
+	если функция совместного распределения $ F_{\xi_1,\ldots,\xi_n} $ может быть выражена как интеграл
+	$$ F_{\xi_1,\ldots,\xi_n}(x_1, \ldots, x_n) 
+	= \int\limits_{\prod\limits_{i = 1}^{n} (-\infty; x_i]}  p_{\xi_1,\ldots,\xi_n}\diff\mu^{(n)}. $$
+	
+	Почти всюду существует частная производная $ \tfrac{\partial^n F_{\xi_1,\ldots,\xi_n}}{\partial x_1 \ldots \partial x_n}(\tilde{x_1}, \ldots, \tilde{x_n}) $, 
+	которая почти всюду совпадает с $ p_{\xi_1,\ldots,\xi_n}(\tilde{x_1}, \ldots, \tilde{x_n}) $.
+	
+	Во многих рассматриваемых случаях (в частности, во всех примерах выше) 
+	функция $ p_\xi $ оказывается интегрируемой по Риману на любом отрезке
+	и абсолютно интегрируема на $ \RR $, поэтому можно записать равенства
+	$$ F_{\xi_1,\ldots,\xi_n}(x_1,\ldots,x_n) 
+	= \int\limits_{-\infty}^{x_n} \ldots \int\limits_{-\infty}^{x_1} 
+	p_{\xi_1,\ldots,\xi_n}(t_1,\ldots,t_n)\diff t_1 \ldots \diff t_n, 
+	$$ 
+	$$ \int\limits_{-\infty}^{+\infty} \ldots \int\limits_{-\infty}^{+\infty} 
+	p_{\xi_1,\ldots,\xi_n}(t_1,\ldots,t_n)\diff t_1 \ldots \diff t_n = 1. $$
+	Также верна формула
+	$$ p_{\xi_1,\ldots,\xi_{n - 1}}(t_1, \ldots, t_{n - 1}) = \int\limits_{-\infty}^{+\infty}
+	p_{\xi_1,\ldots,\xi_n}(t_1,\ldots,t_n)\diff t_n. $$
+	
+	\begin{example}
+		Пусть $ a = (a_1,\ldots, a_n)^T $ --- вектор, $ B = (\sigma_{ij}) $ --- положительно определённая симметрическая матрица. Будем говорить, что вектор $ \xi = (\xi_1, \ldots, \xi_n) $ имеет многомерное нормальное распределение,
+		если это распределение имеет совместную плотность
+		$$ p_{\xi}(x) = \tfrac{1}{(2\pi)^{n / 2}\sqrt{\det B}}e^{-\tfrac{(x - \alpha)^TB^{-1}(x - \alpha)}{2}}. $$
+		Используя замену координат и приведение матрицы $ B $ к единичному виду, можно показать,
+		что
+		$$ \int\limits_{-\infty}^{+\infty} \ldots \int\limits_{-\infty}^{+\infty} 
+		p_{\xi_1,\ldots,\xi_n}(t_1,\ldots,t_n)\diff t_1 \ldots \diff t_n = 1. $$
+	\end{example}
+	
+	\section{Независимость случайных величин}
+	
+	\subsection{Независимость конечного набора случайных величин}
+	
+	Введём понятие независимости случайных величин, с которым мы будем в дальнейшем сталкиваться повсеместно.
+	Интуиция говорит там, что случайные величины независимы, если вероятности их принять какое-то значения
+	не связаны или другими словами независимы события вида $ \xi_k \in B_k $, 
+	где $ B_k $ --- \hyperlink{borel-sets}{борелевские множества}.
+	Случайные величины $ \xi_1, \ldots, \xi_n $ называются \defin{независимыми}{independent-random-variables},
+	если для любого набора борелевских множеств $ B_1, \ldots, B_n $ выполнено равенство
+	$$ \prob(\xi_1 \in B_1, \ldots, \xi_n \in B_n) = \prob(\xi_1 \in B_1)\ldots\prob(\xi_n \in B_n). $$
+	
+	По всякой случайной величине можно построить $ \sigma $-алгебру событий $ \events_\xi $,
+	состоящую из всевозможных прообразов борелевских множеств при $ \xi $:
+	$ \events_\xi = \defineset{\xi^{-1}(B)}{B \in \calB} $.
+	Построенную $ \sigma $-алгебры мы будем называть \defin{$ \sigma $-алгеброй, порождённой случайной величиной $ \xi $}
+	{random variable sigma algebra}. Отметим, что данная $ \sigma $ алгебра есть не что иное как,
+	\hyperlink{inverse-image-of-sigma-algebra}{обратный образ} борелевской $ \sigma $-алгебры при отображении $ \xi $.
+	Проверка того, что это $ \events_{\xi} $ действительно является $ \sigma $-алгеброй 
+	осуществляется непосредственной проверкой всех аксиом.
+	Кроме обозначения $ \events_\xi $,	 будем также писать $ \sigma(\xi) $.
+	
+	\begin{proposition}
+		Пусть $ \xi, \eta $ --- две случайные величины и $ \events_\xi \subset \events_\eta $
+		$ ( $в таких случаях ещё говорят, что $ \xi $ измерима относительно $ \events_\eta $, поскольку включение означает, что прообразы борелевских множеств при отображении $ \xi $ лежат в $ \events_\eta $$ ) $.
+		Тогда существует такая функция борелевская функция $ g $, что
+		$ \xi = g(\eta) $.
+	\end{proposition}
+	
+	\begin{proof}
+		Положим $ A_{k, n} = \xi^{-1}\left(\left[\tfrac{k}{2^n}, \tfrac{k + 1}{2^n}\right)\right) $.
+		Так как $ A_{k, n} \in \events_\xi \subset \events_\eta $, то найдутся борелевские множества $ B_{k, n} $
+		такие, что $ \eta^{-1}(B_{k, n}) = A_{k, n} $.
+		Положим $ g_n(x) = \tfrac{k}{2^n} $ на $ B_{k, n} \setminus \bigcup\limits_{k' \neq k, n' \neq n} B_{k', n'} $
+		и нулём там, где хотя бы два из множеств $ B_{k, n} $ пересекаются 
+		(все такие точки лежат вне образа случайной величины $ \eta $, так как множества $ A_{k, n} $ попарно не пересекаются).
+		Тогда $ g_n $ является борелевской и $ g_n(\eta(\omega)) = \tfrac{\lceil2^n\xi(\omega)\rceil}{2^n} $.
+		Кроме того, функции $ g_n $ образуют поточечно возрастающую последовательность, поточечно ограниченную $ \xi $ или нулём
+		и такую, что композиции $ g_n \circ \eta $ стремятся к $ \xi $.
+		Следовательно, во всех точках существует предел $ g(x) = \lim\limits_{n \to +\infty} g_n(x) $,
+		являющийся борелевской функцией
+		и выполнено равенство $ g(\eta) = \xi $.
+	\end{proof}
+	
+	Две ($ \sigma $-)алгебры $ \events_1, \ldots, \events_n \subset \events $ 
+	будем называть \defin{независимыми}{independent-sigma-algebras},
+	если события из любого набора $ A_1 \in \events_1, \ldots, A_n \in \events_n $ 
+	\hyperlink{global-independent}{независимы}.
+	Поскольку всегда в качестве некоторых $ A_i $ можно взять $ \Omega $,
+	то независимость $ \sigma $-алгебр $ \events_1, \ldots, \events_n \subset \events $
+	равносильна истинности для всех наборов $ A_1 \in \events_1, \ldots, A_n \in \events_n $ равенства
+	$$ \prob(A_1\ldots A_n) = \prob(A_1)\ldots\prob(A_n). $$
+	Ввиду данного определения возникает описание независимости случайных величин в терминах порождённых ими $ \sigma $-алгебр.
+	
+	\begin{proposition} \label{independence of random variables and sigma algebras}
+		Случайные величины независимы тогда и только тогда, когда порождённые ими $ \sigma $-алгебры независимы.
+	\end{proposition}
+	
+	\begin{proof}
+		Взяв в качестве $ A_i = \xi^{-1}(B_i) $, где $ B_i $ борелевское, дословно перепишем друг в друга равенства из обоих определений.
+	\end{proof}
+	
+	\begin{theorem}[Об аппроксимации] \label{approximation}
+		Пусть $ (\Omega, \events, \prob) $ --- вероятностное пространство
+		и $ \setsigmaalg $ --- $ \sigma $-алгебра, порождённая алгеброй $ \calA \subset \events $.
+		Тогда для всякого элемента $ U \in \setsigmaalg $ существует последовательность
+		элементов $ \{U_i\} \subset \calA $ такая, что $ \lim\limits_{i \to +\infty} \prob(U_i \vartriangle U) = 0 $,
+		и, следовательно, $ \lim\limits_{i \to +\infty}{\prob(U_i)} = \prob(U) $.
+	\end{theorem}
+	
+	\begin{proof}
+		Построим по алгебра $ \calA $ и ограничении на неё меры $ \prob $ их лебеговское продолжение,
+		как это делалось в предварительных сведениях.
+		Тогда, новая $ \sigma $-алгебра измеримых множеств будет содержать в себе алгебру $ \setsigmaalg $.
+		По теореме Каратеодори \ref{uniqueness of extention to the minimal sigma algebra} 
+		меры $ \prob $ и продолжение по Лебегу этой же меры с $ \calA $ совпадают на $ \setsigmaalg $.
+		Из измеримости множества $ U $ и конструкции легебогвского продолжения следует существование
+		множеств $ U_i \in \calA $, удовлетворяющих условию.
+		Второе выражение с пределом следует из неравенства $ |\prob(U) - \prob(U_i)| \leqslant \prob(U \vartriangle U_i) $.
+	\end{proof}
+	
+	\begin{theorem} \label{indep of algs => indep of min sigma algs}
+		Пусть $ \events_1, \ldots, \events_n \subset \events $ --- $ \sigma $ алгебры
+		и $ \sigma $-алгебра $ \sigma_i $ порождается алгеброй $ \calA_i $.
+		Тогда независимость данных $ \sigma $-алгебр равносильна независимости
+		всех возможных наборов $ A_i \in \calA_i $ (независимости алгебр $ A_i $).
+	\end{theorem}
+	
+	\begin{proof}
+		Независимость наборов из условия следует из определения независимости $ \sigma $-алгебр.
+		
+		Пусть теперь все алгебры $ \calA_i $ из условия независимы.
+		Пусть $ U_i \in \events_i $ --- набор событий.
+		По лемме об аппроксимации \ref{approximation} существуют последовательности
+		$ U_{ij} \in \calA_i $ такие, что $ \lim\limits_{j \to +\infty}{\prob(U_{ij})} = \prob(U_i) $.
+		Так как $$ \prob((U_1\ldots U_n) \vartriangle (U_{1j}\ldots U_{nj})) \leqslant
+		\sum\limits_{i = 1}^{n} \prob(U_i \vartriangle U_{ij}), $$
+		то существует и предел $ \lim\limits_{j \to +\infty}{\prob(U_{1j}\ldots U_{nj})} = \prob(U_1\ldots U_n) $.
+		Тогда $$ \prob(U_1)\ldots\prob(U_n) 
+		= \lim\limits_{j \to +\infty} {\prob(U_{1j})\ldots\prob(U_{nj})}
+		= \lim\limits_{j \to +\infty} {\prob(U_{1j}\ldots U_{nj})}
+		= \prob(U_1\ldots U_n). $$
+	\end{proof}
+	
+	Следующая теорема демонстрирует связь между независимостью, функциями распределения и совместным распределением.
+	
+	\begin{theorem} \label{independence through distribution functions}
+		Случайные величины $ \xi_1, \ldots, \xi_n $ 
+		независимы тогда и только тогда, когда для любого набора $ (x_1, \ldots, x_n) $ 
+		имеет место равенство
+		$$ F_{\xi_1, \ldots, \xi_n}(x_1, \ldots, x_n) = F_{\xi_1}(x_1) \cdot \ldots \cdot F_{\xi_n}(x_n). $$
+	\end{theorem}
+	
+	\begin{proof}
+		Если случайные величины независимы, то взяв в качестве $ B_i = (-\infty; x_i] $
+		получим требуемое равенство.
+		
+		Предположим, что выполнено равенство из условия.
+		В силу предложения \ref{independence of random variables and sigma algebras}
+		достаточно доказать, что независимы $ \sigma $-алгебры
+		$ \events_{\xi_1}, \ldots, \events_{\xi_n} $.
+		Обозначим через $ B_i(x) $ множество $ \xi_i^{-1}((-\infty; x]) $
+		и через $ C_i(a,b] $ множество $ \xi_i^{-1}((a,b]) $.
+		По условию, для любых $ x_1, \ldots, x_n $ события
+		$ B_1(x_1), \ldots, B_n(x_n) $ независимы.
+		Так как $ C_1(a,b] = B_1(b) \setminus B_1(a) $
+		и выполнены равенства
+		$$ \prob(C_i(a,b]B_2(x_2)\ldots B_n(x_n))
+		= \prob(B_1(b)B_2(x_2)\ldots B_n(x_n))
+		- \prob(B_1(a)B_2(x_2)\ldots B_n(x_n)) = $$  
+		$$ = \prob(B_1(b))\prob(B_2(x_2))\ldots \prob(B_n(x_n))
+		- \prob(B_1(a))\prob(B_2(x_2))\ldots \prob(B_n(x_n)) = $$  
+		$$ = \prob(C_i(a,b])\prob(B_2(x_2))\ldots \prob(B_n(x_n)), $$
+		по индукции, а также аналогично для интервалов $ (a;+\infty) $ 
+		можем вывести, что для любых $ a_1,\ldots, a_n, b_1, \ldots, b_n $
+		независимы события $ A_1, \ldots, A_n $, где $ A_i \in S_i $ --- принадлежат полукольцу
+		полуинвервалов. Из построения минимального кольца $ \ref{min ring description} $
+		и свойств независимости событий $ \ref{indep-prop} $ вытекает, что
+		алгебры, порождённые прообразами всех полуинтервалов независимы.
+		Так как минимальная сигма-алгебра, порождённая полуинтвервалами совпадает с борелевской $ \sigma $-алгеброй,
+		то по лемме \ref{inverse image and min sigma-algebra} их прообразы порождают $ \sigma $-алгебры $ \events_{\xi_i} $.
+		По теореме \ref{indep of algs => indep of min sigma algs} эти $ \sigma $-алгебры независимы.
+	\end{proof}
+	
+	\begin{corollary}
+		Пусть абсолютно непрерывные случайные величины $ \xi_1, \ldots, \xi_n $ 
+		имеют плотности $ p_{\xi_1}, \ldots, p_{\xi_n} $.
+		Тогда их независимость равносильна тому, что 
+		их совместное распределение абсолютно непрерывно с плотностью
+		$$ p_{\xi_1, \ldots, \xi_n}(x_1, \ldots, x_n) = p_{\xi_1}(x_1)\ldots p_{\xi_n}(x_n). $$
+	\end{corollary}
+	
+	\begin{proof}
+		В доказательстве мы будем писать интегралы в нотации интеграла Римана, 
+		подразумевая, что они вычисляются любым допустимым способом (например, по Лебегу).
+		
+		По теореме \ref{independence through distribution functions} из независимости
+		имеем равенство
+		$$ F_{\xi_1, \ldots, \xi_n}(x_1, \ldots, x_n) = F_{\xi_1}(x_1) \cdot \ldots \cdot F_{\xi_n}(x_n). $$
+		Тогда
+		$$ F_{\xi_1, \ldots, \xi_n}(x_1, \ldots, x_n) 
+		= \int\limits_{-\infty}^{x_1} p_{\xi_1}(t_1)\diff t_1 \ldots \int\limits_{-\infty}^{x_n} p_{\xi_n}(t_n)\diff t_n = $$
+		$$ = \int\limits_{-\infty}^{x_1} \ldots \int\limits_{-\infty}^{x_n} 
+		p_{\xi_1}(t_1)\ldots p_{\xi_n}(t_n) \diff t_n\ldots \diff t_1. $$
+		
+		Обратно, если верна формула выше,
+		то проведя выкладки в обратном порядке и воспользовавшись теоремой \ref{independence through distribution functions}
+		в другу сторону, получим независимость.
+	\end{proof}
+	
+	\begin{corollary}
+		Пусть $ g, h $ --- борелевские функции, а $ \xi, \eta $ --- независимые случайные величины.
+		Тогда случайные величины $ g(\xi) $ и $ h(\eta) $ независимы.
+	\end{corollary}
+	
+	\begin{proof}
+		Имеем включения $ \sigma $-алгебр $ \events_{g(\xi)} \subset \events_{\xi} $
+		и $ \events_{h(\eta)} \subset \events_{\eta} $.
+		По предложению \ref{independence of random variables and sigma algebras} большие
+		$ \sigma $-алгебры $ \events_{\xi} $ и $ \events_{\eta} $ независимы.
+		Тогда из определения независимости алгебр следует, что содержащиеся в них
+		$ \sigma $-алгебры $ \events_{g(\xi)} $ и $ \events_{h(\eta)} $ тоже независимы.
+		Вновь по предложению \ref{independence of random variables and sigma algebras}
+		случайные величины $ g(\xi) $ и $ h(\eta) $ независимы.
+	\end{proof}
+	
+	\subsection{Последовательность независимых случайных величин}
+	
+	Последовательность случайных величин $ \{\xi_i\} $ будем называть 
+	\defin{последовательностью независимых случайных величин}{independent-sequence},
+	если для всякого $ n \in \mathbb{N} $ случайные величины $ \xi_1, \ldots, \xi_n $
+	независимы.
 	
 	
 	\section{Численные характеристики случайных величин}
 	
 	\subsection{Математическое ожидание, моменты и абсолютные моменты}
+	
+	
 	
 	\subsection{Ковариация, дисперсия и корреляция}
 	
@@ -2976,7 +3318,6 @@
 	\TODO{записать определения и свойства, описать ковариацию как скалярное произведение}
 	
 	\TODO{доказать формулы для вычисленя матожидания через интегралы Лебега, Лебега-Стилтьеса и интеграл Римана для абсолютно непрерывной случайно величины}
-	
 	
 	
 	\section{Сходимости случайных величин}
@@ -3000,7 +3341,16 @@
 	\section{Характеристические функции}
 	
 	\begin{theorem}[Бохнер, Хинчин]
-		
+		Пусть $ f \colon \RR \to \CC $ --- непрерывная функция и $ f(0) = 1 $.
+		Тогда следующие утверждения о функции $ f $ эквивалентны
+		\begin{enumerate}
+			\item функция $ f = f_\xi $ является характеристической функцией некоторой случайной величины $ \xi $;
+			\item функция $ f $ неотрицательно определена,то есть для любого натурального $ n $
+			и любых наборов $ t_1, \ldots, t_n \in \RR $, $ \lambda_1, \ldots, \lambda_n \in \CC $
+			вещественных и комплексных чисел неотрицательна
+			сумма 
+			$$ \sum\limits_{i,j = 1}^{n} f(t_i - t_j)\lambda_i\overline{\lambda_j} \geqslant 0. $$
+		\end{enumerate}
 	\end{theorem}
 	
 	\section{Предельные теоремы}
@@ -3008,6 +3358,14 @@
 	\TODO{дописать ниже доказательства теорем}
 	
 	\subsection{Неравенства}
+	
+	\begin{theorem}[Неравенства Чебышёва и Маркова]
+		Пусть $ \xi $ --- неотрицательная случайная величина. Тогда при дополнительных условиях имеют место следующие неравенства.
+		\begin{enumerate}
+			\item Если существует матожидание $ \expect\xi $, то справедливо первое неравенство Чебышёва 
+			$ \prob(\xi \geqslant ) $
+		\end{enumerate}
+	\end{theorem}
 	
 	\subsection{Закон больших чисел}
 	
