@@ -28,58 +28,59 @@
 \contentsline {subsubsection}{\numberline {0.6.2}Классические комбинаторные величины}{30}{subsubsection.0.6.2}%
 \contentsline {subsubsection}{\numberline {0.6.3}Свойства комбинаторных величин}{32}{subsubsection.0.6.3}%
 \contentsline {section}{\numberline {1}Вероятностное пространство, случайные события}{33}{section.1}%
-\contentsline {section}{\numberline {2}Условные вероятности, формула Байеса, независимость событий}{36}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Условная вероятность}{36}{subsection.2.1}%
+\contentsline {section}{\numberline {2}Условные вероятности, формула Байеса, независимость событий}{37}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Условная вероятность}{37}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Формула полной вероятности и формула Байеса}{38}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Независимость событий}{41}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}Независимость событий}{42}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Произведение вероятностных пространств}{44}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Случайные величины, их распределения, функции распределения и плотности}{44}{section.3}%
+\contentsline {section}{\numberline {3}Случайные величины, их распределения, функции распределения и плотности}{45}{section.3}%
 \contentsline {section}{\numberline {4}Классические примеры распределений}{50}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Дискретные распределения.}{50}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Распределение константы}{50}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Распределение Бернулли}{50}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1}Дискретные распределения.}{51}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Распределение константы}{51}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Распределение Бернулли}{51}{subsubsection.4.1.2}%
 \contentsline {subsubsection}{\numberline {4.1.3}Дискретное равномерное распределение}{51}{subsubsection.4.1.3}%
-\contentsline {subsubsection}{\numberline {4.1.4}Биномиальное распределение}{51}{subsubsection.4.1.4}%
-\contentsline {subsubsection}{\numberline {4.1.5}Распределение Пуассона}{51}{subsubsection.4.1.5}%
+\contentsline {subsubsection}{\numberline {4.1.4}Биномиальное распределение}{52}{subsubsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.5}Распределение Пуассона}{52}{subsubsection.4.1.5}%
 \contentsline {subsubsection}{\numberline {4.1.6}Геометрическое распределение}{52}{subsubsection.4.1.6}%
-\contentsline {subsubsection}{\numberline {4.1.7}Гипергеометрическое распределение}{52}{subsubsection.4.1.7}%
+\contentsline {subsubsection}{\numberline {4.1.7}Гипергеометрическое распределение}{53}{subsubsection.4.1.7}%
 \contentsline {subsubsection}{\numberline {4.1.8}Отрицательное биномиальное распределение}{53}{subsubsection.4.1.8}%
 \contentsline {subsection}{\numberline {4.2}Абсолютно непрерывные случайные величины}{54}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}Равномерное распределение}{54}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Экспоненциальное (показательное) распределение}{54}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Нормальное распределение (распределение Гаусса)}{55}{subsubsection.4.2.3}%
-\contentsline {subsubsection}{\numberline {4.2.4}Распределение Коши}{56}{subsubsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.3}Сингулярные распределения}{57}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.2.2}Экспоненциальное (показательное) распределение}{55}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Нормальное распределение (распределение Гаусса)}{56}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Распределение Коши}{57}{subsubsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.3}Сингулярные распределения}{58}{subsection.4.3}%
 \contentsline {section}{\numberline {5}Совместные распределения случайных величин}{58}{section.5}%
-\contentsline {section}{\numberline {6}Независимость случайных величин}{60}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Независимость конечного набора случайных величин}{60}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Последовательность независимых случайных величин}{63}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Численные характеристики случайных величин}{63}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Математическое ожидание}{63}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Моменты и абсолютные моменты случайной величины}{68}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Дисперсия, ковариация и корреляция}{68}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Связь с независимостью случайных величин}{71}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Квантили и медиана}{72}{subsection.7.5}%
-\contentsline {subsection}{\numberline {7.6}Мода}{73}{subsection.7.6}%
-\contentsline {subsection}{\numberline {7.7}Асимметрия и эксцесс}{73}{subsection.7.7}%
-\contentsline {subsection}{\numberline {7.8}Вычисление матожиданий и дисперсий некоторых случайных величин}{73}{subsection.7.8}%
-\contentsline {section}{\numberline {8}Сходимости случайных величин}{73}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Сходимость почти наверное}{73}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Сходимость по вероятности}{73}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Пространство $ \mathcal {L}_p $ и сходимость в нём}{73}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Сходимость по распределению}{73}{subsection.8.4}%
-\contentsline {subsection}{\numberline {8.5}Связь сходимостей}{73}{subsection.8.5}%
-\contentsline {section}{\numberline {9}Производящие функции}{73}{section.9}%
-\contentsline {section}{\numberline {10}Характеристические функции}{73}{section.10}%
-\contentsline {section}{\numberline {11}Предельные теоремы}{74}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Неравенства}{74}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Закон больших чисел}{74}{subsection.11.2}%
-\contentsline {subsection}{\numberline {11.3}Теорема Муавра-Лапласа}{74}{subsection.11.3}%
-\contentsline {subsection}{\numberline {11.4}Закон нуля или единицы}{74}{subsection.11.4}%
-\contentsline {subsection}{\numberline {11.5}Закон повторного логарифма}{75}{subsection.11.5}%
-\contentsline {subsection}{\numberline {11.6}Закон арксинуса}{75}{subsection.11.6}%
-\contentsline {subsection}{\numberline {11.7}Правило трёх сигм}{75}{subsection.11.7}%
-\contentsline {subsection}{\numberline {11.8}Центральная предельная теорема}{75}{subsection.11.8}%
-\contentsline {section}{\numberline {12}Свёртки случайных величин}{75}{section.12}%
-\contentsline {section}{\numberline {13}Указатель терминов}{75}{section.13}%
-\contentsline {section}{\numberline {14}Указатель теорем}{75}{section.14}%
+\contentsline {section}{\numberline {6}Независимость случайных величин}{61}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Независимость конечного набора случайных величин}{61}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Последовательность независимых случайных величин}{64}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Численные характеристики случайных величин}{64}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Математическое ожидание}{64}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Моменты и абсолютные моменты случайной величины}{69}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Дисперсия, ковариация и корреляция}{71}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Связь с независимостью случайных величин}{74}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Квантили и медиана}{75}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Мода}{76}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Асимметрия и эксцесс}{76}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}Вычисление матожиданий и дисперсий для распределений, связанных с нормальным распределением}{77}{subsection.7.8}%
+\contentsline {subsection}{\numberline {7.9}Вычисление матожиданий через совместные распределения}{77}{subsection.7.9}%
+\contentsline {section}{\numberline {8}Свёртки случайных величин}{77}{section.8}%
+\contentsline {section}{\numberline {9}Сходимости случайных величин}{77}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Сходимость почти наверное}{77}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Сходимость по вероятности}{77}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Пространство $ \mathcal {L}_p $ и сходимость в нём}{78}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Сходимость по распределению}{78}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Связь сходимостей}{79}{subsection.9.5}%
+\contentsline {section}{\numberline {10}Производящие функции}{79}{section.10}%
+\contentsline {section}{\numberline {11}Характеристические функции}{79}{section.11}%
+\contentsline {section}{\numberline {12}Предельные теоремы}{80}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Неравенства}{80}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Закон больших чисел}{80}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Теорема Муавра-Лапласа}{83}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Закон нуля или единицы}{83}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}Закон повторного логарифма}{83}{subsection.12.5}%
+\contentsline {subsection}{\numberline {12.6}Закон арксинуса}{83}{subsection.12.6}%
+\contentsline {subsection}{\numberline {12.7}Правило трёх сигм}{83}{subsection.12.7}%
+\contentsline {subsection}{\numberline {12.8}Центральная предельная теорема}{83}{subsection.12.8}%
+\contentsline {section}{\numberline {13}Указатель терминов}{84}{section.13}%
+\contentsline {section}{\numberline {14}Указатель теорем}{84}{section.14}%

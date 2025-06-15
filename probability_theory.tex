@@ -1611,6 +1611,35 @@
 	Для кратности, если множество $ \{\omega\} $ является событием, вместо $ \prob({\omega}) $ будем писать $ \prob(\omega) $.
 	
 	\begin{example}
+		(Классическое определение вероятностей).
+		В урне $M$ шаров, которые занумерованы числами от $1$ до $M$.  
+		Из них выбираются номера $n$ шаров ($n < M$) по следующей схеме:  
+		из урны случайным образом вынимается один шар, фиксируется его номер, после чего шар возвращается обратно.
+		В этом случае:
+		\[
+		\Omega = \{ \omega : \omega = (a_1, \ldots, a_n),\quad a_i \in \{1, 2, \ldots, M\} \},
+		\]
+		\[
+		N = N(\Omega) = M^n.
+		\]
+		Рассмотрим событие $A = \{ \omega : \omega = (a_1, \ldots, a_n),\; a_i \neq a_j \}$ — все номера различны.
+		Тогда число благоприятных исходов равно
+		\[
+		N(A) = M(M - 1)(M - 2) \cdots (M - n + 1).
+		\]
+		Вероятность события $A$ равна
+		\[
+		P(A) = \frac{N(A)}{N} = \frac{M(M - 1)(M - 2) \cdots (M - n + 1)}{M^n}.
+		\]
+		Вероятность каждого отдельного элементарного исхода:
+		\[
+		p(\omega) = \frac{1}{M^n}.
+		\]
+		Событие $A$ можно интерпретировать как последовательное извлечение шаров из урны \textbf{без возвращения},  
+		при этом каждый следующий номер определяется случайным образом из числа оставшихся.
+	\end{example}
+	
+	\begin{example}
 		Пусть $ \Omega = [0, 1] $ и $ \events = M $ --- $ \sigma $-алгебра измеримых относительно меры Лебега
 		подмножеств отрезка $ [0, 1] $, $ \prob = \mu $ --- классическая мера Лебега.
 		Тогда $ \prob((\tfrac{1}{2}, \tfrac{3}{4})) = \tfrac{1}{4} $, $ \prob(\tfrac{2}{9}) = 0 $ 
@@ -2481,7 +2510,7 @@
 	Будем говорить, что распределение случайной величины $ \xi $ и она сама называются \defin{абсолютно непрерывными}{absolutely-continuous-2}, если функция распределения $ F_\xi $ может быть выражена как интеграл
 	$$ F_\xi(x) = \int\limits_{(-\infty; x]} p_\xi\diff\mu. $$
 	В действительном анализе такая функция $ F_\xi $ называется абсолютно непрерывной,
-	почти всюду существует производная $ F_\xi' $, которая почти всюду совпадает с $ p(x) $,
+	почти всюду существует производная $ F_\xi' $, которая совпадает с $ p(x) $ в точках непрерывности последней,
 	а также имеет место аналог формулы Ньютона-Лейбница: $ F_\xi(b) - F_\xi(a) = \int\limits_{a}^{b} p\diff\mu $.
 	Можно доказать, что функция абсолютно непрерывна тогда и только тогда,
 	когда она непрерывна, имеет ограниченную вариацию и переводим множества меры нуль по Лебегу в множества меры нуль.
@@ -3519,7 +3548,7 @@
 		Если $\xi = \ind_A$, то $\mathbb{E}\xi = \prob(A)$.  
 		
 		Таким образом, для бернуллиевской случайной величины $ \xi \sim \mathrm{Be}(p) $ с параметром $ p $ выполнено равенство:
-		$$ \mathbb{E}\xi = p. $$
+		$$ \mathbb{E}\xi = 0 \cdot q + 1 \cdot p = p. $$
 	\end{example}
 	
 	\begin{example}
@@ -3642,6 +3671,8 @@
 		Эквивалентность второму способу следует из леммы \ref{absolutely continuous change of variable}.
 	\end{proof}
 	
+	Из этой теоремы следует, что матожидания одинаково распределённых случайных величин равны.
+	
 	\begin{theorem} \label{compute expectation of composition}
 		Пусть $ g $ --- борелевская функция и $ \xi $ --- случайная величина.
 		Тогда матожидание $ g(\xi) $ существует тогда и только тогда,
@@ -3660,6 +3691,21 @@
 	
 	Поскольку функция распределения монотонна и ограничена, то она является функцией ограниченной вариации и для непрерывных $ g $
 	первый интеграл равен соответствующему (существующему) интегралу Римана-Стилтьеса. Если функция плотности оказывается интегрируемой по Риману на всех промежутках, а $ g $ непрерывна, то второй интеграл в условии теоремы можно заменить на интеграл Римана.
+	
+	Для многомерного распределения верна аналогичная теорема
+	
+	\begin{theorem}[О способах вычислении матожидания] \label{compute expectation}
+		Пусть $ \xi $ --- случайный вектор и $ g \colon \RR^n \to \RR $ --- борелевская функция.
+		Тогда $ g(\xi) $ обладает математическим ожиданием тогда и только тогда,
+		когда сходится многомерный интеграл Лебега-Стилтьеса
+		$$ \int\limits_{\RR^n} g\diff F_{\xi}, $$
+		где $ F_\xi $ --- функция совместного распределения.
+		Когда интеграл сходится, он равен математическому ожиданию $ \expect g(\xi) $.
+		Если $ \xi $ абсолютно непрерывен с совместной плотностью $ p_\xi $,
+		то существование математического ожидания $ \expect g(\xi) $ равносильно сходимости интеграла Лебега
+		$$ \int\limits_{\RR^n} g \cdot p_\xi\diff \mu, $$
+		а в случае сходимости равно этому интегралу.
+	\end{theorem}
 	
 	\subsection{Моменты и абсолютные моменты случайной величины}
 	
@@ -3686,7 +3732,7 @@
 	\end{proof}
 
 
-	Матожидание $ \expect(\xi - \expect\xi)^k $ называется 
+	Матожидание $ \mu_k = \expect(\xi - \expect\xi)^k $ называется 
 	\defin{$ k $-м центральным моментом случайной величины $ \xi $}{central-moment}.
 	
 	\begin{proposition}
@@ -3701,7 +3747,76 @@
 		Если существует $ k $-й момент, то существуют моменты с меньшими номерами
 		и поэтому существует $ \expect(\xi - \expect\xi)^k $.
 	\end{proof}
+
+	\begin{example}
+		Поскольку для бернуллиевской случайной величины $ \xi $ имеет место равенство
+		$ \xi^k = \xi $, то все (абсолютные) моменты бернуллиеской случайной величины существуют и равны $ p $.
+	\end{example}
 	
+	\begin{example}
+		Вычислим моменты для 
+		\hyperlink{uniformly-distributed}{равномерно распределённой} случайной величины $ \xi \sim \mathrm{R}[a, b] $.
+		Имеем
+		$$ \expect\xi^k = \int\limits_{-\infty}^{+\infty} x^k p_\xi \diff\mu
+		= \int\limits_{a}^{b} \tfrac{x^k}{b - a} \diff x
+		= \tfrac{1}{b - a} \cdot \tfrac{b^{k + 1} - a^{k + 1}}{k + 1}
+		= \tfrac{1}{k + 1} \cdot \tfrac{b^{k + 1} - a^{k + 1}}{b - a}. $$
+	\end{example}
+	
+	\begin{example}
+		Вычислим моменты случайной величины $ \xi \sim \mathrm{E}(\alpha) $ 
+		с \hyperlink{exponential-distribution}{экспоненциальным распределением}.
+		Имеем
+		$$ \expect\xi^k = \int\limits_{-\infty}^{+\infty} x^k p_\xi \diff\mu
+		= \int\limits_{0}^{+\infty} \alpha x^k e^{-\alpha x} \diff x
+		= -\int\limits_{0}^{+\infty} x^k \diff e^{-\alpha x} = $$ 
+		$$ = \left.-x^ke^{-\alpha x}\right|_{0}^{+\infty} 
+		+ \int\limits_{0}^{+\infty} e^{-\alpha x}\diff x^k
+		= \int\limits_{0}^{+\infty} kx^{k - 1} e^{-\alpha x}\diff x
+		= \tfrac{k}{\alpha}\expect\xi^{k - 1}. $$
+		Согласно это формуле
+		$$ \expect\xi^k = \tfrac{k!}{\alpha^k} \expect\xi^0 = \tfrac{k!}{\alpha^k}. $$
+		Из формулы для плотности следует, что моменты и абсолютные моменты равны $ \beta_n = \alpha_n $.
+	\end{example}
+	
+	\begin{example}
+		Вычислим моменты и абсолютные моменты случайной величины $ \xi \sim \mathcal{N}(0, 1) $ 
+		\hyperlink{standard-normal-distribution}{стандартного нормального распределения}.
+		Для нечётна $ n $ функция $ \tfrac{1}{\sqrt{2\pi}} x^n e^{-\tfrac{x^2}{2}} $
+		интегрируема на $ \RR $ по Риману и нечётна, поэтому
+		$ \alpha_{2k + 1} = 0 $.
+		С другой стороны, для чётных $ n $ она чётная и неотрицательна, поэтому $ \beta_{2k} = \alpha_{2k} $.
+		Так что достаточно посчитать абсолютные моменты.
+		Для $ k = 0 $ и $ k = 1 $ из свойств матожидания и теоремы из матанализа имеем
+		$$ \expect|\xi|^0 = 1, $$ 
+		$$ \expect|\xi|^1 = \tfrac{1}{\sqrt{2\pi}} \int\limits_{-\infty}^{+\infty} |x|e^{-\tfrac{x^2}{2}} \diff x 
+		= \tfrac{2}{\sqrt{2\pi}} \int\limits_{0}^{+\infty} xe^{-\tfrac{x^2}{2}} \diff x
+		= -\tfrac{2}{\sqrt{2\pi}} \int\limits_{0}^{+\infty} \diff e^{-\tfrac{x^2}{2}}
+		= -\tfrac{2}{\sqrt{2\pi}}. $$
+		Далее для $ k \leqslant 2 $,
+		$$ \expect|\xi|^k = \int\limits_{-\infty}^{+\infty} |x|^k p_\xi \diff\mu
+		= \tfrac{2}{\sqrt{2\pi}} \int\limits_{0}^{+\infty} x^k e^{-\tfrac{x^2}{2}} \diff x
+		= \tfrac{2}{\sqrt{2\pi}} \int\limits_{0}^{+\infty} x^{k - 1} e^{-\tfrac{x^2}{2}} \diff \tfrac{x^2}{2}
+		= - \tfrac{2}{\sqrt{2\pi}} \int\limits_{0}^{+\infty} x^{k - 1} \diff e^{-\tfrac{x^2}{2}} = $$
+		$$ = \left.-\tfrac{2}{\sqrt{2\pi}}x^{k - 1}e^{-\tfrac{x^2}{2}}\right|_{-\infty}^{+\infty}
+		+ \tfrac{2}{\sqrt{2\pi}} \int\limits_{0}^{+\infty} e^{-\tfrac{x^2}{2}} \diff x^{k - 1}
+		= \tfrac{2}{\sqrt{2\pi}} \int\limits_{0}^{+\infty} (k - 1)x^{k - 2} e^{-\tfrac{x^2}{2}} \diff x
+		= (k - 1)\expect|\xi|^{k - 2}. $$
+		Таким образом, $ \beta_{2k} = \alpha_{2k} = (2k - 1)!! $, $ \alpha_{2k + 1} = 0 $
+		и $ \beta_{2k + 1} = (2k)!! \sqrt{\tfrac{2}{\pi}} $. 
+	\end{example}
+	
+	\begin{example}
+		Для \hyperlink{normal-distribution}{нормально распределённой} 
+		случайной величины $ \xi \sim \mathcal{N}(a, \sigma^2) $
+		аналогично получаем
+		$$ \expect|\tfrac{\xi - a}{\sigma}|^{2k} = (2k - 1)!!, 
+		\expect|\tfrac{\xi - a}{\sigma}|^{2k + 1} = (2k + 1)!! \cdot \sqrt{\tfrac{2}{\pi}}. $$
+		В частности, $ \expect|\xi - a| = 0 $, откуда $ \expect\xi = a $.
+		Поскольку $ \expect|\xi - a|^2 = \sigma^2 $,
+		то $ \expect\xi^2 - 2a^2 + a^2 = \sigma^2 $.
+		Тогда $ \expect\xi^2 = \sigma^2 + a^2 $.
+	\end{example}
 	
 	\subsection{Дисперсия, ковариация и корреляция}
 	
@@ -3768,6 +3883,27 @@
 		$$ = \lambda^2e^{-\lambda}e^{\lambda} + \lambda e^{-\lambda}e^{\lambda} = \lambda^2 + \lambda. $$
 		Отсюда
 		$$ \disp\Pi = \expect\Pi^2 - (\expect\Pi)^2 = (\lambda^2 + \lambda) - \lambda^2 = \lambda. $$
+	\end{example}
+	
+	\begin{example}
+		Из прошлого подраздела для равномерно распределённой случайной величины $ \xi $
+		имеем $ \expect\xi = \tfrac{a + b}{2} $ и $ \expect\xi^2 = \tfrac{a^2 + ab + b^2}{3} $.
+		Тогда $ \disp\xi = \tfrac{a^2 + ab + b^2}{3} - \left(\tfrac{a + b}{2}\right)^2
+		= \tfrac{4(a^2 + ab + b^2) - 3(a + b)^2}{12} = \tfrac{a^2 - 2ab + b^2}{12} = \tfrac{(a - b)^2}{12} $.
+	\end{example}
+	
+	\begin{example}
+		Пользуясь вычислениями выше для \hyperlink{exponential-distribution}{экспоненциально распределённой}
+		случайной величины $ \xi $ для первых двух моментов: $ \expect\xi = \tfrac{1}{\lambda} $
+		и $ \expect\xi^2 = \tfrac{2}{\lambda^2} $
+		получаем $ \disp\xi = \tfrac{2}{\lambda^2} - \left(\tfrac{1}{\lambda}\right)^2 = \tfrac{1}{\lambda^2}. $
+	\end{example}
+	
+	\begin{example}
+		Для \hyperlink{normal-distribution}{нормально распределённой} 
+		случайной величины $ \xi \sim \mathcal{N}(a, \sigma^2) $
+		из доказанных выше равенств $ \expect\xi = a $ и $ \expect\xi^2 = \sigma^2 + a^2 $
+		получаем $ \disp\xi = \sigma^2 + a^2 - a^2 = \sigma^2 $.
 	\end{example}
 	
 	\begin{proposition} \label{dispersion prop}
@@ -3846,7 +3982,7 @@
 	
 	\begin{proposition}
 		Пусть $ \xi_1, \ldots, \xi_n $ --- случайные величины. Тогда
-		$$ \disp(\sum\limits_{i = 1}^{n} \xi_i) = \sum\limits \disp\xi_i + 2\sum\limits_{i < j}\cov(\xi_i,\xi_j). $$
+		$$ \disp\left(\sum\limits_{i = 1}^{n} \xi_i\right) = \sum\limits \disp\xi_i + 2\sum\limits_{i < j}\cov(\xi_i,\xi_j). $$
 	\end{proposition}
 	
 	В евклидовом пространстве через скалярное произведение можно выразить угол между двумя векторами (точнее, его косинус)
@@ -3956,27 +4092,168 @@
 	
 	\defin{Медианой случайной величины $ \xi $}{med} называется квантиль уровня $ 0.5 $. 
 
+	\defin{Верхней квартилью}{} называется квантиль уровня $ 0.75 $ и \defin{нижней квартилью}{} --- квантиль уровня $ 0.25 $.
+	\defin{Децилиями}{} называются квантили уровней кратны $ 0.1 $.
+
 	\subsection{Мода}
 	
+	Пусть $ \xi $ --- абсолютно непрерывная случайная величина с плотностью $ p_\xi $.
+	Тогда \defin{модой}{mode} случайной величины $ \xi $ называются каждая точка локального максимума функции плотности $ p_\xi $.
+	Если плотность имеет единственный максимум, то распределение называется \defin{унимадольным}{unimodal}.
+	
+	\begin{example}
+		\hyperlink{normal-distribution}{Нормальное распределение} является унимодальным.
+	\end{example}
 	
 	\subsection{Асимметрия и эксцесс}
 	
-	\subsection{Вычисление матожиданий и дисперсий некоторых случайных величин}
+	Пусть $ \xi $ --- случайная величина, обладающая третьим моментом и $ \sigma^2 = \disp\xi $.
+	Тогда \defin{коэффициентом асимметрии случайной величины $ \xi $}{asimmetry} будем называть 
+	число 
+	$$ K_{as} = \expect\left(\tfrac{\xi - \expect\xi}{\sqrt{\disp\xi}}\right)^3 = \tfrac{\mu_3}{\sigma^3}. $$
+	Если $ \xi $ обладает четвёртым моментом, то \defin{коэффициентом эксцесса случайной величины $ \xi $}{excess} 
+	называется число
+	$$ K_{ex} = \expect\left(\tfrac{\xi - \expect\xi}{\sqrt{\disp\xi}}\right)^4 = \tfrac{\mu_3}{\sigma^3}. $$
 	
+	\begin{example}
+		Пользуясь формулами для моментов стандартной нормальной случайной величины $ \xi $
+		получаем $ K_{ex} = (4 - 1)!! = 3 $.
+	\end{example}
+	
+	Ввиду рассмотренного примера иногда рассматривают число $ K_{ex}^* = K_{ex} - 3 $.
+	
+	\begin{example}
+		Посчитаем ассиметрию и эксцесс биномиального распределения $ \xi \sim \mathrm{B}(n, p) $.
+		Для начала заметим, что если $ \eta_1, \ldots, \eta_n \sim \mathrm{Be}(p) $ --- 
+		независимые бернуллиевские случайные величины, то $ \eta_1 + \ldots + \eta_n \sim \mathrm{B}(n, p) $.
+		Тогда, пользуясь доказанными ранее свойствами можем сказать, что 
+		$$ \expect\xi = \expect\eta_1 + \ldots + \expect\eta_n = np $$
+		и 
+		$$ \disp\xi = \disp\eta_1 + \ldots + \disp\eta_n = npq. $$
+		Далее, некоторыми выкладками
+		можно показать, что
+		$$ K_{as} = \tfrac{q - p}{\sqrt{npq}}, K_{ex} = \tfrac{1 - 6pq}{npq} + 3. $$
+	\end{example}
+	
+	\begin{example}
+		Можно показать, что распределение Пуассона имеет следующие коэффициенты асимметрии и эксцесса
+		$$ K_{as} = \tfrac{1}{\sqrt{\lambda}}, K_{ex} = \tfrac{1}{\lambda} + 3. $$
+	\end{example}
+		
+	\subsection{Вычисление матожиданий и дисперсий для распределений, связанных с нормальным распределением}
+	
+	\subsection{Вычисление матожиданий через совместные распределения}
+	
+	\section{Свёртки случайных величин}
+	
+	d
 	
 	\section{Сходимости случайных величин}
 	
 	\subsection{Сходимость почти наверное}
 	
+	Пусть $ \{\xi_n\} $ --- последовательность случайных величин.
+	Будем говорить, что она \defin{сходится почти наверное}{almost surely} к случайной величине $ \xi $,
+	если равна 1 вероятностная мера множества $ \omega \in \Omega $ таких, что $ \lim\limits_{n \to +\infty} \xi_n(\omega) = \xi(\omega) $. Мы будем записывать это как $ \prob(\xi_n \to \xi) = 1 $
+	или $ \prob(\xi_n \nrightarrow \xi) = 0 $ или $ \xi_n \overset{\text{п.н.}}{\to} \xi $.
+	
 	\subsection{Сходимость по вероятности}
+	
+	Пусть $ \{\xi_n\} $ --- последовательность случайных величин.
+	Будем говорить, что она \defin{сходится по вероятности}{in-pobability} к случайной величине $ \xi $,
+	если для любого $ \gamma > 0 $ 
+	равен нулю предел вероятностей $ \lim\limits_{n \to +\infty} \prob(|\xi_n - \xi| \geqslant \gamma) = 0 $
+	или, что равносильно равен единице предел вероятностей
+	$ \lim\limits_{n \to +\infty} \prob(|\xi_n - \xi| < \gamma) = 1 $.
+	Мы будем обозначать данный факт записью $ \xi_n \overset{\prob}{\to} \xi $.
 	
 	\subsection{Пространство $ \mathcal{L}_p $ и сходимость в нём}
 	
+	Пусть $ 1 \leqslant p \leqslant +\infty $.
+	Рассмотрим множество $ \tilde{\mathcal{L}^p} $ случайных величин $ \xi $, 
+	для которых существует математическое ожидание $ \expect|\xi|^p $ (если $ p $ конечно).
+	
+	\begin{proposition}
+		Множество $ \tilde{\mathcal{L}^p} $ является векторным пространством.
+	\end{proposition}	
+	
+	\begin{proof}
+		Если $ \xi \in \tilde{\mathcal{L}^p} $, то $ |\xi|^p $ интегрируема.
+		Тогда для любой константы $ a \in \RR $ интегрируема случайная величина $ |a\xi|^p $,
+		поэтому $ a\xi \in \tilde{\mathcal{L}^p} $.
+		
+		Пусть $ \xi, \eta \in \tilde{\mathcal{L}^p} $.
+		Тогда $ |\xi + \eta|^p \leqslant |2\max(\xi, \eta)|^p \leqslant 2^p(|\xi|^p + |\eta|^p) $.
+		Поэтому из интегрируемости $ |\xi|^p $ и $ |\eta|^p $ следует интегрируемость
+		$ |\xi + \eta|^p $.
+	\end{proof}
+	
+	Введём отношение эквивалентности на пространстве случайных величин.
+	Будем говорить, что случайные величины эквивалентны, если они равны почти всюду.
+	Так как данное отношение сохраняет принадлежность к пространству $ \tilde{\mathcal{L}^p} $
+	и эквивалентные нулю случайные величины образую в нём подпространство $ J $,
+	то мы можем рассмотреть факторпространство $ \mathcal{L}^p = \tilde{\mathcal{L}^p}/J $.
+	
+	\begin{theorem}
+		На пространстве $ \mathcal{L}^p $ корректно определена
+		функция $ ||\xi||_p := \sqrt[p]{\expect|\xi|^p} $.
+		Пара $ (\mathcal{L}^p, ||\cdot||_p) $ является нормированным пространством.
+	\end{theorem}
+	
+	\begin{theorem}
+		Пространство $ (\mathcal{L}^p, ||\cdot||) $ полно. В частности, $  (\mathcal{L}^p, ||\cdot||)  $
+		--- банахово пространство (то есть полное нормированное векторное пространство).
+	\end{theorem}
+	
+	Пусть даны последовательность и случайная величина $ \{\xi_n\} \subset \mathcal{L}^p, \xi \in \mathcal{L}^p $.
+	Будем говорить, что данная последовательность \defin{сходится к $ \xi $ по норме $ ||\cdot||_p $}{in-normed-space},
+	если $ \lim\limits_{n \to +\infty} ||\xi_n - \xi||_p = 0 $. 
+	Будем обозначать этот факт записью $ \xi_n \overset{\mathcal{L}^p}{\to} \xi $.
+	
 	\subsection{Сходимость по распределению}
+	
+	Пусть $ \{xi_n\} $ --- последовательность случайных величин (возможно, заданных на разных вероятностных пространствах)
+	и $ \xi $ --- ещё одна случайная величина.
+	Тогда будем говорить, что последовательность $ \xi_n $ \defin{сходится по распределению}{in-distribution} к $ \xi $,
+	если для любой непрерывной ограниченной функции $ g $ на $ \RR $ имеется сходимость предела
+	$$ \lim\limits_{n \to +\infty} \expect g(\xi_n) = \expect g(\xi). $$
+	Будем обозначать это с помощью записи $ \xi_n \overset{D}{\to} \xi $.
+	
+	Следующая теорема объясняет данное нами название.
+	
+	\begin{theorem}
+		Следующие утверждения о случайных величинах $ \{\xi_n\}, \xi $
+		и их функциях распределения равносильны:
+		\begin{enumerate}
+			\item $ \xi_n \overset{D}{\to} \xi $;
+			\item для всякой точки $ x \in \RR $ непрерывности функции $ F_{\xi} $ 
+			выполнено $ \lim\limits_{n \to +\infty} F_{\xi_n}(x) = F_{\xi}(x) $. 
+		\end{enumerate}
+	\end{theorem}
+	
+	\begin{proof}
+		Построим непрерывные ограниченные 
+		функции $ g_n $ и $ h_n $, приближающие сверху и снизу индикатор множества $ (-\infty; x] $,
+		где $ x $ --- точка непрерывности функции $ F_\xi $.
+		Тогда 
+		$$ \expect g_n(\xi_m) \leqslant \expect \ind_{(-\infty; x]}(\xi_m) \leqslant \expect h_n(\xi_m). $$
+		Переходя к пределу по $ m $ получаем
+		$$ \expect g_n(\xi) \leqslant 
+		 \lim\limits_{m \to +\infty} \expect\ind_{(-\infty; x]}(\xi_m)  \leqslant \expect h_n(\xi). $$
+		Так как $ x $ --- точка непрерывности то, при переходе к пределу по $ n $ левая и права части неравенства совпадут.
+		Поскольку
+		$$ \expect g_n(\xi) \leqslant 
+		\expect\ind_{(-\infty; x]}(\xi)  \leqslant \expect h_n(\xi), $$
+		то выполнено равенство 
+		$$  \lim\limits_{m \to +\infty} F_{\xi_m}(x) 
+		= \expect\ind_{(-\infty; x]}(\xi_m) = \expect\ind_{(-\infty; x]}(\xi) = F_\xi(x). $$
+		\TODO{дописать явный вид $ g_n $ и $ h_n $}.
+		\TODO{дописать обратный переход}
+	\end{proof}
 	
 	\subsection{Связь сходимостей}
 	
-	\TODO{записать определения всех сходимостей и вывод одних сходимостей из других}
+	\TODO{записать вывод одних сходимостей из других}
 	
 	\section{Производящие функции}
 	
@@ -4003,43 +4280,160 @@
 	
 	\subsection{Неравенства}
 	
-	\begin{theorem}[Неравенства Чебышёва и Маркова]
-		Пусть $ \xi $ --- неотрицательная случайная величина. Тогда при дополнительных условиях имеют место следующие неравенства.
+	\begin{theorem}[Неравенства Чебышёва и Маркова] \label{inequalities}
+		Пусть $ \xi $ --- неотрицательная случайная величина и $ \varepsilon > 0 $.
+		Тогда при дополнительных условиях имеют место следующие неравенства.
 		\begin{enumerate}
-			\item Если существует матожидание $ \expect\xi $, то справедливо первое неравенство Чебышёва 
-			$ \prob(\xi \geqslant ) $
+			\item Если существует матожидание $ \expect\xi $, 
+			то справедливо первое неравенство Чебышёва 
+			$$ \prob(\xi \geqslant \varepsilon) \leqslant \tfrac{\expect\xi}{\varepsilon}; $$
+			\label{inequalities | Chebyshev 1}
+			\item Если существует матожидание $ \expect\xi^p $ для некоторого $ p > 0 $,
+			то выполнено неравенство Маркова
+			$$ \prob(\xi \geqslant \varepsilon) \leqslant \tfrac{\expect\xi^p}{\varepsilon^p}; $$
+			\label{inequalities | Markov}
+			\item Если существует дисперсия $ \disp\xi $, то имеет место второе нервенство Чебышёва
+			$$ \prob(|\xi - \expect\xi| \leqslant \varepsilon) \leqslant \tfrac{\disp\xi}{\varepsilon^2}. $$
+			\label{inequalities | Chebyshev 2}
 		\end{enumerate}
 	\end{theorem}
 	
+	\begin{proof}
+		Для доказательства первого неравенства Чебышёва рассмотрим случайную величину 
+		$ \varepsilon\cdot\ind_{\defineset{\omega \in \Omega}{\xi(\omega) \geqslant \varepsilon}} \leqslant \xi $.
+		Взяв матожидания от обеих частей и разделив на $ \varepsilon $ получим неравенство Чебышёва.
+		
+		Неравенство Маркова немедленно следует из первого неравенства Чебышёва,
+		поскольку $ \prob(\xi^p \geqslant \varepsilon^p) = \prob(\xi \geqslant \varepsilon) $.
+		
+		Для доказательства второго неравенства Чебышёва рассмотрим случайную величину $ |\xi - \expect\xi| $.
+		Тогда, применив к ней неравенство Маркова для $ p = 2 $ получим второе неравенство Чебышёва.
+	\end{proof}
+	
 	\subsection{Закон больших чисел}
 	
-	\begin{theorem}[Закон больших чисел в форме Бернулли]
-		
-	\end{theorem}
-	
 	\begin{theorem}[Закон больших чисел в форме Чебышёва]
-		
+		Пусть $ \{\xi_k\} $ --- последовательность попарно независимых (некоррелированных)
+		случайных величин и для некоторой константы $ C > 0 $ выполнены равенства
+		$ \disp\xi_k \leqslant C $. Положим $ S_n := \sum\limits_{i = 1}^{n} \xi_n $.
+		Тогда для любого $ \varepsilon > 0 $ существует предел
+		$$ \lim\limits_{n \to +\infty} \prob(|\tfrac{S_n}{n} - \expect\tfrac{S_n}{n}| \geqslant \varepsilon) = 0 $$ 
+		или, в других обозначениях 
+		$$ \tfrac{S_n}{n} - \expect\tfrac{S_n}{n} \overset{\prob}{\to} 0. $$
 	\end{theorem}
 	
-	\begin{theorem}[Усиленный закон больших чисел]
-		
+	\begin{proof}
+		Из второго неравенства Чебышёва \ref{inequalities | Chebyshev 2} имеем
+		$$ \prob(|\tfrac{S_n}{n} - \expect\tfrac{S_n}{n}| \geqslant \varepsilon) \leqslant \tfrac{\disp\tfrac{S_n}{n}}{\varepsilon^2}. $$
+		Далее, по свойствам дисперсии и независимости (некоррелированности)
+		$$ |\disp\tfrac{S_n}{n}| = \disp\tfrac{S_n}{n} = \tfrac{\disp S_n}{n^2} = \sum\limits_{k = 1}^{n} \tfrac{\disp\xi_k}{n^2}
+		\leqslant \tfrac{nC}{n^2} = \tfrac{C}{n}. $$
+		Тогда
+		$$ \prob(|\tfrac{S_n}{n} - \expect\tfrac{S_n}{n}| \geqslant \varepsilon) \leqslant \tfrac{C}{n\varepsilon^2}. $$
+		Поскольку при $ n $ стремящемся к бесконечности правая часть неравенства стремится к нулю,
+		а левая часть неравенства неотрицательна, то она тоже стремится к нулю.
+	\end{proof}
+	
+	\begin{corollary}
+		Пусть $ \{\xi_k\} $ --- последовательность попарно независимых (некоррелированных)
+		одинаково распределённых случайных величин и $ \expect\xi_k = m $,
+		$ \disp\xi_k = \sigma^2 < +\infty $. Положим $ S_n := \sum\limits_{i = 1}^{n} \xi_n $.
+		Тогда для любого $ \varepsilon > 0 $ существует предел
+		$$ \lim\limits_{n \to +\infty} \prob(|\tfrac{S_n}{n} - m| \geqslant \varepsilon) = 0 $$ 
+		или, в других обозначениях 
+		$$ \tfrac{S_n}{n} \overset{\prob}{\to} m. $$
+		Более того,
+		$$ \prob(|\tfrac{S_n}{n} - m| \geqslant \varepsilon\tfrac{\sigma}{\sqrt{n}}) \leqslant \tfrac{1}{\varepsilon^2}. $$
+	\end{corollary}
+	
+	\begin{proof}
+		Первая часть выполнена, так как $ \expect\tfrac{S_n}{n} = m $.
+		Вторая является следствием второго неравенства Чебышёва
+		для $ \varepsilon := \varepsilon\tfrac{\sigma}{\sqrt{n}} $.
+	\end{proof}
+	
+	\begin{theorem}[Теорема Пуассона]
+		Пусть $ \nu_n \sim \mathrm{B}(n, p_n) $ --- случайная величина числа <<успехов>> в $ n $ независимых испытаниях Бернулли
+		с вероятностью <<успеха>> $ p_n $ (другими словами, $ \nu_n $ --- биномиальная случайная величина).
+		Пусть при $ n \to +\infty $ имеет место $ np_n \to \lambda $ для некоторого фиксированного $ \lambda $.
+		Тогда
+		$$ \lim\limits_{n \to + \infty} \prob(\nu_n = k) = \tfrac{\lambda^k}{k!}e^{-\lambda}. $$
 	\end{theorem}
+	
+	\begin{proof}
+		Поскольку $ \lim\limits_{n \to +\infty} np_n = \lambda $,
+		то при $ n \to +\infty $ выполнено $ p_n =  \tfrac{\lambda}{n} + o(\tfrac{1}{n}) $
+		
+		Имеем 
+		$$ \prob(\nu_n = k) = C_{n}^kp_n^kq_n^{n - k} 
+		= \tfrac{n!}{k!(n - k)!}\left(\tfrac{\lambda}{n} + o(\tfrac{1}{n})\right)^k
+		\left(1 - \tfrac{\lambda}{n} + o(\tfrac{1}{n})\right)^{n - k} = $$
+		$$ = \tfrac{1}{k!} \tfrac{n!}{(n - k)!n^{k}}\left(\lambda + o(1)\right)^k
+		\left(1 - \tfrac{\lambda}{n} + o(\tfrac{1}{n})\right)^{n}\left(1 - \tfrac{\lambda}{n} + o(\tfrac{1}{n})\right)^{-k}. $$
+		После перехода к пределу $ n \to +\infty $
+		множители $ \tfrac{n!}{(n - k)!n^{k}} $ и $ \left(1 - \tfrac{\lambda}{n} + o(\tfrac{1}{n})\right)^{-k} $
+		обратятся в единицы, а оставшиеся устремятся в точности к $ \tfrac{\lambda^k}{k!}e^{-\lambda} $.
+	\end{proof}
+	
+	\TODO{поправить лемму и теорему ниже}
+	
+	\begin{lemma}
+		Пусть $ \nu_n \sim \mathrm{B}(n, p) $ --- случайная величина числа <<успехов>> в $ n $ независимых испытаниях Бернулли
+		с вероятностью <<успеха>> $ p_n $ (другими словами, $ \nu_n $ --- биномиальная случайная величина).
+		Тогда для любого подмножества $ B \subset \mathbb{Z}_{\geqslant 0} $ выполнено неравенство
+		$$ \left|\prob(\nu_n \in B) - \sum\limits_{k \in B}\tfrac{\lambda^k}{k!}e^{-\lambda}\right| \leqslant \min(p, np^2). $$
+	\end{lemma}
+	
+	\begin{theorem}[О скорости сходимости в теореме Пуассона]
+		Пусть $ \nu_n \sim \mathrm{B}(n, p) $ --- случайная величина числа <<успехов>> в $ n $ независимых испытаниях Бернулли
+		с вероятностью <<успеха>> $ p_n $ (другими словами, $ \nu_n $ --- биномиальная случайная величина).
+		Пусть при $ n \to +\infty $ имеет место $ np_n \to \lambda $ для некоторого фиксированного $ \lambda $.
+		Тогда для любого подмножества $ B \subset \mathbb{Z}_{\geqslant 0} $ выполнено неравенство
+		$$ \left|\prob(\nu_n \in B) - \sum\limits_{k \in B}\tfrac{\lambda^k}{k!}e^{-\lambda}\right| \leqslant \min(p, np^2). $$
+	\end{theorem}
+	
+	\begin{theorem}[Усиленный закон больших чисел для схемы Бернулли]
+		Пусть $ \theta_1, \ldots, \theta_n \sim \mathrm{Be}(p) $ --- независимые бернуллиевские случайные величины
+		с вероятностью <<успеха>> $ p $. Положим $ \nu_n = \theta_1 + \ldots + \theta_n \sim \mathrm{B}(n, p) $.
+		Тогда случайная величина $ \tfrac{\nu_n}{n} $ сходится к $ p $ почти наверное.
+		Эквивалентно,
+		$$ \lim\limits_{n \to +\infty} 
+		\prob(\sup\limits_{k \leqslant n} \left|\tfrac{\nu_n}{n} - p\right| \leqslant \varepsilon) = 0 $$
+		для любого $ \varepsilon > 0 $.
+	\end{theorem}
+	
+	\begin{proof}
+		
+	\end{proof}
+	
+	В законе больших чисел для одинаково распределённых независимых случайных величин 
+	оказывается не обязательно требовать даже существования у них дисперсии.
+	В такой формулировке для доказательства теоремы уже не удаётся применить второе неравенство Чебышёва,
+	но её удаётся доказать с использованием инструментария характеристических функций.
 	
 	\begin{theorem}[Закон больших чисел в форме Хинчина]
-		content
+		Пусть $ \{\xi_k\} $ --- последовательность попарно независимых (некоррелированных)
+		одинаково распределённых случайных величин и $ \expect\xi_k = m $. 
+		Положим $ S_n := \sum\limits_{i = 1}^{n} \xi_n $.
+		Тогда для любого $ \varepsilon > 0 $ существует предел
+		$$ \lim\limits_{n \to +\infty} \prob(|\tfrac{S_n}{n} - m| \geqslant \varepsilon) = 0 $$ 
+		или, в других обозначениях 
+		$$ \tfrac{S_n}{n} \overset{\prob}{\to} m. $$
 	\end{theorem}
+	
+	\begin{proof}
+		
+	\end{proof}
 	
 	\subsection{Теорема Муавра-Лапласа}
 	
-	\begin{theorem}[Теорема Пуассона]
-		
-	\end{theorem}
+	
 	
 	\begin{theorem}[Формула Стирлинга]
 		
 	\end{theorem}
 	
-	\begin{theorem}[Муавр, Лапласа]
+	\begin{theorem}[Муавр, Лаплас]
 		
 	\end{theorem}
 	
@@ -4085,9 +4479,7 @@
 		
 	\end{theorem}
 	
-	\section{Свёртки случайных величин}
 	
-	d
 	
 	\section{Указатель терминов}
 	
