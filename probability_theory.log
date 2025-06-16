@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.29)  16 JUN 2025 01:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.29)  16 JUN 2025 14:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1845,19 +1845,32 @@ cmm/m/it/12 x[]\OT1/cmr/m/n/12 )) =
 [65]
 
 [66]
-Overfull \hbox (24.44237pt too wide) in paragraph at lines 3647--3649
+
+[67]
+Overfull \hbox (24.44237pt too wide) in paragraph at lines 3689--3691
 \T2A/cmr/m/n/12 где по-след-нее ра-вен-ство и од-но-вре-мен-ная схо-ди-мость вы
 -пол-не-ны в си-лу $\OML/cmm/m/it/12 ^^[$\T2A/cmr/m/n/12 -аддитивности
  []
 
 
 
-[67]
-
 [68]
 
 [69]
-Overfull \hbox (9.14279pt too wide) detected at line 3800
+Overfull \hbox (19.17099pt too wide) detected at line 3810
+[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^X \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 n
+p\OT1/cmr/m/n/12 )[] = []((\OML/cmm/m/it/12 ^^R[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm
+/m/it/12 p\OT1/cmr/m/n/12 ) + [] + (\OML/cmm/m/it/12 ^^R[] \OMS/cmsy/m/n/12 ^^@
+ \OML/cmm/m/it/12 p\OT1/cmr/m/n/12 ))[] = [] \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 
+(\OML/cmm/m/it/12 k[]; [] ; k[]\OT1/cmr/m/n/12 ) [](\OML/cmm/m/it/12 ^^R[] \OMS
+/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 p\OT1/cmr/m/n/12 )[] [] [](\OML/cmm/m/it/12 ^
+^R[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 p\OT1/cmr/m/n/12 )[] =
+ []
+
+
+
+[70]
+Overfull \hbox (9.14279pt too wide) detected at line 3859
 [] \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ^^X\OMS/cmsy/m/n/12 j[] \OT1/cmr/m/n/12 =
  [] \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 x\OMS/cmsy/m/n/12 j[]\OML/cmm/m/it/12 p[
 ]\OT1/cmr/m/n/12 d\OML/cmm/m/it/12 ^^V \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12
@@ -1868,8 +1881,6 @@ t/12 x[]e[]\OT1/cmr/m/n/12 d[] = \OMS/cmsy/m/n/12 ^^@[] [] \OML/cmm/m/it/12 x[]
 
 
 
-[70]
-
 [71]
 
 [72]
@@ -1878,39 +1889,41 @@ t/12 x[]e[]\OT1/cmr/m/n/12 d[] = \OMS/cmsy/m/n/12 ^^@[] [] \OML/cmm/m/it/12 x[]
 
 [74]
 
-Package hyperref Warning: Ignoring empty anchor on input line 4042.
-
-
-
 [75]
 
-Package hyperref Warning: Ignoring empty anchor on input line 4095.
-
-
-Package hyperref Warning: Ignoring empty anchor on input line 4095.
-
-
-Package hyperref Warning: Ignoring empty anchor on input line 4096.
+Package hyperref Warning: Ignoring empty anchor on input line 4101.
 
 
 
 [76]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4170.
+Package hyperref Warning: Ignoring empty anchor on input line 4154.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 4170.
+Package hyperref Warning: Ignoring empty anchor on input line 4154.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4170.
+Package hyperref Warning: Ignoring empty anchor on input line 4155.
 
 
 
 [77]
-Overfull \hbox (3.4064pt too wide) in paragraph at lines 4198--4201
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4229.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4229.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4229.
+
+
+
+[78]
+Overfull \hbox (3.4064pt too wide) in paragraph at lines 4257--4260
 [][]\T2A/cmr/bx/n/12 Теорема 9.2. []\T2A/cmr/m/it/12 На про-стран-стве $\OMS/cm
 sy/m/n/12 L[]$ \T2A/cmr/m/it/12 кор-рект-но опре-де-ле-на функ-ция $\OMS/cmsy/m
 /n/12 jj\OML/cmm/m/it/12 ^^X\OMS/cmsy/m/n/12 jj[] \OT1/cmr/m/n/12 := []$\T2A/cm
@@ -1918,7 +1931,7 @@ r/m/it/12 .
  []
 
 
-Overfull \hbox (0.42613pt too wide) in paragraph at lines 4229--4231
+Overfull \hbox (0.42613pt too wide) in paragraph at lines 4288--4290
 []\T2A/cmr/m/it/12 для вся-кой точ-ки $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \U
 /msb/m/n/12 R$ \T2A/cmr/m/it/12 непре-рыв-но-сти функ-ции $\OML/cmm/m/it/12 F[]
 $ \T2A/cmr/m/it/12 вы-пол-не-но $[] \OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (\OML/c
@@ -1927,26 +1940,34 @@ mm/m/it/12 x\OT1/cmr/m/n/12 ) =
 
 
 
-[78]
-
 [79]
 
 [80]
-Overfull \hbox (2.78029pt too wide) in paragraph at lines 4338--4342
-[][]\T2A/cmr/bx/n/12 Следствие 12.3. []\T2A/cmr/m/it/12 Пусть $\OMS/cmsy/m/n/12
- f\OML/cmm/m/it/12 ^^X[]\OMS/cmsy/m/n/12 g$ \T2A/cmr/m/it/12 --- по-сле-до-ва-т
-ель-ность по-пар-но неза-ви-си-мых (некор-
- []
-
-
 
 [81]
 
 [82]
 
 [83]
+Overfull \hbox (2.78029pt too wide) in paragraph at lines 4499--4503
+[][]\T2A/cmr/bx/n/12 Следствие 12.7. []\T2A/cmr/m/it/12 Пусть $\OMS/cmsy/m/n/12
+ f\OML/cmm/m/it/12 ^^X[]\OMS/cmsy/m/n/12 g$ \T2A/cmr/m/it/12 --- по-сле-до-ва-т
+ель-ность по-пар-но неза-ви-си-мых (некор-
+ []
 
-[84] (probability_theory.aux)
+
+
+[84]
+
+[85]
+
+[86]
+
+[87]
+
+[88]
+
+[89] (probability_theory.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
@@ -1956,13 +1977,13 @@ L3 programming layer <2024-12-09>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `probability_theory.out' has not changed.
-(rerunfilecheck)             Checksum: D5700DE34414651FF0B5484BE4101A23;27136.
+(rerunfilecheck)             Checksum: C7049521CD8F63DFB96B2D101D9BBEE7;27136.
  ) 
 Here is how much of TeX's memory you used:
- 38307 strings out of 473566
- 857401 string characters out of 5718235
- 1474168 words of memory out of 5000000
- 60286 multiletter control sequences out of 15000+600000
+ 38324 strings out of 473566
+ 857610 string characters out of 5718235
+ 1473319 words of memory out of 5000000
+ 60289 multiletter control sequences out of 15000+600000
  580368 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,15n,107p,1411b,2189s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2004,9 +2025,9 @@ c/doublestroke/dsrom12.pfb></home/konstantin/.miktex/texmfs/install/fonts/type1
 s/type1/public/amsfonts/symbols/msam10.pfb></home/konstantin/.miktex/texmfs/ins
 tall/fonts/type1/public/amsfonts/symbols/msam7.pfb></home/konstantin/.miktex/te
 xmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on probability_theory.pdf (84 pages, 837994 bytes).
+Output written on probability_theory.pdf (89 pages, 865343 bytes).
 PDF statistics:
- 1956 PDF objects out of 2073 (max. 8388607)
- 542 named destinations out of 1000 (max. 500000)
+ 2002 PDF objects out of 2073 (max. 8388607)
+ 556 named destinations out of 1000 (max. 500000)
  713 words of extra memory for PDF output out of 10000 (max. 10000000)
 

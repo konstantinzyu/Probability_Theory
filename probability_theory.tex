@@ -3484,6 +3484,48 @@
 	если для всякого $ n \in \mathbb{N} $ случайные величины $ \xi_1, \ldots, \xi_n $
 	независимы.
 	
+	Назовём \defin{$ \sigma $-алгеброй, порождённой случайными величинами $ \xi_k, \ldots, \xi_n $ ($ n \leqslant +\infty $)}
+	{generated-by-random-variables}, 
+	$ \sigma $-алгебру, порождённую событиями вида $ \bigcap\limits_{k \leqslant m \leqslant n} A_m $,
+	где $ A_m \in \sigma(\xi_m) $. Будем обозначать эту $ \sigma $-алгебру через $ \sigma(\xi_k, \ldots, \xi_n) $
+	для конечных $ n $ и через $ \sigma(\xi_k, \xi_{k + 1}, \ldots) $ для $ n = +\infty $.
+	
+	\begin{proposition} \label{generation as limit}
+		Справедливо равенство
+		$$ \sigma(\xi_k, \xi_{k + 1}, \ldots) = R_{\sigma}(\bigcup\limits_{n = k}^{+\infty} \sigma(\xi_k, \ldots, \xi_n)). $$
+	\end{proposition}
+	
+	\begin{proof}
+		Включения $ \sigma(\xi_k, \ldots, \xi_n) \subset \sigma(\xi_k, \ldots, \xi_{n + 1}), 
+		\sigma(\xi_k, \xi_{k + 1}, \ldots) $
+		следуют из построения.
+		Таким образом, объединение в правой части является алгеброй,
+		и имеется включение 
+		$$ \sigma(\xi_k, \xi_{k + 1}, \ldots) \supset R_{\sigma}(\bigcup\limits_{n = k}^{+\infty} \sigma(\xi_k, \ldots, \xi_n)). $$
+		С другой стороны, так как пересечения $ \bigcap\limits_{k \leqslant m} A_m $
+		все содержатся в правой части,
+		то выполнено равенство.
+	\end{proof}
+	
+	\defin{Хвостовой $ \sigma $-алгеброй}{tail-sigma-algebra} для данной последовательности независимых случайных величины 
+	будем называть пересечение $ \mathfrak{X} = \bigcap\limits_{k = 1}^{+\infty} \sigma(\xi_k, \xi_{k + 1}, \ldots) $.
+	События $ A \in \mathcal{X} $ называются \defin{хвостовыми}{tail-event}.
+	Позже мы докажем, что вероятностная меря всякого хвостового события равна либо 0, либо 1
+	(см. закон нуля или единицы Колмогорова \ref{zero one law}).
+	
+	\begin{proposition} \label{independence of past}
+		Для любого $ k \geqslant 1 $ $ \sigma $-алгебры $ \sigma(\xi_{n + k}) $
+		и $ \sigma(\xi_1, \ldots, \xi_n) $ независимы.
+	\end{proposition}
+	
+	\begin{proof}
+		Из независимости $ \sigma $-алгебр $ \sigma(\xi_1), \ldots, \sigma(\xi_n), \sigma(\xi_{n + k}) $
+		следует независимость $ \sigma $-кольца, порождённого всеми возможными произведениями
+		$ \bigcap\limits_{k \leqslant m \leqslant n} A_m $, где $ A_m \in \sigma(\xi_m) $, $ 1 \leqslant m \leqslant n $
+		и $ \sigma $-алгебры $ \sigma(\xi_{n + k}) $.
+		Тогда по \ref{indep of algs => indep of min sigma algs} утверждение верно и для минимальны $ \sigma $-алгебр
+		$ \sigma(\xi_1, \ldots, \xi_n) $ и $ \sigma(\xi_{n + k}) $.	
+	\end{proof}
 	
 	\section{Численные характеристики случайных величин}
 	
@@ -3751,6 +3793,23 @@
 	\begin{example}
 		Поскольку для бернуллиевской случайной величины $ \xi $ имеет место равенство
 		$ \xi^k = \xi $, то все (абсолютные) моменты бернуллиеской случайной величины существуют и равны $ p $.
+		Вычислим центральные моменты:
+		$$ \expect(\xi - p)^k = \sum\limits_{i = 0}^{k} C_k^i \expect\xi^i (-p)^{k - i}
+		= p\sum\limits_{i = 0}^{k - 1} C_k^i (-p)^{k - i} + (-p)^k $$ 
+		$$ = p(1 - p)^{k} - p(-p)^k + (-p)^k = pq^k + (-1)^kp^kq. $$
+	\end{example}
+	
+	\begin{example}
+		Вычислим центральные моменты 
+		\hyperlink{binomial-distribution}{биномиальной} случайной величины $ \xi \sim \mathrm{B}(n, p) $.
+		Как уже отмечалось ранее $ \expect\xi = np $.
+		Вместо $ \xi $ рассмотрим сумму из $ n $ независимых бернуллиевских случайных величин $ \theta_k \sim \mathrm{Be}(p) $.
+		Тогда
+		$$ \expect(\xi - np)^k = \expect((\theta_1 - p) + \ldots + (\theta_n - p))^k
+		= \sum\limits_{k_1 + \ldots + k_n = k} P(k_1, \ldots, k_n) 
+		\expect(\theta_1 - p)^{k_1}\ldots\expect(\theta_n - p)^{k_n} =  $$
+		$$ = p^kq^k \sum\limits_{k_1 + \ldots + k_n = k} 
+		P(k_1, \ldots, k_n)(q^{k_1 - 1} + (-1)^{k_1}p^{k_1 - 1})\ldots(q^{k_n - 1} + (-1)^{k_n}p^{k_n - 1}). $$
 	\end{example}
 	
 	\begin{example}
@@ -4278,6 +4337,108 @@
 	
 	\TODO{дописать ниже доказательства теорем}
 	
+	\subsection{Закон нуля или единицы}
+	
+	Пусть $ \{A_k\} $ --- последовательность событий.
+	\defin{Верхним пределом}{suplim} этой последовательности будем называть событие
+	$$ \overline{\lim\limits_{n}} A_n := \bigcap\limits_{n = 1}^{+\infty} \bigcup\limits_{k \geqslant n} A_k. $$
+	Можно проверить, что $ \overline{\lim\limits_{n}} A_n $ в точности состоит из элементарных событий $ \omega $,
+	которые входят в бесконечное число событий $ A_n $.
+	
+	\defin{Нижним пределом}{inflim} этой последовательности будем называть событие
+	$$ \varliminf\limits_{n} A_n := \bigcup\limits_{n = 1}^{+\infty} \bigcap\limits_{k \geqslant n} A_k. $$
+	Можно проверить, что $ \varliminf\limits_{n} A_n $ в точности состоит из элементарных событий $ \omega $,
+	которые входят во все события $ A_n $ начиная с некоторого номера $ n $.
+	
+	\begin{lemma}[Борель, Кантелли]
+		Пусть $ \{A_k\} $ --- последовательность событий
+		и сходится $ \sum\limits_{k = 1}^{+\infty}\prob (A_k) < +\infty $.
+		Тогда $ \prob(\overline{\lim\limits_{n}} A_n) = 0. $
+	\end{lemma}
+	
+	\begin{proof}
+		Имеем оценку $ \prob(\bigcup\limits_{k \geqslant n} A_k) \leqslant \sum\limits_{k = n}^{+\infty}\prob (A_k) =: s_n $.
+		Поскольку ряд $ \sum\limits_{k = 1}^{+\infty}\prob (A_k) $ сходится, то $ \lim\limits_{n \to +\infty} s_n = 0 $.
+		Тогда для любого $ \varepsilon > 0 $ найдётся $ n $ такое, что 
+		$$ \prob(\overline{\lim\limits_{n}} A_n)
+		\leqslant \prob(\bigcup\limits_{k \geqslant n} A_k) \leqslant s_n < \varepsilon. $$
+		Отсюда следует, что $ \prob(\overline{\lim\limits_{n}} A_n) = 0 $.
+	\end{proof}
+	
+	\begin{lemma}[Борель, Кантелли]
+		Пусть $ \{A_k\} $ --- последовательность независимых событий
+		и расходится ряд $ \sum\limits_{k = 1}^{+\infty}\prob (A_k) = +\infty $.
+		Тогда $ \prob(\overline{\lim\limits_{n}} A_n) = 1. $
+	\end{lemma}
+	
+	\begin{proof}
+		Положим $ B_k = \Omega \setminus A_k $.
+		Мы докажем, что $$ \prob(\Omega \setminus \overline{\lim\limits_{n}} A_n)
+		= \prob(\varliminf\limits_{n} B_n) = 0. $$
+		Поскольку события $ A_k $ независимы, то $ B_k $ тоже независимы.
+		
+		Имеем $$ \prob(\bigcap\limits_{k = n}^{m} B_k) = \prod\limits_{k = n}^{m} \prob(B_k) 
+		= \prod\limits_{k = n}^{m} (1 - \prob(A_k)) \leqslant e^{-\sum\limits_{k = n}^{m} \prob(A_k)}. $$
+		Переходя к пределу при $ m \to +\infty $
+		получим 
+		$$ \prob(\bigcap\limits_{k = n}^{m} B_k) \leqslant 0, $$
+		откуда $ \prob(\bigcap\limits_{k = n}^{m} B_k) = 0 $ и $ \prob(\varliminf\limits_{n} B_n) = 0 $.
+	\end{proof}
+	
+	\begin{theorem}[Закон нуля или единицы Колмогорова] \label{zero one law}
+		Пусть $ \{\xi_k\} $ --- последовательность независимых случайных величин
+		и $ \mathfrak{X} = \bigcap\limits_{k = 1}^{+\infty} \sigma(\xi_k, \xi_{k + 1}, \ldots) $
+		--- \hyperlink{tail-sigma-algebra}{хвостовая $ \sigma $-алгебра}.
+		Тогда для любого \hyperlink{tail-event}{хвостового события} $ A \in \mathfrak{X} $ либо $ \prob(A) = 0 $, либо $ \prob(A) = 1 $.
+	\end{theorem}
+	
+	\begin{proof}
+		Докажем, что всякое хвостовое событие независимо с самим собой.
+		Тогда по критерию \ref{self independent} его вероятностная мера будет равна либо 0, либо 1.
+		
+		Пусть $ A \in \mathfrak{X} $ --- хвостовое событие.
+		Тогда $ A \in \subset \sigma(\xi_k, \xi_{k + 1}, \ldots) $
+		и по предложению \ref{independence of past} событие $ A $ независимо
+		со всяким событием из $ \sigma $-алгебры $ \sigma(\xi_1, \ldots, \xi_{k - 1}) $.
+		Тогда $ A $ независимо со всяким событием из алгебры
+		$ \bigcup\limits_{n = k}^{+\infty} \sigma(\xi_1, \ldots, \xi_n) $
+		и по теореме \ref{indep of algs => indep of min sigma algs}
+		событие $ A $ независимо со всяким событием
+		из $ \sigma $-алгебры (см. предложение \ref{generation as limit})
+		$$ \sigma(\xi_1, \xi_{k + 1}, \ldots) = R_{\sigma}(\bigcup\limits_{n = k}^{+\infty} \sigma(\xi_1, \ldots, \xi_n)). $$
+		Так как $ A \in \sigma(\xi_1, \xi_{k + 1}, \ldots) $, то $ A $ независимо с самим собой.
+	\end{proof}
+
+	\begin{corollary}
+		Пусть $ \{\xi_n\} $ --- последовательность независимых случайных величин.
+		Тогда предел $ \lim\limits_{n \to +\infty} \xi_n $ существует с вероятностью 1,
+		либо не существует с вероятностью 1.
+		Ряд $ \sum\limits_{n = 1}^{+\infty} \xi_n $ либо сходится с вероятностью 1,
+		либо расходится с вероятностью 1.
+	\end{corollary}
+	
+	\begin{proof}
+		Рассмотрим событие $ C_{m, k_1, k_2} $, выражающее истинность неравенства 
+		$ \left|\xi_{k_1} - \xi_{k_2}\right| < \tfrac{1}{m} $.
+		Тогда $ C_{m, k_1, k_2} \in \sigma(\xi_{k_1}, \ldots, \xi_{k_2}) $. 
+		Далее, $$ C_{m, k_1} := \bigcap\limits_{k_2 = k_1}^{+\infty} C_{m, k_1, k_2} \in \sigma(\xi_{k_1}, \xi_{k_1 + 1},\ldots), $$
+		$$ C_{m, \geqslant n} := \bigcap\limits_{k_1 = n}^{+\infty} C_{m, k_1} \in \sigma(\xi_{n}, \xi_{n + 1},\ldots), $$
+		$$ C_{n_0} := \bigcap\limits_{m = 1}^{+\infty} 
+		\bigcup\limits_{n = n_0}^{+\infty} C_{m, n} \in \sigma(\xi_{n_0}, \xi_{n_0 + 1},\ldots). $$
+		Поскольку сходимость предела равносильна сходимости начиная с любого момента,
+		а сходимость с момента $ n $ попаданию в событие $ C_{n} $,
+		то для всех $ n $ события $ C_{n} $ совпадают и поэтому $ C = C_{n} \in \mathfrak{X} $.
+		По закону нуля или единицы \ref{zero one law} имеем $ \prob(C) = 0 $ или $ \prob(C) = 1 $.
+		
+		Доказательство для сходимости ряда аналогично.
+	\end{proof}
+	
+	\begin{example}
+		Пусть $ \{X_n\} $ --- последовательность независимых случайных величин, принимающих только значения $ \pm 1 $.
+		Ряд $ \sum\limits_{n = 1}^{+\infty} \tfrac{X_n}{n} $ либо сходится с вероятностью 1,
+		либо расходится с вероятностью 1.
+	\end{example}
+	
 	\subsection{Неравенства}
 	
 	\begin{theorem}[Неравенства Чебышёва и Маркова] \label{inequalities}
@@ -4378,14 +4539,14 @@
 	\TODO{поправить лемму и теорему ниже}
 	
 	\begin{lemma}
-		Пусть $ \nu_n \sim \mathrm{B}(n, p) $ --- случайная величина числа <<успехов>> в $ n $ независимых испытаниях Бернулли
+		Пусть $ \nu_n \sim \mathrm{B}(n, p_n) $ --- случайная величина числа <<успехов>> в $ n $ независимых испытаниях Бернулли
 		с вероятностью <<успеха>> $ p_n $ (другими словами, $ \nu_n $ --- биномиальная случайная величина).
 		Тогда для любого подмножества $ B \subset \mathbb{Z}_{\geqslant 0} $ выполнено неравенство
 		$$ \left|\prob(\nu_n \in B) - \sum\limits_{k \in B}\tfrac{\lambda^k}{k!}e^{-\lambda}\right| \leqslant \min(p, np^2). $$
 	\end{lemma}
 	
 	\begin{theorem}[О скорости сходимости в теореме Пуассона]
-		Пусть $ \nu_n \sim \mathrm{B}(n, p) $ --- случайная величина числа <<успехов>> в $ n $ независимых испытаниях Бернулли
+		Пусть $ \nu_n \sim \mathrm{B}(n, p_n) $ --- случайная величина числа <<успехов>> в $ n $ независимых испытаниях Бернулли
 		с вероятностью <<успеха>> $ p_n $ (другими словами, $ \nu_n $ --- биномиальная случайная величина).
 		Пусть при $ n \to +\infty $ имеет место $ np_n \to \lambda $ для некоторого фиксированного $ \lambda $.
 		Тогда для любого подмножества $ B \subset \mathbb{Z}_{\geqslant 0} $ выполнено неравенство
@@ -4398,18 +4559,34 @@
 		Тогда случайная величина $ \tfrac{\nu_n}{n} $ сходится к $ p $ почти наверное.
 		Эквивалентно,
 		$$ \lim\limits_{n \to +\infty} 
-		\prob(\sup\limits_{k \leqslant n} \left|\tfrac{\nu_n}{n} - p\right| \leqslant \varepsilon) = 0 $$
+		\prob(\sup\limits_{k \geqslant n} \left|\tfrac{\nu_k}{k} - p\right| > \varepsilon) = 0 $$
 		для любого $ \varepsilon > 0 $.
 	\end{theorem}
 	
 	\begin{proof}
-		
+		Имеем оценку
+		$$ \prob(\sup\limits_{k \geqslant n} \left|\tfrac{\nu_k}{k} - p\right| > \varepsilon)
+		= \prob(\bigcup\limits_{k \geqslant n} (\left|\tfrac{\nu_k}{k} - p\right| > \varepsilon))
+		\leqslant \sum\limits_{k \geqslant n} \prob(\left|\tfrac{\nu_k}{k} - p\right| > \varepsilon). $$
+		и воспользуемся неравенством Маркова с параметром 4:
+		$$ \prob(\left(\tfrac{\nu_k}{k} - p\right) > \varepsilon) \leqslant 
+		\tfrac{\expect\left(\tfrac{\nu_k}{k} - p\right)^4}{\varepsilon^4}. $$
+		Пользуясь формулой для центральных моментов биномиальных случайных величин (см. соответствующий раздел),
+		перебирая разбиения ($ 4 = 4 = 3 + 1 = 2 + 2 = 2 + 1 + 1 = 1 + 1 + 1 + 1 $) получим
+		$$ \expect\left(\tfrac{\nu_k}{k} - p\right)^4
+		= \tfrac{1}{k^4}(k\cdot(pq^4 + qp^4) + 0 + C_{4}^{2}C_k^2(pq^2 + p^2q) + 0 + 0)
+		= \tfrac{pq(p^3 + q^4)}{k^3} + \tfrac{3pq(k - 1)}{k^3}. $$
+		Тогда ряд $ \sum\limits_{k = 1}^{+\infty} \prob(\left|\tfrac{\nu_k}{k} - p\right| > \varepsilon) $
+		сходится. Отсюда следует, что его хвостовые суммы
+		$ \sum\limits_{k \geqslant n} \prob(\left|\tfrac{\nu_k}{k} - p\right| > \varepsilon) $
+		стремятся к нулю.
 	\end{proof}
 	
 	В законе больших чисел для одинаково распределённых независимых случайных величин 
 	оказывается не обязательно требовать даже существования у них дисперсии.
 	В такой формулировке для доказательства теоремы уже не удаётся применить второе неравенство Чебышёва,
-	но её удаётся доказать с использованием инструментария характеристических функций.
+	но её удаётся доказать как следствие закона нуля или единицы \ref{zero one law}	
+	или с использованием инструментария характеристических функций.
 	
 	\begin{theorem}[Закон больших чисел в форме Хинчина]
 		Пусть $ \{\xi_k\} $ --- последовательность попарно независимых (некоррелированных)
@@ -4425,31 +4602,76 @@
 		
 	\end{proof}
 	
+	
 	\subsection{Теорема Муавра-Лапласа}
 	
-	
-	
 	\begin{theorem}[Формула Стирлинга]
-		
+		При $ n \to +\infty $ имеется эквивалентность
+		$$ n! \sim \sqrt{2\pi n} \left(\tfrac{n}{e}\right)^n \cdot e^{\tfrac{\Theta}{12n}}, $$
+		где $ 0 < \Theta < 1 $.
+		Также $ n \to +\infty $ имеется асимптотическое представление
+		$$ n! = \sqrt{2\pi n} \left(\tfrac{n}{e}\right)^n(1 + o(1)). $$
 	\end{theorem}
 	
-	\begin{theorem}[Муавр, Лаплас]
-		
+	\begin{theorem}[Локальная теорема Муавра-Лапласа]
+		Пусть $ \nu_n \sim \mathrm{B}(n, p) $ --- случайная величина числа <<успехов>> в $ n $ независимых испытаниях Бернулли
+		с вероятностью <<успеха>> $ p $ (другими словами, $ \nu_n $ --- биномиальная случайная величина).
+		Тогда если равномерно по всех целым $ k $ таких, что при $ n \to +\infty $ имеется асимптотическая оценка
+		$$ |k - np| = o\left((npq)^{\tfrac{2}{3}}\right), $$
+		то равномерно при $ n \to +\infty $ имеет место асимптотическая оценка
+		$$ \prob(\nu_n = k) \sim \tfrac{1}{\sqrt{2\pi npq}}e^{-\tfrac{(k - np)^2}{2npq}}. $$
 	\end{theorem}
 	
-	\subsection{Закон нуля или единицы}
-	
-	\begin{lemma}[Борель, Кантелли]
+	\begin{proof}
+		Воспользуемся разложением из формулы Стирлинга:
+		$$ n! = \sqrt{2\pi n} \left(\tfrac{n}{e}\right)^n(1 + o(1)). $$
+		Тогда имеем
+		$$ \prob(\nu_n = k) = \tfrac{n!}{k!(n - k)!}p^kq^{n - k}
+		= 
+		\tfrac{n^n}{k^k (n - k)^{n - k}} \cdot \sqrt{\tfrac{n}{2\pi k(n - k)}} \cdot e^{k + (n - k) - n} p^k q^{n-k} = $$
+		$$ = \tfrac{1}{\sqrt{2\pi n \tfrac{k}{n}\cdot\tfrac{n - k}{n}}} 
+		\cdot \left(\tfrac{k}{n}\right)^{-k}\left(\tfrac{n - k}{n}\right)^{-(n - k)}p^k q^{n-k}. $$
 		
-	\end{lemma}
-	
-	\begin{lemma}[Борель, Кантелли]
+		Положим $ k = np + \delta_n $, где $ \delta_n = o\left((npq)^{\tfrac{2}{3}}\right)  $ по условию.
+		Отсюда $ \tfrac{k}{n} = p + \tfrac{\delta_n}{n} $ и $ \tfrac{n - k}{n} = q - \tfrac{\delta_n}{n} $.
+		Тогда, продолжая цепочку равенств выше получаем
+		$$ \tfrac{1}{\sqrt{2\pi n (p + \tfrac{\delta_n}{n})(q - \tfrac{\delta_n}{n})}} 
+		\cdot \left(1 + \tfrac{\delta_n}{np}\right)^{-np - \delta_n}\left(1 - \tfrac{\delta_n}{nq}\right)^{-nq + \delta_n}. $$
+		Для первого множителя имеем 
+		$ \tfrac{1}{\sqrt{2\pi n (p + \tfrac{\delta_n}{n})(q - \tfrac{\delta_n}{n})}} \sim \tfrac{1}{\sqrt{2\pi n}} $
+		из асимптотической оценки на $ \delta_n $.
+		Оставшиеся множители перепишем в виде
+		$$ \left(1 + \tfrac{\delta_n}{np}\right)^{-np - \delta_n}\left(1 - \tfrac{\delta_n}{nq}\right)^{-nq + \delta_n}
+		= e^{(-np - \delta_n)\ln(1 + \tfrac{\delta_n}{np}) + (-nq + \delta_n)\ln(1 - \tfrac{\delta_n}{nq})}. $$
+		Используем разложение в ряд Маклорена логарифма $ \ln(1 + x) = x - \tfrac{x^2}{2} + O(x^3) $ для
+		оценки степени:
+		$$ (-np - \delta_n)\ln(1 + \tfrac{\delta_n}{np}) + (-nq + \delta_n)\ln(1 - \tfrac{\delta_n}{nq}) = $$ 
+		$$ = (-np - \delta_n)(\tfrac{\delta_n}{np} - \tfrac{\delta_n^2}{2(np)^2} + O(\tfrac{\delta_n^3}{n^33}))
+		+ (-nq + \delta_n)(-\tfrac{\delta_n}{nq} - \tfrac{\delta_n^2}{2(nq)^2} + O(\tfrac{\delta_n^3}{n^3}))
+		= $$
+		$$ = \tfrac{\delta_n^2}{n}(-\tfrac{1}{p} + \tfrac{1}{2p} - \tfrac{1}{q} + \tfrac{1}{2q})
+		+ \tfrac{\delta^3}{2(np)^2} + O(\tfrac{\delta^3}{n^2}) + \tfrac{\delta^3}{2(nq)^2} + O(\tfrac{\delta^3}{n^2})
+		= -\tfrac{\delta^2(p + q)}{2npq} + O(\tfrac{\delta^3}{n^2}) = $$ 
+		$$ = -\tfrac{\delta^2}{2npq} + o(1), $$
+		где в последнем переходе мы воспользовались тем, что $ \delta^3 = o(n^2p^2q^2) $.
 		
-	\end{lemma}
+		Из всего доказанного выше вытекает требуемая оценка.
+	\end{proof}
 	
-	\begin{theorem}[Закон нуля или единицы Колмогорова]
-		
+	\begin{theorem}[Интегральная теорема Муавра-Лапласа]
+		Пусть $ \nu_n \sim \mathrm{B}(n, p) $ --- случайная величина числа <<успехов>> в $ n $ независимых испытаниях Бернулли
+		с вероятностью <<успеха>> $ p $ (другими словами, $ \nu_n $ --- биномиальная случайная величина).
+		Тогда для всяких (возможно бесконечных) $ -\infty \leqslant c < d \leqslant +\infty $ 
+		существует предел
+		$$ \lim\limits_{n \to +\infty} \prob(c \leqslant \tfrac{\nu_n - np}{\sqrt{npq}} \leqslant d) = \Phi(d) - \Phi(c), $$
+		где $ \Phi $ --- функция распределения \hyperlink{standard-normal-distribution}{стандартного нормального распределения}.
 	\end{theorem}
+	
+	\begin{proof}
+		
+	\end{proof}
+	
+	
 	
 	\subsection{Закон повторного логарифма}
 	
