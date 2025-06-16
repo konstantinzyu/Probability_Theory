@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.29)  16 JUN 2025 19:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.29)  16 JUN 2025 22:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1910,20 +1910,70 @@ Package hyperref Warning: Ignoring empty anchor on input line 4155.
 [77]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4229.
+(hyperref)                removing `math shift' on input line 4228.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 4229.
+(hyperref)                removing `\sigma' on input line 4228.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4229.
+(hyperref)                removing `math shift' on input line 4228.
 
 
 
 [78]
-Overfull \hbox (3.4064pt too wide) in paragraph at lines 4257--4260
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4268.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\chi' on input line 4268.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 4268.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4268.
+
+
+
+[79]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4319.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4319.
+
+
+Overfull \hbox (4.36064pt too wide) in paragraph at lines 4321--4323
+\T2A/cmr/m/n/12 Распределение слу-чай-ной ве-ли-чи-ны $\OML/cmm/m/it/12 F\OT1/c
+mr/m/n/12 (\OML/cmm/m/it/12 ^^W[]; ^^W[]\OT1/cmr/m/n/12 ) = []$ \T2A/cmr/m/n/12
+ на-зы-ва-ет-ся []  []$\OML/cmm/m/it/12 F$\T2A/cmr/m/n/12 -распределением
+ []
+
+
+
+[80]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4366.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4366.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4366.
+
+
+Overfull \hbox (3.4064pt too wide) in paragraph at lines 4394--4397
 [][]\T2A/cmr/bx/n/12 Теорема 9.2. []\T2A/cmr/m/it/12 На про-стран-стве $\OMS/cm
 sy/m/n/12 L[]$ \T2A/cmr/m/it/12 кор-рект-но опре-де-ле-на функ-ция $\OMS/cmsy/m
 /n/12 jj\OML/cmm/m/it/12 ^^X\OMS/cmsy/m/n/12 jj[] \OT1/cmr/m/n/12 := []$\T2A/cm
@@ -1931,7 +1981,9 @@ r/m/it/12 .
  []
 
 
-Overfull \hbox (0.42613pt too wide) in paragraph at lines 4288--4290
+
+[81]
+Overfull \hbox (0.42613pt too wide) in paragraph at lines 4425--4427
 []\T2A/cmr/m/it/12 для вся-кой точ-ки $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 \U
 /msb/m/n/12 R$ \T2A/cmr/m/it/12 непре-рыв-но-сти функ-ции $\OML/cmm/m/it/12 F[]
 $ \T2A/cmr/m/it/12 вы-пол-не-но $[] \OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (\OML/c
@@ -1940,28 +1992,22 @@ mm/m/it/12 x\OT1/cmr/m/n/12 ) =
 
 
 
-[79]
-
-[80]
-
-[81]
-
 [82]
 
 [83]
-Overfull \hbox (2.78029pt too wide) in paragraph at lines 4514--4518
-[][]\T2A/cmr/bx/n/12 Следствие 12.8. []\T2A/cmr/m/it/12 Пусть $\OMS/cmsy/m/n/12
- f\OML/cmm/m/it/12 ^^X[]\OMS/cmsy/m/n/12 g$ \T2A/cmr/m/it/12 --- по-сле-до-ва-т
-ель-ность по-пар-но неза-ви-си-мых (некор-
- []
-
-
 
 [84]
 
 [85]
 
 [86]
+Overfull \hbox (2.78029pt too wide) in paragraph at lines 4649--4653
+[][]\T2A/cmr/bx/n/12 Следствие 12.8. []\T2A/cmr/m/it/12 Пусть $\OMS/cmsy/m/n/12
+ f\OML/cmm/m/it/12 ^^X[]\OMS/cmsy/m/n/12 g$ \T2A/cmr/m/it/12 --- по-сле-до-ва-т
+ель-ность по-пар-но неза-ви-си-мых (некор-
+ []
+
+
 
 [87]
 
@@ -1975,7 +2021,13 @@ Overfull \hbox (2.78029pt too wide) in paragraph at lines 4514--4518
 
 [92]
 
-[93] (probability_theory.aux)
+[93]
+
+[94]
+
+[95]
+
+[96] (probability_theory.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
@@ -1985,13 +2037,13 @@ L3 programming layer <2024-12-09>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `probability_theory.out' has not changed.
-(rerunfilecheck)             Checksum: AA00666C403FE3981BFED401FE753734;27136.
+(rerunfilecheck)             Checksum: C72B207D620724D7202106E37EFC0C03;28056.
  ) 
 Here is how much of TeX's memory you used:
- 38334 strings out of 473566
- 857707 string characters out of 5718235
- 1474319 words of memory out of 5000000
- 60289 multiletter control sequences out of 15000+600000
+ 38365 strings out of 473566
+ 858299 string characters out of 5718235
+ 1474411 words of memory out of 5000000
+ 60304 multiletter control sequences out of 15000+600000
  580368 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,15n,107p,1411b,2189s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2033,9 +2085,9 @@ c/doublestroke/dsrom12.pfb></home/konstantin/.miktex/texmfs/install/fonts/type1
 s/type1/public/amsfonts/symbols/msam10.pfb></home/konstantin/.miktex/texmfs/ins
 tall/fonts/type1/public/amsfonts/symbols/msam7.pfb></home/konstantin/.miktex/te
 xmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on probability_theory.pdf (93 pages, 886424 bytes).
+Output written on probability_theory.pdf (96 pages, 905176 bytes).
 PDF statistics:
- 2027 PDF objects out of 2073 (max. 8388607)
- 566 named destinations out of 1000 (max. 500000)
- 713 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2071 PDF objects out of 2073 (max. 8388607)
+ 582 named destinations out of 1000 (max. 500000)
+ 745 words of extra memory for PDF output out of 10000 (max. 10000000)
 

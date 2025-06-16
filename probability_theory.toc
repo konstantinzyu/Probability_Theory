@@ -62,25 +62,29 @@
 \contentsline {subsection}{\numberline {7.5}Квантили и медиана}{76}{subsection.7.5}%
 \contentsline {subsection}{\numberline {7.6}Мода}{77}{subsection.7.6}%
 \contentsline {subsection}{\numberline {7.7}Асимметрия и эксцесс}{77}{subsection.7.7}%
-\contentsline {subsection}{\numberline {7.8}Вычисление матожиданий и дисперсий для распределений, связанных с нормальным распределением}{78}{subsection.7.8}%
-\contentsline {subsection}{\numberline {7.9}Вычисление матожиданий через совместные распределения}{78}{subsection.7.9}%
-\contentsline {section}{\numberline {8}Свёртки случайных величин}{78}{section.8}%
-\contentsline {section}{\numberline {9}Сходимости случайных величин}{78}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Сходимость почти наверное}{78}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Сходимость по вероятности}{78}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Пространство $ \mathcal {L}_p $ и сходимость в нём}{79}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}Сходимость по распределению}{79}{subsection.9.4}%
-\contentsline {subsection}{\numberline {9.5}Связь сходимостей}{80}{subsection.9.5}%
-\contentsline {section}{\numberline {10}Производящие функции}{80}{section.10}%
-\contentsline {section}{\numberline {11}Характеристические функции}{80}{section.11}%
-\contentsline {section}{\numberline {12}Предельные теоремы}{81}{section.12}%
-\contentsline {subsection}{\numberline {12.1}Закон нуля или единицы}{81}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}Неравенства}{83}{subsection.12.2}%
-\contentsline {subsection}{\numberline {12.3}Закон больших чисел}{84}{subsection.12.3}%
-\contentsline {subsection}{\numberline {12.4}Центральная предельная теорема}{87}{subsection.12.4}%
-\contentsline {subsection}{\numberline {12.5}Теорема Муавра-Лапласа}{90}{subsection.12.5}%
-\contentsline {subsection}{\numberline {12.6}Закон повторного логарифма}{92}{subsection.12.6}%
-\contentsline {subsection}{\numberline {12.7}Закон арксинуса}{92}{subsection.12.7}%
-\contentsline {subsection}{\numberline {12.8}Правило трёх сигм}{93}{subsection.12.8}%
-\contentsline {section}{\numberline {13}Указатель терминов}{93}{section.13}%
-\contentsline {section}{\numberline {14}Указатель теорем}{93}{section.14}%
+\contentsline {subsection}{\numberline {7.8}Правило трёх $ \sigma $-м}{78}{subsection.7.8}%
+\contentsline {subsection}{\numberline {7.9}Вычисление матожиданий и дисперсий для распределений, связанных с нормальным распределением}{79}{subsection.7.9}%
+\contentsline {subsubsection}{\numberline {7.9.1}$ \chi ^2 $-распределение}{79}{subsubsection.7.9.1}%
+\contentsline {subsubsection}{\numberline {7.9.2}Распределение Стьютенда}{80}{subsubsection.7.9.2}%
+\contentsline {subsubsection}{\numberline {7.9.3}$ F $-распределение}{80}{subsubsection.7.9.3}%
+\contentsline {subsubsection}{\numberline {7.9.4}Логнормальное распределение}{80}{subsubsection.7.9.4}%
+\contentsline {subsection}{\numberline {7.10}Вычисление матожиданий через совместные распределения}{81}{subsection.7.10}%
+\contentsline {section}{\numberline {8}Свёртки случайных величин}{81}{section.8}%
+\contentsline {section}{\numberline {9}Сходимости случайных величин}{81}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Сходимость почти наверное}{81}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Сходимость по вероятности}{81}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Пространство $ \mathcal {L}_p $ и сходимость в нём}{81}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Сходимость по распределению}{82}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Связь сходимостей}{83}{subsection.9.5}%
+\contentsline {section}{\numberline {10}Производящие функции}{83}{section.10}%
+\contentsline {section}{\numberline {11}Характеристические функции}{83}{section.11}%
+\contentsline {section}{\numberline {12}Предельные теоремы}{83}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Закон нуля или единицы}{83}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Неравенства}{86}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Закон больших чисел}{86}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Центральная предельная теорема}{90}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}Теорема Муавра-Лапласа}{93}{subsection.12.5}%
+\contentsline {subsection}{\numberline {12.6}Закон повторного логарифма}{95}{subsection.12.6}%
+\contentsline {subsection}{\numberline {12.7}Закон арксинуса}{95}{subsection.12.7}%
+\contentsline {section}{\numberline {13}Указатель терминов}{96}{section.13}%
+\contentsline {section}{\numberline {14}Указатель теорем}{96}{section.14}%

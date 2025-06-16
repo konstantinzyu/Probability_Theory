@@ -4198,8 +4198,145 @@
 		Можно показать, что распределение Пуассона имеет следующие коэффициенты асимметрии и эксцесса
 		$$ K_{as} = \tfrac{1}{\sqrt{\lambda}}, K_{ex} = \tfrac{1}{\lambda} + 3. $$
 	\end{example}
+	
+	Распределение случайной величины $ \xi $ называется \defin{симметричным}{symmetric-distribution},
+	если для любого $ x \in \RR $ выполнено равенство $ F_\xi(x) + F_\xi(-x) = 1 $.
+	
+	\begin{proposition}
+		Пусть $ \xi $ --- абсолютно непрерывная случайная величина
+		и её плотность чётна, то есть удовлетворяет соотношению $ p_\xi(x) = p_\xi(-x) $.
+		Тогда
+		\begin{enumerate}
+			\item $ \xi $ симметрична;
+			\item если функция распределения $ \xi $ строго монотонна,
+			то для любого $ 0 < \alpha < 1 $ имеет место равенство квантилей $ x_{\alpha} = - x_{1 - \alpha} $.
+		\end{enumerate}
+	\end{proposition}
+	
+	\begin{proof}
+		Имеем
+		$$ F_\xi(x) + F_\xi(-x) = \int\limits_{-\infty}^{x} p_\xi(u)\diff u +  \int\limits_{-\infty}^{x} p_\xi(u)\diff u
+		= \int\limits_{-\infty}^{x} p_\xi(u)\diff u +  \int\limits_{-\infty}^{-x} p_\xi(-t)\diff (-t) = $$ 
+		$$ = \int\limits_{-\infty}^{x} p_\xi(u)\diff u +  \int\limits_{x}^{+\infty} p_\xi(t)\diff t 
+		= \int\limits_{-\infty}^{+\infty} p_\xi(u)\diff u = 1. $$
+		
+		Далее, для квантилей:
+		$$ F_(x_{1 - \alpha}) = 1 - \alpha = 1 - F_\xi(x_{\alpha}) = F_\xi(-x_{\alpha}), $$
+		откуда $ x_{1 - \alpha} = -x_{\alpha} $.
+	\end{proof}
+	
+	\subsection{Правило трёх $ \sigma $-м}
+	
+	Обозначим через $ u_{\alpha} $ квантиль уровня $ \alpha $ у 
+	стандартно нормально распределённой случайной величины $ \xi \sim \mathcal{N}(0, 1) $.
+	
+	\begin{proposition}
+		Пусть $ \varepsilon \in (0, 1) $. Тогда для случайной величины $ \eta \sim \mathcal{N}(a, \sigma^2) $ 
+		имеет место равенство
+		$$ \prob(|\xi - a| > \sigma u_{1 - \tfrac{\varepsilon}{2}}) = \varepsilon. $$
+	\end{proposition}
+	
+	\begin{proof}
+		Положим $ \alpha_1 = \tfrac{\varepsilon}{2} $ и $ \alpha_2 = 1 - \tfrac{\varepsilon}{2} $.
+		В силу симметричности стандартного нормального распределения $ u_{\alpha_1} = -u_{\alpha_2} $.
+		Тогда
+		$$ \prob(|\xi - a| > \sigma u_{\alpha_2}) = 1 - \prob(|\xi - a| \leqslant \sigma u_{\alpha_2})
+		= 1 - \prob(-u_{\alpha_2} \leqslant \tfrac{\xi - a}{\sigma} \leqslant u_{\alpha_2}) = $$ 
+		$$ = 1 - \prob(u_{\alpha_1} \leqslant \tfrac{\xi - a}{\sigma} \leqslant u_{\alpha_2})
+		= 1 - F_{\xi}(u_{\alpha_2}) + F_\xi(u_{\alpha_1}) 
+		= 1 - (1 - \tfrac{\varepsilon}{2}) + \tfrac{\varepsilon}{2}
+		= \varepsilon. $$
+	\end{proof}
+	
+	\begin{corollary}[Правило трёх сигм]
+		Пусть $ \eta \sim \mathcal{N}(a, \sigma^2) $ --- нормально распределённая случайная величина.
+		Тогда справедливо приближённое равенство
+		$$ \prob(|\eta - a| > 3\sigma) \approx 0.0027. $$
+	\end{corollary}
+	
+	\begin{proof}
+		Пусть $ u_{1 - \tfrac{\varepsilon}{2}} = 3 $.
+		Тогда $ \Phi(3) = 1 - \tfrac{\varepsilon}{2} $
+		и $ \varepsilon = 2 - 2\Phi(3) $.
+		Поскольку $ \Phi(3) \approx 0.99865 $, то 
+		$$ \varepsilon \approx 2 - 2 \cdot 0.99865
+		= 2 - 1.9973 = 0.0027. $$
+	\end{proof}
 		
 	\subsection{Вычисление матожиданий и дисперсий для распределений, связанных с нормальным распределением}
+	
+	\subsubsection{$ \chi^2 $-распределение}
+	
+	Пусть $ \xi_1, \ldots, \xi_n $ --- независимые случайные величины и $ \xi_k \sim \mathcal{N}(0, 1) $.
+	Распределение $ \chi_n^2 := \sum\limits_{k = 1}^{n} \xi_k^2 $ называется 
+	\defin{$ \chi^2 $-распределением с $ n $ степенями свободы}{chi-squared}.
+	
+	Оно абсолютно непрерывно и имеет плотность, сосредоточенную на положительной полуоси:
+	$$ p_{\chi_n^2}(x) = \tfrac{\tfrac{1}{2^n}}{\Gamma(\tfrac{n}{2})} \cdot x^{\tfrac{n}{2} - 1} e^{-\tfrac{x}{2}}, $$
+	где $ \Gamma(z) = \int\limits_{0}^{+\infty} t^{z - 1}e^{-t}\diff t $ --- гамма-функция.
+	
+	Вычислим её численные характеристики.
+	
+	Ранее мы доказали, что $ \expect\xi^2 = 1 $ и $ \expect\xi^4 = 3 $ для $ \xi \sim \mathcal{N}(0, 1) $.
+	Поэтому по независимости имеем $ \expect\chi_n^2 = n\expect\xi_1^2 = n $
+	и $ \disp\chi_n^2 = n\disp(\xi_1^2) = n(\expect\xi_1^4 - (\expect\xi_1^2)^2) = n(3 - 1) = 2n $.
+	
+	Далее, $$ K_{as} = \tfrac{\expect(\chi_n^2 - \expect\chi_n^2)^3}{\sigma^3}
+	= \tfrac{\expect(\sum\limits_{k = 1}^{n} (\xi_k^2 - \expect\xi_k^2))^3}{2n\sqrt{2n}} = $$
+	$$ = \\ \tfrac{n\sum\limits_{k = 1}^{n} \expect (\xi_k^2 - 1)^3 
+		+ 3\sum\limits_{k, j = 1}^{n} \expect (\xi_k^2 - 1)^2\expect(\xi_j^2 - 1)
+		+ 6\sum\limits_{1 \leqslant i < j < k \leqslant n} 
+		\expect(\xi_k^2 - 1)\expect(\xi_j^2 - 1)\expect(\xi_i^2 - 1)}{2n\sqrt{2n}} = $$
+		$$ = \tfrac{n\sum\limits_{k = 1}^{n} (15 - 3\cdot 3 + 3 - 1) + 0 + 0}{2n\sqrt{2n}}
+		= \tfrac{8n}{2n\sqrt{2n}} = \sqrt{\tfrac{8}{n}}.
+		 $$
+	Для коэффициента эксцесса имеем
+	$$ K_{ex} = \tfrac{\expect(\chi_n^2 - \expect\chi_n^2)^4}{\sigma^4}
+	= \tfrac{\expect(\sum\limits_{k = 1}^{n} (\xi_k^2 - \expect\xi_k^2))^4}{4n^2} = $$
+	$$ = \tfrac{n\sum\limits_{k = 1}^{n} \expect (\xi_k^2 - 1)^4
+		+ 6\sum\limits_{1 \leqslant j < k \leqslant n} 
+		\expect(\xi_j^2 - 1)^2\expect(\xi_k^2 - 1)^2}{4n^2} = $$
+	$$ = \tfrac{n\sum\limits_{k = 1}^{n} (105 - 4\cdot 15 + 6\cdot 3 - 4 + 1) 
+		+ 3n(n - 1)(3 - 2\cdot1 + 1)^2}{4n^2}
+	= \tfrac{3n^2 + 12n}{n^2} = 3 + \tfrac{12}{n}.
+	$$
+	
+	\subsubsection{Распределение Стьютенда}
+	
+	\defin{Распределением Стьюдента с $ n $ степенями свободы называется}{Student-distribution}
+	называется распределение случайной величины $ t_n = \tfrac{\xi_0}{\sqrt{\tfrac{\chi_n^2}{n}}} $,
+	где $ \xi_0 \sim \mathcal{N}(0, 1) $.
+	
+	Плотность распределения Стьюдента имеет вид
+	$$ p_{t_n}(x) = \tfrac{\Gamma(\tfrac{n + 1}{2})}{\Gamma(\tfrac{n}{2})\sqrt{\pi n}}(1 + \tfrac{x^2}{n})^{-\tfrac{n + 1}{2}}. $$
+	
+	Оно обладает следующими параметрами.
+	Существует $ \expect t_n = 0 $ при $ n > 1 $.
+	Существует $ \disp t_n = \tfrac{n}{n - 2} $ при $ n > 2 $.
+	Существует $ K_{as} = 0 $ при $ n > 3 $.
+	Существует $ K_{ex} = \tfrac{6}{n - 4} $ при $ n > 4 $.
+	
+	\subsubsection{$ F $-распределение}
+	
+	Распределение случайной величины $ F(\nu_1, \nu_2) = \tfrac{\chi_{\nu_1}^2 / \nu_1}{\chi_{\nu_2}^2 / \nu_2} $
+	называется \defin{$ F $-распределением (распределением Фишера)}{F-distribtuion}.
+	
+	Для него при $ \nu_2 > 2 $ существует матожидание $ \expect F(\nu_1, \nu_2)
+	= \tfrac{\nu_2}{\nu_2 - 2} $
+	и для $ \nu_2 > 4 $ существует дисперсия 
+	$ \disp F(\nu_1, \nu_2) = \tfrac{2\nu_2(\nu_1 + \nu_2 - 2)}{\nu_1(\nu_2 - 2)^2(\nu_2 - 4)} $.
+	
+	\subsubsection{Логнормальное распределение}
+	
+	Пусть $ \xi $ --- случайная величина. Если существует такая константа $ C $,
+	что существует случайная величина $ \ln(\xi - C) $ и она распределена нормальна,
+	то говорят, что $ \xi $ имеет 
+	\defin{логарифмическое нормальное распределение (логнормальное распределение)}{lognormal-distribution}.
+	Имеем формулу для плотности
+	$ p_\xi(x) = \tfrac{1}{(x - C)\sqrt{2\pi}\sigma}e^{-\tfrac{(\ln(x - C) - a)^2}{2\sigma^2}} $.
+	Для заданных параметров имеем
+	$ \expect\xi = C + e^{a + \tfrac{\sigma^2}{2}}, 
+	\disp\xi = (e^{\sigma^2} - 1) \cdot e^{2a + \sigma^2} $.
 	
 	\subsection{Вычисление матожиданий через совместные распределения}
 	
@@ -4334,8 +4471,6 @@
 	\end{theorem}
 	
 	\section{Предельные теоремы}
-	
-	\TODO{дописать ниже доказательства теорем}
 	
 	\subsection{Закон нуля или единицы}
 	
@@ -4488,7 +4623,7 @@
 	
 	\subsection{Закон больших чисел}
 	
-	\begin{theorem}[Закон больших чисел в форме Чебышёва]
+	\begin{theorem}[Закон больших чисел в форме Чебышёва] \label{large numbes law | Chebishov}
 		Пусть $ \{\xi_k\} $ --- последовательность попарно независимых (некоррелированных)
 		случайных величин и для некоторой константы $ C > 0 $ выполнены равенства
 		$ \disp\xi_k \leqslant C $. Положим $ S_n := \sum\limits_{i = 1}^{n} \xi_n $.
@@ -4528,7 +4663,7 @@
 		для $ \varepsilon := \varepsilon\tfrac{\sigma}{\sqrt{n}} $.
 	\end{proof}
 	
-	\begin{theorem}[Теорема Пуассона]
+	\begin{theorem}[Теорема Пуассона] \label{Poisson theorem}
 		Пусть $ \nu_n \sim \mathrm{B}(n, p_n) $ --- случайная величина числа <<успехов>> в $ n $ независимых испытаниях Бернулли
 		с вероятностью <<успеха>> $ p_n $ (другими словами, $ \nu_n $ --- биномиальная случайная величина).
 		Пусть при $ n \to +\infty $ имеет место $ np_n \to \lambda $ для некоторого фиксированного $ \lambda $.
@@ -4560,7 +4695,7 @@
 		$$ \left|\prob(\nu_n \in B) - \sum\limits_{k \in B}\tfrac{\lambda^k}{k!}e^{-\lambda}\right| \leqslant \min(p, np^2). $$
 	\end{lemma}
 	
-	\begin{theorem}[О скорости сходимости в теореме Пуассона]
+	\begin{theorem}[О скорости сходимости в теореме Пуассона] 
 		Пусть $ \nu_n \sim \mathrm{B}(n, p_n) $ --- случайная величина числа <<успехов>> в $ n $ независимых испытаниях Бернулли
 		с вероятностью <<успеха>> $ p_n $ (другими словами, $ \nu_n $ --- биномиальная случайная величина).
 		Пусть при $ n \to +\infty $ имеет место $ np_n \to \lambda $ для некоторого фиксированного $ \lambda $.
@@ -4568,7 +4703,7 @@
 		$$ \left|\prob(\nu_n \in B) - \sum\limits_{k \in B}\tfrac{\lambda^k}{k!}e^{-\lambda}\right| \leqslant \min(p, np^2). $$
 	\end{theorem}
 	
-	\begin{theorem}[Усиленный закон больших чисел для схемы Бернулли]
+	\begin{theorem}[Усиленный закон больших чисел для схемы Бернулли] \label{large numbers law | Bernoulli}
 		Пусть $ \theta_1, \ldots, \theta_n \sim \mathrm{Be}(p) $ --- независимые бернуллиевские случайные величины
 		с вероятностью <<успеха>> $ p $. Положим $ \nu_n = \theta_1 + \ldots + \theta_n \sim \mathrm{B}(n, p) $.
 		Тогда случайная величина $ \tfrac{\nu_n}{n} $ сходится к $ p $ почти наверное.
@@ -4603,7 +4738,7 @@
 	но её удаётся доказать как следствие закона нуля или единицы \ref{zero one law}	
 	или с использованием инструментария характеристических функций.
 	
-	\begin{theorem}[Закон больших чисел в форме Хинчина]
+	\begin{theorem}[Закон больших чисел в форме Хинчина] \label{large numbers law | only expectation}
 		Пусть $ \{\xi_k\} $ --- последовательность попарно независимых
 		одинаково распределённых случайных величин и $ \expect\xi_k = m $. 
 		Положим $ S_n := \sum\limits_{i = 1}^{n} \xi_n $.
@@ -4645,7 +4780,7 @@
 	
 	\subsection{Центральная предельная теорема}
 	
-	\begin{theorem}[Центральная предельная теорема]
+	\begin{theorem}[Центральная предельная теорема] \label{central limit theorem}
 		Пусть $ \{\xi_k\} $ --- последовательность независимых одинаково распределённых случайных величин,
 		обладающих конечными вторыми моментами $ \expect\xi_k^2 $ (и, следовательно, конечными матожиданиями и дисперсиями).
 		Положим $ S_n = \sum\limits_{k = 1}^{n} \xi_k $.
@@ -4692,7 +4827,7 @@
 	В этом случае требует выполнение дополнительных условий,
 	как демонстрирует следующая
 	
-	\begin{theorem}[Обобщение центральной предельной теоремы с условием Линдеберга]
+	\begin{theorem}[Обобщение центральной предельной теоремы с условием Линдеберга] \label{central limit theorem | Lindeberd}
 		Пусть $ \{\xi_k\} $ --- последовательность независимых случайных величин,
 		обладающих вторым моментом $ \expect\xi^2 $ (и, следовательно, математическим ожиданием и дисперсией).
 		Положим $ \sigma_k^2 = \disp\xi_k > 0 $ и $ S_n = \sum\limits_{k = 1}^{n} \xi_k $,
@@ -4710,7 +4845,7 @@
 		где $ \eta \sim \mathcal{N}(0, 1) $.
 	\end{theorem}
 
-	\begin{theorem}[Обобщение центральной предельной теоремы с условием Ляпунова]
+	\begin{theorem}[Обобщение центральной предельной теоремы с условием Ляпунова] \label{central limit theorem | Lyapunov}
 		Пусть $ \{\xi_k\} $ --- последовательность независимых случайных величин,
 		обладающих вторым моментом $ \expect\xi^2 $ (и, следовательно, математическим ожиданием и дисперсией).
 		Положим $ \sigma_k^2 = \disp\xi_k > 0 $ и $ S_n = \sum\limits_{k = 1}^{n} \xi_k $,
@@ -4753,7 +4888,7 @@
 		оно также стремится к нулю. Таким образом, выполнено условие Линдеберга.
 	\end{proof}
 	
-	\begin{theorem}[Оценка Берри-Эссена]
+	\begin{theorem}[Оценка Берри-Эссена] \label{Berri Essen approx}
 		Пусть $ \{\xi_k\} $ --- последовательность независимых одинаково распределённых случайных величин,
 		обладающих моментами $ \expect\xi^k < + \infty $ 
 		(и, следовательно, обладающие математическим ожиданием
@@ -4762,16 +4897,51 @@
 		и $ S_n = \sum\limits_{k = 1}^{n} \xi_k $.
 		Если случайные величины последовательности также обладают третьими моментами $ \expect|\xi|^3 < +\infty $,
 		то для любого натурального $ n $ справедлива оценка
-		$$ \sup\limits_{x \in \RR} \left|\prob\left(\tfrac{S_n - \expect S_n}{\sqrt{\disp S_n}} - \Phi(x)\right)\right|
+		$$ \sup\limits_{x \in \RR} \left|\prob\left(\tfrac{S_n - \expect S_n}{\sqrt{\disp S_n}} \leqslant x \right) - \Phi(x)\right|
 		\leqslant \tfrac{C}{\sqrt{n}} \cdot \tfrac{\expect|\xi_k - \expect\xi_k|^3}{\sigma^3}, $$
 		где $ C $ --- некоторая константа, удовлетворяющая неравенствам
 		$$ 0.3989 \approx \tfrac{1}{\sqrt{2\pi}} \leqslant C < 0.4784. $$
-		
 	\end{theorem}
+	
+	\begin{example}
+		Рассмотрим схему Бернулли, где
+		\[
+		\nu_n = \sum_{i=1}^{n} \theta_i, \quad \expect \nu_n = np, \quad \disp \nu_n = npq, 
+		\quad \expect \theta_1 = p, \quad \disp \theta_1 = pq.
+		\]
+		Тогда оценка Берри–Эссена будет иметь вид:
+		\[
+		\sup_{x \in \mathbb{R}} \left| \prob\left( \frac{\nu_n - np}{\sqrt{npq}} \leqslant x \right) - \Phi(x) \right| 
+		\leqslant \frac{C \cdot \expect|\theta_1 - p|^3}{(pq)^{3/2} \sqrt{n}}.
+		\]
+		Случайная величина $|\theta_1 - p|^3$ распределена следующим образом:
+		\[
+		|\theta_1 - p|^3 \sim
+		\begin{array}{cc}
+			|0 - p|^3 & |1 - p|^3 \\
+			1 - p & p
+		\end{array}.
+		\]
+		Отсюда вычислим математическое ожидание:
+		\[
+		\expect|\theta_1 - p|^3 = p^3(1 - p) + (1 - p)^3 p = p^3 q + q^3 p = pq(p^2 + q^2).
+		\]
+		Подставим в правую часть неравенства:
+		\[
+		\frac{C \cdot \expect|\theta_1 - p|^3}{(pq)^{3/2} \sqrt{n}} = \frac{C \cdot pq(p^2 + q^2)}{(pq)^{3/2} \sqrt{n}} 
+		= \frac{C(p^2 + q^2)}{\sqrt{npq}}.
+		\]
+		В результате, оценка Берри–Эссена для схемы Бернулли будет иметь вид:
+		\[
+		\sup_{x \in \mathbb{R}} \left| \prob\left( \frac{\nu_n - np}{\sqrt{npq}} \leqslant x \right) - \Phi(x) \right| 
+		\leqslant \frac{C(p^2 + q^2)}{\sqrt{npq}}.
+		\]
+		При $p = q = \frac{1}{2}$ правая часть неравенства будет равна $\frac{\sqrt{C}}{\sqrt{n}}$. Если $p \gg q$ или $q \gg p$, то оценка будет работать хуже.
+	\end{example}
 	
 	\subsection{Теорема Муавра-Лапласа}
 	
-	\begin{theorem}[Формула Стирлинга]
+	\begin{theorem}[Формула Стирлинга] \label{Stirling}
 		При $ n \to +\infty $ имеется эквивалентность
 		$$ n! \sim \sqrt{2\pi n} \left(\tfrac{n}{e}\right)^n \cdot e^{\tfrac{\Theta}{12n}}, $$
 		где $ 0 < \Theta < 1 $.
@@ -4779,7 +4949,7 @@
 		$$ n! = \sqrt{2\pi n} \left(\tfrac{n}{e}\right)^n(1 + o(1)). $$
 	\end{theorem}
 	
-	\begin{theorem}[Локальная теорема Муавра-Лапласа]
+	\begin{theorem}[Локальная теорема Муавра-Лапласа] \label{local Muavre Laplas}
 		Пусть $ \nu_n \sim \mathrm{B}(n, p) $ --- случайная величина числа <<успехов>> в $ n $ независимых испытаниях Бернулли
 		с вероятностью <<успеха>> $ p $ (другими словами, $ \nu_n $ --- биномиальная случайная величина).
 		Тогда если равномерно по всех целым $ k $ таких, что при $ n \to +\infty $ имеется асимптотическая оценка
@@ -4824,7 +4994,7 @@
 		Из всего доказанного выше вытекает требуемая оценка.
 	\end{proof}
 	
-	\begin{theorem}[Интегральная теорема Муавра-Лапласа]
+	\begin{theorem}[Интегральная теорема Муавра-Лапласа] \label{integral Muarve Laplas}
 		Пусть $ \nu_n \sim \mathrm{B}(n, p) $ --- случайная величина числа <<успехов>> в $ n $ независимых испытаниях Бернулли
 		с вероятностью <<успеха>> $ p $ (другими словами, $ \nu_n $ --- биномиальная случайная величина).
 		Тогда для всяких (возможно бесконечных) $ -\infty \leqslant c < d \leqslant +\infty $ 
@@ -4889,13 +5059,6 @@
 		Тогда для $ 1 \leqslant k \leqslant n $ выполнено
 		$$ \prob(\nu_{2n} = 2k \mid S_{2n} = 0) = \tfrac{1}{n + 1}. $$
 	\end{theorem}
-	
-	\subsection{Правило трёх сигм}
-	
-	\begin{theorem}[Правило трёх сигм]
-		
-	\end{theorem}
-	
 	
 	\section{Указатель терминов}
 	
