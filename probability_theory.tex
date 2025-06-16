@@ -2565,6 +2565,37 @@
 	$ p_{g(\xi)}(x) = p_{\xi}(g^{-1}(x))\left|\tfrac{\diff g^{-1}}{\diff x}(x)\right|, $
 	которую можно использовать в общем случае для монотонных дифференцируемых функций $ g $.
 	
+	\begin{example}
+		Пусть случайная величина \( \eta = a \cdot \xi + b \), и известна плотность \( f_\xi(x) \). Тогда
+		\[
+		\xi = \frac{\eta - b}{a}, \quad \text{то есть} \quad g^{-1}(y) = \frac{y - b}{a},
+		\]
+		и можно найти плотность \( \eta \) по формуле перехода к новой случайной величине:
+		\[
+		f_\eta(y) = f_\xi\left( \frac{y - b}{a} \right) \cdot \left| \frac{1}{a} \right|.
+		\]
+	\end{example}
+	
+	\begin{example}
+		Пусть \( \eta = g(\xi) \) и $ g $ не является взаимно однозначной функцией, а также известна плотность \( p_\xi(x) \).  
+		К примеру, возьмём \( \eta = \xi^2 \). Тогда распишем функцию распределения \( F_\eta(y) \) по определению:
+		\[
+		F_\eta(y) = \mathbb{P}\{\eta \leq y\} = \mathbb{P}\{\xi^2 \leq y\} = \mathbb{P}\{\xi^2 - y \leq 0\}
+		\]
+		\[
+		= \mathbb{P}\{(\xi - \sqrt{y})(\xi + \sqrt{y}) \leq 0\} = \mathbb{P}\{-\sqrt{y} \leq \xi \leq \sqrt{y}\} 
+		= F_\xi(\sqrt{y}) - F_\xi(-\sqrt{y}).
+		\]
+		Тогда при дифференцировании по \( y \) получим плотность \( \eta \):
+		\[
+		f_\eta(y) = \frac{d}{dy} F_\eta(y) = \frac{d}{dy} \left[F_\xi(\sqrt{y}) - F_\xi(-\sqrt{y})\right]
+		\]
+		\[
+		= \frac{1}{2\sqrt{y}} f_\xi(\sqrt{y}) + \frac{1}{2\sqrt{y}} f_\xi(-\sqrt{y}) 
+		= \frac{1}{2\sqrt{y}} \left( f_\xi(\sqrt{y}) + f_\xi(-\sqrt{y}) \right).
+		\]
+	\end{example}
+	
 	\section{Классические примеры распределений} 
 	
 	В этом разделе мы рассмотрим классические примеры распределений,
@@ -3398,7 +3429,7 @@
 		Взяв в качестве $ A_i = \xi^{-1}(B_i) $, где $ B_i $ борелевское, дословно перепишем друг в друга равенства из обоих определений.
 	\end{proof}
 	
-	\begin{corollary}
+	\begin{corollary} \label{independence of compositions}
 		Пусть $ g, h $ --- борелевские функции, а $ \xi, \eta $ --- независимые случайные величины.
 		Тогда случайные величины $ g(\xi) $ и $ h(\eta) $ независимы.
 	\end{corollary}
@@ -3781,7 +3812,7 @@
 	
 	Для многомерного распределения верна аналогичная теорема
 	
-	\begin{theorem}[О способах вычислении матожидания] \label{compute expectation}
+	\begin{theorem}[О способах вычислении матожидания] \label{compute expectation of vector}
 		Пусть $ \xi $ --- случайный вектор и $ g \colon \RR^n \to \RR $ --- борелевская функция.
 		Тогда $ g(\xi) $ обладает математическим ожиданием тогда и только тогда,
 		когда сходится многомерный интеграл Лебега-Стилтьеса
@@ -4128,7 +4159,7 @@
 		Утверждения для дисперсии, ковариации и корреляции следуют из доказанных выше формул.
 	\end{proof}
 	
-	\begin{theorem}
+	\begin{theorem} \label{independence and expectation}
 		Пусть $ \xi_1, \ldots, \xi_n $ --- независимые случайные величины, обладающие матожиданием. Тогда выполнено следующее:
 		\begin{enumerate}
 			\item существует $ \expect(\xi_1\ldots\xi_n) = \expect\xi_1\ldots\expect\xi_n $;
@@ -4519,6 +4550,154 @@
 	
 	\section{Характеристические функции}
 	
+	Пусть $ \xi $ --- случайная величина. 
+	\defin{Характеристической функцией случайной величины $ \xi $}{characteristic-function} 
+	называется функция $ f_\xi(t) = \expect e^{it\xi} $.
+	
+	Если случайная величина $ \xi $ абсолютно непрерывна, то по доказанному ранее 
+	(по теореме \ref{compute expectation}) имеем 
+	$$ f_\xi(t) = \int\limits_{-\infty}^{+\infty} e^{itx}p_\xi(x) \diff x. $$
+	Таким образом, характеристическая функция является преобразованием Фурье функции плотности.
+	
+	\begin{example}
+		Пусть имеется соотношение между случайными величинами $ \eta = a\xi + b $.
+		Тогда
+		$$ f_\eta(t) = \expect e^{it\eta} = \expect e^{it(a\xi + b)} = e^{itb} \cdot \expect e^{i(at)\xi}
+		= e^{itb} \cdot f_\xi(at). $$
+	\end{example}
+	
+	\begin{example}
+		Пусть $ \xi \sim \Pi(\lambda) $ --- случайная величина с пауссоновским распределением.
+		Тогда
+		$$ f_\xi(t) = \expect e^{it\eta} = \sum\limits_{k = 0}^{+\infty} e^{itk}\cdot \tfrac{\lambda^k}{k!}e^{-\lambda}
+		= e^{-\lambda} \cdot e^{e^{it}\lambda} = e^{\lambda(e^{it} - 1)}. $$
+	\end{example}
+	
+	\begin{example}
+		Пусть $ \xi \sim \mathrm{Be}(p) $ --- бернуллиевская случайная величина.
+		Тогда $ f_{\xi}(t) = \expect e^{it\xi} = e^{it}p + q $.
+	\end{example}
+	
+	\begin{proposition}
+		Пусть $ \xi_1, \ldots, \xi_n $ --- независимые случайные величины.
+		Тогда $$ f_{\xi_1 + \ldots + \xi_n}(t) = f{\xi_1}(t) \cdot \ldots \cdot f_{\xi_n}(t). $$
+		Если эти случайные величины одинаково распределены,
+		то для любого $ 1 \leqslant k \leqslant n $ выполнено
+		$$ f_{\xi_1 + \ldots + \xi_n}(t) = (f_{\xi_k}(t))^n $$
+	\end{proposition}
+	
+	\begin{proof}
+		Поскольку $ \xi_1, \ldots, \xi_n $ независимы, то независимы и композиции $ e^{it\xi} $ (мы не рассматривали ранее комплексно значные случайные величины, но можно считать, что они являются случайными векторами, независимость определяется как попарная независимость компонент обеих величин) по следствию $ \ref{independence of compositions} $.
+		
+		Тогда по теореме \ref{independence and expectation}
+		имеем
+		$$ f_{\xi_1 + \ldots + \xi_n}(t) = \expect e^{it(\xi_1 + \ldots + \xi_n)}
+		= \expect (e^{it\xi_1} \cdot \ldots e^{it\xi_n})
+		= \expect e^{it\xi_1} \cdot \ldots \cdot \expect e^{it\xi_n}
+		= f_{\xi_1}(t) \cdot \ldots \cdot f_{\xi_n}(t). $$
+		
+		Из одинаковой распределённости следует равенство характеристических функции 
+		(как интегралов от композиции с данной случайной величиной),
+		поэтому выполнено второе равенство.
+	\end{proof}
+	
+	\begin{example}
+		Пусть $ \xi \sim \mathcal{N}(0, 1) $. Найдём её характеристическую функцию.
+		$$ f_{\xi}(t)
+		= \tfrac{1}{\sqrt{2\pi}} \int\limits_{-\infty}^{+\infty} e^{itx}e^{-\tfrac{x^2}{2}} \diff x
+		= \tfrac{1}{\sqrt{2\pi}} \int\limits_{-\infty}^{+\infty} \cos(tx)e^{-\tfrac{x^2}{2}} \diff x. $$
+		Интеграл справа сходится абсолютно и равномерно по $ t $,
+		кроме того, сходится абсолютно и равномерно по $ t $ интеграл от производной
+		подынтегральной функции по $ t $.
+		Тогда имеет место равенство
+		$$ f_{\xi}'(t) = \tfrac{1}{\sqrt{2\pi}} \int\limits_{-\infty}^{+\infty} -x\sin(tx)e^{-\tfrac{x^2}{2}} \diff x
+		= \tfrac{-1}{\sqrt{2\pi}} \int\limits_{-\infty}^{+\infty} \sin(tx)e^{-\tfrac{x^2}{2}} \diff \tfrac{x^2}{2}
+		= \tfrac{1}{\sqrt{2\pi}} \int\limits_{-\infty}^{+\infty} \sin(tx) \diff e^{-\tfrac{x^2}{2}} $$ 
+		$$ = \left.\tfrac{}{\sqrt{2\pi}}\sin(tx)e^{-\tfrac{x^2}{2}}\right|_{-\infty}^{+\infty}
+		- \tfrac{1}{\sqrt{2\pi}} \int\limits_{-\infty}^{+\infty} e^{-\tfrac{x^2}{2}} \diff \sin(tx)
+		= - \tfrac{1}{\sqrt{2\pi}} \int\limits_{-\infty}^{+\infty} t\cos(tx)e^{-\tfrac{x^2}{2}} \diff x
+		= -t f_\xi(t). $$
+		Решением дифференциального уравнения являются функции вида $ Ce^{-\tfrac{x^2}{2}} $.
+		Поскольку $ f_{\xi}(0) = 1 $, то $ C = 1 $ и $ f_{\xi}(t) = e^{-\tfrac{x^2}{2}} $.
+	\end{example}
+	
+	\begin{example}
+		Пользуясь вычислениями выше, получим формулу характеристической функции для случайной величины 
+		$ \eta \sim \mathcal{N}(a, \sigma^2) $.
+		Положим $ \tfrac{\eta - a}{\sigma} \sim \mathcal{N}(0, 1) $.
+		Тогда $ f_{\xi}(t) = e^{-\tfrac{t^2}{2}} $.
+		Далее, $ \eta = \sigma\xi + a $, поэтому 
+		$$ f_{\eta}(t) = e^{ita} f_{\xi}(\sigma t) = e^{ita - \tfrac{t\sigma^2}{2}}. $$
+	\end{example}
+	
+	\begin{proposition} \label{characteristic function prop}
+		Пусть $ \xi $ --- случайная величина и $ f_\xi $ --- её характеристическая функция.
+		Тогда $ f_\xi $ обладает следующими свойствами
+		\begin{enumerate}
+			\item $ |f_\xi(t)| \leqslant f_\xi(0) = 1 $; \label{characteristic function prop | values}
+			\item $ f_\xi $ равномерно непрерывна по $ t $ на $ \RR $; \label{characteristic function prop | uniformly}
+			\item если $ \xi $ обладает $ n $-м моментом $ \expect\xi^n $,
+			то для всех $ k \leqslant n $ характеристическая функция $ f_\xi $
+			обладает $ k $-й производной и при этом выполнено равенство
+			$$ f_\xi^{(k)}(t) = \int\limits_{-\infty}^{+\infty} (ix)^ke^{itx}\diff F_\xi; $$
+			\label{characteristic function prop | moments => derivatives}
+			\item если существует производная $ f_\xi^{(2k)} $, то $ \xi $ обладает $ 2k $-м моментом.
+			\label{characteristic function prop | derivatives => moments}
+		\end{enumerate}
+	\end{proposition}
+	
+	\begin{proof}
+		Для доказательства \ref{characteristic function prop | values} 
+		имеем
+		$$ f_\xi(0) = \expect e^{it \cdot 0} = \expect 1 = 1, $$
+		$$ |f_\xi(t)| = |\expect e^{it\xi}| \leqslant \expect |e^{it\xi}| = \expect 1 = 1. $$
+		
+		Фиксируем $ \varepsilon > 0 $.
+		Имеем
+		$$ |f_\xi(t) - f_\xi(t + h)| = |\expect (e^{it\xi} - e^{i(t + h)\xi})|
+		= |\expect e^{it\xi}(1 - e^{ih\xi})| \leqslant \expect |1 - e^{ih\xi}| = $$
+		$$ = \int\limits_{-\infty}^{+\infty} |1 - e^{ihx}| \diff F_\xi
+		=  \int\limits_{\RR \setminus [-A, A]} |1 - e^{ihx}| \diff F_\xi
+		+ \int\limits_{-A}^{+A} |1 - e^{ihx}| \diff F_\xi, $$
+		где мера Лебега-Стилтьеса множества $ \RR \setminus [-A, A] $ не превосходит $ \tfrac{\varepsilon}{4} $.
+		Тогда первый интеграл не превосходит $ 2 \cdot \tfrac{\varepsilon}{4} = \tfrac{\varepsilon}{2} $.
+		Существует $ h_0 $ такое, что $ h_0A < \tfrac{\pi}{4} $ и $ |1 - e^{ih_0A}| < \tfrac{\varepsilon}{4A} $.
+		Тогда для $ |h| < h_0 $ имеем
+		$ \int\limits_{-A}^{+A} |1 - e^{ihx}| \diff F_\xi \leqslant 2A \cdot \tfrac{\varepsilon}{4A} = \tfrac{\varepsilon}{2} $.
+		Отсюда следует оценка $ |f_\xi(t) - f_\xi(t + h)| < \varepsilon $.
+		
+		Докажем, что если $ \xi $ обладает $ n $-м моментом, то $ f_\xi $ обладает, производными до $ n $-го
+		порядка. Для $ n = 1 $ имеем сходимость интеграла $ \expect \xi e^{it\xi} $,
+		поскольку подынтегральная функция по модулю не превосходит $ \xi $.
+		Тогда этот интеграл сходится равномерно относительно $ t $,
+		поэтому можно применить теорему о дифференцировании под знаком интеграла.
+		Кроме того, при $ t = 0 $ получим формулу, требуемую в условии.
+		Продолжая применять рассуждение для моментов с большими номерами получим требуемое.
+	\end{proof}
+	
+	\begin{theorem}[Теорема единственности]
+		Пусть $ F, G $ --- две функции распределения, которым соответствует одна и также характеристическая функция.
+		Тогда $ F = G $.
+	\end{theorem}
+	
+	\begin{theorem}[Формула обращения]
+		Пусть $ F = F(x) $ --- функция распределения и $ f $ --- соответствующая её характеристическая функция.
+		Тогда
+		\begin{enumerate}
+			\item для любых двух точек $ a < b $ и непрерывной $ F $ выполнено
+			$$ F(b) - F(a) 
+			= \lim\limits_{c \to +\infty} \tfrac{1}{2\pi} \int\limits_{-c}^{c} \tfrac{e^{-iat} - e^{-ibt}}{it}f(t) \diff t. $$
+			\item если интеграл $ \int\limits_{-\infty}^{+\infty} |f(t)|\diff t $ сходится,
+			то функция распределения обладает плотностью $ p $, причём выполнено равенство
+			$$ p(x) = \tfrac{1}{2\pi} \int\limits_{-\infty}^{+\infty} \tfrac{e^{-iat} - e^{-ibt}}{it}f(t) \diff t. $$
+		\end{enumerate}
+	\end{theorem}
+	
+	\begin{theorem}
+		Для дискретной случайной величины $ \xi $ имеет место равенство.
+		$$ \prob(\xi = k) = \tfrac{1}{2\pi} \int\limits_{-\pi}^{\pi} \tfrac{e^{-itk} - e^{-ibt}}{it}f(t) \diff t. $$
+	\end{theorem}
+	
 	\begin{theorem}[Бохнер, Хинчин]
 		Пусть $ f \colon \RR \to \CC $ --- непрерывная функция и $ f(0) = 1 $.
 		Тогда следующие утверждения о функции $ f $ эквивалентны
@@ -4531,6 +4710,11 @@
 			$$ \sum\limits_{i,j = 1}^{n} f(t_i - t_j)\lambda_i\overline{\lambda_j} \geqslant 0. $$
 		\end{enumerate}
 	\end{theorem}
+	
+	%\item $ f_\xi $ является вещественной функцией тогда и только тогда,
+	%когда $ \xi $ \hyperlink{symmetric-distribution}{симметрично распределена};
+	%\label{characteristic function prop | real}
+	
 	
 	\section{Предельные теоремы}
 	
