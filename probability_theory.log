@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.29)  16 JUN 2025 14:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.29)  16 JUN 2025 15:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1949,8 +1949,8 @@ mm/m/it/12 x\OT1/cmr/m/n/12 ) =
 [82]
 
 [83]
-Overfull \hbox (2.78029pt too wide) in paragraph at lines 4499--4503
-[][]\T2A/cmr/bx/n/12 —ледствие 12.7. []\T2A/cmr/m/it/12 ѕусть $\OMS/cmsy/m/n/12
+Overfull \hbox (2.78029pt too wide) in paragraph at lines 4514--4518
+[][]\T2A/cmr/bx/n/12 —ледствие 12.8. []\T2A/cmr/m/it/12 ѕусть $\OMS/cmsy/m/n/12
  f\OML/cmm/m/it/12 ^^X[]\OMS/cmsy/m/n/12 g$ \T2A/cmr/m/it/12 --- по-сле-до-ва-т
 ель-ность по-пар-но неза-ви-си-мых (некор-
  []
@@ -1967,7 +1967,9 @@ Overfull \hbox (2.78029pt too wide) in paragraph at lines 4499--4503
 
 [88]
 
-[89] (probability_theory.aux)
+[89]
+
+[90] (probability_theory.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
@@ -1977,12 +1979,12 @@ L3 programming layer <2024-12-09>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `probability_theory.out' has not changed.
-(rerunfilecheck)             Checksum: C7049521CD8F63DFB96B2D101D9BBEE7;27136.
+(rerunfilecheck)             Checksum: AA00666C403FE3981BFED401FE753734;27136.
  ) 
 Here is how much of TeX's memory you used:
- 38324 strings out of 473566
- 857610 string characters out of 5718235
- 1473319 words of memory out of 5000000
+ 38327 strings out of 473566
+ 857643 string characters out of 5718235
+ 1474319 words of memory out of 5000000
  60289 multiletter control sequences out of 15000+600000
  580368 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2025,9 +2027,9 @@ c/doublestroke/dsrom12.pfb></home/konstantin/.miktex/texmfs/install/fonts/type1
 s/type1/public/amsfonts/symbols/msam10.pfb></home/konstantin/.miktex/texmfs/ins
 tall/fonts/type1/public/amsfonts/symbols/msam7.pfb></home/konstantin/.miktex/te
 xmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on probability_theory.pdf (89 pages, 865343 bytes).
+Output written on probability_theory.pdf (90 pages, 871483 bytes).
 PDF statistics:
- 2002 PDF objects out of 2073 (max. 8388607)
- 556 named destinations out of 1000 (max. 500000)
+ 2009 PDF objects out of 2073 (max. 8388607)
+ 559 named destinations out of 1000 (max. 500000)
  713 words of extra memory for PDF output out of 10000 (max. 10000000)
 

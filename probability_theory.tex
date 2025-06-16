@@ -4439,6 +4439,21 @@
 		либо расходится с вероятностью 1.
 	\end{example}
 	
+	\begin{theorem}
+		Пусть $ \{\xi_n\} $ --- последовательность независимых случайных величин.
+		Тогда сходимость ряда $ \sum\limits_{n = 1}^{+\infty} \xi_n $ с вероятностью 1
+		влечёт сходимости рядов $ \sum\limits_{n = 1}^{+\infty} \expect\xi_n $
+		и $ \sum\limits_{n = 1}^{+\infty} \disp\xi_n $.
+		Если случайные величины равномерно ограничены некоторой константой $ C $,
+		то есть для любого $ n \geqslant 1 $ выполнено $ \prob(|\xi_n| \leqslant C) = 1 $,
+		то верно и обратное.
+	\end{theorem}
+	
+	\begin{proof}
+		
+		
+	\end{proof}
+	
 	\subsection{Неравенства}
 	
 	\begin{theorem}[Неравенства Чебышёва и Маркова] \label{inequalities}
@@ -4589,7 +4604,7 @@
 	или с использованием инструментария характеристических функций.
 	
 	\begin{theorem}[Закон больших чисел в форме Хинчина]
-		Пусть $ \{\xi_k\} $ --- последовательность попарно независимых (некоррелированных)
+		Пусть $ \{\xi_k\} $ --- последовательность попарно независимых
 		одинаково распределённых случайных величин и $ \expect\xi_k = m $. 
 		Положим $ S_n := \sum\limits_{i = 1}^{n} \xi_n $.
 		Тогда для любого $ \varepsilon > 0 $ существует предел
@@ -4599,9 +4614,44 @@
 	\end{theorem}
 	
 	\begin{proof}
+		Положим $ f_{\xi_i}(t) = \expect e^{it\xi_i} $ --- характеристическая функция.
+		Также положим $ f_{\tfrac{S_n}{n}}(t) = \expect e^{\tfrac{itS_n}{n}} $ --- характеристическая функция
+		случайной величины $ \tfrac{S_n}{n} $.
 		
+		В силу независимости $ \xi_k $ имеем
+		$$ f_{\tfrac{S_n}{n}}(t) = \expect e^{\tfrac{itS_n}{n}} = \expect e^{it\tfrac{\xi_1 + \ldots + \xi_n}{n}}
+		= \expect e^{\tfrac{it\xi_1}{n} + \ldots + \tfrac{it\xi_n}{n}}
+		= \expect e^{\tfrac{it\xi_1}{n}} \cdot \ldots \cdot \expect e^{\tfrac{it\xi_n}{n}}. $$
+		В силу одинаковой распределённости
+		$$ \expect e^{\tfrac{it\xi_1}{n}} \cdot \ldots \cdot \expect e^{\tfrac{it\xi_n}{n}}
+		= (\expect e^{\tfrac{it\xi_1}{n}})^n = f_{\xi_1}^n(\tfrac{t}{n}). $$
+		Тогда по \TODO{вставить свойство хар функций}
+		имеем
+		$$ f_{\xi_1}(\tfrac{t}{n}) 
+		= 1 + i\tfrac{t}{n}\expect\xi_1 + o(\tfrac{t}{n})
+		= = 1 + i\tfrac{t}{n}m + o(\tfrac{t}{n}), \tfrac{t}{n} \to 0. $$
+		Подставляя в эту формулу $ t = t_0 $ при $ n \to +\infty $ получим 
+		$$ f_{\xi_1}(\tfrac{t_0}{n}) = 1 + i\tfrac{t_0}{n}m + o(\tfrac{1}{n}). $$
+		Тогда
+		$$ f_{\xi_1}^n(\tfrac{t_0}{n}) = \left(1 + i\tfrac{t_0}{n}m + o(\tfrac{1}{n})\right)^n. $$
+		Отсюда
+		$$ \lim\limits_{n \to +\infty} f_{\tfrac{S_n}{n}}(t_0)
+		= \lim\limits_{n \to +\infty} f_{\xi_1}^n(\tfrac{t_0}{n})
+		= \lim\limits_{n \to +\infty} \left(1 + i\tfrac{t_0}{n}m + o(\tfrac{1}{n})\right)^n
+		= e^{it_0m} = f_{m}(t). $$
+		Из теоремы непрерывности следует, что $ \tfrac{S_n}{n} \overset{D}{\to} m $.
+		Так как $ m $ --- константа, то по предложению \TODO{дописать} отсюда $ \tfrac{S_n}{n} \overset{\prob}{\to} m $.
 	\end{proof}
 	
+	\subsection{Центральная предельная теорема}
+	
+	\begin{theorem}[Центральная предельная теорема]
+		Пусть $  $
+	\end{theorem}
+	
+	\begin{theorem}[Оценка Берри-Эссена]
+		
+	\end{theorem}
 	
 	\subsection{Теорема Муавра-Лапласа}
 	
@@ -4672,17 +4722,51 @@
 	\end{proof}
 	
 	
-	
 	\subsection{Закон повторного логарифма}
 	
 	\begin{theorem}[Закон повторного логарифма]
-		
+		Пусть $ \{\xi_k\} $ --- последовательность независимых случайных величины 
+		с распределением
+		$$ \xi_k \sim
+		\begin{tabular}{cc}
+			$ -1 $ & $ 1 $ \\
+			$ \tfrac{1}{2} $ & $ \tfrac{1}{2} $
+		\end{tabular}. $$
+		Положим $ S_n = \xi_1 + \ldots + \xi_n $.
+		Тогда имеет место сходимость почти наверное
+		$$ \prob(\varlimsup\limits_{n \to +\infty} \tfrac{S_n}{\sqrt{2n\ln\ln n}} = 1) = 1, $$
+		$$ \prob(\varliminf\limits_{n \to +\infty} \tfrac{S_n}{\sqrt{2n\ln\ln n}} = -1) = 1. $$
 	\end{theorem}
 	
 	\subsection{Закон арксинуса}
 	
 	\begin{theorem}[Закон арксинуса]
-		
+		Пусть $ \{\xi_k\} $ --- последовательность независимых случайных величины 
+		с распределением
+		$$ \xi_k \sim
+		\begin{tabular}{cc}
+			$ -1 $ & $ 1 $ \\
+			$ \tfrac{1}{2} $ & $ \tfrac{1}{2} $
+		\end{tabular}. $$
+		Пусть $ \nu_n $ --- случайная величина, выражающая количество целых точек $ k \in [1, n] $
+		таких, что $ \xi_1 + \ldots + \xi_k > 0 $.
+		Тогда
+		$$ \lim\limits_{n \to +\infty} \prob(\tfrac{\nu_n}{n} \leqslant x)
+		= \tfrac{1}{\pi}\int\limits_{0}^{x} \tfrac{\diff y}{\sqrt{y(1 - y)}} = \tfrac{2}{\pi}\arcsin \sqrt{x}. $$
+	\end{theorem}
+	
+	\begin{theorem}[Усиленный закон арксинуса]
+		Пусть $ \{\xi_k\} $ --- последовательность независимых случайных величины 
+		с распределением
+		$$ \xi_k \sim
+		\begin{tabular}{cc}
+			$ -1 $ & $ 1 $ \\
+			$ \tfrac{1}{2} $ & $ \tfrac{1}{2} $
+		\end{tabular}. $$
+		Пусть $ \nu_n $ --- случайная величина, выражающая количество целых точек $ k \in [1, n] $
+		таких, что $ \xi_1 + \ldots + \xi_k > 0 $.
+		Тогда для $ 1 \leqslant k \leqslant n $ выполнено
+		$$ \prob(\nu_{2n} = 2k \mid S_{2n} = 0) = \tfrac{1}{n + 1}. $$
 	\end{theorem}
 	
 	\subsection{Правило трёх сигм}
@@ -4690,17 +4774,6 @@
 	\begin{theorem}[Правило трёх сигм]
 		
 	\end{theorem}
-	
-	\subsection{Центральная предельная теорема}
-	
-	\begin{theorem}[Центральная предельная теорема]
-		
-	\end{theorem}
-	
-	\begin{theorem}[Оценка Берри-Эссена]
-		
-	\end{theorem}
-	
 	
 	
 	\section{Указатель терминов}

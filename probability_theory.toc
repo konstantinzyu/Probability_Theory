@@ -77,10 +77,10 @@
 \contentsline {subsection}{\numberline {12.1}Закон нуля или единицы}{81}{subsection.12.1}%
 \contentsline {subsection}{\numberline {12.2}Неравенства}{83}{subsection.12.2}%
 \contentsline {subsection}{\numberline {12.3}Закон больших чисел}{84}{subsection.12.3}%
-\contentsline {subsection}{\numberline {12.4}Теорема Муавра-Лапласа}{86}{subsection.12.4}%
-\contentsline {subsection}{\numberline {12.5}Закон повторного логарифма}{88}{subsection.12.5}%
-\contentsline {subsection}{\numberline {12.6}Закон арксинуса}{88}{subsection.12.6}%
-\contentsline {subsection}{\numberline {12.7}Правило трёх сигм}{88}{subsection.12.7}%
-\contentsline {subsection}{\numberline {12.8}Центральная предельная теорема}{88}{subsection.12.8}%
-\contentsline {section}{\numberline {13}Указатель терминов}{88}{section.13}%
-\contentsline {section}{\numberline {14}Указатель теорем}{88}{section.14}%
+\contentsline {subsection}{\numberline {12.4}Центральная предельная теорема}{87}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}Теорема Муавра-Лапласа}{87}{subsection.12.5}%
+\contentsline {subsection}{\numberline {12.6}Закон повторного логарифма}{89}{subsection.12.6}%
+\contentsline {subsection}{\numberline {12.7}Закон арксинуса}{89}{subsection.12.7}%
+\contentsline {subsection}{\numberline {12.8}Правило трёх сигм}{90}{subsection.12.8}%
+\contentsline {section}{\numberline {13}Указатель терминов}{90}{section.13}%
+\contentsline {section}{\numberline {14}Указатель теорем}{90}{section.14}%
