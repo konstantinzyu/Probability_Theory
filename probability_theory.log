@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.29)  16 JUN 2025 19:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.29)  16 JUN 2025 19:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1973,7 +1973,9 @@ Overfull \hbox (2.78029pt too wide) in paragraph at lines 4514--4518
 
 [91]
 
-[92] (probability_theory.aux)
+[92]
+
+[93] (probability_theory.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
@@ -1986,8 +1988,8 @@ Package rerunfilecheck Info: File `probability_theory.out' has not changed.
 (rerunfilecheck)             Checksum: AA00666C403FE3981BFED401FE753734;27136.
  ) 
 Here is how much of TeX's memory you used:
- 38333 strings out of 473566
- 857700 string characters out of 5718235
+ 38334 strings out of 473566
+ 857707 string characters out of 5718235
  1474319 words of memory out of 5000000
  60289 multiletter control sequences out of 15000+600000
  580368 words of font info for 107 fonts, out of 8000000 for 9000
@@ -2031,9 +2033,9 @@ c/doublestroke/dsrom12.pfb></home/konstantin/.miktex/texmfs/install/fonts/type1
 s/type1/public/amsfonts/symbols/msam10.pfb></home/konstantin/.miktex/texmfs/ins
 tall/fonts/type1/public/amsfonts/symbols/msam7.pfb></home/konstantin/.miktex/te
 xmfs/install/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on probability_theory.pdf (92 pages, 882856 bytes).
+Output written on probability_theory.pdf (93 pages, 886424 bytes).
 PDF statistics:
- 2023 PDF objects out of 2073 (max. 8388607)
- 565 named destinations out of 1000 (max. 500000)
+ 2027 PDF objects out of 2073 (max. 8388607)
+ 566 named destinations out of 1000 (max. 500000)
  713 words of extra memory for PDF output out of 10000 (max. 10000000)
 

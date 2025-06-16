@@ -4698,7 +4698,7 @@
 		Положим $ \sigma_k^2 = \disp\xi_k > 0 $ и $ S_n = \sum\limits_{k = 1}^{n} \xi_k $,
 		$ \disp S_n := B_n^2 $. Пусть $ F_{\xi_k} $ --- функция распределения случайно величины $ \xi_k $.
 		Тогда, если для любого $ \varepsilon > 0 $ выполнено \defin{условие Линдеберга}{Lindeberg}
-		$$ \tfrac{1}{B_n^2} \sum\limits_{k = 1}^{n} 
+		$$ \lim\limits_{n \to +\infty} \tfrac{1}{B_n^2} \sum\limits_{k = 1}^{n} 
 		\int\limits_{\defineset{x \in \RR}{|x - \expect\xi_k| \geqslant \varepsilon B_n}}
 		(x - \expect\xi_k)^2\diff F_{\xi_k} = 0, $$
 		то для любого $ x \in \RR $ имеет место сходимость
@@ -4728,9 +4728,44 @@
 		где $ \eta \sim \mathcal{N}(0, 1) $.
 	\end{theorem}
 	
-	
+	\begin{proof}
+		Докажем, что условие Ляпунова влечёт условие Линдеберга (то есть является более сильным).
+		
+		Фиксируем $ \varepsilon > 0 $. Имеем
+		$$ \expect(\xi_k - \expect\xi_k)^{2 + \delta}
+		= \int\limits_{-\infty}^{+\infty} (x - \expect\xi_k)^{2 + \delta}\diff F_{\xi_k}
+		\geqslant \int\limits_{\defineset{x \in \RR}{|x - \expect\xi_k| \geqslant \varepsilon B_n}}
+		(x - \expect\xi_k)^{2 + \delta}\diff F_{\xi_k} \leqslant $$
+		$$ \leqslant \varepsilon^{\delta}B_{n}^{\delta} \cdot
+		\int\limits_{\defineset{x \in \RR}{|x - \expect\xi_k| \geqslant \varepsilon B_n}}
+		(x - \expect\xi_k)^{2}\diff F_{\xi_k}. $$
+		Отсюда
+		$$ \tfrac{1}{B_n^2} \sum\limits_{k = 1}^{n}
+		\int\limits_{\defineset{x \in \RR}{|x - \expect\xi_k| \geqslant \varepsilon B_n}}
+		(x - \expect\xi_k)^2\diff F_\xi \leqslant $$
+		$$ \varepsilon^{-\delta} \cdot \tfrac{\varepsilon^{\delta} B_n^{\delta}}{B_n^{2 +\delta}} \sum\limits_{k = 1}^{n}
+		\int\limits_{\defineset{x \in \RR}{|x - \expect\xi_k| \geqslant \varepsilon B_n}}
+		(x - \expect\xi_k)^2\diff F_\xi \leqslant $$
+		$$ \leqslant \varepsilon^{-\delta} \cdot \tfrac{1}{B_n^{2 +\delta}} \sum\limits_{k = 1}^{n}
+		\expect(\xi_k - \expect\xi_k)^{2 + \delta}. $$
+		Переходя к пределу $ n \to +\infty $ получим нуль для самого последнего выражения 
+		по условию Ляпунова. В силу неотрицательности первого выражения в последней цепочке
+		оно также стремится к нулю. Таким образом, выполнено условие Линдеберга.
+	\end{proof}
 	
 	\begin{theorem}[Оценка Берри-Эссена]
+		Пусть $ \{\xi_k\} $ --- последовательность независимых одинаково распределённых случайных величин,
+		обладающих моментами $ \expect\xi^k < + \infty $ 
+		(и, следовательно, обладающие математическим ожиданием
+		и дисперсией).
+		Положим $ m = \expect\xi_k $, $ \sigma^2 = \disp\xi_k $
+		и $ S_n = \sum\limits_{k = 1}^{n} \xi_k $.
+		Если случайные величины последовательности также обладают третьими моментами $ \expect|\xi|^3 < +\infty $,
+		то для любого натурального $ n $ справедлива оценка
+		$$ \sup\limits_{x \in \RR} \left|\prob\left(\tfrac{S_n - \expect S_n}{\sqrt{\disp S_n}} - \Phi(x)\right)\right|
+		\leqslant \tfrac{C}{\sqrt{n}} \cdot \tfrac{\expect|\xi_k - \expect\xi_k|^3}{\sigma^3}, $$
+		где $ C $ --- некоторая константа, удовлетворяющая неравенствам
+		$$ 0.3989 \approx \tfrac{1}{\sqrt{2\pi}} \leqslant C < 0.4784. $$
 		
 	\end{theorem}
 	
