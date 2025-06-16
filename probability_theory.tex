@@ -4646,8 +4646,89 @@
 	\subsection{Центральная предельная теорема}
 	
 	\begin{theorem}[Центральная предельная теорема]
-		Пусть $  $
+		Пусть $ \{\xi_k\} $ --- последовательность независимых одинаково распределённых случайных величин,
+		обладающих конечными вторыми моментами $ \expect\xi_k^2 $ (и, следовательно, конечными матожиданиями и дисперсиями).
+		Положим $ S_n = \sum\limits_{k = 1}^{n} \xi_k $.
+		Тогда для любого $ x \in \RR $ существует предел
+		$$ \lim\limits_{n \to +\infty} \prob(\tfrac{S_n - \expect S_n}{\sqrt{\disp S_n}} \leqslant x) = \Phi(x), $$
+		где $ \Phi(x) = \tfrac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{x} e^{-\tfrac{x^2}{2}} $
+		--- функция распределения стандартного распределения.
+		Другими словами, имеется сходимость по распределению
+		$$ \tfrac{S_n - \expect S_n}{\sqrt{\disp S_n}} \overset{D}{\to} \eta, $$
+		где $ \eta \sim \mathcal{N}(0, 1) $.
 	\end{theorem}
+	
+	\begin{proof}
+		Положим $ m = \expect\xi_k $ и $ \sigma^2 = \disp\xi_k $.
+		Имеем
+		$$ f_{\xi_k - m}(t) = \expect e^{it(\xi_k - m)}. $$ 
+		По независимости: 
+		$$ f_{\tfrac{S_n - \expect S_n}{\sqrt{\disp S_n}}}(t)
+		= \expect \exp\left(it{\tfrac{S_n - \sum\limits_{k = 1}^{n} \expect\xi_k}{\sqrt{\sum\limits_{k = 1}^{n} \disp\xi_k}}}\right)
+		= \expect e^{it\tfrac{\sum\limits_{k = 1}^{n} (\xi_k - m) }{\sqrt{n}\sigma}}
+		= \expect \prod\limits_{k = 1}^{n} e^{it\tfrac{\xi_k - m}{\sqrt{n}\sigma}}
+		= \prod\limits_{k = 1}^{n} \expect e^{it\tfrac{\xi_k - m}{\sqrt{n}\sigma}}. $$
+		По одинаковой распределённости:
+		$$ \prod\limits_{k = 1}^{n} \expect e^{it\tfrac{\xi_k - m}{\sqrt{n}\sigma}} 
+		= \prod\limits_{k = 1}^{n} f_{\xi_k - m}(\tfrac{t}{\sqrt{n}\sigma}).
+		= \left(f_{\xi_1 - m}(\tfrac{t}{\sqrt{n}\sigma})\right)^n. $$
+		
+		При $ \tfrac{t}{\sqrt{n}} \to 0 $ из свойств характеристических функий имеем разложение по формуле Тейлора
+		$$ f_{\xi_k - m}(\tfrac{t}{\sqrt{n}\sigma}) = 1 + \tfrac{it}{\sqrt{n}\sigma}\expect(\xi_k - m)
+		+ \tfrac{(it)^2}{2n\sigma^2}\expect(\xi_k - m)^2 + o(\tfrac{t^3}{n\sqrt{n}\sigma^3})
+		= 1 - \tfrac{t^2}{2n} + o(\tfrac{t^3}{n\sqrt{n}}). $$
+		При фиксированном $ t = t_0 $ и $ n \to +\infty $ получаем
+		$$ f_{\xi_k - m}(\tfrac{t_0}{\sqrt{n}\sigma}) = 1 - \tfrac{t_0^2}{2n} + o(\tfrac{1}{n\sqrt{n}}). $$
+		Отсюда
+		$$ \lim\limits_{n \to +\infty} \left(1 - \tfrac{t_0^2}{2n} + o(\tfrac{1}{n\sqrt{n}})\right)^n
+		= e^{-\tfrac{t_0^2}{2}} = f_{\eta}(t_0), $$
+		где $ \eta \sim \mathcal{N}(0, 1) $.
+		
+		Из теоремы непрерывности следует утверждение теоремы.
+	\end{proof}
+	
+	Центральная предельная теорема допускает обобщение на случай, 
+	когда случайные величины не одинаково распределены.
+	В этом случае требует выполнение дополнительных условий,
+	как демонстрирует следующая
+	
+	\begin{theorem}[Обобщение центральной предельной теоремы с условием Линдеберга]
+		Пусть $ \{\xi_k\} $ --- последовательность независимых случайных величин,
+		обладающих вторым моментом $ \expect\xi^2 $ (и, следовательно, математическим ожиданием и дисперсией).
+		Положим $ \sigma_k^2 = \disp\xi_k > 0 $ и $ S_n = \sum\limits_{k = 1}^{n} \xi_k $,
+		$ \disp S_n := B_n^2 $. Пусть $ F_{\xi_k} $ --- функция распределения случайно величины $ \xi_k $.
+		Тогда, если для любого $ \varepsilon > 0 $ выполнено \defin{условие Линдеберга}{Lindeberg}
+		$$ \tfrac{1}{B_n^2} \sum\limits_{k = 1}^{n} 
+		\int\limits_{\defineset{x \in \RR}{|x - \expect\xi_k| \geqslant \varepsilon B_n}}
+		(x - \expect\xi_k)^2\diff F_{\xi_k} = 0, $$
+		то для любого $ x \in \RR $ имеет место сходимость
+		$$ \lim\limits_{n \to +\infty} \prob(\tfrac{S_n - \expect S_n}{\sqrt{\disp S_n}}) = \Phi(x), $$
+		где $ \Phi(x) = \tfrac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{x} e^{-\tfrac{x^2}{2}} $
+		--- функция распределения стандартного распределения.
+		Другими словами, имеется сходимость по распределению
+		$$ \tfrac{S_n - \expect S_n}{\sqrt{\disp S_n}} \overset{D}{\to} \eta, $$
+		где $ \eta \sim \mathcal{N}(0, 1) $.
+	\end{theorem}
+
+	\begin{theorem}[Обобщение центральной предельной теоремы с условием Ляпунова]
+		Пусть $ \{\xi_k\} $ --- последовательность независимых случайных величин,
+		обладающих вторым моментом $ \expect\xi^2 $ (и, следовательно, математическим ожиданием и дисперсией).
+		Положим $ \sigma_k^2 = \disp\xi_k > 0 $ и $ S_n = \sum\limits_{k = 1}^{n} \xi_k $,
+		$ \disp S_n := B_n^2 $. Пусть $ F_{\xi_k} $ --- функция распределения случайно величины $ \xi_k $.
+		Тогда, если для любого $ \varepsilon > 0 $ и некоторого $ \delta > 0 $ 
+		выполнено \defin{условие Ляпунова}{Lyapunov}
+		$$ \lim\limits_{n \to +\infty} \tfrac{1}{B_n^{2 + \delta}} 
+		\sum\limits_{k = 1}^{n} \expect (\xi_k - \expect\xi_k)^{2 + \delta} = 0, $$
+		то для любого $ x \in \RR $ имеет место сходимость
+		$$ \lim\limits_{n \to +\infty} \prob(\tfrac{S_n - \expect S_n}{\sqrt{\disp S_n}}) = \Phi(x), $$
+		где $ \Phi(x) = \tfrac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{x} e^{-\tfrac{x^2}{2}} $
+		--- функция распределения стандартного распределения.
+		Другими словами, имеется сходимость по распределению
+		$$ \tfrac{S_n - \expect S_n}{\sqrt{\disp S_n}} \overset{D}{\to} \eta, $$
+		где $ \eta \sim \mathcal{N}(0, 1) $.
+	\end{theorem}
+	
+	
 	
 	\begin{theorem}[Оценка Берри-Эссена]
 		
@@ -4713,12 +4794,17 @@
 		с вероятностью <<успеха>> $ p $ (другими словами, $ \nu_n $ --- биномиальная случайная величина).
 		Тогда для всяких (возможно бесконечных) $ -\infty \leqslant c < d \leqslant +\infty $ 
 		существует предел
-		$$ \lim\limits_{n \to +\infty} \prob(c \leqslant \tfrac{\nu_n - np}{\sqrt{npq}} \leqslant d) = \Phi(d) - \Phi(c), $$
+		$$ \lim\limits_{n \to +\infty} \prob(c < \tfrac{\nu_n - np}{\sqrt{npq}} \leqslant d) = \Phi(d) - \Phi(c), $$
 		где $ \Phi $ --- функция распределения \hyperlink{standard-normal-distribution}{стандартного нормального распределения}.
 	\end{theorem}
 	
 	\begin{proof}
-		
+		В данном случае имеем $ \expect\nu_n = np $
+		и $ \disp\nu_n = npq $, поэтому для $ c = -\infty $ формула выше совпадает с соответствующей формулой 
+		в центральной предельной теореме.
+		Для произвольных $ c $ воспользуемся равенством
+		$$ \prob(c < \tfrac{\nu_n - np}{\sqrt{npq}} \leqslant d)
+		= \prob(\tfrac{\nu_n - np}{\sqrt{npq}} \leqslant d) - \prob(\tfrac{\nu_n - np}{\sqrt{npq}} \leqslant c). $$
 	\end{proof}
 	
 	
