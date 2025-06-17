@@ -84,7 +84,7 @@
 \contentsline {section}{\numberline {11}Характеристические функции}{85}{section.11}%
 \contentsline {section}{\numberline {12}Предельные теоремы}{88}{section.12}%
 \contentsline {subsection}{\numberline {12.1}Закон нуля или единицы}{88}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}Неравенства}{90}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.2}Неравенства}{91}{subsection.12.2}%
 \contentsline {subsection}{\numberline {12.3}Закон больших чисел}{91}{subsection.12.3}%
 \contentsline {subsection}{\numberline {12.4}Центральная предельная теорема}{95}{subsection.12.4}%
 \contentsline {subsection}{\numberline {12.5}Теорема Муавра-Лапласа}{98}{subsection.12.5}%
